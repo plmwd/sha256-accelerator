@@ -1,0 +1,104 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Tue Apr 28 12:39:27 2020
+| Host         : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
+| Command      : report_methodology -file test_wrapper_methodology_drc_routed.rpt -pb test_wrapper_methodology_drc_routed.pb -rpx test_wrapper_methodology_drc_routed.rpx
+| Design       : test_wrapper
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 13
++-----------+----------+-------------------------------------------------------------------+------------+
+| Rule      | Severity | Description                                                       | Violations |
++-----------+----------+-------------------------------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert                                      | 4          |
+| TIMING-9  | Warning  | Unknown CDC Logic                                                 | 1          |
+| TIMING-10 | Warning  | Missing property on synchronizer                                  | 1          |
+| TIMING-18 | Warning  | Missing input or output delay                                     | 3          |
+| TIMING-47 | Warning  | False path or asynchronous clock group between synchronous clocks | 4          |
++-----------+----------+-------------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell test_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Use_BSCAN.FDC_I/Use_Dbg_Mem_Access.execute_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) test_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Use_Dbg_Mem_Access.execute_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg[30]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg[0]/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg[10]/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg[26]/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg[3]/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_0/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_1/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_10/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_11/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_12/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_2/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_3/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_4/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_5/CLR, test_i/mdm_1/U0/MDM_Core_I1/Use_BSCAN.Config_Reg_reg_c_6/CLR (the first 15 of 23 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell test_i/mdm_1/U0/Use_Dbg_Reg_Access.BUFGCTRL_UPDATE/sel_n_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) test_i/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/sel_n_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#4 Warning
+LUT drives async reset alert  
+LUT cell test_i/mdm_1/U0/Use_E2.BSCAN_I/Use_Dbg_Reg_Access.No_BSCANID.update_reset_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) test_i/mdm_1/U0/Use_Dbg_Reg_Access.No_BSCANID.jtag_busy_reg/CLR, test_i/mdm_1/U0/Use_Dbg_Reg_Access.No_BSCANID.update_reset_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-10#1 Warning
+Missing property on synchronizer  
+One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on reset relative to clock(s) sys_clock
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on usb_uart_rxd relative to clock(s) sys_clock
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on usb_uart_txd relative to clock(s) sys_clock
+Related violations: <none>
+
+TIMING-47#1 Warning
+False path or asynchronous clock group between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks clk_out1_test_clk_wiz_1_0 and test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_DRCK_i_reg/Q (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+Related violations: <none>
+
+TIMING-47#2 Warning
+False path or asynchronous clock group between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks clk_out1_test_clk_wiz_1_0 and test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_UPDATE_i_reg/Q (see constraint position 16 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+Related violations: <none>
+
+TIMING-47#3 Warning
+False path or asynchronous clock group between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_DRCK_i_reg/Q and clk_out1_test_clk_wiz_1_0 (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+Related violations: <none>
+
+TIMING-47#4 Warning
+False path or asynchronous clock group between synchronous clocks  
+A Clock Group timing constraint is set between synchronous clocks test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_UPDATE_i_reg/Q and clk_out1_test_clk_wiz_1_0 (see constraint position 16 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+Related violations: <none>
+
+

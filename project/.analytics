@@ -1,0 +1,33 @@
+timestamp=[2020-04-27 19:14:13], mode=WORKBENCH_START, duration=0:00:03.897, duration_ms=3897, data={}
+timestamp=[2020-04-27 19:14:13], mode=WORKBENCH_UI_INIT, duration=0:00:00.365, duration_ms=365, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2020-04-27 19:18:11], mode=PLATFORM_CREATION, duration=0:00:07.340, duration_ms=7340, data={platform_source=dsa, os=standalone, processor=microblaze, platform=null}
+timestamp=[2020-04-27 19:26:01], mode=PLATFORM_GENERATION, duration=0:00:08.029, duration_ms=8029, data={name=test-cpu}
+timestamp=[2020-04-27 19:27:37], mode=APP_CREATION, duration=0:00:01.614, duration_ms=1614, data={name=test-cpu-app, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=test-cpu, application_type=application}
+timestamp=[2020-04-28 11:07:58], mode=WORKBENCH_START, duration=0:00:11.358, duration_ms=11358, data={}
+timestamp=[2020-04-28 11:07:59], mode=WORKBENCH_UI_INIT, duration=0:00:01.187, duration_ms=1187, data={editors_count=12, platform_editors_count=3, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,test-cpu,test-cpu-app,test-cpu-app_system}
+timestamp=[2020-04-28 11:56:54], mode=PLATFORM_GENERATION, duration=0:00:02.324, duration_ms=2324, data={name=test-cpu}
+timestamp=[2020-04-28 11:57:32], mode=PLATFORM_GENERATION, duration=0:00:06.548, duration_ms=6548, data={name=test-cpu}
+timestamp=[2020-04-28 11:57:47], mode=PLATFORM_GENERATION, duration=0:00:05.895, duration_ms=5895, data={name=test-cpu}
+timestamp=[2020-04-28 12:00:11], mode=PLATFORM_GENERATION, duration=0:00:05.995, duration_ms=5995, data={name=test-cpu}
+timestamp=[2020-04-28 12:01:51], mode=PLATFORM_GENERATION, duration=0:00:01.552, duration_ms=1552, data={name=test-cpu}
+timestamp=[2020-04-28 12:01:59], mode=PLATFORM_GENERATION, duration=0:00:01.534, duration_ms=1534, data={name=test-cpu}
+timestamp=[2020-04-28 12:02:45], mode=PLATFORM_GENERATION, duration=0:00:05.882, duration_ms=5882, data={name=test-cpu}
+timestamp=[2020-04-28 12:13:58], mode=PLATFORM_GENERATION, duration=0:00:01.501, duration_ms=1501, data={name=test-cpu}
+timestamp=[2020-04-28 12:14:07], mode=PLATFORM_GENERATION, duration=0:00:05.842, duration_ms=5842, data={name=test-cpu}
+timestamp=[2020-04-28 12:15:25], mode=PLATFORM_GENERATION, duration=0:00:05.731, duration_ms=5731, data={name=test-cpu}
+timestamp=[2020-04-28 12:15:39], mode=PLATFORM_GENERATION, duration=0:00:05.735, duration_ms=5735, data={name=test-cpu}
+timestamp=[2020-04-28 12:15:44], mode=PLATFORM_GENERATION, duration=0:00:01.542, duration_ms=1542, data={name=test-cpu}
+timestamp=[2020-04-28 12:17:38], mode=PLATFORM_GENERATION, duration=0:00:05.739, duration_ms=5739, data={name=test-cpu}
+timestamp=[2020-04-28 12:17:55], mode=PLATFORM_GENERATION, duration=0:00:05.799, duration_ms=5799, data={name=test-cpu}
+timestamp=[2020-04-28 12:18:26], mode=PLATFORM_GENERATION, duration=0:00:01.593, duration_ms=1593, data={name=test-cpu}
+timestamp=[2020-04-28 12:20:00], mode=PLATFORM_GENERATION, duration=0:00:05.719, duration_ms=5719, data={name=test-cpu}
+timestamp=[2020-04-28 12:20:21], mode=PLATFORM_GENERATION, duration=0:00:05.742, duration_ms=5742, data={name=test-cpu}
+timestamp=[2020-04-28 12:25:26], mode=PLATFORM_GENERATION, duration=0:00:05.937, duration_ms=5937, data={name=test-cpu}
+timestamp=[2020-04-28 12:50:16], mode=PLATFORM_GENERATION, duration=0:00:01.552, duration_ms=1552, data={name=test-cpu}
+timestamp=[2020-04-28 12:50:37], mode=PLATFORM_GENERATION, duration=0:00:05.862, duration_ms=5862, data={name=test-cpu}
+timestamp=[2020-04-28 12:52:15], mode=PLATFORM_GENERATION, duration=0:00:06.063, duration_ms=6063, data={name=test-cpu}
+timestamp=[2020-04-28 13:21:28], mode=PLATFORM_GENERATION, duration=0:00:01.624, duration_ms=1624, data={name=test-cpu}
+timestamp=[2020-04-28 13:22:02], mode=PLATFORM_GENERATION, duration=0:00:06.089, duration_ms=6089, data={name=test-cpu}
+timestamp=[2020-04-28 16:20:10], mode=WORKBENCH_START, duration=0:00:09.431, duration_ms=9431, data={}
+timestamp=[2020-04-28 16:20:11], mode=WORKBENCH_UI_INIT, duration=0:00:01.211, duration_ms=1211, data={editors_count=26, platform_editors_count=14, projects_count=4, platform_projects_count=1, active_platform_editor=true, projects=RemoteSystemsTempFiles,test-cpu,test-cpu-app,test-cpu-app_system}
+timestamp=[2020-04-28 16:20:52], mode=PLATFORM_GENERATION, duration=0:00:09.438, duration_ms=9438, data={name=test-cpu}

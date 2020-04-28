@@ -1,0 +1,12 @@
+vhdl xil_defaultlib  \
+"../../../bd/test/ip/test_microblaze_0_0/sim/test_microblaze_0_0.vhd" \
+"../../../bd/test/ip/test_dlmb_v10_0/sim/test_dlmb_v10_0.vhd" \
+"../../../bd/test/ip/test_ilmb_v10_0/sim/test_ilmb_v10_0.vhd" \
+"../../../bd/test/ip/test_dlmb_bram_if_cntlr_0/sim/test_dlmb_bram_if_cntlr_0.vhd" \
+"../../../bd/test/ip/test_ilmb_bram_if_cntlr_0/sim/test_ilmb_bram_if_cntlr_0.vhd" \
+"../../../bd/test/ip/test_microblaze_0_axi_intc_0/sim/test_microblaze_0_axi_intc_0.vhd" \
+"../../../bd/test/ip/test_mdm_1_0/sim/test_mdm_1_0.vhd" \
+"../../../bd/test/ip/test_rst_clk_wiz_1_100M_0/sim/test_rst_clk_wiz_1_100M_0.vhd" \
+"../../../bd/test/ip/test_axi_uartlite_0_0/sim/test_axi_uartlite_0_0.vhd" \
+
+nosort
