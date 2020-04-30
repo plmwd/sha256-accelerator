@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "led_axi.h"
+
+
+int main(void) {
+	init_platform();
+
+	LEDS = 0xFF;
+
+	while(1) {}
+
+	cleanup_platform();
+	return 0;
+}

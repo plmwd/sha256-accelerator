@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_ext_vitis.xml'  majorVersion='1' minorVersion='0' timeStamp='Mon Apr 27 22:03:09 2020'>
+<webTalkData  fileName='usage_statistics_ext_vitis.xml'  majorVersion='1' minorVersion='0' timeStamp='Tue Apr 28 22:52:41 2020'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="false" description="" />
   <keyValuePair key="build_version" value="2019.2" description="" />
-  <keyValuePair key="date_generated" value="2020-04-27 22:03:03" description="" />
+  <keyValuePair key="date_generated" value="2020-04-28 22:52:37" description="" />
   <keyValuePair key="os_platform" value="amd64" description="" />
   <keyValuePair key="product_version" value="Vitis v2019.2" description="" />
-  <keyValuePair key="project_id" value="2019.2_1" description="" />
-  <keyValuePair key="project_iteration" value="1" description="" />
-  <keyValuePair key="random_id" value="ubjqn8ik1dj937hb5bj7itu5kf" description="" />
+  <keyValuePair key="project_id" value="2019.2_3" description="" />
+  <keyValuePair key="project_iteration" value="3" description="" />
+  <keyValuePair key="random_id" value="eilmubo4gbql4a7r7dn4l3h8et" description="" />
   <keyValuePair key="registration_id" value="NA" description="" />
   <keyValuePair key="route_design" value="NA" description="" />
   <keyValuePair key="target_device" value="NA" description="" />
@@ -27,28 +27,7 @@
   <keyValuePair key="total_processors" value="1" description="" />
  </section>
  <section name="vitis" level="1" order="3" description="">
-  <section name="application/1588030056766" level="2" order="1" description="">
-   <keyValuePair key="application_type" value="application" description="" />
-   <keyValuePair key="device_family" value="artix7" description="" />
-   <keyValuePair key="fpga" value="xc7a35t" description="" />
-   <keyValuePair key="os" value="standalone" description="" />
-   <keyValuePair key="platform" value="custom" description="" />
-   <keyValuePair key="platform_source" value="platform" description="" />
-   <keyValuePair key="platform_type" value="fixed" description="" />
-   <keyValuePair key="processor" value="microblaze_0" description="" />
-   <keyValuePair key="project_type" value="sdk" description="" />
-   <keyValuePair key="runtime" value="C/C++" description="" />
-   <keyValuePair key="template" value="sdk" description="" />
-   <keyValuePair key="uid" value="1588030056766" description="" />
-  </section>
-  <section name="platform/1588029484148" level="2" order="2" description="">
-   <keyValuePair key="os" value="standalone" description="" />
-   <keyValuePair key="platform" value="NA" description="" />
-   <keyValuePair key="platform_source" value="dsa" description="" />
-   <keyValuePair key="processor" value="microblaze" description="" />
-   <keyValuePair key="uid" value="1588029484148" description="" />
-  </section>
-  <section name="tool/1588039383829" level="2" order="3" description="">
+  <section name="tool/1588128757591" level="2" order="1" description="">
    <keyValuePair key="application_platform_change_count" value="0" description="" />
    <keyValuePair key="application_sys_config_change_count" value="0" description="" />
    <keyValuePair key="bootgen_count" value="0" description="" />
@@ -64,12 +43,12 @@
    <keyValuePair key="sdx_build_count" value="0" description="" />
    <keyValuePair key="sdx_export_count" value="0" description="" />
    <keyValuePair key="sdx_import_count" value="0" description="" />
-   <keyValuePair key="sdx_no_op_build_count" value="2" description="" />
+   <keyValuePair key="sdx_no_op_build_count" value="1" description="" />
    <keyValuePair key="spm_analysis_count" value="0" description="" />
    <keyValuePair key="system_platform_change_count" value="0" description="" />
-   <keyValuePair key="tcf_app_debug_count" value="2" description="" />
+   <keyValuePair key="tcf_app_debug_count" value="0" description="" />
    <keyValuePair key="tcf_profiler_count" value="0" description="" />
-   <keyValuePair key="tcf_system_debug_count" value="2" description="" />
+   <keyValuePair key="tcf_system_debug_count" value="0" description="" />
    <keyValuePair key="uid" value="NA" description="" />
   </section>
  </section>

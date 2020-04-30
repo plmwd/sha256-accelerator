@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/synth_1'
+HD_PWD='C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

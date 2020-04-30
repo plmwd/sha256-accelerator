@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Apr 29 17:47:12 2020
+# Process ID: 17148
+# Current directory: C:/Users/904pa/Documents/Git/sha256/ip_repo
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5080 C:\Users\904pa\Documents\Git\sha256\ip_repo\edit_axi_sha256_v1_0.xpr
+# Log file: C:/Users/904pa/Documents/Git/sha256/ip_repo/vivado.log
+# Journal file: C:/Users/904pa/Documents/Git/sha256/ip_repo\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/904pa/Documents/Git/sha256/ip_repo/edit_axi_sha256_v1_0.xpr

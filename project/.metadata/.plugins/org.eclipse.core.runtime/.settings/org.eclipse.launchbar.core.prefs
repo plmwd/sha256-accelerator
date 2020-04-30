@@ -1,7 +1,9 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test-cpu-app_system
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test-cpu-app_system,org.eclipse.launchbar.core.descriptorType.default\:Debugger_test-cpu-app-Default,org.eclipse.launchbar.core.descriptorType.default\:Debugger_test-cpu-app-Default (1),org.eclipse.launchbar.core.descriptorType.default\:Debugger_test-cpu-app-Default (2),org.eclipse.launchbar.core.descriptorType.default\:Debugger_test-cpu-app-Default (3),org.eclipse.launchbar.core.descriptorType.default\:Debugger_test-cpu-app-Default (4)
 eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_test-cpu-app-Default\ (3)/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_test-cpu-app-Default/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test-cpu-app_system/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_test-cpu-app_system/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

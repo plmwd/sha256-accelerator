@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "led_axi.h"
+
+
+int main(void) {
+	init_platform();
+
+	cleanup_platform();
+	return 0;
+}

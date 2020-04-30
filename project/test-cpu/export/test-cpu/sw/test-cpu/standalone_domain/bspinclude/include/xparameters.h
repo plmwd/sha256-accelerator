@@ -478,6 +478,17 @@
  
  
 /******************************************************************/
+/* Definitions for driver AXI_SHA256 */
+#define XPAR_AXI_SHA256_NUM_INSTANCES 1
+
+/* Definitions for peripheral AXI_SHA256_0 */
+#define XPAR_AXI_SHA256_0_DEVICE_ID 0
+#define XPAR_AXI_SHA256_0_S00_AXI_BASEADDR 0x44A10000
+#define XPAR_AXI_SHA256_0_S00_AXI_HIGHADDR 0x44A1FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver BRAM */
 #define XPAR_XBRAM_NUM_INSTANCES 2U
 
@@ -598,6 +609,17 @@
 #define XPAR_INTC_0_INTC_TYPE 0U
 
 #define XPAR_INTC_0_UARTLITE_0_VEC_ID XPAR_MICROBLAZE_0_AXI_INTC_AXI_UARTLITE_0_INTERRUPT_INTR
+
+/******************************************************************/
+
+/* Definitions for driver LED_AXI */
+#define XPAR_LED_AXI_NUM_INSTANCES 1
+
+/* Definitions for peripheral LED_AXI_0 */
+#define XPAR_LED_AXI_0_DEVICE_ID 0
+#define XPAR_LED_AXI_0_LED_IO_AXI_BASEADDR 0x44A00000
+#define XPAR_LED_AXI_0_LED_IO_AXI_HIGHADDR 0x44A0FFFF
+
 
 /******************************************************************/
 
