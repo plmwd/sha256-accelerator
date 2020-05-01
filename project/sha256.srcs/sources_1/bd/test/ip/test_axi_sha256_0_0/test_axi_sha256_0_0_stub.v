@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Wed Apr 29 19:01:03 2020
+// Date        : Thu Apr 30 23:33:49 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_sha256_0_0/test_axi_sha256_0_0_stub.v
+//               C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_sha256_0_0/test_axi_sha256_0_0_stub.v
 // Design      : test_axi_sha256_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1

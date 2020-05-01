@@ -36,20 +36,20 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="basys3"/>
-    <Option Name="WTXSimLaunchSim" Val="354"/>
+    <Option Name="WTXSimLaunchSim" Val="355"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="3"/>
-    <Option Name="WTModelSimExportSim" Val="3"/>
-    <Option Name="WTQuestaExportSim" Val="3"/>
-    <Option Name="WTIesExportSim" Val="3"/>
-    <Option Name="WTVcsExportSim" Val="3"/>
-    <Option Name="WTRivieraExportSim" Val="3"/>
-    <Option Name="WTActivehdlExportSim" Val="3"/>
+    <Option Name="WTXSimExportSim" Val="6"/>
+    <Option Name="WTModelSimExportSim" Val="6"/>
+    <Option Name="WTQuestaExportSim" Val="6"/>
+    <Option Name="WTIesExportSim" Val="6"/>
+    <Option Name="WTVcsExportSim" Val="6"/>
+    <Option Name="WTRivieraExportSim" Val="6"/>
+    <Option Name="WTActivehdlExportSim" Val="6"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -214,47 +214,47 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_axi_sha256_0_0/test_axi_sha256_0_0.xci">
-          <Proxy FileSetName="test_axi_sha256_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_ilmb_v10_0/test_ilmb_v10_0.xci">
-          <Proxy FileSetName="test_ilmb_v10_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_dlmb_v10_0/test_dlmb_v10_0.xci">
-          <Proxy FileSetName="test_dlmb_v10_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_ilmb_bram_if_cntlr_0/test_ilmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="test_ilmb_bram_if_cntlr_0"/>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0.xci">
+          <Proxy FileSetName="test_axi_uartlite_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_lmb_bram_0/test_lmb_bram_0.xci">
           <Proxy FileSetName="test_lmb_bram_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_clk_wiz_1_0/test_clk_wiz_1_0.xci">
-          <Proxy FileSetName="test_clk_wiz_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_led_axi_0_0/test_led_axi_0_0.xci">
-          <Proxy FileSetName="test_led_axi_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_mdm_1_0/test_mdm_1_0.xci">
-          <Proxy FileSetName="test_mdm_1_0"/>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_ilmb_bram_if_cntlr_0/test_ilmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="test_ilmb_bram_if_cntlr_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_dlmb_bram_if_cntlr_0/test_dlmb_bram_if_cntlr_0.xci">
           <Proxy FileSetName="test_dlmb_bram_if_cntlr_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_xbar_0/test_xbar_0.xci">
-          <Proxy FileSetName="test_xbar_0"/>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_axi_sha256_0_0/test_axi_sha256_0_0.xci">
+          <Proxy FileSetName="test_axi_sha256_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0.xci">
           <Proxy FileSetName="test_microblaze_0_axi_intc_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0.xci">
-          <Proxy FileSetName="test_axi_uartlite_0_0"/>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_led_axi_0_0/test_led_axi_0_0.xci">
+          <Proxy FileSetName="test_led_axi_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_microblaze_0_0/test_microblaze_0_0.xci">
-          <Proxy FileSetName="test_microblaze_0_0"/>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_clk_wiz_1_0/test_clk_wiz_1_0.xci">
+          <Proxy FileSetName="test_clk_wiz_1_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_rst_clk_wiz_1_100M_0/test_rst_clk_wiz_1_100M_0.xci">
           <Proxy FileSetName="test_rst_clk_wiz_1_100M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_mdm_1_0/test_mdm_1_0.xci">
+          <Proxy FileSetName="test_mdm_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_ilmb_v10_0/test_ilmb_v10_0.xci">
+          <Proxy FileSetName="test_ilmb_v10_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_xbar_0/test_xbar_0.xci">
+          <Proxy FileSetName="test_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_dlmb_v10_0/test_dlmb_v10_0.xci">
+          <Proxy FileSetName="test_dlmb_v10_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="test.bd" FileRelPathName="ip/test_microblaze_0_0/test_microblaze_0_0.xci">
+          <Proxy FileSetName="test_microblaze_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/test/hdl/test_wrapper.v">
@@ -434,7 +434,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="sha256_core_tb"/>
+        <Option Name="TopModule" Val="sha256_update_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -522,15 +522,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="test_axi_sha256_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_axi_sha256_0_0">
-      <Config>
-        <Option Name="TopModule" Val="test_axi_sha256_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="test_led_axi_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_led_axi_0_0">
       <Config>
         <Option Name="TopModule" Val="test_led_axi_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_axi_sha256_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_axi_sha256_0_0">
+      <Config>
+        <Option Name="TopModule" Val="test_axi_sha256_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -684,11 +684,9 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="test_axi_sha256_0_0_synth_1" Type="Ft3:Synth" SrcSet="test_axi_sha256_0_0" Part="xc7a35tcpg236-1" ConstrsSet="test_axi_sha256_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_axi_sha256_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="test_led_axi_0_0_synth_1" Type="Ft3:Synth" SrcSet="test_led_axi_0_0" Part="xc7a35tcpg236-1" ConstrsSet="test_led_axi_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_led_axi_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -696,7 +694,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="test_led_axi_0_0_synth_1" Type="Ft3:Synth" SrcSet="test_led_axi_0_0" Part="xc7a35tcpg236-1" ConstrsSet="test_led_axi_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_led_axi_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="test_axi_sha256_0_0_synth_1" Type="Ft3:Synth" SrcSet="test_axi_sha256_0_0" Part="xc7a35tcpg236-1" ConstrsSet="test_axi_sha256_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/test_axi_sha256_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -930,11 +928,9 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="test_axi_sha256_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="test_axi_sha256_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_axi_sha256_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="test_led_axi_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="test_led_axi_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_led_axi_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -949,7 +945,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="test_led_axi_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="test_led_axi_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_led_axi_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="test_axi_sha256_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="test_axi_sha256_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="test_axi_sha256_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
           <Desc>Default settings for Implementation.</Desc>

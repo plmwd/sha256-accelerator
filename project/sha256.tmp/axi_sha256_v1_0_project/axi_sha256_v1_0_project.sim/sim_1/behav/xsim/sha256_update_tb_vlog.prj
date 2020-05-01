@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog   --include "../../../../../../../ip_repo/axi_sha256_1.0/src" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/compressor.v" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/hasher.v" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/padder.v" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/reg_delay.v" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/rom.v" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/scheduler.v" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/sha256_update.v" \
+
+verilog xil_defaultlib  --include "../../../../../../../ip_repo/axi_sha256_1.0/src" \
+"../../../../../../../ip_repo/axi_sha256_1.0/src/sha256_update_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

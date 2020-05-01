@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../sha256.ip_user_files/bd/test/ip/test_ilmb_bram_if_cntlr_0/sim/test_ilmb_bram_if_cntlr_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_mdm_1_0/sim/test_mdm_1_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_axi_uartlite_0_0/sim/test_axi_uartlite_0_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_dlmb_bram_if_cntlr_0/sim/test_dlmb_bram_if_cntlr_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_microblaze_0_axi_intc_0/sim/test_microblaze_0_axi_intc_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_ilmb_v10_0/sim/test_ilmb_v10_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_rst_clk_wiz_1_100M_0/sim/test_rst_clk_wiz_1_100M_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_microblaze_0_0/sim/test_microblaze_0_0.vhd" \
+"../../../../sha256.ip_user_files/bd/test/ip/test_dlmb_v10_0/sim/test_dlmb_v10_0.vhd" \
+
+# Do not sort compile order
+nosort

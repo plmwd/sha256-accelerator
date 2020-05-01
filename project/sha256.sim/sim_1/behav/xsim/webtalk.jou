@@ -2,11 +2,11 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sun Apr 19 19:42:28 2020
-# Process ID: 17680
-# Current directory: C:/Users/Paul/Documents/GitHub/Homework/EEL4783/sha256/sha256/sha256.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/Paul/Documents/GitHub/Homework/EEL4783/sha256/sha256/sha256.sim/sim_1/behav/xsim/xsim.dir/sha256_core_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/Paul/Documents/GitHub/Homework/EEL4783/sha256/sha256/sha256.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/Paul/Documents/GitHub/Homework/EEL4783/sha256/sha256/sha256.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Thu Apr 30 22:53:09 2020
+# Process ID: 12640
+# Current directory: C:/Users/904pa/Documents/Git/sha256/project/sha256.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/904pa/Documents/Git/sha256/project/sha256.sim/sim_1/behav/xsim/xsim.dir/sha256_update_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/904pa/Documents/Git/sha256/project/sha256.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/904pa/Documents/Git/sha256/project/sha256.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/Paul/Documents/GitHub/Homework/EEL4783/sha256/sha256/sha256.sim/sim_1/behav/xsim/xsim.dir/sha256_core_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/904pa/Documents/Git/sha256/project/sha256.sim/sim_1/behav/xsim/xsim.dir/sha256_update_tb_behav/webtalk/xsim_webtalk.tcl -notrace

@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Apr 29 19:00:05 2020
-# Process ID: 12572
+# Start of session at: Thu Apr 30 23:33:00 2020
+# Process ID: 13428
 # Current directory: C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_axi_sha256_0_0_synth_1
 # Command line: vivado.exe -log test_axi_sha256_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_axi_sha256_0_0.tcl
 # Log file: C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_axi_sha256_0_0_synth_1/test_axi_sha256_0_0.vds
@@ -24,23 +24,31 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8960 
-WARNING: [Synth 8-2611] redeclaration of ansi port cur_block is not allowed [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/padder.v:36]
+INFO: Helper process launched with PID 13544 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1233.258 ; gain = 236.516
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1226.750 ; gain = 226.645
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'test_axi_sha256_0_0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_sha256_0_0/synth/test_axi_sha256_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'axi_sha256_v1_0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/hdl/axi_sha256_v1_0.v:4]
+INFO: [Synth 8-6157] synthesizing module 'axi_sha256_v1_0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0.v:4]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_sha256_v1_0_S00_AXI' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/hdl/axi_sha256_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6157] synthesizing module 'axi_sha256_v1_0_S00_AXI' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0_S00_AXI.v:4]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter SHA256_EN_BIT bound to: 0 - type: integer 
+	Parameter SHA256_BIG_ENDIAN_MSG_BIT bound to: 1 - type: integer 
+	Parameter SHA256_UPDATE_BIT bound to: 2 - type: integer 
+	Parameter SHA256_BLOCK_DONE_BIT bound to: 3 - type: integer 
+	Parameter SHA256_HASH_DONE_BIT bound to: 4 - type: integer 
+	Parameter SHA256_CONTR_BLANK_START_BIT bound to: 5 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter OPT_MEM_ADDR_BITS bound to: 4 - type: integer 
-WARNING: [Synth 8-6090] variable 'slv_reg0' is written by both blocking and non-blocking assignments, entire logic could be removed [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/hdl/axi_sha256_v1_0_S00_AXI.v:323]
-INFO: [Synth 8-226] default block is never used [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/hdl/axi_sha256_v1_0_S00_AXI.v:750]
-INFO: [Synth 8-6157] synthesizing module 'sha256_update' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/sha256_update.v:5]
+WARNING: [Synth 8-6090] variable 'slv_reg0' is written by both blocking and non-blocking assignments, entire logic could be removed [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0_S00_AXI.v:370]
+WARNING: [Synth 8-6090] variable 'slv_reg0' is written by both blocking and non-blocking assignments, entire logic could be removed [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0_S00_AXI.v:375]
+WARNING: [Synth 8-6090] variable 'slv_reg0' is written by both blocking and non-blocking assignments, entire logic could be removed [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0_S00_AXI.v:379]
+WARNING: [Synth 8-6090] variable 'issue_hash_ack_reset' is written by both blocking and non-blocking assignments, entire logic could be removed [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0_S00_AXI.v:380]
+INFO: [Synth 8-226] default block is never used [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0_S00_AXI.v:838]
+INFO: [Synth 8-6157] synthesizing module 'sha256_update' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/sha256_update.v:5]
 	Parameter STATE_INIT0 bound to: 10'b0010000000 
 	Parameter STATE_INIT1 bound to: 10'b0100000000 
 	Parameter STATE_START bound to: 10'b0001000000 
@@ -55,29 +63,29 @@ INFO: [Synth 8-6157] synthesizing module 'sha256_update' [c:/Users/904pa/Documen
 	Parameter SCH_CONTROL_DELAY bound to: 1 - type: integer 
 	Parameter COMP_CONTROL_DELAY bound to: 2 - type: integer 
 	Parameter DONE_CONTROL_DELAY bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'reg_delay' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_delay' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
 	Parameter WIDTH bound to: 6 - type: integer 
 	Parameter NUM_DELAYS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_delay' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
-INFO: [Synth 8-6157] synthesizing module 'reg_delay__parameterized0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'reg_delay' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_delay__parameterized0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
 	Parameter WIDTH bound to: 2 - type: integer 
 	Parameter NUM_DELAYS bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_delay__parameterized0' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
-INFO: [Synth 8-6157] synthesizing module 'reg_delay__parameterized1' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'reg_delay__parameterized0' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_delay__parameterized1' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
 	Parameter WIDTH bound to: 1 - type: integer 
 	Parameter NUM_DELAYS bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_delay__parameterized1' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
-INFO: [Synth 8-6157] synthesizing module 'reg_delay__parameterized2' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'reg_delay__parameterized1' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
+INFO: [Synth 8-6157] synthesizing module 'reg_delay__parameterized2' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
 	Parameter WIDTH bound to: 2 - type: integer 
 	Parameter NUM_DELAYS bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_delay__parameterized2' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/reg_delay.v:3]
-INFO: [Synth 8-6157] synthesizing module 'rom' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/rom.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'reg_delay__parameterized2' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/reg_delay.v:3]
+INFO: [Synth 8-6157] synthesizing module 'rom' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/rom.v:5]
 	Parameter WORD_WIDTH bound to: 32 - type: integer 
 	Parameter NUM_WORDS bound to: 64 - type: integer 
 	Parameter FILE bound to: kvals.mem - type: string 
-INFO: [Synth 8-3876] $readmem data file 'kvals.mem' is read successfully [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/rom.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'rom' (2#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/rom.v:5]
-INFO: [Synth 8-6157] synthesizing module 'padder' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/padder.v:5]
+INFO: [Synth 8-3876] $readmem data file 'kvals.mem' is read successfully [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/rom.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (2#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/rom.v:5]
+INFO: [Synth 8-6157] synthesizing module 'padder' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/padder.v:5]
 	Parameter STATE_IDLE bound to: 8'b00000001 
 	Parameter STATE_PASSTHROUGH bound to: 8'b00000010 
 	Parameter STATE_START_PAD0 bound to: 8'b00000100 
@@ -88,25 +96,25 @@ INFO: [Synth 8-6157] synthesizing module 'padder' [c:/Users/904pa/Documents/Git/
 	Parameter STATE_FIN_PAD1 bound to: 8'b10000000 
 	Parameter FIN_PAD0_OFFSET_THRESH bound to: 4'b1101 
 	Parameter OF_PAD_IDLE_OFFSET_THRESH bound to: 4'b1111 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/padder.v:84]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/padder.v:148]
-INFO: [Synth 8-6155] done synthesizing module 'padder' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/padder.v:5]
-INFO: [Synth 8-6157] synthesizing module 'scheduler' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/scheduler.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/padder.v:83]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/padder.v:147]
+INFO: [Synth 8-6155] done synthesizing module 'padder' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/padder.v:5]
+INFO: [Synth 8-6157] synthesizing module 'scheduler' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/scheduler.v:3]
 	Parameter WORD_WIDTH bound to: 32 - type: integer 
 	Parameter MSG_BLOCK_SIZE bound to: 512 - type: integer 
 	Parameter NUM_REGS bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'scheduler' (4#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/scheduler.v:3]
-INFO: [Synth 8-6157] synthesizing module 'compressor' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/compressor.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'scheduler' (4#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/scheduler.v:3]
+INFO: [Synth 8-6157] synthesizing module 'compressor' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/compressor.v:5]
 	Parameter WORD_WIDTH bound to: 32 - type: integer 
 	Parameter MSG_BLOCK_SIZE bound to: 512 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'compressor' (5#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/compressor.v:5]
-INFO: [Synth 8-6157] synthesizing module 'hasher' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/hasher.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'hasher' (6#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/hasher.v:5]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/sha256_update.v:285]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/sha256_update.v:343]
-INFO: [Synth 8-6155] done synthesizing module 'sha256_update' (7#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/src/sha256_update.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'axi_sha256_v1_0_S00_AXI' (8#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/hdl/axi_sha256_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'axi_sha256_v1_0' (9#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/a095/hdl/axi_sha256_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'compressor' (5#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/compressor.v:5]
+INFO: [Synth 8-6157] synthesizing module 'hasher' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/hasher.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'hasher' (6#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/hasher.v:5]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/sha256_update.v:285]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/sha256_update.v:343]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_update' (7#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/src/sha256_update.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'axi_sha256_v1_0_S00_AXI' (8#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'axi_sha256_v1_0' (9#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/46ee/hdl/axi_sha256_v1_0.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'test_axi_sha256_0_0' (10#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_sha256_0_0/synth/test_axi_sha256_0_0.v:57]
 WARNING: [Synth 8-3331] design axi_sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design axi_sha256_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
@@ -115,7 +123,7 @@ WARNING: [Synth 8-3331] design axi_sha256_v1_0_S00_AXI has unconnected port S_AX
 WARNING: [Synth 8-3331] design axi_sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design axi_sha256_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1290.996 ; gain = 294.254
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1302.660 ; gain = 302.555
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -128,40 +136,40 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1290.996 ; gain = 294.254
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1302.660 ; gain = 302.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1290.996 ; gain = 294.254
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1302.660 ; gain = 302.555
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.077 . Memory (MB): peak = 1290.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1302.660 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1407.551 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1411.504 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.096 . Memory (MB): peak = 1409.535 ; gain = 1.984
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.091 . Memory (MB): peak = 1414.484 ; gain = 2.980
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1409.535 ; gain = 412.793
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.484 ; gain = 414.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1409.535 ; gain = 412.793
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.484 ; gain = 414.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1409.535 ; gain = 412.793
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1414.484 ; gain = 414.379
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'sha256_update'
 INFO: [Synth 8-5546] ROM "en_cur_block_counter" won't be mapped to RAM because it is too sparse
@@ -188,7 +196,7 @@ INFO: [Synth 8-5546] ROM "load_sch" won't be mapped to RAM because it is too spa
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'sha256_update'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1409.535 ; gain = 412.793
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1414.484 ; gain = 414.379
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -210,18 +218,18 @@ Detailed RTL Component Info :
 	   3 Input     32 Bit         XORs := 5     
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               53 Bit    Registers := 1     
+	               55 Bit    Registers := 1     
 	               32 Bit    Registers := 56    
 	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 3     
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 7     
-	                1 Bit    Registers := 9     
+	                1 Bit    Registers := 10    
 +---Muxes : 
 	   4 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 27    
-	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 46    
+	   3 Input     32 Bit        Muxes := 2     
 	  31 Input     32 Bit        Muxes := 19    
 	  10 Input     10 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 1     
@@ -230,12 +238,14 @@ Detailed RTL Component Info :
 	   3 Input      6 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 2     
 	  31 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 7     
+	  31 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
 	   3 Input      1 Bit        Muxes := 1     
 	   9 Input      1 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 1     
 	  10 Input      1 Bit        Muxes := 11    
 	  32 Input      1 Bit        Muxes := 1     
+	  31 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -264,7 +274,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     64 Bit       Adders := 1     
 +---Registers : 
-	               53 Bit    Registers := 1     
+	               55 Bit    Registers := 1     
 	               32 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
@@ -317,15 +327,17 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 31    
 	                7 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 7     
 +---Muxes : 
-	   3 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 19    
+	   3 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 38    
 	  31 Input     32 Bit        Muxes := 19    
 	   2 Input      3 Bit        Muxes := 1     
 	  31 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
+	  31 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
 	  32 Input      1 Bit        Muxes := 1     
+	  31 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -428,7 +440,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/axi
 INFO: [Synth 8-3886] merging instance 'inst/axi_sha256_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/axi_sha256_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/axi_sha256_v1_0_S00_AXI_inst /\axi_bresp_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1409.535 ; gain = 412.793
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1414.484 ; gain = 414.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -455,13 +467,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1409.535 ; gain = 412.793
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1414.484 ; gain = 414.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1409.535 ; gain = 412.793
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1414.484 ; gain = 414.379
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -475,7 +487,7 @@ Start Technology Mapping
 INFO: [Synth 8-7053] The timing for the instance inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/kval_addr_delay_inst/delay_reg[1] (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7053] The timing for the instance inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/kval_addr_delay_inst/delay_reg[1] (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1468.523 ; gain = 471.781
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1471.813 ; gain = 471.707
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -499,13 +511,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -524,25 +536,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -554,7 +566,7 @@ Static Shift Register Report:
 +--------------------+---------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |test_axi_sha256_0_0 | inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/sch_inst/cir_buf_reg[6][31]        | 5      | 32    | NO           | NO                 | YES               | 32     | 0       | 
 |test_axi_sha256_0_0 | inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/sch_inst/cir_buf_reg[14][31]       | 8      | 32    | NO           | NO                 | YES               | 32     | 0       | 
-|test_axi_sha256_0_0 | inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/done_control_delay/delay_reg[2][0] | 3      | 1     | NO           | NO                 | NO                | 1      | 0       | 
+|test_axi_sha256_0_0 | inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/done_control_delay/delay_reg[2][0] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 +--------------------+---------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -575,17 +587,17 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |CARRY4   |   161|
-|2     |LUT1     |    67|
-|3     |LUT2     |   331|
-|4     |LUT3     |   392|
-|5     |LUT4     |   203|
-|6     |LUT5     |   251|
-|7     |LUT6     |   580|
-|8     |MUXF7    |   128|
-|9     |MUXF8    |    64|
+|2     |LUT1     |    68|
+|3     |LUT2     |   346|
+|4     |LUT3     |   395|
+|5     |LUT4     |   144|
+|6     |LUT5     |   256|
+|7     |LUT6     |   806|
+|8     |MUXF7    |   192|
+|9     |MUXF8    |    32|
 |10    |RAMB18E1 |     1|
 |11    |SRL16E   |    65|
-|12    |FDRE     |  1652|
+|12    |FDRE     |  1661|
 |13    |FDSE     |   138|
 +------+---------+------+
 
@@ -593,50 +605,50 @@ Report Instance Areas:
 +------+---------------------------------+----------------------------+------+
 |      |Instance                         |Module                      |Cells |
 +------+---------------------------------+----------------------------+------+
-|1     |top                              |                            |  4033|
-|2     |  inst                           |axi_sha256_v1_0             |  4033|
-|3     |    axi_sha256_v1_0_S00_AXI_inst |axi_sha256_v1_0_S00_AXI     |  4030|
-|4     |      axi_sha256                 |sha256_update               |  2542|
+|1     |top                              |                            |  4265|
+|2     |  inst                           |axi_sha256_v1_0             |  4265|
+|3     |    axi_sha256_v1_0_S00_AXI_inst |axi_sha256_v1_0_S00_AXI     |  4261|
+|4     |      axi_sha256                 |sha256_update               |  2754|
 |5     |        comp_control_delays      |reg_delay__parameterized0   |     7|
 |6     |        comp_inst                |compressor                  |   949|
-|7     |        done_control_delay       |reg_delay__parameterized1   |     2|
-|8     |        hash_control_delays      |reg_delay__parameterized0_0 |    21|
+|7     |        done_control_delay       |reg_delay__parameterized1   |     8|
+|8     |        hash_control_delays      |reg_delay__parameterized0_0 |    22|
 |9     |        hasher_inst              |hasher                      |   480|
 |10    |        kval_addr_delay_inst     |reg_delay                   |    12|
-|11    |        pad_inst                 |padder                      |   509|
+|11    |        pad_inst                 |padder                      |   704|
 |12    |        sch_control_delays       |reg_delay__parameterized2   |     3|
 |13    |        sch_inst                 |scheduler                   |   390|
 +------+---------------------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 1473.145 ; gain = 357.863
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1473.145 ; gain = 476.402
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 1476.465 ; gain = 364.535
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1476.465 ; gain = 476.359
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1485.199 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 354 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1489.512 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 386 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.199 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1489.512 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-139 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+139 Infos, 19 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1485.199 ; gain = 748.961
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.199 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1489.512 ; gain = 750.785
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1489.512 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_axi_sha256_0_0_synth_1/test_axi_sha256_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP test_axi_sha256_0_0, cache-ID = 1ecbd2ad1ef1dd13
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP test_axi_sha256_0_0, cache-ID = d78d3fbb7f9ae546
 INFO: [Coretcl 2-1174] Renamed 12 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1485.199 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1489.512 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_axi_sha256_0_0_synth_1/test_axi_sha256_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file test_axi_sha256_0_0_utilization_synth.rpt -pb test_axi_sha256_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Apr 29 19:01:04 2020...
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 30 23:33:50 2020...

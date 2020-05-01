@@ -191,9 +191,11 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="xilinx.gnu.mb.exe.debug.216054548.2096953158" name="sha2.h" rcbsApplicability="disable" resourcePath="src/sha256/sha2.h" toolsToInvoke=""/>
+                    					
                     <sourceEntries>
                         						
-                        <entry excluding="src/sha256/sha256cl.c|src/helloworld.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="src/sha256/sha2.h|src/sha256/sha2.c|src/leds.c|src/sha256/sha256cl.c|src/helloworld.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

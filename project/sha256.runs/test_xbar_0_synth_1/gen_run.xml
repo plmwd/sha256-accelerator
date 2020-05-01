@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="test_xbar_0_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1588201199">
   <File Type="PA-TCL" Name="test_xbar_0.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="test_xbar_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="test_xbar_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="test_xbar_0.vds"/>
   <File Type="RDS-UTIL" Name="test_xbar_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="test_xbar_0_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="test_xbar_0.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="test_xbar_0_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="test_xbar_0_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/test_xbar_0">
     <File Path="$PSRCDIR/sources_1/bd/test/ip/test_xbar_0/test_xbar_0.xci">
       <FileInfo>

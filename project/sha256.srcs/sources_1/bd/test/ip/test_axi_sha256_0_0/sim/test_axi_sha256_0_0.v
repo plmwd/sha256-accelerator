@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:axi_sha256:1.0
-// IP Revision: 2
+// IP Revision: 6
 
 `timescale 1ns/1ps
 

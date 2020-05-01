@@ -1,7 +1,7 @@
 Lowest offset
 offset: [NAME] {31...0}
 
-0: [CONTROL]        {blank[31:4], hash_done (R), block_done (R), update (R/W), restart (R/W), en (R/W)}
+0: [CONTROL]        {blank[31:4], hash_done (R), block_done (R), update (R/W), big_endian_msg (R/W), reset (R/W), en R/W)}
 1: [MSG_SIZE_L]     {msg_size[31:0] (R/W)}
 2: [MSG_SIZE_H]     {msg_size[63:32] (R/W)}
 3: [CUR_BLOCK_L]    {cur_block[31:0] (R)}
