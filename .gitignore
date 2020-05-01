@@ -1,0 +1,11 @@
+*.log
+*.jou
+*.analytics
+.metadata/
+.sdk/
+.Xil/
+RemoteSystemTempFiles/
+webtalk/
+sha256.tmp/
+sha256.cache/
+.log/
