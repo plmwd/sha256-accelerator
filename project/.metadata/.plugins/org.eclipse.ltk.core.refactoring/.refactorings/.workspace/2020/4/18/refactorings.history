@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete 9 resources" deleteContents="false" description="Delete 9 resources" element1="/test-cpu-app/src/sha256/test.c" element2="/test-cpu-app/src/sha256/debug0.txt" element3="/test-cpu-app/src/sha256/debug1.txt" element4="/test-cpu-app/src/sha256/debug2.txt" element5="/test-cpu-app/src/sha256/sha2.txt" element6="/test-cpu-app/src/sha256/sha256" element7="/test-cpu-app/src/sha256/test1.txt" element8="/test-cpu-app/src/sha256/test2.txt" element9="/test-cpu-app/src/sha256/test3.txt" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="9" stamp="1588087419379"/>
-</session>

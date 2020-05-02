@@ -1,5 +1,0 @@
-#include "sha256/axi_sha256.h"
-
-int main(void) {
-
-}

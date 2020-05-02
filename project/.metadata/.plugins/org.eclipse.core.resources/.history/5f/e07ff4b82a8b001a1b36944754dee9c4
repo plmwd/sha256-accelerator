@@ -1,6 +1,0 @@
-#include "sha256/axi_sha256.h"
-
-int main(void) {
-	sha256_t test_hash;
-	test_hash.msg_size = 3;
-}
