@@ -1,5 +1,26 @@
 `timescale 1ns / 1ps
 
+/**
+* 
+* Design Name: SHA256 Accelerator
+* Module Name: hasher
+* Project Name: sha256
+* Target Devices: Basys3 (xc7a35tcpg236-1)
+* Tool Versions: Vivado 2019.2
+* Author: Paul Wood
+* Description: The hasher houses the intermediate hash results and has circuitry for calculating the
+*   new values.
+* 
+* Dependencies:
+*   A encapsolating module with a controller (i.e. sha256_update) with...
+*       > compressor.v
+*   And, any other dependencies of the listed modules.
+*
+* Algorithm Documentation: https://csrc.nist.gov/publications/detail/fips/180/4/final
+* Module Block Diagrams/Flowcharts: SHA256-HardwareImplementation.pdf 
+* 
+*/
+
 `include "sha256types.vh"
 
 module hasher(
@@ -25,9 +46,12 @@ module hasher(
     input init
     );
 
+    // Signals
     wire `WORD  new_hash0, new_hash1, new_hash2, new_hash3, 
                 new_hash4, new_hash5, new_hash6, new_hash7;
 
+
+    // Calculation of new hash values using state registers from the compressor.
     assign new_hash0 = hash0 + A;
     assign new_hash1 = hash1 + B;
     assign new_hash2 = hash2 + C;
@@ -37,6 +61,9 @@ module hasher(
     assign new_hash6 = hash6 + G;
     assign new_hash7 = hash7 + H;
 
+    // Since the new_hash signals will always be updating with values, the wen signal allows for controlling when to write to 
+    // hash registers. The init signal allows the hash registers to be initialized with the initialization vectors defined in 
+    // the algorithm documentation.
     always @(posedge clk) begin
         if (wen) begin
             if (init) begin
