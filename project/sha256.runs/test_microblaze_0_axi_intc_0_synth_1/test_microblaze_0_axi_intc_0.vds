@@ -2,35 +2,44 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Apr 27 12:26:45 2020
-# Process ID: 13200
-# Current directory: C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1
+# Start of session at: Sat May  2 23:15:45 2020
+# Process ID: 19232
+# Current directory: C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1
 # Command line: vivado.exe -log test_microblaze_0_axi_intc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_microblaze_0_axi_intc_0.tcl
-# Log file: C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/test_microblaze_0_axi_intc_0.vds
-# Journal file: C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1\vivado.jou
+# Log file: C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/test_microblaze_0_axi_intc_0.vds
+# Journal file: C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source test_microblaze_0_axi_intc_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0'.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/led_axi_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
 Command: synth_design -top test_microblaze_0_axi_intc_0 -part xc7a35tcpg236-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1996 
+INFO: Helper process launched with PID 2808 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1098.457 ; gain = 231.277
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1226.691 ; gain = 227.289
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'test_microblaze_0_axi_intc_0' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/synth/test_microblaze_0_axi_intc_0.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'test_microblaze_0_axi_intc_0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/synth/test_microblaze_0_axi_intc_0.vhd:89]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_INSTANCE bound to: test_microblaze_0_axi_intc_0 - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_NUM_INTR_INPUTS bound to: 2 - type: integer 
 	Parameter C_NUM_SW_INTR bound to: 0 - type: integer 
-	Parameter C_KIND_OF_INTR bound to: 32'b11111111111111111111111111111111 
+	Parameter C_KIND_OF_INTR bound to: 32'b11111111111111111111111111111101 
 	Parameter C_KIND_OF_EDGE bound to: 32'b11111111111111111111111111111111 
 	Parameter C_KIND_OF_LVL bound to: 32'b11111111111111111111111111111111 
-	Parameter C_ASYNC_INTR bound to: 32'b11111111111111111111111111111110 
+	Parameter C_ASYNC_INTR bound to: 32'b11111111111111111111111111111100 
 	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_IVAR_RESET_VALUE bound to: 64'b0000000000000000000000000000000000000000000000000000000000010000 
@@ -47,18 +56,18 @@ INFO: [Synth 8-638] synthesizing module 'test_microblaze_0_axi_intc_0' [c:/Users
 	Parameter C_HAS_FAST bound to: 1 - type: integer 
 	Parameter C_EN_CASCADE_MODE bound to: 0 - type: integer 
 	Parameter C_CASCADE_MASTER bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'axi_intc' declared at 'c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:3452' bound to instance 'U0' of component 'axi_intc' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/synth/test_microblaze_0_axi_intc_0.vhd:195]
-INFO: [Synth 8-638] synthesizing module 'axi_intc' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:3553]
+INFO: [Synth 8-3491] module 'axi_intc' declared at 'c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:3452' bound to instance 'U0' of component 'axi_intc' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/synth/test_microblaze_0_axi_intc_0.vhd:195]
+INFO: [Synth 8-638] synthesizing module 'axi_intc' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:3553]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_INSTANCE bound to: test_microblaze_0_axi_intc_0 - type: string 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_NUM_INTR_INPUTS bound to: 2 - type: integer 
 	Parameter C_NUM_SW_INTR bound to: 0 - type: integer 
-	Parameter C_KIND_OF_INTR bound to: -1 - type: integer 
+	Parameter C_KIND_OF_INTR bound to: -3 - type: integer 
 	Parameter C_KIND_OF_EDGE bound to: -1 - type: integer 
 	Parameter C_KIND_OF_LVL bound to: -1 - type: integer 
-	Parameter C_ASYNC_INTR bound to: -2 - type: integer 
+	Parameter C_ASYNC_INTR bound to: -4 - type: integer 
 	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
 	Parameter C_IVAR_RESET_VALUE bound to: 64'b0000000000000000000000000000000000000000000000000000000000010000 
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
@@ -75,15 +84,15 @@ INFO: [Synth 8-638] synthesizing module 'axi_intc' [c:/Users/904pa/Documents/Git
 	Parameter C_ENABLE_ASYNC bound to: 0 - type: integer 
 	Parameter C_EN_CASCADE_MODE bound to: 0 - type: integer 
 	Parameter C_CASCADE_MASTER bound to: 0 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'intc_core' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:794]
+INFO: [Synth 8-638] synthesizing module 'intc_core' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:794]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_DWIDTH bound to: 32 - type: integer 
 	Parameter C_NUM_INTR_INPUTS bound to: 2 - type: integer 
 	Parameter C_NUM_SW_INTR bound to: 0 - type: integer 
-	Parameter C_KIND_OF_INTR bound to: -1 - type: integer 
+	Parameter C_KIND_OF_INTR bound to: -3 - type: integer 
 	Parameter C_KIND_OF_EDGE bound to: -1 - type: integer 
 	Parameter C_KIND_OF_LVL bound to: -1 - type: integer 
-	Parameter C_ASYNC_INTR bound to: -2 - type: integer 
+	Parameter C_ASYNC_INTR bound to: -4 - type: integer 
 	Parameter C_NUM_SYNC_FF bound to: 2 - type: integer 
 	Parameter C_HAS_IPR bound to: 1 - type: integer 
 	Parameter C_HAS_SIE bound to: 1 - type: integer 
@@ -100,19 +109,18 @@ INFO: [Synth 8-638] synthesizing module 'intc_core' [c:/Users/904pa/Documents/Gi
 	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
 	Parameter C_EN_CASCADE_MODE bound to: 0 - type: integer 
 	Parameter C_CASCADE_MASTER bound to: 0 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* buffer_type = "none" *) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:767]
-INFO: [Synth 8-638] synthesizing module 'shared_ram_ivar' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:320]
+INFO: [Synth 8-5534] Detected attribute (* buffer_type = "none" *) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:767]
+INFO: [Synth 8-638] synthesizing module 'shared_ram_ivar' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:320]
 	Parameter C_WIDTH bound to: 32 - type: integer 
 	Parameter C_DPRAM_DEPTH bound to: 16 - type: integer 
 	Parameter C_ADDR_LINES bound to: 4 - type: integer 
 	Parameter C_WE_WIDTH bound to: 1 - type: integer 
 	Parameter C_RESET_VALUE bound to: 64'b0000000000000000000000000000000000000000000000000000000000010000 
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:342]
-INFO: [Synth 8-256] done synthesizing module 'shared_ram_ivar' (1#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:320]
-INFO: [Synth 8-5534] Detected attribute (* async_reg = "TRUE" *) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:1894]
-WARNING: [Synth 8-6014] Unused sequential element ACK_EN_SYNC_ON_AXI_CLK_GEN.NO_CASCADE_MASTER.second_ack_sync_d3_reg was removed.  [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:1330]
-INFO: [Synth 8-256] done synthesizing module 'intc_core' (2#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:794]
-INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:342]
+INFO: [Synth 8-256] done synthesizing module 'shared_ram_ivar' (1#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:320]
+WARNING: [Synth 8-6014] Unused sequential element ACK_EN_SYNC_ON_AXI_CLK_GEN.NO_CASCADE_MASTER.second_ack_sync_d3_reg was removed.  [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:1330]
+INFO: [Synth 8-256] done synthesizing module 'intc_core' (2#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:794]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_MIN_SIZE bound to: 32'b00000000000000000000000111111111 
@@ -121,7 +129,7 @@ INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [c:/Users/904pa/Document
 	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 384'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010111111100000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001011111111 
 	Parameter C_ARD_NUM_CE_ARRAY bound to: 96'b000000000000000000000000000100000000000000000000000000000000000100000000000000000000000000000010 
 	Parameter C_FAMILY bound to: artix7 - type: string 
-INFO: [Synth 8-638] synthesizing module 'slave_attachment' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
 	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 384'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010111111100000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001011111111 
 	Parameter C_ARD_NUM_CE_ARRAY bound to: 96'b000000000000000000000000000100000000000000000000000000000000000100000000000000000000000000000010 
 	Parameter C_IPIF_ABUS_WIDTH bound to: 9 - type: integer 
@@ -130,144 +138,144 @@ INFO: [Synth 8-638] synthesizing module 'slave_attachment' [c:/Users/904pa/Docum
 	Parameter C_USE_WSTRB bound to: 1 - type: integer 
 	Parameter C_DPHASE_TIMEOUT bound to: 8 - type: integer 
 	Parameter C_FAMILY bound to: artix7 - type: string 
-INFO: [Synth 8-638] synthesizing module 'address_decoder' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
 	Parameter C_BUS_AWIDTH bound to: 9 - type: integer 
 	Parameter C_S_AXI_MIN_SIZE bound to: 511 - type: integer 
 	Parameter C_ARD_ADDR_RANGE_ARRAY bound to: 384'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111110000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010111111100000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001011111111 
 	Parameter C_ARD_NUM_CE_ARRAY bound to: 96'b000000000000000000000000000100000000000000000000000000000000000100000000000000000000000000000010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-638] synthesizing module 'pselect_f' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 3 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
 	Parameter C_BAR bound to: 9'b000000000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0001 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0011 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0100 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0101 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0110 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized7' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized7' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b0111 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized7' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized8' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized7' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized8' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized8' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized9' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized8' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized9' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1001 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized9' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized10' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized9' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized10' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1010 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized10' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized11' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized10' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized11' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1011 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized11' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized12' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized11' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized12' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1100 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized12' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized13' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized12' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized13' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1101 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized13' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized14' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized13' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized14' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1110 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized14' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized15' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized14' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized15' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 4 - type: integer 
 	Parameter C_AW bound to: 4 - type: integer 
 	Parameter C_BAR bound to: 4'b1111 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized15' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized16' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized15' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized16' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 2 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
 	Parameter C_BAR bound to: 9'b100000000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized16' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized17' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized16' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized17' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 1 - type: integer 
 	Parameter C_AW bound to: 9 - type: integer 
 	Parameter C_BAR bound to: 9'b000000000 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized17' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized18' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized17' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized18' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 1 - type: integer 
 	Parameter C_AW bound to: 1 - type: integer 
 	Parameter C_BAR bound to: 1'b0 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized18' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized19' [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized18' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized19' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
 	Parameter C_AB bound to: 1 - type: integer 
 	Parameter C_AW bound to: 1 - type: integer 
 	Parameter C_BAR bound to: 1'b1 
 	Parameter C_FAMILY bound to: nofamily - type: string 
-INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized19' (3#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
-INFO: [Synth 8-256] done synthesizing module 'address_decoder' (4#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
-INFO: [Synth 8-226] default block is never used [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
-INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (5#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
-INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (6#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
-INFO: [Synth 8-256] done synthesizing module 'axi_intc' (7#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:3553]
-INFO: [Synth 8-256] done synthesizing module 'test_microblaze_0_axi_intc_0' (8#1) [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/synth/test_microblaze_0_axi_intc_0.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized19' (3#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (4#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (5#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (6#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_intc' (7#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/f78a/hdl/axi_intc_v4_1_vh_rfs.vhd:3553]
+INFO: [Synth 8-256] done synthesizing module 'test_microblaze_0_axi_intc_0' (8#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/synth/test_microblaze_0_axi_intc_0.vhd:89]
 WARNING: [Synth 8-3331] design pselect_f__parameterized17 has unconnected port A[1]
 WARNING: [Synth 8-3331] design pselect_f__parameterized17 has unconnected port A[2]
 WARNING: [Synth 8-3331] design pselect_f__parameterized17 has unconnected port A[3]
@@ -348,7 +356,7 @@ WARNING: [Synth 8-3331] design intc_core has unconnected port Interrupt_address_
 WARNING: [Synth 8-3331] design intc_core has unconnected port Interrupt_address_in[0]
 WARNING: [Synth 8-3331] design axi_intc has unconnected port irq_in
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1176.359 ; gain = 309.180
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1304.375 ; gain = 304.973
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -361,47 +369,47 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1176.359 ; gain = 309.180
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1304.375 ; gain = 304.973
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1176.359 ; gain = 309.180
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1304.375 ; gain = 304.973
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1176.359 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1304.375 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0.xdc] for cell 'U0'
-Parsing XDC File [C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/dont_touch.xdc]
-Parsing XDC File [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_clocks.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_clocks.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_clocks.xdc] for cell 'U0'
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1263.969 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1393.078 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1275.496 ; gain = 11.527
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1403.484 ; gain = 10.406
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1275.496 ; gain = 408.316
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1403.484 ; gain = 404.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1275.496 ; gain = 408.316
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1403.484 ; gain = 404.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1275.496 ; gain = 408.316
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1403.484 ; gain = 404.082
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg' in module 'intc_core'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
@@ -423,7 +431,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'IRQ_LEVEL_GEN.IRQ_LEVEL_FA
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1275.496 ; gain = 408.316
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1403.484 ; gain = 404.082
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -441,8 +449,8 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 4     
 	                9 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
-	                2 Bit    Registers := 6     
-	                1 Bit    Registers := 63    
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 62    
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 3     
 	   2 Input     30 Bit        Muxes := 1     
@@ -470,8 +478,8 @@ Module intc_core
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
-	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 29    
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 28    
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 3     
 	   2 Input     30 Bit        Muxes := 1     
@@ -648,7 +656,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\INTC_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_reg[0] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1275.496 ; gain = 408.316
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1403.484 ; gain = 404.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -675,13 +683,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1275.496 ; gain = 408.316
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1403.484 ; gain = 404.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1275.496 ; gain = 408.316
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1403.484 ; gain = 404.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -707,7 +715,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1276.367 ; gain = 409.188
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1404.148 ; gain = 404.746
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -731,13 +739,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1408.941 ; gain = 409.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1408.941 ; gain = 409.539
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -756,25 +764,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1408.941 ; gain = 409.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1408.941 ; gain = 409.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1408.941 ; gain = 409.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1408.941 ; gain = 409.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -793,11 +801,11 @@ Report Cell Usage:
 |1     |LUT1     |     2|
 |2     |LUT2     |    19|
 |3     |LUT3     |    18|
-|4     |LUT4     |    52|
-|5     |LUT5     |    35|
+|4     |LUT4     |    53|
+|5     |LUT5     |    34|
 |6     |LUT6     |    28|
 |7     |RAM16X1D |    32|
-|8     |FDRE     |   183|
+|8     |FDRE     |   180|
 |9     |FDSE     |     2|
 +------+---------+------+
 
@@ -805,45 +813,45 @@ Report Instance Areas:
 +------+-------------------------------------------------------------------+-----------------+------+
 |      |Instance                                                           |Module           |Cells |
 +------+-------------------------------------------------------------------+-----------------+------+
-|1     |top                                                                |                 |   371|
-|2     |  U0                                                               |axi_intc         |   371|
+|1     |top                                                                |                 |   368|
+|2     |  U0                                                               |axi_intc         |   368|
 |3     |    AXI_LITE_IPIF_I                                                |axi_lite_ipif    |   199|
 |4     |      I_SLAVE_ATTACHMENT                                           |slave_attachment |   199|
 |5     |        I_DECODER                                                  |address_decoder  |   103|
-|6     |    INTC_CORE_I                                                    |intc_core        |   168|
+|6     |    INTC_CORE_I                                                    |intc_core        |   165|
 |7     |      \IVAR_FAST_MODE_GEN.IVAR_REG_MEM_AXI_CLK_GEN.IVAR_REG_MEM_I  |shared_ram_ivar  |    96|
 +------+-------------------------------------------------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1408.941 ; gain = 409.539
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 35 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1283.148 ; gain = 316.832
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1283.148 ; gain = 415.969
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 1408.941 ; gain = 310.430
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1408.941 ; gain = 409.539
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1295.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1421.016 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1295.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1423.988 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 32 instances were transformed.
   RAM16X1D => RAM32X1D (RAMD32(x2)): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-109 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+115 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1295.211 ; gain = 686.188
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1295.211 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1423.988 ; gain = 682.461
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1423.988 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/test_microblaze_0_axi_intc_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/test_microblaze_0_axi_intc_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP test_microblaze_0_axi_intc_0, cache-ID = 4e019d5915a9d16b
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP test_microblaze_0_axi_intc_0, cache-ID = d4609f074b3d733c
 INFO: [Coretcl 2-1174] Renamed 6 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1295.211 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1423.988 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/test_microblaze_0_axi_intc_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/test_microblaze_0_axi_intc_0_synth_1/test_microblaze_0_axi_intc_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file test_microblaze_0_axi_intc_0_utilization_synth.rpt -pb test_microblaze_0_axi_intc_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 27 12:27:26 2020...
+INFO: [Common 17-206] Exiting Vivado at Sat May  2 23:16:25 2020...

@@ -159,7 +159,7 @@ ARCHITECTURE test_microblaze_0_axi_intc_0_arch OF test_microblaze_0_axi_intc_0 I
   ATTRIBUTE X_INTERFACE_INFO OF processor_rst: SIGNAL IS "xilinx.com:signal:reset:1.0 proc_reset RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF processor_clk: SIGNAL IS "XIL_INTERFACENAME proc_clock, ASSOCIATED_BUSIF interrupt, ASSOCIATED_RESET processor_rst, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF processor_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 proc_clock CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF intr: SIGNAL IS "XIL_INTERFACENAME interrupt_input, SENSITIVITY NULL:EDGE_RISING, PortWidth 2";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF intr: SIGNAL IS "XIL_INTERFACENAME interrupt_input, SENSITIVITY LEVEL_HIGH:EDGE_RISING, PortWidth 2";
   ATTRIBUTE X_INTERFACE_INFO OF intr: SIGNAL IS "xilinx.com:signal:interrupt:1.0 interrupt_input INTERRUPT";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi RREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi RVALID";
@@ -193,10 +193,10 @@ BEGIN
       C_S_AXI_DATA_WIDTH => 32,
       C_NUM_INTR_INPUTS => 2,
       C_NUM_SW_INTR => 0,
-      C_KIND_OF_INTR => X"FFFFFFFF",
+      C_KIND_OF_INTR => X"fffffffd",
       C_KIND_OF_EDGE => X"FFFFFFFF",
       C_KIND_OF_LVL => X"FFFFFFFF",
-      C_ASYNC_INTR => X"FFFFFFFE",
+      C_ASYNC_INTR => X"FFFFFFFC",
       C_NUM_SYNC_FF => 2,
       C_ADDR_WIDTH => 32,
       C_IVAR_RESET_VALUE => X"0000000000000010",

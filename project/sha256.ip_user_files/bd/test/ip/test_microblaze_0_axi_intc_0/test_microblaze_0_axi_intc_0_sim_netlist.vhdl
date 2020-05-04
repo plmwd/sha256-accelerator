@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Mon Apr 27 12:27:26 2020
+-- Date        : Sat May  2 23:16:25 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_sim_netlist.vhdl
+--               C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_sim_netlist.vhdl
 -- Design      : test_microblaze_0_axi_intc_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -52,10 +52,10 @@ entity test_microblaze_0_axi_intc_0_address_decoder is
     ip2bus_wrack : in STD_LOGIC;
     s_axi_wready : in STD_LOGIC;
     ip2bus_rdack_int_d1 : in STD_LOGIC;
-    \s_axi_rdata_i_reg[31]\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \s_axi_rdata_i_reg[0]\ : in STD_LOGIC;
     \s_axi_rdata_i_reg[0]_0\ : in STD_LOGIC;
     \s_axi_rdata_i_reg[0]_1\ : in STD_LOGIC;
+    \s_axi_rdata_i_reg[31]\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \s_axi_rdata_i_reg[1]\ : in STD_LOGIC;
     \s_axi_rdata_i_reg[2]\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[18].ce_out_i_reg[18]_0\ : in STD_LOGIC_VECTOR ( 6 downto 0 );
@@ -761,10 +761,10 @@ ip2bus_rdack_int_d1_i_2: unisim.vcomponents.LUT5
       INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => p_18_in,
-      I1 => p_11_in,
-      I2 => p_17_in,
-      I3 => p_12_in,
+      I0 => p_12_in,
+      I1 => p_17_in,
+      I2 => p_11_in,
+      I3 => p_18_in,
       I4 => p_16_in,
       O => ip2bus_rdack_int_d1_i_2_n_0
     );
@@ -818,10 +818,10 @@ ip2bus_wrack_int_d1_i_2: unisim.vcomponents.LUT6
       INIT => X"FFFFFFFFFFFFFFFE"
     )
         port map (
-      I0 => \^gen_bkend_ce_registers[3].ce_out_i_reg[3]_0\,
-      I1 => p_2_in,
-      I2 => p_11_in,
-      I3 => p_18_in,
+      I0 => p_18_in,
+      I1 => p_11_in,
+      I2 => p_2_in,
+      I3 => \^gen_bkend_ce_registers[3].ce_out_i_reg[3]_0\,
       I4 => p_17_in,
       I5 => p_12_in,
       O => ip2bus_wrack_int_d1_i_2_n_0
@@ -897,15 +897,15 @@ s_axi_arready_INST_0: unisim.vcomponents.LUT6
     );
 \s_axi_rdata_i[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"F444F444F4444444"
+      INIT => X"8880FFFF88808880"
     )
         port map (
-      I0 => \s_axi_rdata_i[31]_i_2_n_0\,
-      I1 => \s_axi_rdata_i_reg[31]\(0),
-      I2 => \s_axi_rdata_i[31]_i_4_n_0\,
-      I3 => \s_axi_rdata_i_reg[0]\,
-      I4 => \s_axi_rdata_i_reg[0]_0\,
-      I5 => \s_axi_rdata_i_reg[0]_1\,
+      I0 => \s_axi_rdata_i[31]_i_4_n_0\,
+      I1 => \s_axi_rdata_i_reg[0]\,
+      I2 => \s_axi_rdata_i_reg[0]_0\,
+      I3 => \s_axi_rdata_i_reg[0]_1\,
+      I4 => \s_axi_rdata_i[31]_i_2_n_0\,
+      I5 => \s_axi_rdata_i_reg[31]\(0),
       O => D(0)
     );
 \s_axi_rdata_i[10]_i_1\: unisim.vcomponents.LUT4
@@ -1023,10 +1023,10 @@ s_axi_arready_INST_0: unisim.vcomponents.LUT6
       INIT => X"4F44"
     )
         port map (
-      I0 => \s_axi_rdata_i[31]_i_2_n_0\,
-      I1 => \s_axi_rdata_i_reg[31]\(1),
-      I2 => \s_axi_rdata_i_reg[1]\,
-      I3 => \s_axi_rdata_i[31]_i_4_n_0\,
+      I0 => \s_axi_rdata_i_reg[1]\,
+      I1 => \s_axi_rdata_i[31]_i_4_n_0\,
+      I2 => \s_axi_rdata_i[31]_i_2_n_0\,
+      I3 => \s_axi_rdata_i_reg[31]\(1),
       O => D(1)
     );
 \s_axi_rdata_i[20]_i_1\: unisim.vcomponents.LUT4
@@ -2845,8 +2845,7 @@ architecture STRUCTURE of test_microblaze_0_axi_intc_0_intc_core is
   signal \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[0]_i_2_n_0\ : STD_LOGIC;
   signal \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[1]_i_2_n_0\ : STD_LOGIC;
   signal \INTR_DETECT_GEN[0].EDGE_DETECT_GEN.hw_intr[0]_i_1_n_0\ : STD_LOGIC;
-  signal \INTR_DETECT_GEN[1].EDGE_DETECT_GEN.hw_intr[1]_i_1_n_0\ : STD_LOGIC;
-  signal \INTR_DETECT_GEN[1].EDGE_DETECT_GEN.intr_d1_reg_n_0\ : STD_LOGIC;
+  signal \INTR_DETECT_GEN[1].LVL_DETECT_GEN.hw_intr[1]_i_1_n_0\ : STD_LOGIC;
   signal \IPR_GEN.ipr[0]_i_1_n_0\ : STD_LOGIC;
   signal \IPR_GEN.ipr[1]_i_1_n_0\ : STD_LOGIC;
   signal \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.in_idle_reg_n_0\ : STD_LOGIC;
@@ -2887,9 +2886,6 @@ architecture STRUCTURE of test_microblaze_0_axi_intc_0_intc_core is
   signal idle_and_irq_d1 : STD_LOGIC;
   signal in_idle : STD_LOGIC;
   signal intr_d1 : STD_LOGIC;
-  signal intr_ff : STD_LOGIC_VECTOR ( 0 to 1 );
-  attribute async_reg : string;
-  attribute async_reg of intr_ff : signal is "true";
   signal ipr : STD_LOGIC_VECTOR ( 1 to 1 );
   signal irq_gen : STD_LOGIC;
   signal irq_gen_i : STD_LOGIC;
@@ -2916,18 +2912,12 @@ architecture STRUCTURE of test_microblaze_0_axi_intc_0_intc_core is
   attribute FSM_ENCODED_STATES of \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg[0]\ : label is "gen_level_irq:01,wait_ack:10,idle:00";
   attribute FSM_ENCODED_STATES of \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state_reg[1]\ : label is "gen_level_irq:01,wait_ack:10,idle:00";
   attribute SOFT_HLUTNM of \INTR_DETECT_GEN[0].EDGE_DETECT_GEN.hw_intr[0]_i_1\ : label is "soft_lutpair37";
-  attribute ASYNC_REG_boolean : boolean;
-  attribute ASYNC_REG_boolean of \INTR_DETECT_GEN[1].ASYNC_GEN.intr_ff_reg[0]\ : label is std.standard.true;
-  attribute KEEP : string;
-  attribute KEEP of \INTR_DETECT_GEN[1].ASYNC_GEN.intr_ff_reg[0]\ : label is "yes";
-  attribute ASYNC_REG_boolean of \INTR_DETECT_GEN[1].ASYNC_GEN.intr_ff_reg[1]\ : label is std.standard.true;
-  attribute KEEP of \INTR_DETECT_GEN[1].ASYNC_GEN.intr_ff_reg[1]\ : label is "yes";
+  attribute SOFT_HLUTNM of \INTR_DETECT_GEN[1].LVL_DETECT_GEN.hw_intr[1]_i_1\ : label is "soft_lutpair42";
   attribute SOFT_HLUTNM of \IPR_GEN.ipr[0]_i_1\ : label is "soft_lutpair40";
   attribute SOFT_HLUTNM of \IPR_GEN.ipr[1]_i_1\ : label is "soft_lutpair36";
   attribute SOFT_HLUTNM of \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.in_idle_i_1\ : label is "soft_lutpair39";
   attribute SOFT_HLUTNM of \IVAR_INDEX_SYNC_ON_AXI_CLK_GEN.idle_and_irq_d1_i_1\ : label is "soft_lutpair41";
   attribute SOFT_HLUTNM of \IVAR_INDEX_SYNC_ON_AXI_CLK_GEN.ivar_index_sample_en_i_1\ : label is "soft_lutpair41";
-  attribute SOFT_HLUTNM of \IVR_GEN.ivr[0]_i_1\ : label is "soft_lutpair42";
   attribute SOFT_HLUTNM of \REG_GEN[0].isr[0]_i_3\ : label is "soft_lutpair37";
   attribute SOFT_HLUTNM of \REG_GEN[1].isr[1]_i_2\ : label is "soft_lutpair42";
   attribute SOFT_HLUTNM of irq_gen_i_1 : label is "soft_lutpair40";
@@ -3032,15 +3022,15 @@ begin
     );
 \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"000C00AA003F00AA"
+      INIT => X"0202023232320232"
     )
         port map (
       I0 => ivar_index_sample_en,
-      I1 => \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[0]_i_2_n_0\,
-      I2 => first_ack,
-      I3 => current_state(1),
-      I4 => current_state(0),
-      I5 => ack_or,
+      I1 => current_state(1),
+      I2 => current_state(0),
+      I3 => ack_or,
+      I4 => \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[0]_i_2_n_0\,
+      I5 => first_ack,
       O => \current_state__0\(0)
     );
 \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[0]_i_2\: unisim.vcomponents.LUT3
@@ -3055,7 +3045,7 @@ begin
     );
 \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[1]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0A30"
+      INIT => X"0530"
     )
         port map (
       I0 => \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[1]_i_2_n_0\,
@@ -3066,7 +3056,7 @@ begin
     );
 \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[1]_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"A280"
+      INIT => X"5D7F"
     )
         port map (
       I0 => first_ack,
@@ -3119,55 +3109,24 @@ begin
       Q => intr_d1,
       R => \^sr\(0)
     );
-\INTR_DETECT_GEN[1].ASYNC_GEN.intr_ff_reg[0]\: unisim.vcomponents.FDRE
+\INTR_DETECT_GEN[1].LVL_DETECT_GEN.hw_intr[1]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => '0'
-    )
-        port map (
-      C => s_axi_aclk,
-      CE => '1',
-      D => intr(1),
-      Q => intr_ff(0),
-      R => '0'
-    );
-\INTR_DETECT_GEN[1].ASYNC_GEN.intr_ff_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => s_axi_aclk,
-      CE => '1',
-      D => intr_ff(0),
-      Q => intr_ff(1),
-      R => '0'
-    );
-\INTR_DETECT_GEN[1].EDGE_DETECT_GEN.hw_intr[1]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"0000AE00"
+      INIT => X"00E0"
     )
         port map (
       I0 => hw_intr(1),
-      I1 => intr_ff(1),
-      I2 => \INTR_DETECT_GEN[1].EDGE_DETECT_GEN.intr_d1_reg_n_0\,
-      I3 => s_axi_aresetn,
-      I4 => \REG_GEN[1].IAR_FAST_MODE_GEN.iar_reg_n_0_[1]\,
-      O => \INTR_DETECT_GEN[1].EDGE_DETECT_GEN.hw_intr[1]_i_1_n_0\
+      I1 => intr(1),
+      I2 => s_axi_aresetn,
+      I3 => \REG_GEN[1].IAR_FAST_MODE_GEN.iar_reg_n_0_[1]\,
+      O => \INTR_DETECT_GEN[1].LVL_DETECT_GEN.hw_intr[1]_i_1_n_0\
     );
-\INTR_DETECT_GEN[1].EDGE_DETECT_GEN.hw_intr_reg[1]\: unisim.vcomponents.FDRE
+\INTR_DETECT_GEN[1].LVL_DETECT_GEN.hw_intr_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \INTR_DETECT_GEN[1].EDGE_DETECT_GEN.hw_intr[1]_i_1_n_0\,
+      D => \INTR_DETECT_GEN[1].LVL_DETECT_GEN.hw_intr[1]_i_1_n_0\,
       Q => hw_intr(1),
       R => '0'
-    );
-\INTR_DETECT_GEN[1].EDGE_DETECT_GEN.intr_d1_reg\: unisim.vcomponents.FDRE
-     port map (
-      C => s_axi_aclk,
-      CE => '1',
-      D => intr_ff(1),
-      Q => \INTR_DETECT_GEN[1].EDGE_DETECT_GEN.intr_d1_reg_n_0\,
-      R => \^sr\(0)
     );
 \IPR_GEN.ipr[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -3386,15 +3345,15 @@ begin
     );
 \REG_GEN[0].IAR_FAST_MODE_GEN.iar[0]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"004400440F440044"
+      INIT => X"000044440F004444"
     )
         port map (
       I0 => Bus_RNW_reg,
       I1 => p_15_in,
-      I2 => ivar_index_axi_clk(0),
-      I3 => \^reg_gen[0].imr_fast_mode_gen.imr_reg[0]_0\,
-      I4 => first_ack,
-      I5 => ivar_index_axi_clk(1),
+      I2 => ivar_index_axi_clk(1),
+      I3 => first_ack,
+      I4 => \^reg_gen[0].imr_fast_mode_gen.imr_reg[0]_0\,
+      I5 => ivar_index_axi_clk(0),
       O => \REG_GEN[0].IAR_FAST_MODE_GEN.iar[0]_i_2_n_0\
     );
 \REG_GEN[0].IAR_FAST_MODE_GEN.iar_reg[0]\: unisim.vcomponents.FDRE
@@ -3470,7 +3429,7 @@ begin
     )
         port map (
       I0 => \REG_GEN[1].IAR_FAST_MODE_GEN.iar[1]_i_2_n_0\,
-      I1 => first_ack,
+      I1 => second_ack,
       I2 => \REG_GEN[1].IAR_FAST_MODE_GEN.iar_reg[1]_0\,
       I3 => s_axi_wdata(1),
       I4 => s_axi_aresetn,
@@ -3479,15 +3438,15 @@ begin
     );
 \REG_GEN[1].IAR_FAST_MODE_GEN.iar[1]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"00440044F0440044"
+      INIT => X"0F00000044444444"
     )
         port map (
       I0 => Bus_RNW_reg,
       I1 => p_15_in,
-      I2 => ivar_index_axi_clk(0),
-      I3 => \^reg_gen[1].imr_fast_mode_gen.imr_reg[1]_0\,
-      I4 => first_ack,
-      I5 => ivar_index_axi_clk(1),
+      I2 => ivar_index_axi_clk(1),
+      I3 => second_ack,
+      I4 => ivar_index_axi_clk(0),
+      I5 => \^reg_gen[1].imr_fast_mode_gen.imr_reg[1]_0\,
       O => \REG_GEN[1].IAR_FAST_MODE_GEN.iar[1]_i_2_n_0\
     );
 \REG_GEN[1].IAR_FAST_MODE_GEN.iar_reg[1]\: unisim.vcomponents.FDRE
@@ -3833,10 +3792,10 @@ begin
         port map (
       I0 => \^ip2bus_wrack_reg\,
       I1 => s_axi_bresp_i,
-      I2 => \FSM_onehot_state_reg_n_0_[3]\,
-      I3 => \FSM_onehot_state[3]_i_2_n_0\,
-      I4 => s_axi_rresp_i,
-      I5 => \^ip2bus_rdack_reg\,
+      I2 => s_axi_rresp_i,
+      I3 => \^ip2bus_rdack_reg\,
+      I4 => \FSM_onehot_state_reg_n_0_[3]\,
+      I5 => \FSM_onehot_state[3]_i_2_n_0\,
       O => \FSM_onehot_state[3]_i_1_n_0\
     );
 \FSM_onehot_state[3]_i_2\: unisim.vcomponents.LUT4
@@ -5028,7 +4987,7 @@ entity test_microblaze_0_axi_intc_0_axi_intc is
   attribute C_ADDR_WIDTH : integer;
   attribute C_ADDR_WIDTH of test_microblaze_0_axi_intc_0_axi_intc : entity is 32;
   attribute C_ASYNC_INTR : integer;
-  attribute C_ASYNC_INTR of test_microblaze_0_axi_intc_0_axi_intc : entity is -2;
+  attribute C_ASYNC_INTR of test_microblaze_0_axi_intc_0_axi_intc : entity is -4;
   attribute C_CASCADE_MASTER : integer;
   attribute C_CASCADE_MASTER of test_microblaze_0_axi_intc_0_axi_intc : entity is 0;
   attribute C_DISABLE_SYNCHRONIZERS : integer;
@@ -5062,7 +5021,7 @@ entity test_microblaze_0_axi_intc_0_axi_intc is
   attribute C_KIND_OF_EDGE : integer;
   attribute C_KIND_OF_EDGE of test_microblaze_0_axi_intc_0_axi_intc : entity is -1;
   attribute C_KIND_OF_INTR : integer;
-  attribute C_KIND_OF_INTR of test_microblaze_0_axi_intc_0_axi_intc : entity is -1;
+  attribute C_KIND_OF_INTR of test_microblaze_0_axi_intc_0_axi_intc : entity is -3;
   attribute C_KIND_OF_LVL : integer;
   attribute C_KIND_OF_LVL of test_microblaze_0_axi_intc_0_axi_intc : entity is -1;
   attribute C_MB_CLK_NOT_CONNECTED : integer;
@@ -5338,7 +5297,7 @@ architecture STRUCTURE of test_microblaze_0_axi_intc_0 is
   attribute C_ADDR_WIDTH : integer;
   attribute C_ADDR_WIDTH of U0 : label is 32;
   attribute C_ASYNC_INTR : integer;
-  attribute C_ASYNC_INTR of U0 : label is -2;
+  attribute C_ASYNC_INTR of U0 : label is -4;
   attribute C_CASCADE_MASTER : integer;
   attribute C_CASCADE_MASTER of U0 : label is 0;
   attribute C_DISABLE_SYNCHRONIZERS : integer;
@@ -5372,7 +5331,7 @@ architecture STRUCTURE of test_microblaze_0_axi_intc_0 is
   attribute C_KIND_OF_EDGE : integer;
   attribute C_KIND_OF_EDGE of U0 : label is -1;
   attribute C_KIND_OF_INTR : integer;
-  attribute C_KIND_OF_INTR of U0 : label is -1;
+  attribute C_KIND_OF_INTR of U0 : label is -3;
   attribute C_KIND_OF_LVL : integer;
   attribute C_KIND_OF_LVL of U0 : label is -1;
   attribute C_MB_CLK_NOT_CONNECTED : integer;
@@ -5423,7 +5382,7 @@ architecture STRUCTURE of test_microblaze_0_axi_intc_0 is
   attribute x_interface_info of s_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 s_axi WVALID";
   attribute x_interface_info of interrupt_address : signal is "xilinx.com:interface:mbinterrupt:1.0 interrupt ADDRESS";
   attribute x_interface_info of intr : signal is "xilinx.com:signal:interrupt:1.0 interrupt_input INTERRUPT";
-  attribute x_interface_parameter of intr : signal is "XIL_INTERFACENAME interrupt_input, SENSITIVITY NULL:EDGE_RISING, PortWidth 2";
+  attribute x_interface_parameter of intr : signal is "XIL_INTERFACENAME interrupt_input, SENSITIVITY LEVEL_HIGH:EDGE_RISING, PortWidth 2";
   attribute x_interface_info of processor_ack : signal is "xilinx.com:interface:mbinterrupt:1.0 interrupt ACK";
   attribute x_interface_info of s_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 s_axi ARADDR";
   attribute x_interface_info of s_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 s_axi AWADDR";

@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Thu Apr 30 23:33:49 2020
+-- Date        : Mon May  4 13:53:04 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_sha256_0_0/test_axi_sha256_0_0_sim_netlist.vhdl
@@ -10971,230 +10971,230 @@ architecture STRUCTURE of test_axi_sha256_0_0_hasher is
   signal \^hash6_reg[31]_0\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^hash7_reg[31]_0\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \A[0]_i_1\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \A[10]_i_1\ : label is "soft_lutpair104";
-  attribute SOFT_HLUTNM of \A[11]_i_1\ : label is "soft_lutpair104";
-  attribute SOFT_HLUTNM of \A[12]_i_1\ : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of \A[13]_i_1\ : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of \A[14]_i_1\ : label is "soft_lutpair102";
-  attribute SOFT_HLUTNM of \A[15]_i_1\ : label is "soft_lutpair102";
-  attribute SOFT_HLUTNM of \A[16]_i_1\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \A[17]_i_1\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \A[18]_i_1\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \A[19]_i_1\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \A[1]_i_1\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \A[20]_i_1\ : label is "soft_lutpair99";
-  attribute SOFT_HLUTNM of \A[21]_i_1\ : label is "soft_lutpair99";
-  attribute SOFT_HLUTNM of \A[22]_i_1\ : label is "soft_lutpair98";
-  attribute SOFT_HLUTNM of \A[23]_i_1\ : label is "soft_lutpair98";
-  attribute SOFT_HLUTNM of \A[24]_i_1\ : label is "soft_lutpair97";
-  attribute SOFT_HLUTNM of \A[25]_i_1\ : label is "soft_lutpair97";
-  attribute SOFT_HLUTNM of \A[26]_i_1\ : label is "soft_lutpair96";
-  attribute SOFT_HLUTNM of \A[27]_i_1\ : label is "soft_lutpair96";
-  attribute SOFT_HLUTNM of \A[28]_i_1\ : label is "soft_lutpair95";
-  attribute SOFT_HLUTNM of \A[29]_i_1\ : label is "soft_lutpair95";
-  attribute SOFT_HLUTNM of \A[2]_i_1\ : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \A[30]_i_1\ : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \A[31]_i_1\ : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \A[3]_i_1\ : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \A[4]_i_1\ : label is "soft_lutpair107";
-  attribute SOFT_HLUTNM of \A[5]_i_1\ : label is "soft_lutpair107";
-  attribute SOFT_HLUTNM of \A[6]_i_1\ : label is "soft_lutpair106";
-  attribute SOFT_HLUTNM of \A[7]_i_1\ : label is "soft_lutpair106";
-  attribute SOFT_HLUTNM of \A[8]_i_1\ : label is "soft_lutpair105";
-  attribute SOFT_HLUTNM of \A[9]_i_1\ : label is "soft_lutpair105";
-  attribute SOFT_HLUTNM of \B[0]_i_1\ : label is "soft_lutpair125";
-  attribute SOFT_HLUTNM of \B[10]_i_1\ : label is "soft_lutpair120";
-  attribute SOFT_HLUTNM of \B[11]_i_1\ : label is "soft_lutpair120";
-  attribute SOFT_HLUTNM of \B[12]_i_1\ : label is "soft_lutpair119";
-  attribute SOFT_HLUTNM of \B[13]_i_1\ : label is "soft_lutpair119";
-  attribute SOFT_HLUTNM of \B[14]_i_1\ : label is "soft_lutpair118";
-  attribute SOFT_HLUTNM of \B[15]_i_1\ : label is "soft_lutpair118";
-  attribute SOFT_HLUTNM of \B[16]_i_1\ : label is "soft_lutpair117";
-  attribute SOFT_HLUTNM of \B[17]_i_1\ : label is "soft_lutpair117";
-  attribute SOFT_HLUTNM of \B[18]_i_1\ : label is "soft_lutpair116";
-  attribute SOFT_HLUTNM of \B[19]_i_1\ : label is "soft_lutpair116";
-  attribute SOFT_HLUTNM of \B[1]_i_1\ : label is "soft_lutpair125";
-  attribute SOFT_HLUTNM of \B[20]_i_1\ : label is "soft_lutpair115";
-  attribute SOFT_HLUTNM of \B[21]_i_1\ : label is "soft_lutpair115";
-  attribute SOFT_HLUTNM of \B[22]_i_1\ : label is "soft_lutpair114";
-  attribute SOFT_HLUTNM of \B[23]_i_1\ : label is "soft_lutpair114";
-  attribute SOFT_HLUTNM of \B[24]_i_1\ : label is "soft_lutpair113";
-  attribute SOFT_HLUTNM of \B[25]_i_1\ : label is "soft_lutpair113";
-  attribute SOFT_HLUTNM of \B[26]_i_1\ : label is "soft_lutpair112";
-  attribute SOFT_HLUTNM of \B[27]_i_1\ : label is "soft_lutpair112";
-  attribute SOFT_HLUTNM of \B[28]_i_1\ : label is "soft_lutpair111";
-  attribute SOFT_HLUTNM of \B[29]_i_1\ : label is "soft_lutpair111";
-  attribute SOFT_HLUTNM of \B[2]_i_1\ : label is "soft_lutpair124";
-  attribute SOFT_HLUTNM of \B[30]_i_1\ : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of \B[31]_i_1\ : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of \B[3]_i_1\ : label is "soft_lutpair124";
-  attribute SOFT_HLUTNM of \B[4]_i_1\ : label is "soft_lutpair123";
-  attribute SOFT_HLUTNM of \B[5]_i_1\ : label is "soft_lutpair123";
-  attribute SOFT_HLUTNM of \B[6]_i_1\ : label is "soft_lutpair122";
-  attribute SOFT_HLUTNM of \B[7]_i_1\ : label is "soft_lutpair122";
-  attribute SOFT_HLUTNM of \B[8]_i_1\ : label is "soft_lutpair121";
-  attribute SOFT_HLUTNM of \B[9]_i_1\ : label is "soft_lutpair121";
-  attribute SOFT_HLUTNM of \C[0]_i_1\ : label is "soft_lutpair141";
-  attribute SOFT_HLUTNM of \C[10]_i_1\ : label is "soft_lutpair136";
-  attribute SOFT_HLUTNM of \C[11]_i_1\ : label is "soft_lutpair136";
-  attribute SOFT_HLUTNM of \C[12]_i_1\ : label is "soft_lutpair135";
-  attribute SOFT_HLUTNM of \C[13]_i_1\ : label is "soft_lutpair135";
-  attribute SOFT_HLUTNM of \C[14]_i_1\ : label is "soft_lutpair134";
-  attribute SOFT_HLUTNM of \C[15]_i_1\ : label is "soft_lutpair134";
-  attribute SOFT_HLUTNM of \C[16]_i_1\ : label is "soft_lutpair133";
-  attribute SOFT_HLUTNM of \C[17]_i_1\ : label is "soft_lutpair133";
-  attribute SOFT_HLUTNM of \C[18]_i_1\ : label is "soft_lutpair132";
-  attribute SOFT_HLUTNM of \C[19]_i_1\ : label is "soft_lutpair132";
-  attribute SOFT_HLUTNM of \C[1]_i_1\ : label is "soft_lutpair141";
-  attribute SOFT_HLUTNM of \C[20]_i_1\ : label is "soft_lutpair131";
-  attribute SOFT_HLUTNM of \C[21]_i_1\ : label is "soft_lutpair131";
-  attribute SOFT_HLUTNM of \C[22]_i_1\ : label is "soft_lutpair130";
-  attribute SOFT_HLUTNM of \C[23]_i_1\ : label is "soft_lutpair130";
-  attribute SOFT_HLUTNM of \C[24]_i_1\ : label is "soft_lutpair129";
-  attribute SOFT_HLUTNM of \C[25]_i_1\ : label is "soft_lutpair129";
-  attribute SOFT_HLUTNM of \C[26]_i_1\ : label is "soft_lutpair128";
-  attribute SOFT_HLUTNM of \C[27]_i_1\ : label is "soft_lutpair128";
-  attribute SOFT_HLUTNM of \C[28]_i_1\ : label is "soft_lutpair127";
-  attribute SOFT_HLUTNM of \C[29]_i_1\ : label is "soft_lutpair127";
-  attribute SOFT_HLUTNM of \C[2]_i_1\ : label is "soft_lutpair140";
-  attribute SOFT_HLUTNM of \C[30]_i_1\ : label is "soft_lutpair126";
-  attribute SOFT_HLUTNM of \C[31]_i_1\ : label is "soft_lutpair126";
-  attribute SOFT_HLUTNM of \C[3]_i_1\ : label is "soft_lutpair140";
-  attribute SOFT_HLUTNM of \C[4]_i_1\ : label is "soft_lutpair139";
-  attribute SOFT_HLUTNM of \C[5]_i_1\ : label is "soft_lutpair139";
-  attribute SOFT_HLUTNM of \C[6]_i_1\ : label is "soft_lutpair138";
-  attribute SOFT_HLUTNM of \C[7]_i_1\ : label is "soft_lutpair138";
-  attribute SOFT_HLUTNM of \C[8]_i_1\ : label is "soft_lutpair137";
-  attribute SOFT_HLUTNM of \C[9]_i_1\ : label is "soft_lutpair137";
-  attribute SOFT_HLUTNM of \D[0]_i_1\ : label is "soft_lutpair157";
-  attribute SOFT_HLUTNM of \D[10]_i_1\ : label is "soft_lutpair152";
-  attribute SOFT_HLUTNM of \D[11]_i_1\ : label is "soft_lutpair152";
-  attribute SOFT_HLUTNM of \D[12]_i_1\ : label is "soft_lutpair151";
-  attribute SOFT_HLUTNM of \D[13]_i_1\ : label is "soft_lutpair151";
-  attribute SOFT_HLUTNM of \D[14]_i_1\ : label is "soft_lutpair150";
-  attribute SOFT_HLUTNM of \D[15]_i_1\ : label is "soft_lutpair150";
-  attribute SOFT_HLUTNM of \D[16]_i_1\ : label is "soft_lutpair149";
-  attribute SOFT_HLUTNM of \D[17]_i_1\ : label is "soft_lutpair149";
-  attribute SOFT_HLUTNM of \D[18]_i_1\ : label is "soft_lutpair148";
-  attribute SOFT_HLUTNM of \D[19]_i_1\ : label is "soft_lutpair148";
-  attribute SOFT_HLUTNM of \D[1]_i_1\ : label is "soft_lutpair157";
-  attribute SOFT_HLUTNM of \D[20]_i_1\ : label is "soft_lutpair147";
-  attribute SOFT_HLUTNM of \D[21]_i_1\ : label is "soft_lutpair147";
-  attribute SOFT_HLUTNM of \D[22]_i_1\ : label is "soft_lutpair146";
-  attribute SOFT_HLUTNM of \D[23]_i_1\ : label is "soft_lutpair146";
-  attribute SOFT_HLUTNM of \D[24]_i_1\ : label is "soft_lutpair145";
-  attribute SOFT_HLUTNM of \D[25]_i_1\ : label is "soft_lutpair145";
-  attribute SOFT_HLUTNM of \D[26]_i_1\ : label is "soft_lutpair144";
-  attribute SOFT_HLUTNM of \D[27]_i_1\ : label is "soft_lutpair144";
-  attribute SOFT_HLUTNM of \D[28]_i_1\ : label is "soft_lutpair143";
-  attribute SOFT_HLUTNM of \D[29]_i_1\ : label is "soft_lutpair143";
-  attribute SOFT_HLUTNM of \D[2]_i_1\ : label is "soft_lutpair156";
-  attribute SOFT_HLUTNM of \D[30]_i_1\ : label is "soft_lutpair142";
-  attribute SOFT_HLUTNM of \D[31]_i_1\ : label is "soft_lutpair142";
-  attribute SOFT_HLUTNM of \D[3]_i_1\ : label is "soft_lutpair156";
-  attribute SOFT_HLUTNM of \D[4]_i_1\ : label is "soft_lutpair155";
-  attribute SOFT_HLUTNM of \D[5]_i_1\ : label is "soft_lutpair155";
-  attribute SOFT_HLUTNM of \D[6]_i_1\ : label is "soft_lutpair154";
-  attribute SOFT_HLUTNM of \D[7]_i_1\ : label is "soft_lutpair154";
-  attribute SOFT_HLUTNM of \D[8]_i_1\ : label is "soft_lutpair153";
-  attribute SOFT_HLUTNM of \D[9]_i_1\ : label is "soft_lutpair153";
-  attribute SOFT_HLUTNM of \F[0]_i_1\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \F[10]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \F[11]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \F[12]_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \F[13]_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \F[14]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \F[15]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \F[16]_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \F[17]_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \F[18]_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \F[19]_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \F[1]_i_1\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \F[20]_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \F[21]_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \F[22]_i_1\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \F[23]_i_1\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \F[24]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \F[25]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \F[26]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \F[27]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \F[28]_i_1\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \F[29]_i_1\ : label is "soft_lutpair47";
-  attribute SOFT_HLUTNM of \F[2]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \F[30]_i_1\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \F[31]_i_1\ : label is "soft_lutpair46";
-  attribute SOFT_HLUTNM of \F[3]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \F[4]_i_1\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \F[5]_i_1\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \F[6]_i_1\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \F[7]_i_1\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \F[8]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \F[9]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \G[0]_i_1\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \G[10]_i_1\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \G[11]_i_1\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \G[12]_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \G[13]_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \G[14]_i_1\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \G[15]_i_1\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \G[16]_i_1\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \G[17]_i_1\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \G[18]_i_1\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \G[19]_i_1\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \G[1]_i_1\ : label is "soft_lutpair77";
-  attribute SOFT_HLUTNM of \G[20]_i_1\ : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of \G[21]_i_1\ : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of \G[22]_i_1\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \G[23]_i_1\ : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \G[24]_i_1\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \G[25]_i_1\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \G[26]_i_1\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \G[27]_i_1\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \G[28]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \G[29]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \G[2]_i_1\ : label is "soft_lutpair76";
-  attribute SOFT_HLUTNM of \G[30]_i_1\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \G[31]_i_1\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \G[3]_i_1\ : label is "soft_lutpair76";
-  attribute SOFT_HLUTNM of \G[4]_i_1\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \G[5]_i_1\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \G[6]_i_1\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \G[7]_i_1\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \G[8]_i_1\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \G[9]_i_1\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \H[0]_i_1\ : label is "soft_lutpair93";
-  attribute SOFT_HLUTNM of \H[10]_i_1\ : label is "soft_lutpair88";
-  attribute SOFT_HLUTNM of \H[11]_i_1\ : label is "soft_lutpair88";
-  attribute SOFT_HLUTNM of \H[12]_i_1\ : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \H[13]_i_1\ : label is "soft_lutpair87";
-  attribute SOFT_HLUTNM of \H[14]_i_1\ : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of \H[15]_i_1\ : label is "soft_lutpair86";
-  attribute SOFT_HLUTNM of \H[16]_i_1\ : label is "soft_lutpair85";
-  attribute SOFT_HLUTNM of \H[17]_i_1\ : label is "soft_lutpair85";
-  attribute SOFT_HLUTNM of \H[18]_i_1\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \H[19]_i_1\ : label is "soft_lutpair84";
-  attribute SOFT_HLUTNM of \H[1]_i_1\ : label is "soft_lutpair93";
-  attribute SOFT_HLUTNM of \H[20]_i_1\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \H[21]_i_1\ : label is "soft_lutpair83";
-  attribute SOFT_HLUTNM of \H[22]_i_1\ : label is "soft_lutpair82";
-  attribute SOFT_HLUTNM of \H[23]_i_1\ : label is "soft_lutpair82";
-  attribute SOFT_HLUTNM of \H[24]_i_1\ : label is "soft_lutpair81";
-  attribute SOFT_HLUTNM of \H[25]_i_1\ : label is "soft_lutpair81";
-  attribute SOFT_HLUTNM of \H[26]_i_1\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \H[27]_i_1\ : label is "soft_lutpair80";
-  attribute SOFT_HLUTNM of \H[28]_i_1\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \H[29]_i_1\ : label is "soft_lutpair79";
-  attribute SOFT_HLUTNM of \H[2]_i_1\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of \H[30]_i_1\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \H[31]_i_1\ : label is "soft_lutpair78";
-  attribute SOFT_HLUTNM of \H[3]_i_1\ : label is "soft_lutpair92";
-  attribute SOFT_HLUTNM of \H[4]_i_1\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \H[5]_i_1\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \H[6]_i_1\ : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of \H[7]_i_1\ : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of \H[8]_i_1\ : label is "soft_lutpair89";
-  attribute SOFT_HLUTNM of \H[9]_i_1\ : label is "soft_lutpair89";
+  attribute SOFT_HLUTNM of \A[0]_i_1\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \A[10]_i_1\ : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \A[11]_i_1\ : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \A[12]_i_1\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \A[13]_i_1\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \A[14]_i_1\ : label is "soft_lutpair103";
+  attribute SOFT_HLUTNM of \A[15]_i_1\ : label is "soft_lutpair103";
+  attribute SOFT_HLUTNM of \A[16]_i_1\ : label is "soft_lutpair102";
+  attribute SOFT_HLUTNM of \A[17]_i_1\ : label is "soft_lutpair102";
+  attribute SOFT_HLUTNM of \A[18]_i_1\ : label is "soft_lutpair101";
+  attribute SOFT_HLUTNM of \A[19]_i_1\ : label is "soft_lutpair101";
+  attribute SOFT_HLUTNM of \A[1]_i_1\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \A[20]_i_1\ : label is "soft_lutpair100";
+  attribute SOFT_HLUTNM of \A[21]_i_1\ : label is "soft_lutpair100";
+  attribute SOFT_HLUTNM of \A[22]_i_1\ : label is "soft_lutpair99";
+  attribute SOFT_HLUTNM of \A[23]_i_1\ : label is "soft_lutpair99";
+  attribute SOFT_HLUTNM of \A[24]_i_1\ : label is "soft_lutpair98";
+  attribute SOFT_HLUTNM of \A[25]_i_1\ : label is "soft_lutpair98";
+  attribute SOFT_HLUTNM of \A[26]_i_1\ : label is "soft_lutpair97";
+  attribute SOFT_HLUTNM of \A[27]_i_1\ : label is "soft_lutpair97";
+  attribute SOFT_HLUTNM of \A[28]_i_1\ : label is "soft_lutpair96";
+  attribute SOFT_HLUTNM of \A[29]_i_1\ : label is "soft_lutpair96";
+  attribute SOFT_HLUTNM of \A[2]_i_1\ : label is "soft_lutpair109";
+  attribute SOFT_HLUTNM of \A[30]_i_1\ : label is "soft_lutpair95";
+  attribute SOFT_HLUTNM of \A[31]_i_1\ : label is "soft_lutpair95";
+  attribute SOFT_HLUTNM of \A[3]_i_1\ : label is "soft_lutpair109";
+  attribute SOFT_HLUTNM of \A[4]_i_1\ : label is "soft_lutpair108";
+  attribute SOFT_HLUTNM of \A[5]_i_1\ : label is "soft_lutpair108";
+  attribute SOFT_HLUTNM of \A[6]_i_1\ : label is "soft_lutpair107";
+  attribute SOFT_HLUTNM of \A[7]_i_1\ : label is "soft_lutpair107";
+  attribute SOFT_HLUTNM of \A[8]_i_1\ : label is "soft_lutpair106";
+  attribute SOFT_HLUTNM of \A[9]_i_1\ : label is "soft_lutpair106";
+  attribute SOFT_HLUTNM of \B[0]_i_1\ : label is "soft_lutpair126";
+  attribute SOFT_HLUTNM of \B[10]_i_1\ : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \B[11]_i_1\ : label is "soft_lutpair121";
+  attribute SOFT_HLUTNM of \B[12]_i_1\ : label is "soft_lutpair120";
+  attribute SOFT_HLUTNM of \B[13]_i_1\ : label is "soft_lutpair120";
+  attribute SOFT_HLUTNM of \B[14]_i_1\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \B[15]_i_1\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \B[16]_i_1\ : label is "soft_lutpair118";
+  attribute SOFT_HLUTNM of \B[17]_i_1\ : label is "soft_lutpair118";
+  attribute SOFT_HLUTNM of \B[18]_i_1\ : label is "soft_lutpair117";
+  attribute SOFT_HLUTNM of \B[19]_i_1\ : label is "soft_lutpair117";
+  attribute SOFT_HLUTNM of \B[1]_i_1\ : label is "soft_lutpair126";
+  attribute SOFT_HLUTNM of \B[20]_i_1\ : label is "soft_lutpair116";
+  attribute SOFT_HLUTNM of \B[21]_i_1\ : label is "soft_lutpair116";
+  attribute SOFT_HLUTNM of \B[22]_i_1\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of \B[23]_i_1\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of \B[24]_i_1\ : label is "soft_lutpair114";
+  attribute SOFT_HLUTNM of \B[25]_i_1\ : label is "soft_lutpair114";
+  attribute SOFT_HLUTNM of \B[26]_i_1\ : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of \B[27]_i_1\ : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of \B[28]_i_1\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \B[29]_i_1\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \B[2]_i_1\ : label is "soft_lutpair125";
+  attribute SOFT_HLUTNM of \B[30]_i_1\ : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of \B[31]_i_1\ : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of \B[3]_i_1\ : label is "soft_lutpair125";
+  attribute SOFT_HLUTNM of \B[4]_i_1\ : label is "soft_lutpair124";
+  attribute SOFT_HLUTNM of \B[5]_i_1\ : label is "soft_lutpair124";
+  attribute SOFT_HLUTNM of \B[6]_i_1\ : label is "soft_lutpair123";
+  attribute SOFT_HLUTNM of \B[7]_i_1\ : label is "soft_lutpair123";
+  attribute SOFT_HLUTNM of \B[8]_i_1\ : label is "soft_lutpair122";
+  attribute SOFT_HLUTNM of \B[9]_i_1\ : label is "soft_lutpair122";
+  attribute SOFT_HLUTNM of \C[0]_i_1\ : label is "soft_lutpair142";
+  attribute SOFT_HLUTNM of \C[10]_i_1\ : label is "soft_lutpair137";
+  attribute SOFT_HLUTNM of \C[11]_i_1\ : label is "soft_lutpair137";
+  attribute SOFT_HLUTNM of \C[12]_i_1\ : label is "soft_lutpair136";
+  attribute SOFT_HLUTNM of \C[13]_i_1\ : label is "soft_lutpair136";
+  attribute SOFT_HLUTNM of \C[14]_i_1\ : label is "soft_lutpair135";
+  attribute SOFT_HLUTNM of \C[15]_i_1\ : label is "soft_lutpair135";
+  attribute SOFT_HLUTNM of \C[16]_i_1\ : label is "soft_lutpair134";
+  attribute SOFT_HLUTNM of \C[17]_i_1\ : label is "soft_lutpair134";
+  attribute SOFT_HLUTNM of \C[18]_i_1\ : label is "soft_lutpair133";
+  attribute SOFT_HLUTNM of \C[19]_i_1\ : label is "soft_lutpair133";
+  attribute SOFT_HLUTNM of \C[1]_i_1\ : label is "soft_lutpair142";
+  attribute SOFT_HLUTNM of \C[20]_i_1\ : label is "soft_lutpair132";
+  attribute SOFT_HLUTNM of \C[21]_i_1\ : label is "soft_lutpair132";
+  attribute SOFT_HLUTNM of \C[22]_i_1\ : label is "soft_lutpair131";
+  attribute SOFT_HLUTNM of \C[23]_i_1\ : label is "soft_lutpair131";
+  attribute SOFT_HLUTNM of \C[24]_i_1\ : label is "soft_lutpair130";
+  attribute SOFT_HLUTNM of \C[25]_i_1\ : label is "soft_lutpair130";
+  attribute SOFT_HLUTNM of \C[26]_i_1\ : label is "soft_lutpair129";
+  attribute SOFT_HLUTNM of \C[27]_i_1\ : label is "soft_lutpair129";
+  attribute SOFT_HLUTNM of \C[28]_i_1\ : label is "soft_lutpair128";
+  attribute SOFT_HLUTNM of \C[29]_i_1\ : label is "soft_lutpair128";
+  attribute SOFT_HLUTNM of \C[2]_i_1\ : label is "soft_lutpair141";
+  attribute SOFT_HLUTNM of \C[30]_i_1\ : label is "soft_lutpair127";
+  attribute SOFT_HLUTNM of \C[31]_i_1\ : label is "soft_lutpair127";
+  attribute SOFT_HLUTNM of \C[3]_i_1\ : label is "soft_lutpair141";
+  attribute SOFT_HLUTNM of \C[4]_i_1\ : label is "soft_lutpair140";
+  attribute SOFT_HLUTNM of \C[5]_i_1\ : label is "soft_lutpair140";
+  attribute SOFT_HLUTNM of \C[6]_i_1\ : label is "soft_lutpair139";
+  attribute SOFT_HLUTNM of \C[7]_i_1\ : label is "soft_lutpair139";
+  attribute SOFT_HLUTNM of \C[8]_i_1\ : label is "soft_lutpair138";
+  attribute SOFT_HLUTNM of \C[9]_i_1\ : label is "soft_lutpair138";
+  attribute SOFT_HLUTNM of \D[0]_i_1\ : label is "soft_lutpair158";
+  attribute SOFT_HLUTNM of \D[10]_i_1\ : label is "soft_lutpair153";
+  attribute SOFT_HLUTNM of \D[11]_i_1\ : label is "soft_lutpair153";
+  attribute SOFT_HLUTNM of \D[12]_i_1\ : label is "soft_lutpair152";
+  attribute SOFT_HLUTNM of \D[13]_i_1\ : label is "soft_lutpair152";
+  attribute SOFT_HLUTNM of \D[14]_i_1\ : label is "soft_lutpair151";
+  attribute SOFT_HLUTNM of \D[15]_i_1\ : label is "soft_lutpair151";
+  attribute SOFT_HLUTNM of \D[16]_i_1\ : label is "soft_lutpair150";
+  attribute SOFT_HLUTNM of \D[17]_i_1\ : label is "soft_lutpair150";
+  attribute SOFT_HLUTNM of \D[18]_i_1\ : label is "soft_lutpair149";
+  attribute SOFT_HLUTNM of \D[19]_i_1\ : label is "soft_lutpair149";
+  attribute SOFT_HLUTNM of \D[1]_i_1\ : label is "soft_lutpair158";
+  attribute SOFT_HLUTNM of \D[20]_i_1\ : label is "soft_lutpair148";
+  attribute SOFT_HLUTNM of \D[21]_i_1\ : label is "soft_lutpair148";
+  attribute SOFT_HLUTNM of \D[22]_i_1\ : label is "soft_lutpair147";
+  attribute SOFT_HLUTNM of \D[23]_i_1\ : label is "soft_lutpair147";
+  attribute SOFT_HLUTNM of \D[24]_i_1\ : label is "soft_lutpair146";
+  attribute SOFT_HLUTNM of \D[25]_i_1\ : label is "soft_lutpair146";
+  attribute SOFT_HLUTNM of \D[26]_i_1\ : label is "soft_lutpair145";
+  attribute SOFT_HLUTNM of \D[27]_i_1\ : label is "soft_lutpair145";
+  attribute SOFT_HLUTNM of \D[28]_i_1\ : label is "soft_lutpair144";
+  attribute SOFT_HLUTNM of \D[29]_i_1\ : label is "soft_lutpair144";
+  attribute SOFT_HLUTNM of \D[2]_i_1\ : label is "soft_lutpair157";
+  attribute SOFT_HLUTNM of \D[30]_i_1\ : label is "soft_lutpair143";
+  attribute SOFT_HLUTNM of \D[31]_i_1\ : label is "soft_lutpair143";
+  attribute SOFT_HLUTNM of \D[3]_i_1\ : label is "soft_lutpair157";
+  attribute SOFT_HLUTNM of \D[4]_i_1\ : label is "soft_lutpair156";
+  attribute SOFT_HLUTNM of \D[5]_i_1\ : label is "soft_lutpair156";
+  attribute SOFT_HLUTNM of \D[6]_i_1\ : label is "soft_lutpair155";
+  attribute SOFT_HLUTNM of \D[7]_i_1\ : label is "soft_lutpair155";
+  attribute SOFT_HLUTNM of \D[8]_i_1\ : label is "soft_lutpair154";
+  attribute SOFT_HLUTNM of \D[9]_i_1\ : label is "soft_lutpair154";
+  attribute SOFT_HLUTNM of \F[0]_i_1\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \F[10]_i_1\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \F[11]_i_1\ : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \F[12]_i_1\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \F[13]_i_1\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \F[14]_i_1\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \F[15]_i_1\ : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of \F[16]_i_1\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of \F[17]_i_1\ : label is "soft_lutpair54";
+  attribute SOFT_HLUTNM of \F[18]_i_1\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \F[19]_i_1\ : label is "soft_lutpair53";
+  attribute SOFT_HLUTNM of \F[1]_i_1\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \F[20]_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \F[21]_i_1\ : label is "soft_lutpair52";
+  attribute SOFT_HLUTNM of \F[22]_i_1\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \F[23]_i_1\ : label is "soft_lutpair51";
+  attribute SOFT_HLUTNM of \F[24]_i_1\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of \F[25]_i_1\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of \F[26]_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \F[27]_i_1\ : label is "soft_lutpair49";
+  attribute SOFT_HLUTNM of \F[28]_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \F[29]_i_1\ : label is "soft_lutpair48";
+  attribute SOFT_HLUTNM of \F[2]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \F[30]_i_1\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \F[31]_i_1\ : label is "soft_lutpair47";
+  attribute SOFT_HLUTNM of \F[3]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \F[4]_i_1\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \F[5]_i_1\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \F[6]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \F[7]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \F[8]_i_1\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \F[9]_i_1\ : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of \G[0]_i_1\ : label is "soft_lutpair78";
+  attribute SOFT_HLUTNM of \G[10]_i_1\ : label is "soft_lutpair73";
+  attribute SOFT_HLUTNM of \G[11]_i_1\ : label is "soft_lutpair73";
+  attribute SOFT_HLUTNM of \G[12]_i_1\ : label is "soft_lutpair72";
+  attribute SOFT_HLUTNM of \G[13]_i_1\ : label is "soft_lutpair72";
+  attribute SOFT_HLUTNM of \G[14]_i_1\ : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \G[15]_i_1\ : label is "soft_lutpair71";
+  attribute SOFT_HLUTNM of \G[16]_i_1\ : label is "soft_lutpair70";
+  attribute SOFT_HLUTNM of \G[17]_i_1\ : label is "soft_lutpair70";
+  attribute SOFT_HLUTNM of \G[18]_i_1\ : label is "soft_lutpair69";
+  attribute SOFT_HLUTNM of \G[19]_i_1\ : label is "soft_lutpair69";
+  attribute SOFT_HLUTNM of \G[1]_i_1\ : label is "soft_lutpair78";
+  attribute SOFT_HLUTNM of \G[20]_i_1\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of \G[21]_i_1\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of \G[22]_i_1\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \G[23]_i_1\ : label is "soft_lutpair67";
+  attribute SOFT_HLUTNM of \G[24]_i_1\ : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of \G[25]_i_1\ : label is "soft_lutpair66";
+  attribute SOFT_HLUTNM of \G[26]_i_1\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \G[27]_i_1\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \G[28]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \G[29]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \G[2]_i_1\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \G[30]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \G[31]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \G[3]_i_1\ : label is "soft_lutpair77";
+  attribute SOFT_HLUTNM of \G[4]_i_1\ : label is "soft_lutpair76";
+  attribute SOFT_HLUTNM of \G[5]_i_1\ : label is "soft_lutpair76";
+  attribute SOFT_HLUTNM of \G[6]_i_1\ : label is "soft_lutpair75";
+  attribute SOFT_HLUTNM of \G[7]_i_1\ : label is "soft_lutpair75";
+  attribute SOFT_HLUTNM of \G[8]_i_1\ : label is "soft_lutpair74";
+  attribute SOFT_HLUTNM of \G[9]_i_1\ : label is "soft_lutpair74";
+  attribute SOFT_HLUTNM of \H[0]_i_1\ : label is "soft_lutpair94";
+  attribute SOFT_HLUTNM of \H[10]_i_1\ : label is "soft_lutpair89";
+  attribute SOFT_HLUTNM of \H[11]_i_1\ : label is "soft_lutpair89";
+  attribute SOFT_HLUTNM of \H[12]_i_1\ : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of \H[13]_i_1\ : label is "soft_lutpair88";
+  attribute SOFT_HLUTNM of \H[14]_i_1\ : label is "soft_lutpair87";
+  attribute SOFT_HLUTNM of \H[15]_i_1\ : label is "soft_lutpair87";
+  attribute SOFT_HLUTNM of \H[16]_i_1\ : label is "soft_lutpair86";
+  attribute SOFT_HLUTNM of \H[17]_i_1\ : label is "soft_lutpair86";
+  attribute SOFT_HLUTNM of \H[18]_i_1\ : label is "soft_lutpair85";
+  attribute SOFT_HLUTNM of \H[19]_i_1\ : label is "soft_lutpair85";
+  attribute SOFT_HLUTNM of \H[1]_i_1\ : label is "soft_lutpair94";
+  attribute SOFT_HLUTNM of \H[20]_i_1\ : label is "soft_lutpair84";
+  attribute SOFT_HLUTNM of \H[21]_i_1\ : label is "soft_lutpair84";
+  attribute SOFT_HLUTNM of \H[22]_i_1\ : label is "soft_lutpair83";
+  attribute SOFT_HLUTNM of \H[23]_i_1\ : label is "soft_lutpair83";
+  attribute SOFT_HLUTNM of \H[24]_i_1\ : label is "soft_lutpair82";
+  attribute SOFT_HLUTNM of \H[25]_i_1\ : label is "soft_lutpair82";
+  attribute SOFT_HLUTNM of \H[26]_i_1\ : label is "soft_lutpair81";
+  attribute SOFT_HLUTNM of \H[27]_i_1\ : label is "soft_lutpair81";
+  attribute SOFT_HLUTNM of \H[28]_i_1\ : label is "soft_lutpair80";
+  attribute SOFT_HLUTNM of \H[29]_i_1\ : label is "soft_lutpair80";
+  attribute SOFT_HLUTNM of \H[2]_i_1\ : label is "soft_lutpair93";
+  attribute SOFT_HLUTNM of \H[30]_i_1\ : label is "soft_lutpair79";
+  attribute SOFT_HLUTNM of \H[31]_i_1\ : label is "soft_lutpair79";
+  attribute SOFT_HLUTNM of \H[3]_i_1\ : label is "soft_lutpair93";
+  attribute SOFT_HLUTNM of \H[4]_i_1\ : label is "soft_lutpair92";
+  attribute SOFT_HLUTNM of \H[5]_i_1\ : label is "soft_lutpair92";
+  attribute SOFT_HLUTNM of \H[6]_i_1\ : label is "soft_lutpair91";
+  attribute SOFT_HLUTNM of \H[7]_i_1\ : label is "soft_lutpair91";
+  attribute SOFT_HLUTNM of \H[8]_i_1\ : label is "soft_lutpair90";
+  attribute SOFT_HLUTNM of \H[9]_i_1\ : label is "soft_lutpair90";
 begin
   D(31 downto 0) <= \^d\(31 downto 0);
   \hash1_reg[31]_0\(31 downto 0) <= \^hash1_reg[31]_0\(31 downto 0);
@@ -15509,7 +15509,7 @@ entity test_axi_sha256_0_0_padder is
     \state_reg[3]_0\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
     \w_in_reg_reg[31]_0\ : out STD_LOGIC_VECTOR ( 31 downto 0 );
     CO : out STD_LOGIC_VECTOR ( 0 to 0 );
-    p_0_in : in STD_LOGIC_VECTOR ( 61 downto 0 );
+    sha256_msg_size : in STD_LOGIC_VECTOR ( 63 downto 0 );
     \w_in_reg_reg[0]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \w_in_reg_reg[7]_i_5_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \w_in_reg_reg[0]_i_2_0\ : in STD_LOGIC;
@@ -15534,7 +15534,6 @@ entity test_axi_sha256_0_0_padder is
     \state_reg[5]_2\ : in STD_LOGIC;
     \round_counter_reg[0]_rep__0\ : in STD_LOGIC_VECTOR ( 8 downto 0 );
     D : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    \cir_buf_reg[0][15]\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     pad_start_carry_0 : in STD_LOGIC;
     \pad_start_carry__4_0\ : in STD_LOGIC_VECTOR ( 58 downto 0 );
     \cur_block_reg_reg[54]_0\ : in STD_LOGIC_VECTOR ( 54 downto 0 );
@@ -15655,7 +15654,7 @@ architecture STRUCTURE of test_axi_sha256_0_0_padder is
   signal \next_state1_inferred__0/i__carry_n_1\ : STD_LOGIC;
   signal \next_state1_inferred__0/i__carry_n_2\ : STD_LOGIC;
   signal \next_state1_inferred__0/i__carry_n_3\ : STD_LOGIC;
-  signal p_0_in_0 : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal p_0_in : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal pad_of0 : STD_LOGIC;
   signal \pad_of0_carry__0_i_1_n_0\ : STD_LOGIC;
   signal \pad_of0_carry__0_i_2_n_0\ : STD_LOGIC;
@@ -16175,22 +16174,22 @@ architecture STRUCTURE of test_axi_sha256_0_0_padder is
   signal \NLW_pad_start_carry__4_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_pad_start_carry_i_8_O_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \cir_buf[0][15]_i_3\ : label is "soft_lutpair164";
-  attribute SOFT_HLUTNM of \cir_buf[0][16]_i_2\ : label is "soft_lutpair160";
-  attribute SOFT_HLUTNM of \cir_buf[0][23]_i_2\ : label is "soft_lutpair161";
-  attribute SOFT_HLUTNM of \cir_buf[0][31]_i_3\ : label is "soft_lutpair164";
-  attribute SOFT_HLUTNM of \cir_buf[0][31]_i_4\ : label is "soft_lutpair160";
-  attribute SOFT_HLUTNM of \cir_buf[0][7]_i_2\ : label is "soft_lutpair161";
-  attribute SOFT_HLUTNM of \state[1]_i_1__0\ : label is "soft_lutpair165";
-  attribute SOFT_HLUTNM of \state[2]_i_1\ : label is "soft_lutpair165";
-  attribute SOFT_HLUTNM of \state[3]_i_1\ : label is "soft_lutpair159";
-  attribute SOFT_HLUTNM of \state[5]_i_1__0\ : label is "soft_lutpair158";
-  attribute SOFT_HLUTNM of \state[6]_i_2\ : label is "soft_lutpair159";
-  attribute SOFT_HLUTNM of \state[9]_i_3\ : label is "soft_lutpair158";
-  attribute SOFT_HLUTNM of \w_out_inferred__0/i_\ : label is "soft_lutpair163";
-  attribute SOFT_HLUTNM of \w_out_inferred__0/i___0\ : label is "soft_lutpair163";
-  attribute SOFT_HLUTNM of \w_out_inferred__0/i___1\ : label is "soft_lutpair162";
-  attribute SOFT_HLUTNM of \w_out_inferred__0/i___2\ : label is "soft_lutpair162";
+  attribute SOFT_HLUTNM of \cir_buf[0][15]_i_3\ : label is "soft_lutpair165";
+  attribute SOFT_HLUTNM of \cir_buf[0][16]_i_2\ : label is "soft_lutpair161";
+  attribute SOFT_HLUTNM of \cir_buf[0][23]_i_2\ : label is "soft_lutpair162";
+  attribute SOFT_HLUTNM of \cir_buf[0][31]_i_3\ : label is "soft_lutpair165";
+  attribute SOFT_HLUTNM of \cir_buf[0][31]_i_4\ : label is "soft_lutpair161";
+  attribute SOFT_HLUTNM of \cir_buf[0][7]_i_2\ : label is "soft_lutpair162";
+  attribute SOFT_HLUTNM of \state[1]_i_1__0\ : label is "soft_lutpair166";
+  attribute SOFT_HLUTNM of \state[2]_i_1\ : label is "soft_lutpair166";
+  attribute SOFT_HLUTNM of \state[3]_i_1\ : label is "soft_lutpair160";
+  attribute SOFT_HLUTNM of \state[5]_i_1__0\ : label is "soft_lutpair159";
+  attribute SOFT_HLUTNM of \state[6]_i_2\ : label is "soft_lutpair160";
+  attribute SOFT_HLUTNM of \state[9]_i_3\ : label is "soft_lutpair159";
+  attribute SOFT_HLUTNM of \w_out_inferred__0/i_\ : label is "soft_lutpair164";
+  attribute SOFT_HLUTNM of \w_out_inferred__0/i___0\ : label is "soft_lutpair164";
+  attribute SOFT_HLUTNM of \w_out_inferred__0/i___1\ : label is "soft_lutpair163";
+  attribute SOFT_HLUTNM of \w_out_inferred__0/i___2\ : label is "soft_lutpair163";
 begin
   Q(2 downto 0) <= \^q\(2 downto 0);
   en_pad <= \^en_pad\;
@@ -16207,7 +16206,7 @@ begin
       I0 => sch_calc(0),
       I1 => \cir_buf_reg[0][7]\(0),
       I2 => \cir_buf[0][31]_i_4_n_0\,
-      I3 => p_0_in(27),
+      I3 => sha256_msg_size(29),
       I4 => w_in_reg(0),
       I5 => \cir_buf[0][2]_i_2_n_0\,
       O => \w_in_reg_reg[31]_0\(0)
@@ -16218,7 +16217,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(5),
+      I1 => sha256_msg_size(7),
       I2 => \cir_buf[0][10]_i_2_n_0\,
       I3 => w_in_reg(10),
       I4 => \cir_buf[0][14]_i_3_n_0\,
@@ -16229,7 +16228,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(37),
+      I0 => sha256_msg_size(39),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16242,7 +16241,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(6),
+      I1 => sha256_msg_size(8),
       I2 => \cir_buf[0][11]_i_2_n_0\,
       I3 => w_in_reg(11),
       I4 => \cir_buf[0][14]_i_3_n_0\,
@@ -16253,7 +16252,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(38),
+      I0 => sha256_msg_size(40),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16266,7 +16265,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(7),
+      I1 => sha256_msg_size(9),
       I2 => \cir_buf[0][12]_i_2_n_0\,
       I3 => w_in_reg(12),
       I4 => \cir_buf[0][14]_i_3_n_0\,
@@ -16277,7 +16276,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(39),
+      I0 => sha256_msg_size(41),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16290,7 +16289,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(8),
+      I1 => sha256_msg_size(10),
       I2 => \cir_buf[0][13]_i_2_n_0\,
       I3 => w_in_reg(13),
       I4 => \cir_buf[0][14]_i_3_n_0\,
@@ -16301,7 +16300,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(40),
+      I0 => sha256_msg_size(42),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16314,7 +16313,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(9),
+      I1 => sha256_msg_size(11),
       I2 => \cir_buf[0][14]_i_2_n_0\,
       I3 => w_in_reg(14),
       I4 => \cir_buf[0][14]_i_3_n_0\,
@@ -16325,7 +16324,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(41),
+      I0 => sha256_msg_size(43),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16340,8 +16339,8 @@ begin
       I0 => \cir_buf_reg[0][7]\(0),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \state_reg_n_0_[2]\,
-      I3 => \cir_buf_reg[0][15]\(0),
-      I4 => \cir_buf_reg[0][15]\(1),
+      I3 => sha256_msg_size(0),
+      I4 => sha256_msg_size(1),
       I5 => \state_reg_n_0_[1]\,
       O => \cir_buf[0][14]_i_3_n_0\
     );
@@ -16352,9 +16351,9 @@ begin
         port map (
       I0 => \cir_buf[0][15]_i_2_n_0\,
       I1 => \cir_buf[0][22]_i_2_n_0\,
-      I2 => p_0_in(10),
-      I3 => \cir_buf_reg[0][15]\(0),
-      I4 => \cir_buf_reg[0][15]\(1),
+      I2 => sha256_msg_size(12),
+      I3 => sha256_msg_size(0),
+      I4 => sha256_msg_size(1),
       I5 => \cir_buf[0][15]_i_3_n_0\,
       O => \w_in_reg_reg[31]_0\(15)
     );
@@ -16366,7 +16365,7 @@ begin
       I0 => sch_calc(15),
       I1 => \cir_buf_reg[0][7]\(0),
       I2 => \cir_buf[0][31]_i_4_n_0\,
-      I3 => p_0_in(42),
+      I3 => sha256_msg_size(44),
       I4 => w_in_reg(15),
       I5 => \cir_buf[0][22]_i_4_n_0\,
       O => \cir_buf[0][15]_i_2_n_0\
@@ -16387,7 +16386,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(11),
+      I1 => sha256_msg_size(13),
       I2 => \cir_buf[0][16]_i_2_n_0\,
       I3 => w_in_reg(16),
       I4 => \cir_buf[0][22]_i_4_n_0\,
@@ -16398,7 +16397,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(43),
+      I0 => sha256_msg_size(45),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16411,7 +16410,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(12),
+      I1 => sha256_msg_size(14),
       I2 => \cir_buf[0][17]_i_2_n_0\,
       I3 => w_in_reg(17),
       I4 => \cir_buf[0][22]_i_4_n_0\,
@@ -16422,7 +16421,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(44),
+      I0 => sha256_msg_size(46),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16435,7 +16434,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(13),
+      I1 => sha256_msg_size(15),
       I2 => \cir_buf[0][18]_i_2_n_0\,
       I3 => w_in_reg(18),
       I4 => \cir_buf[0][22]_i_4_n_0\,
@@ -16446,7 +16445,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(45),
+      I0 => sha256_msg_size(47),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16459,7 +16458,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(14),
+      I1 => sha256_msg_size(16),
       I2 => \cir_buf[0][19]_i_2_n_0\,
       I3 => w_in_reg(19),
       I4 => \cir_buf[0][22]_i_4_n_0\,
@@ -16470,7 +16469,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(46),
+      I0 => sha256_msg_size(48),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16485,7 +16484,7 @@ begin
       I0 => sch_calc(1),
       I1 => \cir_buf_reg[0][7]\(0),
       I2 => \cir_buf[0][31]_i_4_n_0\,
-      I3 => p_0_in(28),
+      I3 => sha256_msg_size(30),
       I4 => w_in_reg(1),
       I5 => \cir_buf[0][2]_i_2_n_0\,
       O => \w_in_reg_reg[31]_0\(1)
@@ -16496,7 +16495,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(15),
+      I1 => sha256_msg_size(17),
       I2 => \cir_buf[0][20]_i_2_n_0\,
       I3 => w_in_reg(20),
       I4 => \cir_buf[0][22]_i_4_n_0\,
@@ -16507,7 +16506,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(47),
+      I0 => sha256_msg_size(49),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16520,7 +16519,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(16),
+      I1 => sha256_msg_size(18),
       I2 => \cir_buf[0][21]_i_2_n_0\,
       I3 => w_in_reg(21),
       I4 => \cir_buf[0][22]_i_4_n_0\,
@@ -16531,7 +16530,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(48),
+      I0 => sha256_msg_size(50),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16544,7 +16543,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(17),
+      I1 => sha256_msg_size(19),
       I2 => \cir_buf[0][22]_i_3_n_0\,
       I3 => w_in_reg(22),
       I4 => \cir_buf[0][22]_i_4_n_0\,
@@ -16565,7 +16564,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(49),
+      I0 => sha256_msg_size(51),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -16577,12 +16576,12 @@ begin
       INIT => X"C080C000C0C0C000"
     )
         port map (
-      I0 => \cir_buf_reg[0][15]\(1),
+      I0 => sha256_msg_size(1),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \state_reg_n_0_[1]\,
       I4 => \state_reg_n_0_[2]\,
-      I5 => \cir_buf_reg[0][15]\(0),
+      I5 => sha256_msg_size(0),
       O => \cir_buf[0][22]_i_4_n_0\
     );
 \cir_buf[0][23]_i_1\: unisim.vcomponents.LUT6
@@ -16591,7 +16590,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][23]_i_2_n_0\,
-      I1 => p_0_in(50),
+      I1 => sha256_msg_size(52),
       I2 => \cir_buf[0][31]_i_4_n_0\,
       I3 => \cir_buf_reg[0][7]\(0),
       I4 => sch_calc(23),
@@ -16603,8 +16602,8 @@ begin
       INIT => X"40000000"
     )
         port map (
-      I0 => \cir_buf_reg[0][15]\(1),
-      I1 => \cir_buf_reg[0][15]\(0),
+      I0 => sha256_msg_size(1),
+      I1 => sha256_msg_size(0),
       I2 => \state_reg_n_0_[2]\,
       I3 => \cir_buf_reg[0][7]\(0),
       I4 => \w_out_inferred__0/i___3_n_0\,
@@ -16615,7 +16614,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(18),
+      I0 => sha256_msg_size(20),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16633,7 +16632,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(51),
+      I5 => sha256_msg_size(53),
       O => \w_in_reg_reg[31]_0\(24)
     );
 \cir_buf[0][24]_i_2\: unisim.vcomponents.LUT6
@@ -16641,7 +16640,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(19),
+      I0 => sha256_msg_size(21),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16659,7 +16658,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(52),
+      I5 => sha256_msg_size(54),
       O => \w_in_reg_reg[31]_0\(25)
     );
 \cir_buf[0][25]_i_2\: unisim.vcomponents.LUT6
@@ -16667,7 +16666,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(20),
+      I0 => sha256_msg_size(22),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16685,7 +16684,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(53),
+      I5 => sha256_msg_size(55),
       O => \w_in_reg_reg[31]_0\(26)
     );
 \cir_buf[0][26]_i_2\: unisim.vcomponents.LUT6
@@ -16693,7 +16692,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(21),
+      I0 => sha256_msg_size(23),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16711,7 +16710,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(54),
+      I5 => sha256_msg_size(56),
       O => \w_in_reg_reg[31]_0\(27)
     );
 \cir_buf[0][27]_i_2\: unisim.vcomponents.LUT6
@@ -16719,7 +16718,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(22),
+      I0 => sha256_msg_size(24),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16737,7 +16736,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(55),
+      I5 => sha256_msg_size(57),
       O => \w_in_reg_reg[31]_0\(28)
     );
 \cir_buf[0][28]_i_2\: unisim.vcomponents.LUT6
@@ -16745,7 +16744,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(23),
+      I0 => sha256_msg_size(25),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16763,7 +16762,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(56),
+      I5 => sha256_msg_size(58),
       O => \w_in_reg_reg[31]_0\(29)
     );
 \cir_buf[0][29]_i_2\: unisim.vcomponents.LUT6
@@ -16771,7 +16770,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(24),
+      I0 => sha256_msg_size(26),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16787,7 +16786,7 @@ begin
       I0 => sch_calc(2),
       I1 => \cir_buf_reg[0][7]\(0),
       I2 => \cir_buf[0][31]_i_4_n_0\,
-      I3 => p_0_in(29),
+      I3 => sha256_msg_size(31),
       I4 => w_in_reg(2),
       I5 => \cir_buf[0][2]_i_2_n_0\,
       O => \w_in_reg_reg[31]_0\(2)
@@ -16798,8 +16797,8 @@ begin
     )
         port map (
       I0 => \state_reg_n_0_[1]\,
-      I1 => \cir_buf_reg[0][15]\(1),
-      I2 => \cir_buf_reg[0][15]\(0),
+      I1 => sha256_msg_size(1),
+      I2 => sha256_msg_size(0),
       I3 => \state_reg_n_0_[2]\,
       I4 => \w_out_inferred__0/i___3_n_0\,
       I5 => \cir_buf_reg[0][7]\(0),
@@ -16815,7 +16814,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(57),
+      I5 => sha256_msg_size(59),
       O => \w_in_reg_reg[31]_0\(30)
     );
 \cir_buf[0][30]_i_2\: unisim.vcomponents.LUT6
@@ -16823,7 +16822,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => p_0_in(25),
+      I0 => sha256_msg_size(27),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16840,7 +16839,7 @@ begin
       I1 => \cir_buf[0][31]_i_3_n_0\,
       I2 => w_in_reg(31),
       I3 => \cir_buf[0][31]_i_4_n_0\,
-      I4 => p_0_in(58),
+      I4 => sha256_msg_size(60),
       O => \w_in_reg_reg[31]_0\(31)
     );
 \cir_buf[0][31]_i_2\: unisim.vcomponents.LUT6
@@ -16850,7 +16849,7 @@ begin
         port map (
       I0 => sch_calc(31),
       I1 => \state_reg_n_0_[3]\,
-      I2 => p_0_in(26),
+      I2 => sha256_msg_size(28),
       I3 => \w_out_inferred__0/i___3_n_0\,
       I4 => \cir_buf_reg[0][7]\(0),
       I5 => \^q\(2),
@@ -16887,7 +16886,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(30),
+      I5 => sha256_msg_size(32),
       O => \w_in_reg_reg[31]_0\(3)
     );
 \cir_buf[0][3]_i_2\: unisim.vcomponents.LUT6
@@ -16895,7 +16894,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => \cir_buf_reg[0][15]\(0),
+      I0 => sha256_msg_size(0),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16913,7 +16912,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(31),
+      I5 => sha256_msg_size(33),
       O => \w_in_reg_reg[31]_0\(4)
     );
 \cir_buf[0][4]_i_2\: unisim.vcomponents.LUT6
@@ -16921,7 +16920,7 @@ begin
       INIT => X"FFFF800080008000"
     )
         port map (
-      I0 => \cir_buf_reg[0][15]\(1),
+      I0 => sha256_msg_size(1),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(2),
@@ -16939,7 +16938,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(32),
+      I5 => sha256_msg_size(34),
       O => \w_in_reg_reg[31]_0\(5)
     );
 \cir_buf[0][5]_i_2\: unisim.vcomponents.LUT6
@@ -16949,7 +16948,7 @@ begin
         port map (
       I0 => w_in_reg(5),
       I1 => \cir_buf[0][2]_i_2_n_0\,
-      I2 => p_0_in(0),
+      I2 => sha256_msg_size(2),
       I3 => \w_out_inferred__0/i___3_n_0\,
       I4 => \cir_buf_reg[0][7]\(0),
       I5 => \^q\(2),
@@ -16965,7 +16964,7 @@ begin
       I2 => \cir_buf_reg[0][7]\(0),
       I3 => \^q\(1),
       I4 => \w_out_inferred__0/i___3_n_0\,
-      I5 => p_0_in(33),
+      I5 => sha256_msg_size(35),
       O => \w_in_reg_reg[31]_0\(6)
     );
 \cir_buf[0][6]_i_2\: unisim.vcomponents.LUT6
@@ -16975,7 +16974,7 @@ begin
         port map (
       I0 => w_in_reg(6),
       I1 => \cir_buf[0][2]_i_2_n_0\,
-      I2 => p_0_in(1),
+      I2 => sha256_msg_size(3),
       I3 => \w_out_inferred__0/i___3_n_0\,
       I4 => \cir_buf_reg[0][7]\(0),
       I5 => \^q\(2),
@@ -16987,7 +16986,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][7]_i_2_n_0\,
-      I1 => p_0_in(34),
+      I1 => sha256_msg_size(36),
       I2 => \cir_buf[0][31]_i_4_n_0\,
       I3 => \cir_buf_reg[0][7]\(0),
       I4 => sch_calc(7),
@@ -16999,8 +16998,8 @@ begin
       INIT => X"80000000"
     )
         port map (
-      I0 => \cir_buf_reg[0][15]\(1),
-      I1 => \cir_buf_reg[0][15]\(0),
+      I0 => sha256_msg_size(1),
+      I1 => sha256_msg_size(0),
       I2 => \state_reg_n_0_[2]\,
       I3 => \cir_buf_reg[0][7]\(0),
       I4 => \w_out_inferred__0/i___3_n_0\,
@@ -17013,7 +17012,7 @@ begin
         port map (
       I0 => w_in_reg(7),
       I1 => \cir_buf[0][2]_i_2_n_0\,
-      I2 => p_0_in(2),
+      I2 => sha256_msg_size(4),
       I3 => \w_out_inferred__0/i___3_n_0\,
       I4 => \cir_buf_reg[0][7]\(0),
       I5 => \^q\(2),
@@ -17025,7 +17024,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(3),
+      I1 => sha256_msg_size(5),
       I2 => \cir_buf[0][8]_i_2_n_0\,
       I3 => w_in_reg(8),
       I4 => \cir_buf[0][14]_i_3_n_0\,
@@ -17036,7 +17035,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(35),
+      I0 => sha256_msg_size(37),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -17049,7 +17048,7 @@ begin
     )
         port map (
       I0 => \cir_buf[0][22]_i_2_n_0\,
-      I1 => p_0_in(4),
+      I1 => sha256_msg_size(6),
       I2 => \cir_buf[0][9]_i_2_n_0\,
       I3 => w_in_reg(9),
       I4 => \cir_buf[0][14]_i_3_n_0\,
@@ -17060,7 +17059,7 @@ begin
       INIT => X"80FF8000"
     )
         port map (
-      I0 => p_0_in(36),
+      I0 => sha256_msg_size(38),
       I1 => \w_out_inferred__0/i___3_n_0\,
       I2 => \^q\(1),
       I3 => \cir_buf_reg[0][7]\(0),
@@ -17531,8 +17530,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(12),
-      I1 => p_0_in(13),
+      I0 => sha256_msg_size(14),
+      I1 => sha256_msg_size(15),
       O => \i__carry__0_i_1_n_0\
     );
 \i__carry__0_i_2\: unisim.vcomponents.LUT2
@@ -17540,8 +17539,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(10),
-      I1 => p_0_in(11),
+      I0 => sha256_msg_size(12),
+      I1 => sha256_msg_size(13),
       O => \i__carry__0_i_2_n_0\
     );
 \i__carry__0_i_3\: unisim.vcomponents.LUT2
@@ -17549,8 +17548,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(8),
-      I1 => p_0_in(9),
+      I0 => sha256_msg_size(10),
+      I1 => sha256_msg_size(11),
       O => \i__carry__0_i_3_n_0\
     );
 \i__carry__0_i_4\: unisim.vcomponents.LUT2
@@ -17558,8 +17557,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(6),
-      I1 => p_0_in(7),
+      I0 => sha256_msg_size(8),
+      I1 => sha256_msg_size(9),
       O => \i__carry__0_i_4_n_0\
     );
 \i__carry__1_i_1\: unisim.vcomponents.LUT2
@@ -17567,8 +17566,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(20),
-      I1 => p_0_in(21),
+      I0 => sha256_msg_size(22),
+      I1 => sha256_msg_size(23),
       O => \i__carry__1_i_1_n_0\
     );
 \i__carry__1_i_2\: unisim.vcomponents.LUT2
@@ -17576,8 +17575,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(18),
-      I1 => p_0_in(19),
+      I0 => sha256_msg_size(20),
+      I1 => sha256_msg_size(21),
       O => \i__carry__1_i_2_n_0\
     );
 \i__carry__1_i_3\: unisim.vcomponents.LUT2
@@ -17585,8 +17584,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(16),
-      I1 => p_0_in(17),
+      I0 => sha256_msg_size(18),
+      I1 => sha256_msg_size(19),
       O => \i__carry__1_i_3_n_0\
     );
 \i__carry__1_i_4\: unisim.vcomponents.LUT2
@@ -17594,8 +17593,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(14),
-      I1 => p_0_in(15),
+      I0 => sha256_msg_size(16),
+      I1 => sha256_msg_size(17),
       O => \i__carry__1_i_4_n_0\
     );
 \i__carry__2_i_1\: unisim.vcomponents.LUT2
@@ -17603,8 +17602,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(28),
-      I1 => p_0_in(29),
+      I0 => sha256_msg_size(30),
+      I1 => sha256_msg_size(31),
       O => \i__carry__2_i_1_n_0\
     );
 \i__carry__2_i_2\: unisim.vcomponents.LUT2
@@ -17612,8 +17611,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(26),
-      I1 => p_0_in(27),
+      I0 => sha256_msg_size(28),
+      I1 => sha256_msg_size(29),
       O => \i__carry__2_i_2_n_0\
     );
 \i__carry__2_i_3\: unisim.vcomponents.LUT2
@@ -17621,8 +17620,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(24),
-      I1 => p_0_in(25),
+      I0 => sha256_msg_size(26),
+      I1 => sha256_msg_size(27),
       O => \i__carry__2_i_3_n_0\
     );
 \i__carry__2_i_4\: unisim.vcomponents.LUT2
@@ -17630,8 +17629,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(22),
-      I1 => p_0_in(23),
+      I0 => sha256_msg_size(24),
+      I1 => sha256_msg_size(25),
       O => \i__carry__2_i_4_n_0\
     );
 \i__carry__3_i_1\: unisim.vcomponents.LUT2
@@ -17639,8 +17638,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(36),
-      I1 => p_0_in(37),
+      I0 => sha256_msg_size(38),
+      I1 => sha256_msg_size(39),
       O => \i__carry__3_i_1_n_0\
     );
 \i__carry__3_i_2\: unisim.vcomponents.LUT2
@@ -17648,8 +17647,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(34),
-      I1 => p_0_in(35),
+      I0 => sha256_msg_size(36),
+      I1 => sha256_msg_size(37),
       O => \i__carry__3_i_2_n_0\
     );
 \i__carry__3_i_3\: unisim.vcomponents.LUT2
@@ -17657,8 +17656,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(32),
-      I1 => p_0_in(33),
+      I0 => sha256_msg_size(34),
+      I1 => sha256_msg_size(35),
       O => \i__carry__3_i_3_n_0\
     );
 \i__carry__3_i_4\: unisim.vcomponents.LUT2
@@ -17666,8 +17665,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(30),
-      I1 => p_0_in(31),
+      I0 => sha256_msg_size(32),
+      I1 => sha256_msg_size(33),
       O => \i__carry__3_i_4_n_0\
     );
 \i__carry__4_i_1\: unisim.vcomponents.LUT2
@@ -17675,8 +17674,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(44),
-      I1 => p_0_in(45),
+      I0 => sha256_msg_size(46),
+      I1 => sha256_msg_size(47),
       O => \i__carry__4_i_1_n_0\
     );
 \i__carry__4_i_2\: unisim.vcomponents.LUT2
@@ -17684,8 +17683,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(42),
-      I1 => p_0_in(43),
+      I0 => sha256_msg_size(44),
+      I1 => sha256_msg_size(45),
       O => \i__carry__4_i_2_n_0\
     );
 \i__carry__4_i_3\: unisim.vcomponents.LUT2
@@ -17693,8 +17692,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(40),
-      I1 => p_0_in(41),
+      I0 => sha256_msg_size(42),
+      I1 => sha256_msg_size(43),
       O => \i__carry__4_i_3_n_0\
     );
 \i__carry__4_i_4\: unisim.vcomponents.LUT2
@@ -17702,8 +17701,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(38),
-      I1 => p_0_in(39),
+      I0 => sha256_msg_size(40),
+      I1 => sha256_msg_size(41),
       O => \i__carry__4_i_4_n_0\
     );
 \i__carry__5_i_1\: unisim.vcomponents.LUT2
@@ -17711,8 +17710,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(52),
-      I1 => p_0_in(53),
+      I0 => sha256_msg_size(54),
+      I1 => sha256_msg_size(55),
       O => \i__carry__5_i_1_n_0\
     );
 \i__carry__5_i_2\: unisim.vcomponents.LUT2
@@ -17720,8 +17719,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(50),
-      I1 => p_0_in(51),
+      I0 => sha256_msg_size(52),
+      I1 => sha256_msg_size(53),
       O => \i__carry__5_i_2_n_0\
     );
 \i__carry__5_i_3\: unisim.vcomponents.LUT2
@@ -17729,8 +17728,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(48),
-      I1 => p_0_in(49),
+      I0 => sha256_msg_size(50),
+      I1 => sha256_msg_size(51),
       O => \i__carry__5_i_3_n_0\
     );
 \i__carry__5_i_4\: unisim.vcomponents.LUT2
@@ -17738,8 +17737,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(46),
-      I1 => p_0_in(47),
+      I0 => sha256_msg_size(48),
+      I1 => sha256_msg_size(49),
       O => \i__carry__5_i_4_n_0\
     );
 \i__carry__6_i_1\: unisim.vcomponents.LUT2
@@ -17747,8 +17746,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(61),
-      I1 => p_0_in(60),
+      I0 => sha256_msg_size(63),
+      I1 => sha256_msg_size(62),
       O => \i__carry__6_i_1_n_0\
     );
 \i__carry__6_i_2\: unisim.vcomponents.LUT2
@@ -17756,8 +17755,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(59),
-      I1 => p_0_in(58),
+      I0 => sha256_msg_size(61),
+      I1 => sha256_msg_size(60),
       O => \i__carry__6_i_2_n_0\
     );
 \i__carry__6_i_3\: unisim.vcomponents.LUT2
@@ -17765,8 +17764,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(56),
-      I1 => p_0_in(57),
+      I0 => sha256_msg_size(58),
+      I1 => sha256_msg_size(59),
       O => \i__carry__6_i_3_n_0\
     );
 \i__carry__6_i_4\: unisim.vcomponents.LUT2
@@ -17774,8 +17773,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(54),
-      I1 => p_0_in(55),
+      I0 => sha256_msg_size(56),
+      I1 => sha256_msg_size(57),
       O => \i__carry__6_i_4_n_0\
     );
 \i__carry_i_1\: unisim.vcomponents.LUT2
@@ -17783,8 +17782,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(1),
-      I1 => p_0_in(0),
+      I0 => sha256_msg_size(3),
+      I1 => sha256_msg_size(2),
       O => \i__carry_i_1_n_0\
     );
 \i__carry_i_2\: unisim.vcomponents.LUT2
@@ -17792,8 +17791,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(4),
-      I1 => p_0_in(5),
+      I0 => sha256_msg_size(6),
+      I1 => sha256_msg_size(7),
       O => \i__carry_i_2_n_0\
     );
 \i__carry_i_3\: unisim.vcomponents.LUT2
@@ -17801,8 +17800,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(3),
-      I1 => p_0_in(2),
+      I0 => sha256_msg_size(5),
+      I1 => sha256_msg_size(4),
       O => \i__carry_i_3_n_0\
     );
 \i__carry_i_4\: unisim.vcomponents.LUT2
@@ -17810,8 +17809,8 @@ begin
       INIT => X"2"
     )
         port map (
-      I0 => p_0_in(0),
-      I1 => p_0_in(1),
+      I0 => sha256_msg_size(2),
+      I1 => sha256_msg_size(3),
       O => \i__carry_i_4_n_0\
     );
 \i__carry_i_5\: unisim.vcomponents.LUT2
@@ -17819,8 +17818,8 @@ begin
       INIT => X"1"
     )
         port map (
-      I0 => \cir_buf_reg[0][15]\(1),
-      I1 => \cir_buf_reg[0][15]\(0),
+      I0 => sha256_msg_size(1),
+      I1 => sha256_msg_size(0),
       O => \i__carry_i_5_n_0\
     );
 \next_state1_inferred__0/i__carry\: unisim.vcomponents.CARRY4
@@ -17981,10 +17980,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(21),
-      I1 => p_0_in(25),
+      I1 => sha256_msg_size(27),
       I2 => cur_block_reg(22),
-      I3 => p_0_in(26),
-      I4 => p_0_in(27),
+      I3 => sha256_msg_size(28),
+      I4 => sha256_msg_size(29),
       I5 => cur_block_reg(23),
       O => \pad_of0_carry__0_i_1_n_0\
     );
@@ -17994,10 +17993,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(18),
-      I1 => p_0_in(22),
+      I1 => sha256_msg_size(24),
       I2 => cur_block_reg(19),
-      I3 => p_0_in(23),
-      I4 => p_0_in(24),
+      I3 => sha256_msg_size(25),
+      I4 => sha256_msg_size(26),
       I5 => cur_block_reg(20),
       O => \pad_of0_carry__0_i_2_n_0\
     );
@@ -18007,10 +18006,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(15),
-      I1 => p_0_in(19),
+      I1 => sha256_msg_size(21),
       I2 => cur_block_reg(16),
-      I3 => p_0_in(20),
-      I4 => p_0_in(21),
+      I3 => sha256_msg_size(22),
+      I4 => sha256_msg_size(23),
       I5 => cur_block_reg(17),
       O => \pad_of0_carry__0_i_3_n_0\
     );
@@ -18020,10 +18019,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(12),
-      I1 => p_0_in(16),
+      I1 => sha256_msg_size(18),
       I2 => cur_block_reg(13),
-      I3 => p_0_in(17),
-      I4 => p_0_in(18),
+      I3 => sha256_msg_size(19),
+      I4 => sha256_msg_size(20),
       I5 => cur_block_reg(14),
       O => \pad_of0_carry__0_i_4_n_0\
     );
@@ -18048,10 +18047,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(33),
-      I1 => p_0_in(37),
+      I1 => sha256_msg_size(39),
       I2 => cur_block_reg(34),
-      I3 => p_0_in(38),
-      I4 => p_0_in(39),
+      I3 => sha256_msg_size(40),
+      I4 => sha256_msg_size(41),
       I5 => cur_block_reg(35),
       O => \pad_of0_carry__1_i_1_n_0\
     );
@@ -18061,10 +18060,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(30),
-      I1 => p_0_in(34),
+      I1 => sha256_msg_size(36),
       I2 => cur_block_reg(31),
-      I3 => p_0_in(35),
-      I4 => p_0_in(36),
+      I3 => sha256_msg_size(37),
+      I4 => sha256_msg_size(38),
       I5 => cur_block_reg(32),
       O => \pad_of0_carry__1_i_2_n_0\
     );
@@ -18074,10 +18073,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(27),
-      I1 => p_0_in(31),
+      I1 => sha256_msg_size(33),
       I2 => cur_block_reg(28),
-      I3 => p_0_in(32),
-      I4 => p_0_in(33),
+      I3 => sha256_msg_size(34),
+      I4 => sha256_msg_size(35),
       I5 => cur_block_reg(29),
       O => \pad_of0_carry__1_i_3_n_0\
     );
@@ -18087,10 +18086,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(24),
-      I1 => p_0_in(28),
+      I1 => sha256_msg_size(30),
       I2 => cur_block_reg(25),
-      I3 => p_0_in(29),
-      I4 => p_0_in(30),
+      I3 => sha256_msg_size(31),
+      I4 => sha256_msg_size(32),
       I5 => cur_block_reg(26),
       O => \pad_of0_carry__1_i_4_n_0\
     );
@@ -18115,10 +18114,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(45),
-      I1 => p_0_in(49),
+      I1 => sha256_msg_size(51),
       I2 => cur_block_reg(46),
-      I3 => p_0_in(50),
-      I4 => p_0_in(51),
+      I3 => sha256_msg_size(52),
+      I4 => sha256_msg_size(53),
       I5 => cur_block_reg(47),
       O => \pad_of0_carry__2_i_1_n_0\
     );
@@ -18128,10 +18127,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(42),
-      I1 => p_0_in(46),
+      I1 => sha256_msg_size(48),
       I2 => cur_block_reg(43),
-      I3 => p_0_in(47),
-      I4 => p_0_in(48),
+      I3 => sha256_msg_size(49),
+      I4 => sha256_msg_size(50),
       I5 => cur_block_reg(44),
       O => \pad_of0_carry__2_i_2_n_0\
     );
@@ -18141,10 +18140,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(39),
-      I1 => p_0_in(43),
+      I1 => sha256_msg_size(45),
       I2 => cur_block_reg(40),
-      I3 => p_0_in(44),
-      I4 => p_0_in(45),
+      I3 => sha256_msg_size(46),
+      I4 => sha256_msg_size(47),
       I5 => cur_block_reg(41),
       O => \pad_of0_carry__2_i_3_n_0\
     );
@@ -18154,10 +18153,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(36),
-      I1 => p_0_in(40),
+      I1 => sha256_msg_size(42),
       I2 => cur_block_reg(37),
-      I3 => p_0_in(41),
-      I4 => p_0_in(42),
+      I3 => sha256_msg_size(43),
+      I4 => sha256_msg_size(44),
       I5 => cur_block_reg(38),
       O => \pad_of0_carry__2_i_4_n_0\
     );
@@ -18181,7 +18180,7 @@ pad_of0_carry: unisim.vcomponents.CARRY4
       INIT => X"9"
     )
         port map (
-      I0 => p_0_in(58),
+      I0 => sha256_msg_size(60),
       I1 => cur_block_reg(54),
       O => \pad_of0_carry__3_i_1_n_0\
     );
@@ -18191,10 +18190,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(51),
-      I1 => p_0_in(55),
+      I1 => sha256_msg_size(57),
       I2 => cur_block_reg(52),
-      I3 => p_0_in(56),
-      I4 => p_0_in(57),
+      I3 => sha256_msg_size(58),
+      I4 => sha256_msg_size(59),
       I5 => cur_block_reg(53),
       O => \pad_of0_carry__3_i_2_n_0\
     );
@@ -18204,10 +18203,10 @@ pad_of0_carry: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => cur_block_reg(48),
-      I1 => p_0_in(52),
+      I1 => sha256_msg_size(54),
       I2 => cur_block_reg(49),
-      I3 => p_0_in(53),
-      I4 => p_0_in(54),
+      I3 => sha256_msg_size(55),
+      I4 => sha256_msg_size(56),
       I5 => cur_block_reg(50),
       O => \pad_of0_carry__3_i_3_n_0\
     );
@@ -18217,10 +18216,10 @@ pad_of0_carry_i_1: unisim.vcomponents.LUT6
     )
         port map (
       I0 => cur_block_reg(9),
-      I1 => p_0_in(13),
+      I1 => sha256_msg_size(15),
       I2 => cur_block_reg(10),
-      I3 => p_0_in(14),
-      I4 => p_0_in(15),
+      I3 => sha256_msg_size(16),
+      I4 => sha256_msg_size(17),
       I5 => cur_block_reg(11),
       O => pad_of0_carry_i_1_n_0
     );
@@ -18230,10 +18229,10 @@ pad_of0_carry_i_2: unisim.vcomponents.LUT6
     )
         port map (
       I0 => cur_block_reg(6),
-      I1 => p_0_in(10),
+      I1 => sha256_msg_size(12),
       I2 => cur_block_reg(7),
-      I3 => p_0_in(11),
-      I4 => p_0_in(12),
+      I3 => sha256_msg_size(13),
+      I4 => sha256_msg_size(14),
       I5 => cur_block_reg(8),
       O => pad_of0_carry_i_2_n_0
     );
@@ -18243,10 +18242,10 @@ pad_of0_carry_i_3: unisim.vcomponents.LUT6
     )
         port map (
       I0 => cur_block_reg(3),
-      I1 => p_0_in(7),
+      I1 => sha256_msg_size(9),
       I2 => cur_block_reg(4),
-      I3 => p_0_in(8),
-      I4 => p_0_in(9),
+      I3 => sha256_msg_size(10),
+      I4 => sha256_msg_size(11),
       I5 => cur_block_reg(5),
       O => pad_of0_carry_i_3_n_0
     );
@@ -18256,10 +18255,10 @@ pad_of0_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => cur_block_reg(0),
-      I1 => p_0_in(4),
+      I1 => sha256_msg_size(6),
       I2 => cur_block_reg(1),
-      I3 => p_0_in(5),
-      I4 => p_0_in(6),
+      I3 => sha256_msg_size(7),
+      I4 => sha256_msg_size(8),
       I5 => cur_block_reg(2),
       O => pad_of0_carry_i_4_n_0
     );
@@ -18596,7 +18595,7 @@ pad_start_carry_i_21: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(2),
+      I0 => sha256_msg_size(4),
       O => pad_start_carry_i_21_n_0
     );
 pad_start_carry_i_22: unisim.vcomponents.LUT1
@@ -18604,7 +18603,7 @@ pad_start_carry_i_22: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(1),
+      I0 => sha256_msg_size(3),
       O => pad_start_carry_i_22_n_0
     );
 pad_start_carry_i_23: unisim.vcomponents.LUT1
@@ -18612,7 +18611,7 @@ pad_start_carry_i_23: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(0),
+      I0 => sha256_msg_size(2),
       O => pad_start_carry_i_23_n_0
     );
 pad_start_carry_i_24: unisim.vcomponents.LUT1
@@ -18620,7 +18619,7 @@ pad_start_carry_i_24: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => \cir_buf_reg[0][15]\(1),
+      I0 => sha256_msg_size(1),
       O => pad_start_carry_i_24_n_0
     );
 pad_start_carry_i_3: unisim.vcomponents.LUT6
@@ -18642,10 +18641,10 @@ pad_start_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => pad_start_carry_0,
-      I1 => p_0_in_0(0),
+      I1 => p_0_in(0),
       I2 => \w_in_reg_reg[0]_0\(1),
-      I3 => p_0_in_0(1),
-      I4 => p_0_in_0(2),
+      I3 => p_0_in(1),
+      I4 => p_0_in(2),
       I5 => \w_in_reg_reg[0]_0\(2),
       O => pad_start_carry_i_4_n_0
     );
@@ -18656,10 +18655,9 @@ pad_start_carry_i_8: unisim.vcomponents.CARRY4
       CO(2) => pad_start_carry_i_8_n_1,
       CO(1) => pad_start_carry_i_8_n_2,
       CO(0) => pad_start_carry_i_8_n_3,
-      CYINIT => \cir_buf_reg[0][15]\(0),
-      DI(3 downto 1) => p_0_in(2 downto 0),
-      DI(0) => \cir_buf_reg[0][15]\(1),
-      O(3 downto 1) => p_0_in_0(2 downto 0),
+      CYINIT => sha256_msg_size(0),
+      DI(3 downto 0) => sha256_msg_size(4 downto 1),
+      O(3 downto 1) => p_0_in(2 downto 0),
       O(0) => NLW_pad_start_carry_i_8_O_UNCONNECTED(0),
       S(3) => pad_start_carry_i_21_n_0,
       S(2) => pad_start_carry_i_22_n_0,
@@ -18731,8 +18729,8 @@ pad_start_carry_i_8: unisim.vcomponents.CARRY4
       I1 => \^state_reg[5]_0\,
       I2 => \^q\(1),
       I3 => \^q\(2),
-      I4 => \cir_buf_reg[0][15]\(1),
-      I5 => \cir_buf_reg[0][15]\(0),
+      I4 => sha256_msg_size(1),
+      I5 => sha256_msg_size(0),
       O => \state[3]_i_2_n_0\
     );
 \state[5]_i_1\: unisim.vcomponents.LUT6
@@ -18753,10 +18751,10 @@ pad_start_carry_i_8: unisim.vcomponents.CARRY4
       INIT => X"7FFF0000"
     )
         port map (
-      I0 => p_0_in(2),
-      I1 => p_0_in(1),
+      I0 => sha256_msg_size(4),
+      I1 => sha256_msg_size(3),
       I2 => pad_of0,
-      I3 => p_0_in(3),
+      I3 => sha256_msg_size(5),
       I4 => \round_counter_reg[0]_rep__0\(2),
       O => \state_reg[3]_0\(0)
     );
@@ -18799,10 +18797,10 @@ pad_start_carry_i_8: unisim.vcomponents.CARRY4
       INIT => X"0000800000000000"
     )
         port map (
-      I0 => p_0_in(3),
+      I0 => sha256_msg_size(5),
       I1 => pad_of0,
-      I2 => p_0_in(1),
-      I3 => p_0_in(2),
+      I2 => sha256_msg_size(3),
+      I3 => sha256_msg_size(4),
       I4 => \state_reg[5]_2\,
       I5 => \^en_pad\,
       O => \state[7]_i_3_n_0\
@@ -18863,10 +18861,10 @@ pad_start_carry_i_8: unisim.vcomponents.CARRY4
     )
         port map (
       I0 => \round_counter_reg[0]_rep__0\(2),
-      I1 => p_0_in(2),
-      I2 => p_0_in(1),
+      I1 => sha256_msg_size(4),
+      I2 => sha256_msg_size(3),
       I3 => pad_of0,
-      I4 => p_0_in(3),
+      I4 => sha256_msg_size(5),
       O => \state_reg[3]_0\(1)
     );
 \state_reg[0]\: unisim.vcomponents.FDRE
@@ -24640,12 +24638,13 @@ entity \test_axi_sha256_0_0_reg_delay__parameterized1\ is
   port (
     \axi_awaddr_reg[6]\ : out STD_LOGIC;
     \axi_awaddr_reg[6]_0\ : out STD_LOGIC;
+    s00_sha256_irq : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     slv_reg0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \slv_reg0_reg[4]\ : in STD_LOGIC;
     \slv_reg0_reg[4]_0\ : in STD_LOGIC;
-    p_1_in18_in : in STD_LOGIC;
+    p_0_in : in STD_LOGIC;
     \slv_reg0_reg[4]_1\ : in STD_LOGIC;
     \slv_reg0_reg[4]_2\ : in STD_LOGIC;
     slv_reg01 : in STD_LOGIC;
@@ -24670,6 +24669,9 @@ architecture STRUCTURE of \test_axi_sha256_0_0_reg_delay__parameterized1\ is
   attribute srl_bus_name of \delay_reg[1][0]_srl2\ : label is "\inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/done_control_delay/delay_reg[1] ";
   attribute srl_name : string;
   attribute srl_name of \delay_reg[1][0]_srl2\ : label is "\inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/done_control_delay/delay_reg[1][0]_srl2 ";
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of s00_sha256_irq_INST_0 : label is "soft_lutpair46";
+  attribute SOFT_HLUTNM of \slv_reg0[4]_i_3\ : label is "soft_lutpair46";
 begin
 \delay_reg[1][0]_srl2\: unisim.vcomponents.SRL16E
      port map (
@@ -24703,6 +24705,15 @@ begin
       Q => sha256_block_done,
       R => '0'
     );
+s00_sha256_irq_INST_0: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"E"
+    )
+        port map (
+      I0 => p_0_in,
+      I1 => sha256_block_done,
+      O => s00_sha256_irq
+    );
 \slv_reg0[3]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E4FFFFFFE400F0F0"
@@ -24713,7 +24724,7 @@ begin
       I2 => sha256_block_done,
       I3 => slv_reg0(0),
       I4 => \slv_reg0_reg[4]\,
-      I5 => p_1_in18_in,
+      I5 => p_0_in,
       O => \axi_awaddr_reg[6]_0\
     );
 \slv_reg0[3]_i_2\: unisim.vcomponents.LUT6
@@ -24760,8 +24771,8 @@ begin
       INIT => X"8"
     )
         port map (
-      I0 => sha256_block_done,
-      I1 => CO(0),
+      I0 => CO(0),
+      I1 => sha256_block_done,
       O => sha256_hash_done
     );
 end STRUCTURE;
@@ -25208,64 +25219,64 @@ architecture STRUCTURE of test_axi_sha256_0_0_scheduler is
   attribute srl_bus_name of \cir_buf_reg[5][9]_srl4\ : label is "\inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/sch_inst/cir_buf_reg[5] ";
   attribute srl_name of \cir_buf_reg[5][9]_srl4\ : label is "\inst/axi_sha256_v1_0_S00_AXI_inst/axi_sha256/sch_inst/cir_buf_reg[5][9]_srl4 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_10\ : label is "soft_lutpair172";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_11\ : label is "soft_lutpair170";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_12\ : label is "soft_lutpair171";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_13\ : label is "soft_lutpair169";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_14\ : label is "soft_lutpair170";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_15\ : label is "soft_lutpair173";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_16\ : label is "soft_lutpair172";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_9\ : label is "soft_lutpair171";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_10\ : label is "soft_lutpair176";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_11\ : label is "soft_lutpair174";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_12\ : label is "soft_lutpair175";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_13\ : label is "soft_lutpair173";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_14\ : label is "soft_lutpair174";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_15\ : label is "soft_lutpair177";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_16\ : label is "soft_lutpair176";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_9\ : label is "soft_lutpair175";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_10\ : label is "soft_lutpair180";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_11\ : label is "soft_lutpair178";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_12\ : label is "soft_lutpair179";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_13\ : label is "soft_lutpair177";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_14\ : label is "soft_lutpair178";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_15\ : label is "soft_lutpair167";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_16\ : label is "soft_lutpair180";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_9\ : label is "soft_lutpair179";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_10\ : label is "soft_lutpair184";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_11\ : label is "soft_lutpair181";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_12\ : label is "soft_lutpair183";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_13\ : label is "soft_lutpair167";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_14\ : label is "soft_lutpair181";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_15\ : label is "soft_lutpair185";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_16\ : label is "soft_lutpair184";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_9\ : label is "soft_lutpair183";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_10\ : label is "soft_lutpair188";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_11\ : label is "soft_lutpair186";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_12\ : label is "soft_lutpair182";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_13\ : label is "soft_lutpair185";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_14\ : label is "soft_lutpair186";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_15\ : label is "soft_lutpair187";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_16\ : label is "soft_lutpair188";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_9\ : label is "soft_lutpair182";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_10\ : label is "soft_lutpair189";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_11\ : label is "soft_lutpair190";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_12\ : label is "soft_lutpair191";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_13\ : label is "soft_lutpair187";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_14\ : label is "soft_lutpair190";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_15\ : label is "soft_lutpair192";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_16\ : label is "soft_lutpair189";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_9\ : label is "soft_lutpair191";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_10\ : label is "soft_lutpair192";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_11\ : label is "soft_lutpair193";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_15\ : label is "soft_lutpair194";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_8\ : label is "soft_lutpair193";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_9\ : label is "soft_lutpair194";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_10\ : label is "soft_lutpair166";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_12\ : label is "soft_lutpair169";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_13\ : label is "soft_lutpair168";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_14\ : label is "soft_lutpair166";
-  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_9\ : label is "soft_lutpair168";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_10\ : label is "soft_lutpair173";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_11\ : label is "soft_lutpair171";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_12\ : label is "soft_lutpair172";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_13\ : label is "soft_lutpair170";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_14\ : label is "soft_lutpair171";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_15\ : label is "soft_lutpair174";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_16\ : label is "soft_lutpair173";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__0_i_9\ : label is "soft_lutpair172";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_10\ : label is "soft_lutpair177";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_11\ : label is "soft_lutpair175";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_12\ : label is "soft_lutpair176";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_13\ : label is "soft_lutpair174";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_14\ : label is "soft_lutpair175";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_15\ : label is "soft_lutpair178";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_16\ : label is "soft_lutpair177";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__1_i_9\ : label is "soft_lutpair176";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_10\ : label is "soft_lutpair181";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_11\ : label is "soft_lutpair179";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_12\ : label is "soft_lutpair180";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_13\ : label is "soft_lutpair178";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_14\ : label is "soft_lutpair179";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_15\ : label is "soft_lutpair168";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_16\ : label is "soft_lutpair181";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__2_i_9\ : label is "soft_lutpair180";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_10\ : label is "soft_lutpair185";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_11\ : label is "soft_lutpair182";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_12\ : label is "soft_lutpair184";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_13\ : label is "soft_lutpair168";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_14\ : label is "soft_lutpair182";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_15\ : label is "soft_lutpair186";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_16\ : label is "soft_lutpair185";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__3_i_9\ : label is "soft_lutpair184";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_10\ : label is "soft_lutpair189";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_11\ : label is "soft_lutpair187";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_12\ : label is "soft_lutpair183";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_13\ : label is "soft_lutpair186";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_14\ : label is "soft_lutpair187";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_15\ : label is "soft_lutpair188";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_16\ : label is "soft_lutpair189";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__4_i_9\ : label is "soft_lutpair183";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_10\ : label is "soft_lutpair190";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_11\ : label is "soft_lutpair191";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_12\ : label is "soft_lutpair192";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_13\ : label is "soft_lutpair188";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_14\ : label is "soft_lutpair191";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_15\ : label is "soft_lutpair193";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_16\ : label is "soft_lutpair190";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__5_i_9\ : label is "soft_lutpair192";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_10\ : label is "soft_lutpair193";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_11\ : label is "soft_lutpair194";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_15\ : label is "soft_lutpair195";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_8\ : label is "soft_lutpair194";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry__6_i_9\ : label is "soft_lutpair195";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_10\ : label is "soft_lutpair167";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_12\ : label is "soft_lutpair170";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_13\ : label is "soft_lutpair169";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_14\ : label is "soft_lutpair167";
+  attribute SOFT_HLUTNM of \sch_calc__2_carry_i_9\ : label is "soft_lutpair169";
 begin
   Q(30 downto 0) <= \^q\(30 downto 0);
 \cir_buf_reg[0][0]\: unisim.vcomponents.FDRE
@@ -29257,14 +29268,15 @@ entity test_axi_sha256_0_0_sha256_update is
     \hash7_reg[31]\ : out STD_LOGIC_VECTOR ( 31 downto 0 );
     \axi_awaddr_reg[6]\ : out STD_LOGIC;
     \axi_awaddr_reg[6]_0\ : out STD_LOGIC;
+    s00_sha256_irq : out STD_LOGIC;
     CO : out STD_LOGIC_VECTOR ( 0 to 0 );
     s00_axi_aclk : in STD_LOGIC;
-    p_0_in : in STD_LOGIC_VECTOR ( 61 downto 0 );
+    sha256_msg_size : in STD_LOGIC_VECTOR ( 63 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     slv_reg0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \slv_reg0_reg[4]\ : in STD_LOGIC;
     \slv_reg0_reg[4]_0\ : in STD_LOGIC;
-    p_1_in18_in : in STD_LOGIC;
+    p_0_in : in STD_LOGIC;
     \slv_reg0_reg[4]_1\ : in STD_LOGIC;
     \slv_reg0_reg[4]_2\ : in STD_LOGIC;
     slv_reg01 : in STD_LOGIC;
@@ -29291,7 +29303,6 @@ entity test_axi_sha256_0_0_sha256_update is
     \w_in_reg_reg[7]_i_2_1\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     \w_in_reg_reg[7]_i_2_2\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
     S : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \cir_buf_reg[0][15]\ : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \pad_start_carry__4\ : in STD_LOGIC_VECTOR ( 58 downto 0 );
     p_2_in : in STD_LOGIC
   );
@@ -30093,18 +30104,18 @@ architecture STRUCTURE of test_axi_sha256_0_0_sha256_update is
   signal \NLW_slv_reg0_reg[4]_i_8_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_slv_reg0_reg[4]_i_9_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \round_counter[1]_i_1\ : label is "soft_lutpair198";
-  attribute SOFT_HLUTNM of \round_counter[2]_i_1\ : label is "soft_lutpair198";
-  attribute SOFT_HLUTNM of \round_counter[3]_i_1\ : label is "soft_lutpair197";
-  attribute SOFT_HLUTNM of \round_counter[4]_i_1\ : label is "soft_lutpair195";
+  attribute SOFT_HLUTNM of \round_counter[1]_i_1\ : label is "soft_lutpair199";
+  attribute SOFT_HLUTNM of \round_counter[2]_i_1\ : label is "soft_lutpair199";
+  attribute SOFT_HLUTNM of \round_counter[3]_i_1\ : label is "soft_lutpair198";
+  attribute SOFT_HLUTNM of \round_counter[4]_i_1\ : label is "soft_lutpair196";
   attribute ORIG_CELL_NAME : string;
   attribute ORIG_CELL_NAME of \round_counter_reg[0]\ : label is "round_counter_reg[0]";
   attribute ORIG_CELL_NAME of \round_counter_reg[0]_rep\ : label is "round_counter_reg[0]";
   attribute ORIG_CELL_NAME of \round_counter_reg[0]_rep__0\ : label is "round_counter_reg[0]";
-  attribute SOFT_HLUTNM of \state[1]_i_1\ : label is "soft_lutpair196";
-  attribute SOFT_HLUTNM of \state[9]_i_11\ : label is "soft_lutpair196";
-  attribute SOFT_HLUTNM of \state[9]_i_13\ : label is "soft_lutpair195";
-  attribute SOFT_HLUTNM of \state[9]_i_14\ : label is "soft_lutpair197";
+  attribute SOFT_HLUTNM of \state[1]_i_1\ : label is "soft_lutpair197";
+  attribute SOFT_HLUTNM of \state[9]_i_11\ : label is "soft_lutpair197";
+  attribute SOFT_HLUTNM of \state[9]_i_13\ : label is "soft_lutpair196";
+  attribute SOFT_HLUTNM of \state[9]_i_14\ : label is "soft_lutpair198";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \state_reg[0]\ : label is "STATE_INIT1:0100000000,STATE_COMP_IMD_HASH:0000001000,STATE_INIT0:0010000000,STATE_START:0001000000,STATE_ROUND_CALC:0000000010,STATE_OF_PAD:1000000000,STATE_IDLE:0000010000,STATE_DONE:0000100000,STATE_PREPROC_COMP:0000000001";
   attribute FSM_ENCODED_STATES of \state_reg[1]\ : label is "STATE_INIT1:0100000000,STATE_COMP_IMD_HASH:0000001000,STATE_INIT0:0010000000,STATE_START:0001000000,STATE_ROUND_CALC:0000000010,STATE_OF_PAD:1000000000,STATE_IDLE:0000010000,STATE_DONE:0000100000,STATE_PREPROC_COMP:0000000001";
@@ -31355,9 +31366,10 @@ done_control_delay: entity work.\test_axi_sha256_0_0_reg_delay__parameterized1\
       \delay_reg[2][0]__0_0\(2) => \state__0\(3),
       \delay_reg[2][0]__0_0\(1 downto 0) => \state__0\(1 downto 0),
       \delay_reg[2][0]__0_1\ => pad_inst_n_5,
-      p_1_in18_in => p_1_in18_in,
+      p_0_in => p_0_in,
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_wstrb(0) => s00_axi_wstrb(0),
+      s00_sha256_irq => s00_sha256_irq,
       slv_reg0(1 downto 0) => slv_reg0(1 downto 0),
       slv_reg01 => slv_reg01,
       slv_reg0121_out => slv_reg0121_out,
@@ -31881,12 +31893,10 @@ pad_inst: entity work.test_axi_sha256_0_0_padder
       Q(2) => pad_inst_n_0,
       Q(1) => pad_inst_n_1,
       Q(0) => pad_inst_n_2,
-      \cir_buf_reg[0][15]\(1 downto 0) => \cir_buf_reg[0][15]\(1 downto 0),
       \cir_buf_reg[0][7]\(0) => sch_control_delays_n_1,
       \cur_block_reg_reg[54]_0\(54 downto 53) => sha256_cur_block(54 downto 53),
       \cur_block_reg_reg[54]_0\(52 downto 0) => \^cur_block_reg[52]_0\(52 downto 0),
       en_pad => en_pad,
-      p_0_in(61 downto 0) => p_0_in(61 downto 0),
       pad_start_carry_0 => \round_counter_reg[0]_rep__0_n_0\,
       \pad_start_carry__4_0\(58 downto 0) => \pad_start_carry__4\(58 downto 0),
       reset_round_counter => reset_round_counter,
@@ -31895,6 +31905,7 @@ pad_inst: entity work.test_axi_sha256_0_0_padder
       s00_axi_aclk => s00_axi_aclk,
       sch_calc(31 downto 0) => sch_calc(31 downto 0),
       sha256_big_endian_msg => sha256_big_endian_msg,
+      sha256_msg_size(63 downto 0) => sha256_msg_size(63 downto 0),
       \state_reg[1]_0\ => pad_inst_n_7,
       \state_reg[1]_1\ => kval_addr_delay_inst_n_32,
       \state_reg[2]_0\ => pad_inst_n_9,
@@ -32157,9 +32168,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
       INIT => X"04"
     )
         port map (
-      I0 => p_0_in(58),
+      I0 => sha256_msg_size(60),
       I1 => sha256_cur_block(54),
-      I2 => p_0_in(59),
+      I2 => sha256_msg_size(61),
       O => \slv_reg0[4]_i_10_n_0\
     );
 \slv_reg0[4]_i_11\: unisim.vcomponents.LUT4
@@ -32168,8 +32179,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(52),
-      I1 => p_0_in(56),
-      I2 => p_0_in(57),
+      I1 => sha256_msg_size(58),
+      I2 => sha256_msg_size(59),
       I3 => sha256_cur_block(53),
       O => \slv_reg0[4]_i_11_n_0\
     );
@@ -32179,8 +32190,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => sha256_cur_block(54),
-      I1 => p_0_in(58),
-      I2 => p_0_in(59),
+      I1 => sha256_msg_size(60),
+      I2 => sha256_msg_size(61),
       O => \slv_reg0[4]_i_13_n_0\
     );
 \slv_reg0[4]_i_14\: unisim.vcomponents.LUT4
@@ -32189,9 +32200,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(52),
-      I1 => p_0_in(56),
+      I1 => sha256_msg_size(58),
       I2 => sha256_cur_block(53),
-      I3 => p_0_in(57),
+      I3 => sha256_msg_size(59),
       O => \slv_reg0[4]_i_14_n_0\
     );
 \slv_reg0[4]_i_16\: unisim.vcomponents.LUT4
@@ -32200,8 +32211,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(50),
-      I1 => p_0_in(54),
-      I2 => p_0_in(55),
+      I1 => sha256_msg_size(56),
+      I2 => sha256_msg_size(57),
       I3 => \^cur_block_reg[52]_0\(51),
       O => \slv_reg0[4]_i_16_n_0\
     );
@@ -32211,8 +32222,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(48),
-      I1 => p_0_in(52),
-      I2 => p_0_in(53),
+      I1 => sha256_msg_size(54),
+      I2 => sha256_msg_size(55),
       I3 => \^cur_block_reg[52]_0\(49),
       O => \slv_reg0[4]_i_17_n_0\
     );
@@ -32222,8 +32233,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(46),
-      I1 => p_0_in(50),
-      I2 => p_0_in(51),
+      I1 => sha256_msg_size(52),
+      I2 => sha256_msg_size(53),
       I3 => \^cur_block_reg[52]_0\(47),
       O => \slv_reg0[4]_i_18_n_0\
     );
@@ -32233,8 +32244,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(44),
-      I1 => p_0_in(48),
-      I2 => p_0_in(49),
+      I1 => sha256_msg_size(50),
+      I2 => sha256_msg_size(51),
       I3 => \^cur_block_reg[52]_0\(45),
       O => \slv_reg0[4]_i_19_n_0\
     );
@@ -32244,9 +32255,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(50),
-      I1 => p_0_in(54),
+      I1 => sha256_msg_size(56),
       I2 => \^cur_block_reg[52]_0\(51),
-      I3 => p_0_in(55),
+      I3 => sha256_msg_size(57),
       O => \slv_reg0[4]_i_20_n_0\
     );
 \slv_reg0[4]_i_21\: unisim.vcomponents.LUT4
@@ -32255,9 +32266,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(48),
-      I1 => p_0_in(52),
+      I1 => sha256_msg_size(54),
       I2 => \^cur_block_reg[52]_0\(49),
-      I3 => p_0_in(53),
+      I3 => sha256_msg_size(55),
       O => \slv_reg0[4]_i_21_n_0\
     );
 \slv_reg0[4]_i_22\: unisim.vcomponents.LUT4
@@ -32266,9 +32277,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(46),
-      I1 => p_0_in(50),
+      I1 => sha256_msg_size(52),
       I2 => \^cur_block_reg[52]_0\(47),
-      I3 => p_0_in(51),
+      I3 => sha256_msg_size(53),
       O => \slv_reg0[4]_i_22_n_0\
     );
 \slv_reg0[4]_i_23\: unisim.vcomponents.LUT4
@@ -32277,9 +32288,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(44),
-      I1 => p_0_in(48),
+      I1 => sha256_msg_size(50),
       I2 => \^cur_block_reg[52]_0\(45),
-      I3 => p_0_in(49),
+      I3 => sha256_msg_size(51),
       O => \slv_reg0[4]_i_23_n_0\
     );
 \slv_reg0[4]_i_25\: unisim.vcomponents.LUT4
@@ -32288,8 +32299,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(42),
-      I1 => p_0_in(46),
-      I2 => p_0_in(47),
+      I1 => sha256_msg_size(48),
+      I2 => sha256_msg_size(49),
       I3 => \^cur_block_reg[52]_0\(43),
       O => \slv_reg0[4]_i_25_n_0\
     );
@@ -32299,8 +32310,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(40),
-      I1 => p_0_in(44),
-      I2 => p_0_in(45),
+      I1 => sha256_msg_size(46),
+      I2 => sha256_msg_size(47),
       I3 => \^cur_block_reg[52]_0\(41),
       O => \slv_reg0[4]_i_26_n_0\
     );
@@ -32310,8 +32321,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(38),
-      I1 => p_0_in(42),
-      I2 => p_0_in(43),
+      I1 => sha256_msg_size(44),
+      I2 => sha256_msg_size(45),
       I3 => \^cur_block_reg[52]_0\(39),
       O => \slv_reg0[4]_i_27_n_0\
     );
@@ -32321,8 +32332,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(36),
-      I1 => p_0_in(40),
-      I2 => p_0_in(41),
+      I1 => sha256_msg_size(42),
+      I2 => sha256_msg_size(43),
       I3 => \^cur_block_reg[52]_0\(37),
       O => \slv_reg0[4]_i_28_n_0\
     );
@@ -32332,9 +32343,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(42),
-      I1 => p_0_in(46),
+      I1 => sha256_msg_size(48),
       I2 => \^cur_block_reg[52]_0\(43),
-      I3 => p_0_in(47),
+      I3 => sha256_msg_size(49),
       O => \slv_reg0[4]_i_29_n_0\
     );
 \slv_reg0[4]_i_30\: unisim.vcomponents.LUT4
@@ -32343,9 +32354,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(40),
-      I1 => p_0_in(44),
+      I1 => sha256_msg_size(46),
       I2 => \^cur_block_reg[52]_0\(41),
-      I3 => p_0_in(45),
+      I3 => sha256_msg_size(47),
       O => \slv_reg0[4]_i_30_n_0\
     );
 \slv_reg0[4]_i_31\: unisim.vcomponents.LUT4
@@ -32354,9 +32365,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(38),
-      I1 => p_0_in(42),
+      I1 => sha256_msg_size(44),
       I2 => \^cur_block_reg[52]_0\(39),
-      I3 => p_0_in(43),
+      I3 => sha256_msg_size(45),
       O => \slv_reg0[4]_i_31_n_0\
     );
 \slv_reg0[4]_i_32\: unisim.vcomponents.LUT4
@@ -32365,9 +32376,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(36),
-      I1 => p_0_in(40),
+      I1 => sha256_msg_size(42),
       I2 => \^cur_block_reg[52]_0\(37),
-      I3 => p_0_in(41),
+      I3 => sha256_msg_size(43),
       O => \slv_reg0[4]_i_32_n_0\
     );
 \slv_reg0[4]_i_34\: unisim.vcomponents.LUT4
@@ -32376,8 +32387,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(34),
-      I1 => p_0_in(38),
-      I2 => p_0_in(39),
+      I1 => sha256_msg_size(40),
+      I2 => sha256_msg_size(41),
       I3 => \^cur_block_reg[52]_0\(35),
       O => \slv_reg0[4]_i_34_n_0\
     );
@@ -32387,8 +32398,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(32),
-      I1 => p_0_in(36),
-      I2 => p_0_in(37),
+      I1 => sha256_msg_size(38),
+      I2 => sha256_msg_size(39),
       I3 => \^cur_block_reg[52]_0\(33),
       O => \slv_reg0[4]_i_35_n_0\
     );
@@ -32398,8 +32409,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(30),
-      I1 => p_0_in(34),
-      I2 => p_0_in(35),
+      I1 => sha256_msg_size(36),
+      I2 => sha256_msg_size(37),
       I3 => \^cur_block_reg[52]_0\(31),
       O => \slv_reg0[4]_i_36_n_0\
     );
@@ -32409,8 +32420,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(28),
-      I1 => p_0_in(32),
-      I2 => p_0_in(33),
+      I1 => sha256_msg_size(34),
+      I2 => sha256_msg_size(35),
       I3 => \^cur_block_reg[52]_0\(29),
       O => \slv_reg0[4]_i_37_n_0\
     );
@@ -32420,9 +32431,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(34),
-      I1 => p_0_in(38),
+      I1 => sha256_msg_size(40),
       I2 => \^cur_block_reg[52]_0\(35),
-      I3 => p_0_in(39),
+      I3 => sha256_msg_size(41),
       O => \slv_reg0[4]_i_38_n_0\
     );
 \slv_reg0[4]_i_39\: unisim.vcomponents.LUT4
@@ -32431,9 +32442,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(32),
-      I1 => p_0_in(36),
+      I1 => sha256_msg_size(38),
       I2 => \^cur_block_reg[52]_0\(33),
-      I3 => p_0_in(37),
+      I3 => sha256_msg_size(39),
       O => \slv_reg0[4]_i_39_n_0\
     );
 \slv_reg0[4]_i_40\: unisim.vcomponents.LUT4
@@ -32442,9 +32453,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(30),
-      I1 => p_0_in(34),
+      I1 => sha256_msg_size(36),
       I2 => \^cur_block_reg[52]_0\(31),
-      I3 => p_0_in(35),
+      I3 => sha256_msg_size(37),
       O => \slv_reg0[4]_i_40_n_0\
     );
 \slv_reg0[4]_i_41\: unisim.vcomponents.LUT4
@@ -32453,9 +32464,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(28),
-      I1 => p_0_in(32),
+      I1 => sha256_msg_size(34),
       I2 => \^cur_block_reg[52]_0\(29),
-      I3 => p_0_in(33),
+      I3 => sha256_msg_size(35),
       O => \slv_reg0[4]_i_41_n_0\
     );
 \slv_reg0[4]_i_43\: unisim.vcomponents.LUT4
@@ -32464,8 +32475,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(26),
-      I1 => p_0_in(30),
-      I2 => p_0_in(31),
+      I1 => sha256_msg_size(32),
+      I2 => sha256_msg_size(33),
       I3 => \^cur_block_reg[52]_0\(27),
       O => \slv_reg0[4]_i_43_n_0\
     );
@@ -32475,8 +32486,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(24),
-      I1 => p_0_in(28),
-      I2 => p_0_in(29),
+      I1 => sha256_msg_size(30),
+      I2 => sha256_msg_size(31),
       I3 => \^cur_block_reg[52]_0\(25),
       O => \slv_reg0[4]_i_44_n_0\
     );
@@ -32486,8 +32497,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(22),
-      I1 => p_0_in(26),
-      I2 => p_0_in(27),
+      I1 => sha256_msg_size(28),
+      I2 => sha256_msg_size(29),
       I3 => \^cur_block_reg[52]_0\(23),
       O => \slv_reg0[4]_i_45_n_0\
     );
@@ -32497,8 +32508,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(20),
-      I1 => p_0_in(24),
-      I2 => p_0_in(25),
+      I1 => sha256_msg_size(26),
+      I2 => sha256_msg_size(27),
       I3 => \^cur_block_reg[52]_0\(21),
       O => \slv_reg0[4]_i_46_n_0\
     );
@@ -32508,9 +32519,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(26),
-      I1 => p_0_in(30),
+      I1 => sha256_msg_size(32),
       I2 => \^cur_block_reg[52]_0\(27),
-      I3 => p_0_in(31),
+      I3 => sha256_msg_size(33),
       O => \slv_reg0[4]_i_47_n_0\
     );
 \slv_reg0[4]_i_48\: unisim.vcomponents.LUT4
@@ -32519,9 +32530,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(24),
-      I1 => p_0_in(28),
+      I1 => sha256_msg_size(30),
       I2 => \^cur_block_reg[52]_0\(25),
-      I3 => p_0_in(29),
+      I3 => sha256_msg_size(31),
       O => \slv_reg0[4]_i_48_n_0\
     );
 \slv_reg0[4]_i_49\: unisim.vcomponents.LUT4
@@ -32530,9 +32541,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(22),
-      I1 => p_0_in(26),
+      I1 => sha256_msg_size(28),
       I2 => \^cur_block_reg[52]_0\(23),
-      I3 => p_0_in(27),
+      I3 => sha256_msg_size(29),
       O => \slv_reg0[4]_i_49_n_0\
     );
 \slv_reg0[4]_i_50\: unisim.vcomponents.LUT4
@@ -32541,9 +32552,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(20),
-      I1 => p_0_in(24),
+      I1 => sha256_msg_size(26),
       I2 => \^cur_block_reg[52]_0\(21),
-      I3 => p_0_in(25),
+      I3 => sha256_msg_size(27),
       O => \slv_reg0[4]_i_50_n_0\
     );
 \slv_reg0[4]_i_52\: unisim.vcomponents.LUT4
@@ -32552,8 +32563,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(18),
-      I1 => p_0_in(22),
-      I2 => p_0_in(23),
+      I1 => sha256_msg_size(24),
+      I2 => sha256_msg_size(25),
       I3 => \^cur_block_reg[52]_0\(19),
       O => \slv_reg0[4]_i_52_n_0\
     );
@@ -32563,8 +32574,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(16),
-      I1 => p_0_in(20),
-      I2 => p_0_in(21),
+      I1 => sha256_msg_size(22),
+      I2 => sha256_msg_size(23),
       I3 => \^cur_block_reg[52]_0\(17),
       O => \slv_reg0[4]_i_53_n_0\
     );
@@ -32574,8 +32585,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(14),
-      I1 => p_0_in(18),
-      I2 => p_0_in(19),
+      I1 => sha256_msg_size(20),
+      I2 => sha256_msg_size(21),
       I3 => \^cur_block_reg[52]_0\(15),
       O => \slv_reg0[4]_i_54_n_0\
     );
@@ -32585,8 +32596,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(12),
-      I1 => p_0_in(16),
-      I2 => p_0_in(17),
+      I1 => sha256_msg_size(18),
+      I2 => sha256_msg_size(19),
       I3 => \^cur_block_reg[52]_0\(13),
       O => \slv_reg0[4]_i_55_n_0\
     );
@@ -32596,9 +32607,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(18),
-      I1 => p_0_in(22),
+      I1 => sha256_msg_size(24),
       I2 => \^cur_block_reg[52]_0\(19),
-      I3 => p_0_in(23),
+      I3 => sha256_msg_size(25),
       O => \slv_reg0[4]_i_56_n_0\
     );
 \slv_reg0[4]_i_57\: unisim.vcomponents.LUT4
@@ -32607,9 +32618,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(16),
-      I1 => p_0_in(20),
+      I1 => sha256_msg_size(22),
       I2 => \^cur_block_reg[52]_0\(17),
-      I3 => p_0_in(21),
+      I3 => sha256_msg_size(23),
       O => \slv_reg0[4]_i_57_n_0\
     );
 \slv_reg0[4]_i_58\: unisim.vcomponents.LUT4
@@ -32618,9 +32629,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(14),
-      I1 => p_0_in(18),
+      I1 => sha256_msg_size(20),
       I2 => \^cur_block_reg[52]_0\(15),
-      I3 => p_0_in(19),
+      I3 => sha256_msg_size(21),
       O => \slv_reg0[4]_i_58_n_0\
     );
 \slv_reg0[4]_i_59\: unisim.vcomponents.LUT4
@@ -32629,9 +32640,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(12),
-      I1 => p_0_in(16),
+      I1 => sha256_msg_size(18),
       I2 => \^cur_block_reg[52]_0\(13),
-      I3 => p_0_in(17),
+      I3 => sha256_msg_size(19),
       O => \slv_reg0[4]_i_59_n_0\
     );
 \slv_reg0[4]_i_61\: unisim.vcomponents.LUT4
@@ -32640,8 +32651,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(10),
-      I1 => p_0_in(14),
-      I2 => p_0_in(15),
+      I1 => sha256_msg_size(16),
+      I2 => sha256_msg_size(17),
       I3 => \^cur_block_reg[52]_0\(11),
       O => \slv_reg0[4]_i_61_n_0\
     );
@@ -32651,8 +32662,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(8),
-      I1 => p_0_in(12),
-      I2 => p_0_in(13),
+      I1 => sha256_msg_size(14),
+      I2 => sha256_msg_size(15),
       I3 => \^cur_block_reg[52]_0\(9),
       O => \slv_reg0[4]_i_62_n_0\
     );
@@ -32662,8 +32673,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(6),
-      I1 => p_0_in(10),
-      I2 => p_0_in(11),
+      I1 => sha256_msg_size(12),
+      I2 => sha256_msg_size(13),
       I3 => \^cur_block_reg[52]_0\(7),
       O => \slv_reg0[4]_i_63_n_0\
     );
@@ -32673,8 +32684,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(4),
-      I1 => p_0_in(8),
-      I2 => p_0_in(9),
+      I1 => sha256_msg_size(10),
+      I2 => sha256_msg_size(11),
       I3 => \^cur_block_reg[52]_0\(5),
       O => \slv_reg0[4]_i_64_n_0\
     );
@@ -32684,9 +32695,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(10),
-      I1 => p_0_in(14),
+      I1 => sha256_msg_size(16),
       I2 => \^cur_block_reg[52]_0\(11),
-      I3 => p_0_in(15),
+      I3 => sha256_msg_size(17),
       O => \slv_reg0[4]_i_65_n_0\
     );
 \slv_reg0[4]_i_66\: unisim.vcomponents.LUT4
@@ -32695,9 +32706,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(8),
-      I1 => p_0_in(12),
+      I1 => sha256_msg_size(14),
       I2 => \^cur_block_reg[52]_0\(9),
-      I3 => p_0_in(13),
+      I3 => sha256_msg_size(15),
       O => \slv_reg0[4]_i_66_n_0\
     );
 \slv_reg0[4]_i_67\: unisim.vcomponents.LUT4
@@ -32706,9 +32717,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(6),
-      I1 => p_0_in(10),
+      I1 => sha256_msg_size(12),
       I2 => \^cur_block_reg[52]_0\(7),
-      I3 => p_0_in(11),
+      I3 => sha256_msg_size(13),
       O => \slv_reg0[4]_i_67_n_0\
     );
 \slv_reg0[4]_i_68\: unisim.vcomponents.LUT4
@@ -32717,9 +32728,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(4),
-      I1 => p_0_in(8),
+      I1 => sha256_msg_size(10),
       I2 => \^cur_block_reg[52]_0\(5),
-      I3 => p_0_in(9),
+      I3 => sha256_msg_size(11),
       O => \slv_reg0[4]_i_68_n_0\
     );
 \slv_reg0[4]_i_69\: unisim.vcomponents.LUT4
@@ -32728,8 +32739,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(2),
-      I1 => p_0_in(6),
-      I2 => p_0_in(7),
+      I1 => sha256_msg_size(8),
+      I2 => sha256_msg_size(9),
       I3 => \^cur_block_reg[52]_0\(3),
       O => \slv_reg0[4]_i_69_n_0\
     );
@@ -32739,8 +32750,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(0),
-      I1 => p_0_in(4),
-      I2 => p_0_in(5),
+      I1 => sha256_msg_size(6),
+      I2 => sha256_msg_size(7),
       I3 => \^cur_block_reg[52]_0\(1),
       O => \slv_reg0[4]_i_70_n_0\
     );
@@ -32750,8 +32761,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => sha256_block_offset(2),
-      I1 => p_0_in(2),
-      I2 => p_0_in(3),
+      I1 => sha256_msg_size(4),
+      I2 => sha256_msg_size(5),
       I3 => sha256_block_offset(3),
       O => \slv_reg0[4]_i_71_n_0\
     );
@@ -32761,8 +32772,8 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \round_counter_reg[0]_rep__0_n_0\,
-      I1 => p_0_in(0),
-      I2 => p_0_in(1),
+      I1 => sha256_msg_size(2),
+      I2 => sha256_msg_size(3),
       I3 => sha256_block_offset(1),
       O => \slv_reg0[4]_i_72_n_0\
     );
@@ -32772,9 +32783,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(2),
-      I1 => p_0_in(6),
+      I1 => sha256_msg_size(8),
       I2 => \^cur_block_reg[52]_0\(3),
-      I3 => p_0_in(7),
+      I3 => sha256_msg_size(9),
       O => \slv_reg0[4]_i_73_n_0\
     );
 \slv_reg0[4]_i_74\: unisim.vcomponents.LUT4
@@ -32783,9 +32794,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \^cur_block_reg[52]_0\(0),
-      I1 => p_0_in(4),
+      I1 => sha256_msg_size(6),
       I2 => \^cur_block_reg[52]_0\(1),
-      I3 => p_0_in(5),
+      I3 => sha256_msg_size(7),
       O => \slv_reg0[4]_i_74_n_0\
     );
 \slv_reg0[4]_i_75\: unisim.vcomponents.LUT4
@@ -32794,9 +32805,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => sha256_block_offset(2),
-      I1 => p_0_in(2),
+      I1 => sha256_msg_size(4),
       I2 => sha256_block_offset(3),
-      I3 => p_0_in(3),
+      I3 => sha256_msg_size(5),
       O => \slv_reg0[4]_i_75_n_0\
     );
 \slv_reg0[4]_i_76\: unisim.vcomponents.LUT4
@@ -32805,9 +32816,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
     )
         port map (
       I0 => \round_counter_reg[0]_rep__0_n_0\,
-      I1 => p_0_in(0),
+      I1 => sha256_msg_size(2),
       I2 => sha256_block_offset(1),
-      I3 => p_0_in(1),
+      I3 => sha256_msg_size(3),
       O => \slv_reg0[4]_i_76_n_0\
     );
 \slv_reg0_reg[4]_i_15\: unisim.vcomponents.CARRY4
@@ -33010,9 +33021,9 @@ sch_inst: entity work.test_axi_sha256_0_0_scheduler
       INIT => X"00FF0400"
     )
         port map (
-      I0 => p_1_in18_in,
+      I0 => \slv_reg0_reg[4]_0\,
       I1 => p_2_in,
-      I2 => \slv_reg0_reg[4]_0\,
+      I2 => p_0_in,
       I3 => \state__0\(4),
       I4 => \state__0\(8),
       O => \state[9]_i_12_n_0\
@@ -33209,8 +33220,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI is
   port (
-    axi_wready_reg_0 : out STD_LOGIC;
     axi_awready_reg_0 : out STD_LOGIC;
+    axi_wready_reg_0 : out STD_LOGIC;
     axi_arready_reg_0 : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
     aw_en_reg_0 : out STD_LOGIC;
@@ -33220,6 +33231,7 @@ entity test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI is
     p_1_in : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     issue_hash_ack_reset4_in : out STD_LOGIC;
+    s00_sha256_irq : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     axi_bvalid_reg_0 : in STD_LOGIC;
     aw_en_reg_1 : in STD_LOGIC;
@@ -33604,13 +33616,12 @@ architecture STRUCTURE of test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI is
   signal \axi_rdata_reg[9]_i_7_n_0\ : STD_LOGIC;
   signal axi_sha256_n_309 : STD_LOGIC;
   signal axi_sha256_n_310 : STD_LOGIC;
-  signal axi_sha256_n_311 : STD_LOGIC;
+  signal axi_sha256_n_312 : STD_LOGIC;
   signal axi_wready0 : STD_LOGIC;
   signal \^axi_wready_reg_0\ : STD_LOGIC;
   signal \^issue_hash_ack_reset\ : STD_LOGIC;
-  signal p_0_in : STD_LOGIC_VECTOR ( 61 downto 0 );
+  signal p_0_in : STD_LOGIC;
   signal \^p_1_in\ : STD_LOGIC;
-  signal p_1_in18_in : STD_LOGIC;
   signal \p_1_in__0\ : STD_LOGIC_VECTOR ( 31 downto 7 );
   signal p_2_in : STD_LOGIC;
   signal \pad_inst/p_0_in\ : STD_LOGIC_VECTOR ( 61 downto 3 );
@@ -33744,6 +33755,7 @@ architecture STRUCTURE of test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI is
   signal sha256_hash5 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal sha256_hash6 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal sha256_hash7 : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal sha256_msg_size : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal slv_reg0 : STD_LOGIC_VECTOR ( 4 downto 3 );
   signal slv_reg01 : STD_LOGIC;
   signal slv_reg0121_out : STD_LOGIC;
@@ -33816,8 +33828,6 @@ architecture STRUCTURE of test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI is
   signal \slv_reg19[31]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg19[7]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg1[31]_i_2_n_0\ : STD_LOGIC;
-  signal \slv_reg1_reg_n_0_[0]\ : STD_LOGIC;
-  signal \slv_reg1_reg_n_0_[1]\ : STD_LOGIC;
   signal slv_reg20 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \slv_reg20[15]_i_1_n_0\ : STD_LOGIC;
   signal \slv_reg20[23]_i_1_n_0\ : STD_LOGIC;
@@ -33908,28 +33918,28 @@ architecture STRUCTURE of test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI is
   attribute ORIG_CELL_NAME of \axi_araddr_reg[3]\ : label is "axi_araddr_reg[3]";
   attribute ORIG_CELL_NAME of \axi_araddr_reg[3]_rep\ : label is "axi_araddr_reg[3]";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \slv_reg0[0]_i_1\ : label is "soft_lutpair204";
-  attribute SOFT_HLUTNM of \slv_reg0[1]_i_1\ : label is "soft_lutpair204";
-  attribute SOFT_HLUTNM of \slv_reg0[2]_i_2\ : label is "soft_lutpair200";
-  attribute SOFT_HLUTNM of \slv_reg0[2]_i_3\ : label is "soft_lutpair200";
-  attribute SOFT_HLUTNM of \slv_reg0[2]_i_5\ : label is "soft_lutpair208";
-  attribute SOFT_HLUTNM of \slv_reg0[3]_i_3\ : label is "soft_lutpair199";
-  attribute SOFT_HLUTNM of \slv_reg0[3]_i_4\ : label is "soft_lutpair199";
-  attribute SOFT_HLUTNM of \slv_reg0[4]_i_4\ : label is "soft_lutpair201";
-  attribute SOFT_HLUTNM of \slv_reg0[4]_i_6\ : label is "soft_lutpair203";
-  attribute SOFT_HLUTNM of \slv_reg0[4]_i_7\ : label is "soft_lutpair201";
+  attribute SOFT_HLUTNM of \slv_reg0[0]_i_1\ : label is "soft_lutpair206";
+  attribute SOFT_HLUTNM of \slv_reg0[1]_i_1\ : label is "soft_lutpair206";
+  attribute SOFT_HLUTNM of \slv_reg0[2]_i_2\ : label is "soft_lutpair201";
+  attribute SOFT_HLUTNM of \slv_reg0[2]_i_3\ : label is "soft_lutpair201";
+  attribute SOFT_HLUTNM of \slv_reg0[2]_i_5\ : label is "soft_lutpair204";
+  attribute SOFT_HLUTNM of \slv_reg0[3]_i_3\ : label is "soft_lutpair200";
+  attribute SOFT_HLUTNM of \slv_reg0[3]_i_4\ : label is "soft_lutpair200";
+  attribute SOFT_HLUTNM of \slv_reg0[4]_i_4\ : label is "soft_lutpair202";
+  attribute SOFT_HLUTNM of \slv_reg0[4]_i_6\ : label is "soft_lutpair205";
+  attribute SOFT_HLUTNM of \slv_reg0[4]_i_7\ : label is "soft_lutpair202";
   attribute ORIG_CELL_NAME of \slv_reg0_reg[1]\ : label is "slv_reg0_reg[1]";
   attribute ORIG_CELL_NAME of \slv_reg0_reg[1]_rep\ : label is "slv_reg0_reg[1]";
   attribute SOFT_HLUTNM of \slv_reg10[31]_i_2\ : label is "soft_lutpair203";
-  attribute SOFT_HLUTNM of \slv_reg12[31]_i_2\ : label is "soft_lutpair202";
-  attribute SOFT_HLUTNM of \slv_reg13[31]_i_2\ : label is "soft_lutpair205";
-  attribute SOFT_HLUTNM of \slv_reg14[31]_i_2\ : label is "soft_lutpair206";
-  attribute SOFT_HLUTNM of \slv_reg15[31]_i_2\ : label is "soft_lutpair202";
-  attribute SOFT_HLUTNM of \slv_reg1[31]_i_2\ : label is "soft_lutpair205";
-  attribute SOFT_HLUTNM of \slv_reg5[31]_i_2\ : label is "soft_lutpair208";
-  attribute SOFT_HLUTNM of \slv_reg6[31]_i_2\ : label is "soft_lutpair206";
-  attribute SOFT_HLUTNM of \slv_reg7[31]_i_2\ : label is "soft_lutpair207";
-  attribute SOFT_HLUTNM of \slv_reg9[31]_i_2\ : label is "soft_lutpair207";
+  attribute SOFT_HLUTNM of \slv_reg12[31]_i_2\ : label is "soft_lutpair203";
+  attribute SOFT_HLUTNM of \slv_reg13[31]_i_2\ : label is "soft_lutpair207";
+  attribute SOFT_HLUTNM of \slv_reg14[31]_i_2\ : label is "soft_lutpair208";
+  attribute SOFT_HLUTNM of \slv_reg15[31]_i_2\ : label is "soft_lutpair204";
+  attribute SOFT_HLUTNM of \slv_reg1[31]_i_2\ : label is "soft_lutpair207";
+  attribute SOFT_HLUTNM of \slv_reg5[31]_i_2\ : label is "soft_lutpair209";
+  attribute SOFT_HLUTNM of \slv_reg6[31]_i_2\ : label is "soft_lutpair208";
+  attribute SOFT_HLUTNM of \slv_reg7[31]_i_2\ : label is "soft_lutpair209";
+  attribute SOFT_HLUTNM of \slv_reg9[31]_i_2\ : label is "soft_lutpair205";
 begin
   aw_en_reg_0 <= \^aw_en_reg_0\;
   axi_arready_reg_0 <= \^axi_arready_reg_0\;
@@ -34204,9 +34214,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[0]\,
-      I1 => p_0_in(30),
+      I1 => sha256_msg_size(32),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \slv_reg1_reg_n_0_[0]\,
+      I3 => sha256_msg_size(0),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
       I5 => \slv_reg0_reg_n_0_[0]\,
       O => \axi_rdata[0]_i_9_n_0\
@@ -34320,10 +34330,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[10]\,
-      I1 => p_0_in(40),
+      I1 => sha256_msg_size(42),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(8),
+      I4 => sha256_msg_size(10),
       O => \axi_rdata[10]_i_9_n_0\
     );
 \axi_rdata[11]_i_1\: unisim.vcomponents.LUT6
@@ -34435,10 +34445,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[11]\,
-      I1 => p_0_in(41),
+      I1 => sha256_msg_size(43),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(9),
+      I4 => sha256_msg_size(11),
       O => \axi_rdata[11]_i_9_n_0\
     );
 \axi_rdata[12]_i_1\: unisim.vcomponents.LUT6
@@ -34550,10 +34560,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[12]\,
-      I1 => p_0_in(42),
+      I1 => sha256_msg_size(44),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(10),
+      I4 => sha256_msg_size(12),
       O => \axi_rdata[12]_i_9_n_0\
     );
 \axi_rdata[13]_i_1\: unisim.vcomponents.LUT6
@@ -34665,10 +34675,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[13]\,
-      I1 => p_0_in(43),
+      I1 => sha256_msg_size(45),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(11),
+      I4 => sha256_msg_size(13),
       O => \axi_rdata[13]_i_9_n_0\
     );
 \axi_rdata[14]_i_1\: unisim.vcomponents.LUT6
@@ -34780,10 +34790,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[14]\,
-      I1 => p_0_in(44),
+      I1 => sha256_msg_size(46),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(12),
+      I4 => sha256_msg_size(14),
       O => \axi_rdata[14]_i_9_n_0\
     );
 \axi_rdata[15]_i_1\: unisim.vcomponents.LUT6
@@ -34895,10 +34905,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[15]\,
-      I1 => p_0_in(45),
+      I1 => sha256_msg_size(47),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(13),
+      I4 => sha256_msg_size(15),
       O => \axi_rdata[15]_i_9_n_0\
     );
 \axi_rdata[16]_i_1\: unisim.vcomponents.LUT6
@@ -35010,10 +35020,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[16]\,
-      I1 => p_0_in(46),
+      I1 => sha256_msg_size(48),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(14),
+      I4 => sha256_msg_size(16),
       O => \axi_rdata[16]_i_9_n_0\
     );
 \axi_rdata[17]_i_1\: unisim.vcomponents.LUT6
@@ -35125,10 +35135,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[17]\,
-      I1 => p_0_in(47),
+      I1 => sha256_msg_size(49),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(15),
+      I4 => sha256_msg_size(17),
       O => \axi_rdata[17]_i_9_n_0\
     );
 \axi_rdata[18]_i_1\: unisim.vcomponents.LUT6
@@ -35240,10 +35250,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[18]\,
-      I1 => p_0_in(48),
+      I1 => sha256_msg_size(50),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(16),
+      I4 => sha256_msg_size(18),
       O => \axi_rdata[18]_i_9_n_0\
     );
 \axi_rdata[19]_i_1\: unisim.vcomponents.LUT6
@@ -35355,10 +35365,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[19]\,
-      I1 => p_0_in(49),
+      I1 => sha256_msg_size(51),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(17),
+      I4 => sha256_msg_size(19),
       O => \axi_rdata[19]_i_9_n_0\
     );
 \axi_rdata[1]_i_1\: unisim.vcomponents.LUT6
@@ -35470,9 +35480,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[1]\,
-      I1 => p_0_in(31),
+      I1 => sha256_msg_size(33),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => \slv_reg1_reg_n_0_[1]\,
+      I3 => sha256_msg_size(1),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
       I5 => sha256_big_endian_msg,
       O => \axi_rdata[1]_i_9_n_0\
@@ -35586,10 +35596,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[20]\,
-      I1 => p_0_in(50),
+      I1 => sha256_msg_size(52),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(18),
+      I4 => sha256_msg_size(20),
       O => \axi_rdata[20]_i_9_n_0\
     );
 \axi_rdata[21]_i_1\: unisim.vcomponents.LUT6
@@ -35700,10 +35710,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[21]\,
-      I1 => p_0_in(51),
+      I1 => sha256_msg_size(53),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(19),
+      I4 => sha256_msg_size(21),
       O => \axi_rdata[21]_i_9_n_0\
     );
 \axi_rdata[22]_i_1\: unisim.vcomponents.LUT6
@@ -35814,10 +35824,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[22]\,
-      I1 => p_0_in(52),
+      I1 => sha256_msg_size(54),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(20),
+      I4 => sha256_msg_size(22),
       O => \axi_rdata[22]_i_9_n_0\
     );
 \axi_rdata[23]_i_1\: unisim.vcomponents.LUT6
@@ -35928,10 +35938,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[23]\,
-      I1 => p_0_in(53),
+      I1 => sha256_msg_size(55),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(21),
+      I4 => sha256_msg_size(23),
       O => \axi_rdata[23]_i_9_n_0\
     );
 \axi_rdata[24]_i_1\: unisim.vcomponents.LUT6
@@ -36042,10 +36052,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[24]\,
-      I1 => p_0_in(54),
+      I1 => sha256_msg_size(56),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(22),
+      I4 => sha256_msg_size(24),
       O => \axi_rdata[24]_i_9_n_0\
     );
 \axi_rdata[25]_i_1\: unisim.vcomponents.LUT6
@@ -36156,10 +36166,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[25]\,
-      I1 => p_0_in(55),
+      I1 => sha256_msg_size(57),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(23),
+      I4 => sha256_msg_size(25),
       O => \axi_rdata[25]_i_9_n_0\
     );
 \axi_rdata[26]_i_1\: unisim.vcomponents.LUT6
@@ -36270,10 +36280,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[26]\,
-      I1 => p_0_in(56),
+      I1 => sha256_msg_size(58),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(24),
+      I4 => sha256_msg_size(26),
       O => \axi_rdata[26]_i_9_n_0\
     );
 \axi_rdata[27]_i_1\: unisim.vcomponents.LUT6
@@ -36384,10 +36394,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[27]\,
-      I1 => p_0_in(57),
+      I1 => sha256_msg_size(59),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(25),
+      I4 => sha256_msg_size(27),
       O => \axi_rdata[27]_i_9_n_0\
     );
 \axi_rdata[28]_i_1\: unisim.vcomponents.LUT6
@@ -36498,10 +36508,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[28]\,
-      I1 => p_0_in(58),
+      I1 => sha256_msg_size(60),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(26),
+      I4 => sha256_msg_size(28),
       O => \axi_rdata[28]_i_9_n_0\
     );
 \axi_rdata[29]_i_1\: unisim.vcomponents.LUT6
@@ -36612,10 +36622,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[29]\,
-      I1 => p_0_in(59),
+      I1 => sha256_msg_size(61),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(27),
+      I4 => sha256_msg_size(29),
       O => \axi_rdata[29]_i_9_n_0\
     );
 \axi_rdata[2]_i_1\: unisim.vcomponents.LUT6
@@ -36727,9 +36737,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[2]\,
-      I1 => p_0_in(32),
+      I1 => sha256_msg_size(34),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => p_0_in(0),
+      I3 => sha256_msg_size(2),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
       I5 => p_2_in,
       O => \axi_rdata[2]_i_9_n_0\
@@ -36842,10 +36852,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[30]\,
-      I1 => p_0_in(60),
+      I1 => sha256_msg_size(62),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(28),
+      I4 => sha256_msg_size(30),
       O => \axi_rdata[30]_i_9_n_0\
     );
 \axi_rdata[31]_i_1\: unisim.vcomponents.LUT3
@@ -36877,10 +36887,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[31]\,
-      I1 => p_0_in(61),
+      I1 => sha256_msg_size(63),
       I2 => sel0(1),
       I3 => sel0(0),
-      I4 => p_0_in(29),
+      I4 => sha256_msg_size(31),
       O => \axi_rdata[31]_i_12_n_0\
     );
 \axi_rdata[31]_i_13\: unisim.vcomponents.LUT5
@@ -37100,11 +37110,11 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[3]\,
-      I1 => p_0_in(33),
+      I1 => sha256_msg_size(35),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => p_0_in(1),
+      I3 => sha256_msg_size(3),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
-      I5 => p_1_in18_in,
+      I5 => p_0_in,
       O => \axi_rdata[3]_i_9_n_0\
     );
 \axi_rdata[4]_i_1\: unisim.vcomponents.LUT6
@@ -37216,9 +37226,9 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[4]\,
-      I1 => p_0_in(34),
+      I1 => sha256_msg_size(36),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
-      I3 => p_0_in(2),
+      I3 => sha256_msg_size(4),
       I4 => \axi_araddr_reg[2]_rep_n_0\,
       I5 => \^p_1_in\,
       O => \axi_rdata[4]_i_9_n_0\
@@ -37332,10 +37342,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[5]\,
-      I1 => p_0_in(35),
+      I1 => sha256_msg_size(37),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(3),
+      I4 => sha256_msg_size(5),
       O => \axi_rdata[5]_i_9_n_0\
     );
 \axi_rdata[6]_i_1\: unisim.vcomponents.LUT6
@@ -37447,10 +37457,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[6]\,
-      I1 => p_0_in(36),
+      I1 => sha256_msg_size(38),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(4),
+      I4 => sha256_msg_size(6),
       O => \axi_rdata[6]_i_9_n_0\
     );
 \axi_rdata[7]_i_1\: unisim.vcomponents.LUT6
@@ -37562,10 +37572,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[7]\,
-      I1 => p_0_in(37),
+      I1 => sha256_msg_size(39),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(5),
+      I4 => sha256_msg_size(7),
       O => \axi_rdata[7]_i_9_n_0\
     );
 \axi_rdata[8]_i_1\: unisim.vcomponents.LUT6
@@ -37677,10 +37687,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[8]\,
-      I1 => p_0_in(38),
+      I1 => sha256_msg_size(40),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(6),
+      I4 => sha256_msg_size(8),
       O => \axi_rdata[8]_i_9_n_0\
     );
 \axi_rdata[9]_i_1\: unisim.vcomponents.LUT6
@@ -37792,10 +37802,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
     )
         port map (
       I0 => \slv_reg3_reg_n_0_[9]\,
-      I1 => p_0_in(39),
+      I1 => sha256_msg_size(41),
       I2 => \axi_araddr_reg[3]_rep_n_0\,
       I3 => \axi_araddr_reg[2]_rep_n_0\,
-      I4 => p_0_in(7),
+      I4 => sha256_msg_size(9),
       O => \axi_rdata[9]_i_9_n_0\
     );
 \axi_rdata_reg[0]\: unisim.vcomponents.FDRE
@@ -38736,14 +38746,12 @@ axi_rvalid_reg: unisim.vcomponents.FDRE
     );
 axi_sha256: entity work.test_axi_sha256_0_0_sha256_update
      port map (
-      CO(0) => axi_sha256_n_311,
+      CO(0) => axi_sha256_n_312,
       D(31 downto 0) => sha256_hash0(31 downto 0),
       Q(1 downto 0) => axi_awaddr(6 downto 5),
       S(0) => \slv_reg0[4]_i_12_n_0\,
       \axi_awaddr_reg[6]\ => axi_sha256_n_309,
       \axi_awaddr_reg[6]_0\ => axi_sha256_n_310,
-      \cir_buf_reg[0][15]\(1) => \slv_reg1_reg_n_0_[1]\,
-      \cir_buf_reg[0][15]\(0) => \slv_reg1_reg_n_0_[0]\,
       \cur_block_reg[0]_0\ => \slv_reg0_reg_n_0_[0]\,
       \cur_block_reg[52]_0\(52 downto 0) => sha256_cur_block(52 downto 0),
       \hash1_reg[31]\(31 downto 0) => sha256_hash1(31 downto 0),
@@ -38754,13 +38762,14 @@ axi_sha256: entity work.test_axi_sha256_0_0_sha256_update
       \hash6_reg[31]\(31 downto 0) => sha256_hash6(31 downto 0),
       \hash7_reg[31]\(31 downto 0) => sha256_hash7(31 downto 0),
       issue_hash_ack_reset => \^issue_hash_ack_reset\,
-      p_0_in(61 downto 0) => p_0_in(61 downto 0),
-      p_1_in18_in => p_1_in18_in,
+      p_0_in => p_0_in,
       p_2_in => p_2_in,
       \pad_start_carry__4\(58 downto 0) => \pad_inst/p_0_in\(61 downto 3),
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_wstrb(0) => s00_axi_wstrb(0),
+      s00_sha256_irq => s00_sha256_irq,
       sha256_big_endian_msg => sha256_big_endian_msg,
+      sha256_msg_size(63 downto 0) => sha256_msg_size(63 downto 0),
       slv_reg0(1 downto 0) => slv_reg0(4 downto 3),
       slv_reg01 => slv_reg01,
       slv_reg0121_out => slv_reg0121_out,
@@ -38831,7 +38840,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(20),
+      I0 => sha256_msg_size(22),
       O => \pad_start_carry__0_i_10_n_0\
     );
 \pad_start_carry__0_i_11\: unisim.vcomponents.LUT1
@@ -38839,7 +38848,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(19),
+      I0 => sha256_msg_size(21),
       O => \pad_start_carry__0_i_11_n_0\
     );
 \pad_start_carry__0_i_12\: unisim.vcomponents.LUT1
@@ -38847,7 +38856,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(26),
+      I0 => sha256_msg_size(28),
       O => \pad_start_carry__0_i_12_n_0\
     );
 \pad_start_carry__0_i_13\: unisim.vcomponents.LUT1
@@ -38855,7 +38864,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(25),
+      I0 => sha256_msg_size(27),
       O => \pad_start_carry__0_i_13_n_0\
     );
 \pad_start_carry__0_i_14\: unisim.vcomponents.LUT1
@@ -38863,7 +38872,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(24),
+      I0 => sha256_msg_size(26),
       O => \pad_start_carry__0_i_14_n_0\
     );
 \pad_start_carry__0_i_15\: unisim.vcomponents.LUT1
@@ -38871,7 +38880,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(23),
+      I0 => sha256_msg_size(25),
       O => \pad_start_carry__0_i_15_n_0\
     );
 \pad_start_carry__0_i_16\: unisim.vcomponents.LUT1
@@ -38879,7 +38888,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(18),
+      I0 => sha256_msg_size(20),
       O => \pad_start_carry__0_i_16_n_0\
     );
 \pad_start_carry__0_i_17\: unisim.vcomponents.LUT1
@@ -38887,7 +38896,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(17),
+      I0 => sha256_msg_size(19),
       O => \pad_start_carry__0_i_17_n_0\
     );
 \pad_start_carry__0_i_18\: unisim.vcomponents.LUT1
@@ -38895,7 +38904,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(16),
+      I0 => sha256_msg_size(18),
       O => \pad_start_carry__0_i_18_n_0\
     );
 \pad_start_carry__0_i_19\: unisim.vcomponents.LUT1
@@ -38903,7 +38912,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(15),
+      I0 => sha256_msg_size(17),
       O => \pad_start_carry__0_i_19_n_0\
     );
 \pad_start_carry__0_i_5\: unisim.vcomponents.CARRY4
@@ -38914,7 +38923,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__0_i_5_n_2\,
       CO(0) => \pad_start_carry__0_i_5_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(22 downto 19),
+      DI(3 downto 0) => sha256_msg_size(24 downto 21),
       O(3 downto 0) => \pad_inst/p_0_in\(22 downto 19),
       S(3) => \pad_start_carry__0_i_8_n_0\,
       S(2) => \pad_start_carry__0_i_9_n_0\,
@@ -38929,7 +38938,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__0_i_6_n_2\,
       CO(0) => \pad_start_carry__0_i_6_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(26 downto 23),
+      DI(3 downto 0) => sha256_msg_size(28 downto 25),
       O(3 downto 0) => \pad_inst/p_0_in\(26 downto 23),
       S(3) => \pad_start_carry__0_i_12_n_0\,
       S(2) => \pad_start_carry__0_i_13_n_0\,
@@ -38944,7 +38953,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__0_i_7_n_2\,
       CO(0) => \pad_start_carry__0_i_7_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(18 downto 15),
+      DI(3 downto 0) => sha256_msg_size(20 downto 17),
       O(3 downto 0) => \pad_inst/p_0_in\(18 downto 15),
       S(3) => \pad_start_carry__0_i_16_n_0\,
       S(2) => \pad_start_carry__0_i_17_n_0\,
@@ -38956,7 +38965,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(22),
+      I0 => sha256_msg_size(24),
       O => \pad_start_carry__0_i_8_n_0\
     );
 \pad_start_carry__0_i_9\: unisim.vcomponents.LUT1
@@ -38964,7 +38973,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(21),
+      I0 => sha256_msg_size(23),
       O => \pad_start_carry__0_i_9_n_0\
     );
 \pad_start_carry__1_i_10\: unisim.vcomponents.LUT1
@@ -38972,7 +38981,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(32),
+      I0 => sha256_msg_size(34),
       O => \pad_start_carry__1_i_10_n_0\
     );
 \pad_start_carry__1_i_11\: unisim.vcomponents.LUT1
@@ -38980,7 +38989,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(31),
+      I0 => sha256_msg_size(33),
       O => \pad_start_carry__1_i_11_n_0\
     );
 \pad_start_carry__1_i_12\: unisim.vcomponents.LUT1
@@ -38988,7 +38997,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(38),
+      I0 => sha256_msg_size(40),
       O => \pad_start_carry__1_i_12_n_0\
     );
 \pad_start_carry__1_i_13\: unisim.vcomponents.LUT1
@@ -38996,7 +39005,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(37),
+      I0 => sha256_msg_size(39),
       O => \pad_start_carry__1_i_13_n_0\
     );
 \pad_start_carry__1_i_14\: unisim.vcomponents.LUT1
@@ -39004,7 +39013,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(36),
+      I0 => sha256_msg_size(38),
       O => \pad_start_carry__1_i_14_n_0\
     );
 \pad_start_carry__1_i_15\: unisim.vcomponents.LUT1
@@ -39012,7 +39021,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(35),
+      I0 => sha256_msg_size(37),
       O => \pad_start_carry__1_i_15_n_0\
     );
 \pad_start_carry__1_i_16\: unisim.vcomponents.LUT1
@@ -39020,7 +39029,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(30),
+      I0 => sha256_msg_size(32),
       O => \pad_start_carry__1_i_16_n_0\
     );
 \pad_start_carry__1_i_17\: unisim.vcomponents.LUT1
@@ -39028,7 +39037,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(29),
+      I0 => sha256_msg_size(31),
       O => \pad_start_carry__1_i_17_n_0\
     );
 \pad_start_carry__1_i_18\: unisim.vcomponents.LUT1
@@ -39036,7 +39045,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(28),
+      I0 => sha256_msg_size(30),
       O => \pad_start_carry__1_i_18_n_0\
     );
 \pad_start_carry__1_i_19\: unisim.vcomponents.LUT1
@@ -39044,7 +39053,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(27),
+      I0 => sha256_msg_size(29),
       O => \pad_start_carry__1_i_19_n_0\
     );
 \pad_start_carry__1_i_5\: unisim.vcomponents.CARRY4
@@ -39055,7 +39064,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__1_i_5_n_2\,
       CO(0) => \pad_start_carry__1_i_5_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(34 downto 31),
+      DI(3 downto 0) => sha256_msg_size(36 downto 33),
       O(3 downto 0) => \pad_inst/p_0_in\(34 downto 31),
       S(3) => \pad_start_carry__1_i_8_n_0\,
       S(2) => \pad_start_carry__1_i_9_n_0\,
@@ -39070,7 +39079,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__1_i_6_n_2\,
       CO(0) => \pad_start_carry__1_i_6_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(38 downto 35),
+      DI(3 downto 0) => sha256_msg_size(40 downto 37),
       O(3 downto 0) => \pad_inst/p_0_in\(38 downto 35),
       S(3) => \pad_start_carry__1_i_12_n_0\,
       S(2) => \pad_start_carry__1_i_13_n_0\,
@@ -39085,7 +39094,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__1_i_7_n_2\,
       CO(0) => \pad_start_carry__1_i_7_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(30 downto 27),
+      DI(3 downto 0) => sha256_msg_size(32 downto 29),
       O(3 downto 0) => \pad_inst/p_0_in\(30 downto 27),
       S(3) => \pad_start_carry__1_i_16_n_0\,
       S(2) => \pad_start_carry__1_i_17_n_0\,
@@ -39097,7 +39106,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(34),
+      I0 => sha256_msg_size(36),
       O => \pad_start_carry__1_i_8_n_0\
     );
 \pad_start_carry__1_i_9\: unisim.vcomponents.LUT1
@@ -39105,7 +39114,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(33),
+      I0 => sha256_msg_size(35),
       O => \pad_start_carry__1_i_9_n_0\
     );
 \pad_start_carry__2_i_10\: unisim.vcomponents.LUT1
@@ -39113,7 +39122,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(44),
+      I0 => sha256_msg_size(46),
       O => \pad_start_carry__2_i_10_n_0\
     );
 \pad_start_carry__2_i_11\: unisim.vcomponents.LUT1
@@ -39121,7 +39130,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(43),
+      I0 => sha256_msg_size(45),
       O => \pad_start_carry__2_i_11_n_0\
     );
 \pad_start_carry__2_i_12\: unisim.vcomponents.LUT1
@@ -39129,7 +39138,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(50),
+      I0 => sha256_msg_size(52),
       O => \pad_start_carry__2_i_12_n_0\
     );
 \pad_start_carry__2_i_13\: unisim.vcomponents.LUT1
@@ -39137,7 +39146,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(49),
+      I0 => sha256_msg_size(51),
       O => \pad_start_carry__2_i_13_n_0\
     );
 \pad_start_carry__2_i_14\: unisim.vcomponents.LUT1
@@ -39145,7 +39154,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(48),
+      I0 => sha256_msg_size(50),
       O => \pad_start_carry__2_i_14_n_0\
     );
 \pad_start_carry__2_i_15\: unisim.vcomponents.LUT1
@@ -39153,7 +39162,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(47),
+      I0 => sha256_msg_size(49),
       O => \pad_start_carry__2_i_15_n_0\
     );
 \pad_start_carry__2_i_16\: unisim.vcomponents.LUT1
@@ -39161,7 +39170,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(42),
+      I0 => sha256_msg_size(44),
       O => \pad_start_carry__2_i_16_n_0\
     );
 \pad_start_carry__2_i_17\: unisim.vcomponents.LUT1
@@ -39169,7 +39178,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(41),
+      I0 => sha256_msg_size(43),
       O => \pad_start_carry__2_i_17_n_0\
     );
 \pad_start_carry__2_i_18\: unisim.vcomponents.LUT1
@@ -39177,7 +39186,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(40),
+      I0 => sha256_msg_size(42),
       O => \pad_start_carry__2_i_18_n_0\
     );
 \pad_start_carry__2_i_19\: unisim.vcomponents.LUT1
@@ -39185,7 +39194,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(39),
+      I0 => sha256_msg_size(41),
       O => \pad_start_carry__2_i_19_n_0\
     );
 \pad_start_carry__2_i_5\: unisim.vcomponents.CARRY4
@@ -39196,7 +39205,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__2_i_5_n_2\,
       CO(0) => \pad_start_carry__2_i_5_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(46 downto 43),
+      DI(3 downto 0) => sha256_msg_size(48 downto 45),
       O(3 downto 0) => \pad_inst/p_0_in\(46 downto 43),
       S(3) => \pad_start_carry__2_i_8_n_0\,
       S(2) => \pad_start_carry__2_i_9_n_0\,
@@ -39211,7 +39220,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__2_i_6_n_2\,
       CO(0) => \pad_start_carry__2_i_6_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(50 downto 47),
+      DI(3 downto 0) => sha256_msg_size(52 downto 49),
       O(3 downto 0) => \pad_inst/p_0_in\(50 downto 47),
       S(3) => \pad_start_carry__2_i_12_n_0\,
       S(2) => \pad_start_carry__2_i_13_n_0\,
@@ -39226,7 +39235,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__2_i_7_n_2\,
       CO(0) => \pad_start_carry__2_i_7_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(42 downto 39),
+      DI(3 downto 0) => sha256_msg_size(44 downto 41),
       O(3 downto 0) => \pad_inst/p_0_in\(42 downto 39),
       S(3) => \pad_start_carry__2_i_16_n_0\,
       S(2) => \pad_start_carry__2_i_17_n_0\,
@@ -39238,7 +39247,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(46),
+      I0 => sha256_msg_size(48),
       O => \pad_start_carry__2_i_8_n_0\
     );
 \pad_start_carry__2_i_9\: unisim.vcomponents.LUT1
@@ -39246,7 +39255,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(45),
+      I0 => sha256_msg_size(47),
       O => \pad_start_carry__2_i_9_n_0\
     );
 \pad_start_carry__3_i_10\: unisim.vcomponents.LUT1
@@ -39254,7 +39263,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(59),
+      I0 => sha256_msg_size(61),
       O => \pad_start_carry__3_i_10_n_0\
     );
 \pad_start_carry__3_i_11\: unisim.vcomponents.LUT1
@@ -39262,7 +39271,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(58),
+      I0 => sha256_msg_size(60),
       O => \pad_start_carry__3_i_11_n_0\
     );
 \pad_start_carry__3_i_12\: unisim.vcomponents.LUT1
@@ -39270,7 +39279,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(57),
+      I0 => sha256_msg_size(59),
       O => \pad_start_carry__3_i_12_n_0\
     );
 \pad_start_carry__3_i_13\: unisim.vcomponents.LUT1
@@ -39278,7 +39287,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(56),
+      I0 => sha256_msg_size(58),
       O => \pad_start_carry__3_i_13_n_0\
     );
 \pad_start_carry__3_i_14\: unisim.vcomponents.LUT1
@@ -39286,7 +39295,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(55),
+      I0 => sha256_msg_size(57),
       O => \pad_start_carry__3_i_14_n_0\
     );
 \pad_start_carry__3_i_15\: unisim.vcomponents.LUT1
@@ -39294,7 +39303,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(54),
+      I0 => sha256_msg_size(56),
       O => \pad_start_carry__3_i_15_n_0\
     );
 \pad_start_carry__3_i_16\: unisim.vcomponents.LUT1
@@ -39302,7 +39311,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(53),
+      I0 => sha256_msg_size(55),
       O => \pad_start_carry__3_i_16_n_0\
     );
 \pad_start_carry__3_i_17\: unisim.vcomponents.LUT1
@@ -39310,7 +39319,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(52),
+      I0 => sha256_msg_size(54),
       O => \pad_start_carry__3_i_17_n_0\
     );
 \pad_start_carry__3_i_18\: unisim.vcomponents.LUT1
@@ -39318,7 +39327,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(51),
+      I0 => sha256_msg_size(53),
       O => \pad_start_carry__3_i_18_n_0\
     );
 \pad_start_carry__3_i_5\: unisim.vcomponents.CARRY4
@@ -39329,7 +39338,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(0) => \pad_start_carry__3_i_5_n_3\,
       CYINIT => '0',
       DI(3 downto 2) => B"00",
-      DI(1 downto 0) => p_0_in(60 downto 59),
+      DI(1 downto 0) => sha256_msg_size(62 downto 61),
       O(3) => \NLW_pad_start_carry__3_i_5_O_UNCONNECTED\(3),
       O(2 downto 0) => \pad_inst/p_0_in\(61 downto 59),
       S(3) => '0',
@@ -39345,7 +39354,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__3_i_6_n_2\,
       CO(0) => \pad_start_carry__3_i_6_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(58 downto 55),
+      DI(3 downto 0) => sha256_msg_size(60 downto 57),
       O(3 downto 0) => \pad_inst/p_0_in\(58 downto 55),
       S(3) => \pad_start_carry__3_i_11_n_0\,
       S(2) => \pad_start_carry__3_i_12_n_0\,
@@ -39360,7 +39369,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       CO(1) => \pad_start_carry__3_i_7_n_2\,
       CO(0) => \pad_start_carry__3_i_7_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(54 downto 51),
+      DI(3 downto 0) => sha256_msg_size(56 downto 53),
       O(3 downto 0) => \pad_inst/p_0_in\(54 downto 51),
       S(3) => \pad_start_carry__3_i_15_n_0\,
       S(2) => \pad_start_carry__3_i_16_n_0\,
@@ -39372,7 +39381,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(61),
+      I0 => sha256_msg_size(63),
       O => \pad_start_carry__3_i_8_n_0\
     );
 \pad_start_carry__3_i_9\: unisim.vcomponents.LUT1
@@ -39380,7 +39389,7 @@ issue_hash_ack_reset_reg: unisim.vcomponents.FDRE
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(60),
+      I0 => sha256_msg_size(62),
       O => \pad_start_carry__3_i_9_n_0\
     );
 pad_start_carry_i_10: unisim.vcomponents.LUT1
@@ -39388,7 +39397,7 @@ pad_start_carry_i_10: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(9),
+      I0 => sha256_msg_size(11),
       O => pad_start_carry_i_10_n_0
     );
 pad_start_carry_i_11: unisim.vcomponents.LUT1
@@ -39396,7 +39405,7 @@ pad_start_carry_i_11: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(8),
+      I0 => sha256_msg_size(10),
       O => pad_start_carry_i_11_n_0
     );
 pad_start_carry_i_12: unisim.vcomponents.LUT1
@@ -39404,7 +39413,7 @@ pad_start_carry_i_12: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(7),
+      I0 => sha256_msg_size(9),
       O => pad_start_carry_i_12_n_0
     );
 pad_start_carry_i_13: unisim.vcomponents.LUT1
@@ -39412,7 +39421,7 @@ pad_start_carry_i_13: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(14),
+      I0 => sha256_msg_size(16),
       O => pad_start_carry_i_13_n_0
     );
 pad_start_carry_i_14: unisim.vcomponents.LUT1
@@ -39420,7 +39429,7 @@ pad_start_carry_i_14: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(13),
+      I0 => sha256_msg_size(15),
       O => pad_start_carry_i_14_n_0
     );
 pad_start_carry_i_15: unisim.vcomponents.LUT1
@@ -39428,7 +39437,7 @@ pad_start_carry_i_15: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(12),
+      I0 => sha256_msg_size(14),
       O => pad_start_carry_i_15_n_0
     );
 pad_start_carry_i_16: unisim.vcomponents.LUT1
@@ -39436,7 +39445,7 @@ pad_start_carry_i_16: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(11),
+      I0 => sha256_msg_size(13),
       O => pad_start_carry_i_16_n_0
     );
 pad_start_carry_i_17: unisim.vcomponents.LUT1
@@ -39444,7 +39453,7 @@ pad_start_carry_i_17: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(6),
+      I0 => sha256_msg_size(8),
       O => pad_start_carry_i_17_n_0
     );
 pad_start_carry_i_18: unisim.vcomponents.LUT1
@@ -39452,7 +39461,7 @@ pad_start_carry_i_18: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(5),
+      I0 => sha256_msg_size(7),
       O => pad_start_carry_i_18_n_0
     );
 pad_start_carry_i_19: unisim.vcomponents.LUT1
@@ -39460,7 +39469,7 @@ pad_start_carry_i_19: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(4),
+      I0 => sha256_msg_size(6),
       O => pad_start_carry_i_19_n_0
     );
 pad_start_carry_i_20: unisim.vcomponents.LUT1
@@ -39468,7 +39477,7 @@ pad_start_carry_i_20: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(3),
+      I0 => sha256_msg_size(5),
       O => pad_start_carry_i_20_n_0
     );
 pad_start_carry_i_5: unisim.vcomponents.CARRY4
@@ -39479,7 +39488,7 @@ pad_start_carry_i_5: unisim.vcomponents.CARRY4
       CO(1) => pad_start_carry_i_5_n_2,
       CO(0) => pad_start_carry_i_5_n_3,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(10 downto 7),
+      DI(3 downto 0) => sha256_msg_size(12 downto 9),
       O(3 downto 0) => \pad_inst/p_0_in\(10 downto 7),
       S(3) => pad_start_carry_i_9_n_0,
       S(2) => pad_start_carry_i_10_n_0,
@@ -39494,7 +39503,7 @@ pad_start_carry_i_6: unisim.vcomponents.CARRY4
       CO(1) => pad_start_carry_i_6_n_2,
       CO(0) => pad_start_carry_i_6_n_3,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(14 downto 11),
+      DI(3 downto 0) => sha256_msg_size(16 downto 13),
       O(3 downto 0) => \pad_inst/p_0_in\(14 downto 11),
       S(3) => pad_start_carry_i_13_n_0,
       S(2) => pad_start_carry_i_14_n_0,
@@ -39503,13 +39512,13 @@ pad_start_carry_i_6: unisim.vcomponents.CARRY4
     );
 pad_start_carry_i_7: unisim.vcomponents.CARRY4
      port map (
-      CI => axi_sha256_n_311,
+      CI => axi_sha256_n_312,
       CO(3) => pad_start_carry_i_7_n_0,
       CO(2) => pad_start_carry_i_7_n_1,
       CO(1) => pad_start_carry_i_7_n_2,
       CO(0) => pad_start_carry_i_7_n_3,
       CYINIT => '0',
-      DI(3 downto 0) => p_0_in(6 downto 3),
+      DI(3 downto 0) => sha256_msg_size(8 downto 5),
       O(3 downto 0) => \pad_inst/p_0_in\(6 downto 3),
       S(3) => pad_start_carry_i_17_n_0,
       S(2) => pad_start_carry_i_18_n_0,
@@ -39521,7 +39530,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(10),
+      I0 => sha256_msg_size(12),
       O => pad_start_carry_i_9_n_0
     );
 \slv_reg0[0]_i_1\: unisim.vcomponents.LUT3
@@ -39580,13 +39589,13 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
     );
 \slv_reg0[2]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"88000001"
+      INIT => X"80800001"
     )
         port map (
       I0 => axi_awaddr(6),
       I1 => axi_awaddr(5),
-      I2 => axi_awaddr(2),
-      I3 => axi_awaddr(4),
+      I2 => axi_awaddr(4),
+      I3 => axi_awaddr(2),
       I4 => axi_awaddr(3),
       O => \slv_reg0[2]_i_2_n_0\
     );
@@ -39633,7 +39642,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       I1 => s00_axi_wdata(3),
       I2 => \slv_reg0[2]_i_2_n_0\,
       I3 => \slv_reg0[2]_i_3_n_0\,
-      I4 => p_1_in18_in,
+      I4 => p_0_in,
       O => slv_reg0(3)
     );
 \slv_reg0[3]_i_4\: unisim.vcomponents.LUT2
@@ -39641,7 +39650,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       INIT => X"2"
     )
         port map (
-      I0 => p_1_in18_in,
+      I0 => p_0_in,
       I1 => s00_axi_wdata(3),
       O => slv_reg01
     );
@@ -39650,8 +39659,8 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       INIT => X"1"
     )
         port map (
-      I0 => p_0_in(60),
-      I1 => p_0_in(61),
+      I0 => sha256_msg_size(62),
+      I1 => sha256_msg_size(63),
       O => \slv_reg0[4]_i_12_n_0\
     );
 \slv_reg0[4]_i_4\: unisim.vcomponents.LUT5
@@ -39733,7 +39742,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => '1',
       D => axi_sha256_n_310,
-      Q => p_1_in18_in,
+      Q => p_0_in,
       R => axi_awready_i_1_n_0
     );
 \slv_reg0_reg[4]\: unisim.vcomponents.FDRE
@@ -42917,7 +42926,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(0),
-      Q => \slv_reg1_reg_n_0_[0]\,
+      Q => sha256_msg_size(0),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[10]\: unisim.vcomponents.FDRE
@@ -42925,7 +42934,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(10),
-      Q => p_0_in(8),
+      Q => sha256_msg_size(10),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[11]\: unisim.vcomponents.FDRE
@@ -42933,7 +42942,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(11),
-      Q => p_0_in(9),
+      Q => sha256_msg_size(11),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[12]\: unisim.vcomponents.FDRE
@@ -42941,7 +42950,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(12),
-      Q => p_0_in(10),
+      Q => sha256_msg_size(12),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[13]\: unisim.vcomponents.FDRE
@@ -42949,7 +42958,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(13),
-      Q => p_0_in(11),
+      Q => sha256_msg_size(13),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[14]\: unisim.vcomponents.FDRE
@@ -42957,7 +42966,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(14),
-      Q => p_0_in(12),
+      Q => sha256_msg_size(14),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[15]\: unisim.vcomponents.FDRE
@@ -42965,7 +42974,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(15),
-      Q => p_0_in(13),
+      Q => sha256_msg_size(15),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[16]\: unisim.vcomponents.FDRE
@@ -42973,7 +42982,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(16),
-      Q => p_0_in(14),
+      Q => sha256_msg_size(16),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[17]\: unisim.vcomponents.FDRE
@@ -42981,7 +42990,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(17),
-      Q => p_0_in(15),
+      Q => sha256_msg_size(17),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[18]\: unisim.vcomponents.FDRE
@@ -42989,7 +42998,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(18),
-      Q => p_0_in(16),
+      Q => sha256_msg_size(18),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[19]\: unisim.vcomponents.FDRE
@@ -42997,7 +43006,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(19),
-      Q => p_0_in(17),
+      Q => sha256_msg_size(19),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[1]\: unisim.vcomponents.FDRE
@@ -43005,7 +43014,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(1),
-      Q => \slv_reg1_reg_n_0_[1]\,
+      Q => sha256_msg_size(1),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[20]\: unisim.vcomponents.FDRE
@@ -43013,7 +43022,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(20),
-      Q => p_0_in(18),
+      Q => sha256_msg_size(20),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[21]\: unisim.vcomponents.FDRE
@@ -43021,7 +43030,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(21),
-      Q => p_0_in(19),
+      Q => sha256_msg_size(21),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[22]\: unisim.vcomponents.FDRE
@@ -43029,7 +43038,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(22),
-      Q => p_0_in(20),
+      Q => sha256_msg_size(22),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[23]\: unisim.vcomponents.FDRE
@@ -43037,7 +43046,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(23),
       D => s00_axi_wdata(23),
-      Q => p_0_in(21),
+      Q => sha256_msg_size(23),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[24]\: unisim.vcomponents.FDRE
@@ -43045,7 +43054,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(24),
-      Q => p_0_in(22),
+      Q => sha256_msg_size(24),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[25]\: unisim.vcomponents.FDRE
@@ -43053,7 +43062,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(25),
-      Q => p_0_in(23),
+      Q => sha256_msg_size(25),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[26]\: unisim.vcomponents.FDRE
@@ -43061,7 +43070,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(26),
-      Q => p_0_in(24),
+      Q => sha256_msg_size(26),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[27]\: unisim.vcomponents.FDRE
@@ -43069,7 +43078,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(27),
-      Q => p_0_in(25),
+      Q => sha256_msg_size(27),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[28]\: unisim.vcomponents.FDRE
@@ -43077,7 +43086,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(28),
-      Q => p_0_in(26),
+      Q => sha256_msg_size(28),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[29]\: unisim.vcomponents.FDRE
@@ -43085,7 +43094,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(29),
-      Q => p_0_in(27),
+      Q => sha256_msg_size(29),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[2]\: unisim.vcomponents.FDRE
@@ -43093,7 +43102,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(2),
-      Q => p_0_in(0),
+      Q => sha256_msg_size(2),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[30]\: unisim.vcomponents.FDRE
@@ -43101,7 +43110,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(30),
-      Q => p_0_in(28),
+      Q => sha256_msg_size(30),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[31]\: unisim.vcomponents.FDRE
@@ -43109,7 +43118,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(31),
       D => s00_axi_wdata(31),
-      Q => p_0_in(29),
+      Q => sha256_msg_size(31),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[3]\: unisim.vcomponents.FDRE
@@ -43117,7 +43126,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(3),
-      Q => p_0_in(1),
+      Q => sha256_msg_size(3),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[4]\: unisim.vcomponents.FDRE
@@ -43125,7 +43134,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(4),
-      Q => p_0_in(2),
+      Q => sha256_msg_size(4),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[5]\: unisim.vcomponents.FDRE
@@ -43133,7 +43142,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(5),
-      Q => p_0_in(3),
+      Q => sha256_msg_size(5),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[6]\: unisim.vcomponents.FDRE
@@ -43141,7 +43150,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(6),
-      Q => p_0_in(4),
+      Q => sha256_msg_size(6),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[7]\: unisim.vcomponents.FDRE
@@ -43149,7 +43158,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(7),
       D => s00_axi_wdata(7),
-      Q => p_0_in(5),
+      Q => sha256_msg_size(7),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[8]\: unisim.vcomponents.FDRE
@@ -43157,7 +43166,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(8),
-      Q => p_0_in(6),
+      Q => sha256_msg_size(8),
       R => axi_awready_i_1_n_0
     );
 \slv_reg1_reg[9]\: unisim.vcomponents.FDRE
@@ -43165,7 +43174,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \p_1_in__0\(15),
       D => s00_axi_wdata(9),
-      Q => p_0_in(7),
+      Q => sha256_msg_size(9),
       R => axi_awready_i_1_n_0
     );
 \slv_reg20[15]_i_1\: unisim.vcomponents.LUT6
@@ -45581,7 +45590,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(0),
-      Q => p_0_in(30),
+      Q => sha256_msg_size(32),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[10]\: unisim.vcomponents.FDRE
@@ -45589,7 +45598,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(10),
-      Q => p_0_in(40),
+      Q => sha256_msg_size(42),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[11]\: unisim.vcomponents.FDRE
@@ -45597,7 +45606,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(11),
-      Q => p_0_in(41),
+      Q => sha256_msg_size(43),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[12]\: unisim.vcomponents.FDRE
@@ -45605,7 +45614,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(12),
-      Q => p_0_in(42),
+      Q => sha256_msg_size(44),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[13]\: unisim.vcomponents.FDRE
@@ -45613,7 +45622,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(13),
-      Q => p_0_in(43),
+      Q => sha256_msg_size(45),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[14]\: unisim.vcomponents.FDRE
@@ -45621,7 +45630,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(14),
-      Q => p_0_in(44),
+      Q => sha256_msg_size(46),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[15]\: unisim.vcomponents.FDRE
@@ -45629,7 +45638,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(15),
-      Q => p_0_in(45),
+      Q => sha256_msg_size(47),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[16]\: unisim.vcomponents.FDRE
@@ -45637,7 +45646,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(16),
-      Q => p_0_in(46),
+      Q => sha256_msg_size(48),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[17]\: unisim.vcomponents.FDRE
@@ -45645,7 +45654,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(17),
-      Q => p_0_in(47),
+      Q => sha256_msg_size(49),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[18]\: unisim.vcomponents.FDRE
@@ -45653,7 +45662,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(18),
-      Q => p_0_in(48),
+      Q => sha256_msg_size(50),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[19]\: unisim.vcomponents.FDRE
@@ -45661,7 +45670,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(19),
-      Q => p_0_in(49),
+      Q => sha256_msg_size(51),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[1]\: unisim.vcomponents.FDRE
@@ -45669,7 +45678,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(1),
-      Q => p_0_in(31),
+      Q => sha256_msg_size(33),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[20]\: unisim.vcomponents.FDRE
@@ -45677,7 +45686,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(20),
-      Q => p_0_in(50),
+      Q => sha256_msg_size(52),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[21]\: unisim.vcomponents.FDRE
@@ -45685,7 +45694,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(21),
-      Q => p_0_in(51),
+      Q => sha256_msg_size(53),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[22]\: unisim.vcomponents.FDRE
@@ -45693,7 +45702,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(22),
-      Q => p_0_in(52),
+      Q => sha256_msg_size(54),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[23]\: unisim.vcomponents.FDRE
@@ -45701,7 +45710,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[23]_i_1_n_0\,
       D => s00_axi_wdata(23),
-      Q => p_0_in(53),
+      Q => sha256_msg_size(55),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[24]\: unisim.vcomponents.FDRE
@@ -45709,7 +45718,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(24),
-      Q => p_0_in(54),
+      Q => sha256_msg_size(56),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[25]\: unisim.vcomponents.FDRE
@@ -45717,7 +45726,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(25),
-      Q => p_0_in(55),
+      Q => sha256_msg_size(57),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[26]\: unisim.vcomponents.FDRE
@@ -45725,7 +45734,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(26),
-      Q => p_0_in(56),
+      Q => sha256_msg_size(58),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[27]\: unisim.vcomponents.FDRE
@@ -45733,7 +45742,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(27),
-      Q => p_0_in(57),
+      Q => sha256_msg_size(59),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[28]\: unisim.vcomponents.FDRE
@@ -45741,7 +45750,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(28),
-      Q => p_0_in(58),
+      Q => sha256_msg_size(60),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[29]\: unisim.vcomponents.FDRE
@@ -45749,7 +45758,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(29),
-      Q => p_0_in(59),
+      Q => sha256_msg_size(61),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[2]\: unisim.vcomponents.FDRE
@@ -45757,7 +45766,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(2),
-      Q => p_0_in(32),
+      Q => sha256_msg_size(34),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[30]\: unisim.vcomponents.FDRE
@@ -45765,7 +45774,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(30),
-      Q => p_0_in(60),
+      Q => sha256_msg_size(62),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[31]\: unisim.vcomponents.FDRE
@@ -45773,7 +45782,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[31]_i_1_n_0\,
       D => s00_axi_wdata(31),
-      Q => p_0_in(61),
+      Q => sha256_msg_size(63),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[3]\: unisim.vcomponents.FDRE
@@ -45781,7 +45790,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(3),
-      Q => p_0_in(33),
+      Q => sha256_msg_size(35),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[4]\: unisim.vcomponents.FDRE
@@ -45789,7 +45798,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(4),
-      Q => p_0_in(34),
+      Q => sha256_msg_size(36),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[5]\: unisim.vcomponents.FDRE
@@ -45797,7 +45806,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(5),
-      Q => p_0_in(35),
+      Q => sha256_msg_size(37),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[6]\: unisim.vcomponents.FDRE
@@ -45805,7 +45814,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(6),
-      Q => p_0_in(36),
+      Q => sha256_msg_size(38),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[7]\: unisim.vcomponents.FDRE
@@ -45813,7 +45822,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[7]_i_1_n_0\,
       D => s00_axi_wdata(7),
-      Q => p_0_in(37),
+      Q => sha256_msg_size(39),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[8]\: unisim.vcomponents.FDRE
@@ -45821,7 +45830,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(8),
-      Q => p_0_in(38),
+      Q => sha256_msg_size(40),
       R => axi_awready_i_1_n_0
     );
 \slv_reg2_reg[9]\: unisim.vcomponents.FDRE
@@ -45829,7 +45838,7 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       C => s00_axi_aclk,
       CE => \slv_reg2[15]_i_1_n_0\,
       D => s00_axi_wdata(9),
-      Q => p_0_in(39),
+      Q => sha256_msg_size(41),
       R => axi_awready_i_1_n_0
     );
 \slv_reg3[31]_i_1\: unisim.vcomponents.LUT5
@@ -46910,8 +46919,8 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       I0 => \^slv_reg_wren\,
       I1 => axi_awaddr(4),
       I2 => s00_axi_wstrb(1),
-      I3 => axi_awaddr(5),
-      I4 => axi_awaddr(6),
+      I3 => axi_awaddr(6),
+      I4 => axi_awaddr(5),
       I5 => \slv_reg7[31]_i_2_n_0\,
       O => \slv_reg7[15]_i_1_n_0\
     );
@@ -46923,8 +46932,8 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       I0 => \^slv_reg_wren\,
       I1 => axi_awaddr(4),
       I2 => s00_axi_wstrb(2),
-      I3 => axi_awaddr(5),
-      I4 => axi_awaddr(6),
+      I3 => axi_awaddr(6),
+      I4 => axi_awaddr(5),
       I5 => \slv_reg7[31]_i_2_n_0\,
       O => \slv_reg7[23]_i_1_n_0\
     );
@@ -46936,8 +46945,8 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       I0 => \^slv_reg_wren\,
       I1 => axi_awaddr(4),
       I2 => s00_axi_wstrb(3),
-      I3 => axi_awaddr(5),
-      I4 => axi_awaddr(6),
+      I3 => axi_awaddr(6),
+      I4 => axi_awaddr(5),
       I5 => \slv_reg7[31]_i_2_n_0\,
       O => \slv_reg7[31]_i_1_n_0\
     );
@@ -46958,8 +46967,8 @@ pad_start_carry_i_9: unisim.vcomponents.LUT1
       I0 => \^slv_reg_wren\,
       I1 => axi_awaddr(4),
       I2 => s00_axi_wstrb(0),
-      I3 => axi_awaddr(5),
-      I4 => axi_awaddr(6),
+      I3 => axi_awaddr(6),
+      I4 => axi_awaddr(5),
       I5 => \slv_reg7[31]_i_2_n_0\,
       O => \slv_reg7[7]_i_1_n_0\
     );
@@ -47851,10 +47860,11 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity test_axi_sha256_0_0_axi_sha256_v1_0 is
   port (
-    S_AXI_WREADY : out STD_LOGIC;
     S_AXI_AWREADY : out STD_LOGIC;
+    S_AXI_WREADY : out STD_LOGIC;
     S_AXI_ARREADY : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_sha256_irq : out STD_LOGIC;
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
@@ -47956,6 +47966,7 @@ axi_sha256_v1_0_S00_AXI_inst: entity work.test_axi_sha256_0_0_axi_sha256_v1_0_S0
       s00_axi_wdata(31 downto 0) => s00_axi_wdata(31 downto 0),
       s00_axi_wstrb(3 downto 0) => s00_axi_wstrb(3 downto 0),
       s00_axi_wvalid => s00_axi_wvalid,
+      s00_sha256_irq => s00_sha256_irq,
       slv_reg_wren => slv_reg_wren
     );
 issue_hash_ack_reset_i_1: unisim.vcomponents.LUT6
@@ -47978,6 +47989,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity test_axi_sha256_0_0 is
   port (
+    s00_sha256_irq : out STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 6 downto 0 );
@@ -48029,6 +48041,8 @@ architecture STRUCTURE of test_axi_sha256_0_0 is
   attribute X_INTERFACE_INFO of s00_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI RVALID";
   attribute X_INTERFACE_INFO of s00_axi_wready : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WREADY";
   attribute X_INTERFACE_INFO of s00_axi_wvalid : signal is "xilinx.com:interface:aximm:1.0 S00_AXI WVALID";
+  attribute X_INTERFACE_INFO of s00_sha256_irq : signal is "xilinx.com:signal:interrupt:1.0 IRQ INTERRUPT";
+  attribute X_INTERFACE_PARAMETER of s00_sha256_irq : signal is "XIL_INTERFACENAME IRQ, SENSITIVITY LEVEL_HIGH, PortWidth 1";
   attribute X_INTERFACE_INFO of s00_axi_araddr : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARADDR";
   attribute X_INTERFACE_INFO of s00_axi_arprot : signal is "xilinx.com:interface:aximm:1.0 S00_AXI ARPROT";
   attribute X_INTERFACE_INFO of s00_axi_awaddr : signal is "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
@@ -48065,6 +48079,7 @@ inst: entity work.test_axi_sha256_0_0_axi_sha256_v1_0
       s00_axi_rvalid => s00_axi_rvalid,
       s00_axi_wdata(31 downto 0) => s00_axi_wdata(31 downto 0),
       s00_axi_wstrb(3 downto 0) => s00_axi_wstrb(3 downto 0),
-      s00_axi_wvalid => s00_axi_wvalid
+      s00_axi_wvalid => s00_axi_wvalid,
+      s00_sha256_irq => s00_sha256_irq
     );
 end STRUCTURE;

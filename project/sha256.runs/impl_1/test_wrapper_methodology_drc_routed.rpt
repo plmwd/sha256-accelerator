@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Apr 30 23:36:37 2020
+| Date         : Mon May  4 13:55:48 2020
 | Host         : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 | Command      : report_methodology -file test_wrapper_methodology_drc_routed.rpt -pb test_wrapper_methodology_drc_routed.pb -rpx test_wrapper_methodology_drc_routed.rpx
 | Design       : test_wrapper
@@ -163,22 +163,22 @@ Related violations: <none>
 
 TIMING-47#1 Warning
 False path or asynchronous clock group between synchronous clocks  
-A Clock Group timing constraint is set between synchronous clocks clk_out1_test_clk_wiz_1_0 and test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_DRCK_i_reg/Q (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+A Clock Group timing constraint is set between synchronous clocks clk_out1_test_clk_wiz_1_0 and test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_DRCK_i_reg/Q (see constraint position 14 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
 Related violations: <none>
 
 TIMING-47#2 Warning
 False path or asynchronous clock group between synchronous clocks  
-A Clock Group timing constraint is set between synchronous clocks clk_out1_test_clk_wiz_1_0 and test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_UPDATE_i_reg/Q (see constraint position 16 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+A Clock Group timing constraint is set between synchronous clocks clk_out1_test_clk_wiz_1_0 and test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_UPDATE_i_reg/Q (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
 Related violations: <none>
 
 TIMING-47#3 Warning
 False path or asynchronous clock group between synchronous clocks  
-A Clock Group timing constraint is set between synchronous clocks test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_DRCK_i_reg/Q and clk_out1_test_clk_wiz_1_0 (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+A Clock Group timing constraint is set between synchronous clocks test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_DRCK_i_reg/Q and clk_out1_test_clk_wiz_1_0 (see constraint position 14 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
 Related violations: <none>
 
 TIMING-47#4 Warning
 False path or asynchronous clock group between synchronous clocks  
-A Clock Group timing constraint is set between synchronous clocks test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_UPDATE_i_reg/Q and clk_out1_test_clk_wiz_1_0 (see constraint position 16 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
+A Clock Group timing constraint is set between synchronous clocks test_i/mdm_1/U0/MDM_Core_I1/Use_Dbg_Reg_Access.DbgReg_UPDATE_i_reg/Q and clk_out1_test_clk_wiz_1_0 (see constraint position 15 in the Timing Constraint window in Vivado IDE). It is not recommended to cover synchronous clock domains with constraints that prevent timing analysis as the design could fail in hardware.
 Related violations: <none>
 
 

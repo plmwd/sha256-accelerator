@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Mon Apr 27 12:27:26 2020
+-- Date        : Sat May  2 23:16:25 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/904pa/Documents/Git/Homework/EEL4783/sha256/sha256/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_stub.vhdl
+--               C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_axi_intc_0/test_microblaze_0_axi_intc_0_stub.vhdl
 -- Design      : test_microblaze_0_axi_intc_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Apr 30 23:33:52 2020
-# Process ID: 16188
+# Start of session at: Mon May  4 13:53:06 2020
+# Process ID: 21176
 # Current directory: C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1
 # Command line: vivado.exe -log test_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_wrapper.tcl
 # Log file: C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/test_wrapper.vds
@@ -11,11 +11,12 @@
 #-----------------------------------------------------------
 source test_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0'.
 WARNING: [IP_Flow 19-2207] Repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0' already exists; ignoring attempt to add it again.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0'.
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2207] Repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/904pa/Documents/Git/sha256/ip_repo/led_axi_1.0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
 Command: synth_design -top test_wrapper -part xc7a35tcpg236-1
@@ -24,29 +25,28 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10304 
-WARNING: [Synth 8-2611] redeclaration of ansi port cur_block is not allowed [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/new/padder.v:36]
+INFO: Helper process launched with PID 20448 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1256.809 ; gain = 234.559
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1250.555 ; gain = 228.117
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'test_wrapper' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/hdl/test_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'test' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1363]
-INFO: [Synth 8-6157] synthesizing module 'test_axi_sha256_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_axi_sha256_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axi_sha256_0_0' (1#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_axi_sha256_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_axi_uartlite_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_axi_uartlite_0_0' (2#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_clk_wiz_1_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_clk_wiz_1_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'test_clk_wiz_1_0' (3#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_clk_wiz_1_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'test_led_axi_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_led_axi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_led_axi_0_0' (4#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_led_axi_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_mdm_1_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_mdm_1_0' (5#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_mdm_1_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'mdm_1' of module 'test_mdm_1_0' has 79 connections declared, but only 71 given [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1640]
-INFO: [Synth 8-6157] synthesizing module 'test_microblaze_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_microblaze_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_microblaze_0_0' (6#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_microblaze_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_microblaze_0_axi_intc_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_microblaze_0_axi_intc_0' (7#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_microblaze_0_axi_periph_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1990]
+INFO: [Synth 8-6157] synthesizing module 'test_axi_sha256_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_axi_sha256_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axi_sha256_0_0' (1#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_axi_sha256_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_axi_uartlite_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_axi_uartlite_0_0' (2#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_clk_wiz_1_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'test_clk_wiz_1_0' (3#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'test_led_axi_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_led_axi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_led_axi_0_0' (4#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_led_axi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_mdm_1_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_mdm_1_0' (5#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_mdm_1_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'mdm_1' of module 'test_mdm_1_0' has 79 connections declared, but only 71 given [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1641]
+INFO: [Synth 8-6157] synthesizing module 'test_microblaze_0_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_microblaze_0_0' (6#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_microblaze_0_axi_intc_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_microblaze_0_axi_intc_0' (7#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_microblaze_0_axi_periph_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1989]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_U2ET0M' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_U2ET0M' (8#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:12]
 INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_1UYIL1S' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:144]
@@ -60,25 +60,25 @@ INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_WQ3S71' (12#1) [
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1BFSG9F' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:934]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1BFSG9F' (13#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:934]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_FJ0V8L' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1080]
-INFO: [Synth 8-6157] synthesizing module 'test_auto_pc_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_auto_pc_0' (14#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_auto_pc_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_auto_pc_0' (14#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_FJ0V8L' (15#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1080]
-INFO: [Synth 8-6157] synthesizing module 'test_xbar_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_xbar_0' (16#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_microblaze_0_axi_periph_0' (17#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1990]
+INFO: [Synth 8-6157] synthesizing module 'test_xbar_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_xbar_0' (16#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_microblaze_0_axi_periph_0' (17#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1989]
 INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_1LG0PZ6' [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:700]
-INFO: [Synth 8-6157] synthesizing module 'test_dlmb_bram_if_cntlr_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_dlmb_bram_if_cntlr_0' (18#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_dlmb_v10_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_dlmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_dlmb_v10_0' (19#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_dlmb_bram_if_cntlr_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_dlmb_bram_if_cntlr_0' (18#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_dlmb_v10_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_dlmb_v10_0' (19#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_dlmb_v10_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'test_dlmb_v10_0' has 25 connections declared, but only 24 given [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:846]
-INFO: [Synth 8-6157] synthesizing module 'test_ilmb_bram_if_cntlr_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_ilmb_bram_if_cntlr_0' (20#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'test_ilmb_v10_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_ilmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_ilmb_v10_0' (21#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_ilmb_bram_if_cntlr_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_ilmb_bram_if_cntlr_0' (20#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_ilmb_v10_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_ilmb_v10_0' (21#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_ilmb_v10_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'test_ilmb_v10_0' has 25 connections declared, but only 24 given [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:892]
-INFO: [Synth 8-6157] synthesizing module 'test_lmb_bram_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_lmb_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_lmb_bram_0' (22#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'test_lmb_bram_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_lmb_bram_0' (22#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_lmb_bram_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'test_lmb_bram_0' has 16 connections declared, but only 14 given [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:917]
 INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_1LG0PZ6' (23#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:700]
 INFO: [Synth 8-6157] synthesizing module 'test_microblaze_0_xlconcat_0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_xlconcat_0/synth/test_microblaze_0_xlconcat_0.v:58]
@@ -119,17 +119,11 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/90
 	Parameter NUM_PORTS bound to: 2 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (24#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'test_microblaze_0_xlconcat_0' (25#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_xlconcat_0/synth/test_microblaze_0_xlconcat_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'test_rst_clk_wiz_1_100M_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_rst_clk_wiz_1_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'test_rst_clk_wiz_1_100M_0' (26#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-16188-DESKTOP-E4CP06Q/realtime/test_rst_clk_wiz_1_100M_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'test_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1977]
-INFO: [Synth 8-6157] synthesizing module 'test_xlconstant_0_0' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_xlconstant_0_0/synth/test_xlconstant_0_0.v:57]
-INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-	Parameter CONST_VAL bound to: 0 - type: integer 
-	Parameter CONST_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (27#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ipshared/34f7/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'test_xlconstant_0_0' (28#1) [c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_xlconstant_0_0/synth/test_xlconstant_0_0.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'test' (29#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1363]
-INFO: [Synth 8-6155] done synthesizing module 'test_wrapper' (30#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/hdl/test_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'test_rst_clk_wiz_1_100M_0' [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'test_rst_clk_wiz_1_100M_0' (26#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/.Xil/Vivado-21176-DESKTOP-E4CP06Q/realtime/test_rst_clk_wiz_1_100M_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'test_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1978]
+INFO: [Synth 8-6155] done synthesizing module 'test' (27#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/synth/test.v:1363]
+INFO: [Synth 8-6155] done synthesizing module 'test_wrapper' (28#1) [C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/hdl/test_wrapper.v:12]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In2[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In3[0]
 WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In4[0]
@@ -201,7 +195,7 @@ WARNING: [Synth 8-3331] design test_microblaze_0_axi_periph_0 has unconnected po
 WARNING: [Synth 8-3331] design test_microblaze_0_axi_periph_0 has unconnected port S01_ACLK
 WARNING: [Synth 8-3331] design test_microblaze_0_axi_periph_0 has unconnected port S01_ARESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1308.492 ; gain = 286.242
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1328.617 ; gain = 306.180
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -214,12 +208,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1308.492 ; gain = 286.242
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1328.617 ; gain = 306.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1308.492 ; gain = 286.242
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1328.617 ; gain = 306.180
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 1308.492 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1328.617 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -262,21 +256,21 @@ Parsing XDC File [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_
 Finished Parsing XDC File [C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1394.176 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1395.301 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1394.176 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1395.301 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'test_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.195 ; gain = 374.945
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.289 ; gain = 374.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.195 ; gain = 374.945
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.289 ; gain = 374.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -298,15 +292,14 @@ Applied set_property DONT_TOUCH = true for test_i/mdm_1. (constraint file  auto 
 Applied set_property DONT_TOUCH = true for test_i/clk_wiz_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_i/rst_clk_wiz_1_100M. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_i/axi_uartlite_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for test_i/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_i/led_axi_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_i/axi_sha256_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_i/microblaze_0_axi_periph/s01_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.195 ; gain = 374.945
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.289 ; gain = 374.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.195 ; gain = 374.945
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1397.289 ; gain = 374.852
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -356,7 +349,7 @@ WARNING: [Synth 8-3331] design test_microblaze_0_axi_periph_0 has unconnected po
 WARNING: [Synth 8-3331] design test_microblaze_0_axi_periph_0 has unconnected port S01_ACLK
 WARNING: [Synth 8-3331] design test_microblaze_0_axi_periph_0 has unconnected port S01_ARESETN
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1397.195 ; gain = 374.945
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1397.289 ; gain = 374.852
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -368,13 +361,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1398.539 ; gain = 376.289
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1397.871 ; gain = 375.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1398.762 ; gain = 376.512
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1398.020 ; gain = 375.582
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -386,7 +379,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1409.297 ; gain = 387.047
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1408.668 ; gain = 386.230
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -410,13 +403,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -435,25 +428,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -507,35 +500,34 @@ Report Instance Areas:
 +------+------------------------------+--------------------------------------+------+
 |      |Instance                      |Module                                |Cells |
 +------+------------------------------+--------------------------------------+------+
-|1     |top                           |                                      |  2032|
-|2     |  test_i                      |test                                  |  2013|
+|1     |top                           |                                      |  2033|
+|2     |  test_i                      |test                                  |  2014|
 |3     |    microblaze_0_axi_periph   |test_microblaze_0_axi_periph_0        |   790|
 |4     |      s01_couplers            |s01_couplers_imp_FJ0V8L               |   153|
 |5     |    microblaze_0_xlconcat     |test_microblaze_0_xlconcat_0          |     0|
-|6     |    xlconstant_0              |test_xlconstant_0_0                   |     0|
-|7     |    microblaze_0_local_memory |microblaze_0_local_memory_imp_1LG0PZ6 |   496|
+|6     |    microblaze_0_local_memory |microblaze_0_local_memory_imp_1LG0PZ6 |   496|
 +------+------------------------------+--------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1423.105 ; gain = 312.152
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.105 ; gain = 400.855
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 1423.465 ; gain = 332.355
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1423.465 ; gain = 401.027
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1436.168 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1435.527 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1439.125 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1443.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-75 Infos, 93 Warnings, 0 Critical Warnings and 0 Errors encountered.
+73 Infos, 92 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1439.125 ; gain = 694.945
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1439.125 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1443.555 ; gain = 699.871
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1443.555 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/904pa/Documents/Git/sha256/project/sha256.runs/synth_1/test_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file test_wrapper_utilization_synth.rpt -pb test_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 30 23:34:32 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon May  4 13:53:47 2020...

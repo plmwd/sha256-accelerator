@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Thu Apr 30 23:33:49 2020
+// Date        : Mon May  4 13:53:03 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_sha256_0_0/test_axi_sha256_0_0_sim_netlist.v
@@ -15,7 +15,8 @@
 (* CHECK_LICENSE_TYPE = "test_axi_sha256_0_0,axi_sha256_v1_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "axi_sha256_v1_0,Vivado 2019.2" *) 
 (* NotValidForBitStream *)
 module test_axi_sha256_0_0
-   (s00_axi_aclk,
+   (s00_sha256_irq,
+    s00_axi_aclk,
     s00_axi_aresetn,
     s00_axi_awaddr,
     s00_axi_awprot,
@@ -36,6 +37,7 @@ module test_axi_sha256_0_0
     s00_axi_rresp,
     s00_axi_rvalid,
     s00_axi_rready);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:interrupt:1.0 IRQ INTERRUPT" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME IRQ, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) output s00_sha256_irq;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input s00_axi_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [6:0]s00_axi_awaddr;
@@ -76,6 +78,7 @@ module test_axi_sha256_0_0
   wire s00_axi_wready;
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
+  wire s00_sha256_irq;
 
   assign s00_axi_bresp[1] = \<const0> ;
   assign s00_axi_bresp[0] = \<const0> ;
@@ -100,15 +103,17 @@ module test_axi_sha256_0_0
         .s00_axi_rvalid(s00_axi_rvalid),
         .s00_axi_wdata(s00_axi_wdata),
         .s00_axi_wstrb(s00_axi_wstrb),
-        .s00_axi_wvalid(s00_axi_wvalid));
+        .s00_axi_wvalid(s00_axi_wvalid),
+        .s00_sha256_irq(s00_sha256_irq));
 endmodule
 
 (* ORIG_REF_NAME = "axi_sha256_v1_0" *) 
 module test_axi_sha256_0_0_axi_sha256_v1_0
-   (S_AXI_WREADY,
-    S_AXI_AWREADY,
+   (S_AXI_AWREADY,
+    S_AXI_WREADY,
     S_AXI_ARREADY,
     s00_axi_rdata,
+    s00_sha256_irq,
     s00_axi_rvalid,
     s00_axi_bvalid,
     s00_axi_aclk,
@@ -122,10 +127,11 @@ module test_axi_sha256_0_0_axi_sha256_v1_0
     s00_axi_arvalid,
     s00_axi_bready,
     s00_axi_rready);
-  output S_AXI_WREADY;
   output S_AXI_AWREADY;
+  output S_AXI_WREADY;
   output S_AXI_ARREADY;
   output [31:0]s00_axi_rdata;
+  output s00_sha256_irq;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
   input s00_axi_aclk;
@@ -165,6 +171,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0
   wire [31:0]s00_axi_wdata;
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
+  wire s00_sha256_irq;
   wire slv_reg_wren;
 
   LUT6 #(
@@ -219,6 +226,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0
         .s00_axi_wdata(s00_axi_wdata),
         .s00_axi_wstrb(s00_axi_wstrb),
         .s00_axi_wvalid(s00_axi_wvalid),
+        .s00_sha256_irq(s00_sha256_irq),
         .slv_reg_wren(slv_reg_wren));
   LUT6 #(
     .INIT(64'h00002000FFFF0000)) 
@@ -234,8 +242,8 @@ endmodule
 
 (* ORIG_REF_NAME = "axi_sha256_v1_0_S00_AXI" *) 
 module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
-   (axi_wready_reg_0,
-    axi_awready_reg_0,
+   (axi_awready_reg_0,
+    axi_wready_reg_0,
     axi_arready_reg_0,
     s00_axi_bvalid,
     aw_en_reg_0,
@@ -245,6 +253,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     p_1_in,
     s00_axi_rdata,
     issue_hash_ack_reset4_in,
+    s00_sha256_irq,
     s00_axi_aclk,
     axi_bvalid_reg_0,
     aw_en_reg_1,
@@ -258,8 +267,8 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     s00_axi_aresetn,
     s00_axi_wstrb,
     s00_axi_arvalid);
-  output axi_wready_reg_0;
   output axi_awready_reg_0;
+  output axi_wready_reg_0;
   output axi_arready_reg_0;
   output s00_axi_bvalid;
   output aw_en_reg_0;
@@ -269,6 +278,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
   output p_1_in;
   output [31:0]s00_axi_rdata;
   output issue_hash_ack_reset4_in;
+  output s00_sha256_irq;
   input s00_axi_aclk;
   input axi_bvalid_reg_0;
   input aw_en_reg_1;
@@ -651,15 +661,14 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
   wire axi_rvalid_reg_0;
   wire axi_sha256_n_309;
   wire axi_sha256_n_310;
-  wire axi_sha256_n_311;
+  wire axi_sha256_n_312;
   wire axi_wready0;
   wire axi_wready_reg_0;
   wire issue_hash_ack_reset;
   wire issue_hash_ack_reset4_in;
   wire issue_hash_ack_reset_reg_0;
-  wire [61:0]p_0_in;
+  wire p_0_in;
   wire p_1_in;
-  wire p_1_in18_in;
   wire [31:7]p_1_in__0;
   wire p_2_in;
   wire [61:3]\pad_inst/p_0_in ;
@@ -793,6 +802,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
   wire [31:0]s00_axi_wdata;
   wire [3:0]s00_axi_wstrb;
   wire s00_axi_wvalid;
+  wire s00_sha256_irq;
   wire [4:0]sel0;
   wire sha256_big_endian_msg;
   wire [52:0]sha256_cur_block;
@@ -804,6 +814,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
   wire [31:0]sha256_hash5;
   wire [31:0]sha256_hash6;
   wire [31:0]sha256_hash7;
+  wire [63:0]sha256_msg_size;
   wire [4:3]slv_reg0;
   wire slv_reg01;
   wire slv_reg0121_out;
@@ -876,8 +887,6 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
   wire \slv_reg19[31]_i_1_n_0 ;
   wire \slv_reg19[7]_i_1_n_0 ;
   wire \slv_reg1[31]_i_2_n_0 ;
-  wire \slv_reg1_reg_n_0_[0] ;
-  wire \slv_reg1_reg_n_0_[1] ;
   wire [31:0]slv_reg20;
   wire \slv_reg20[15]_i_1_n_0 ;
   wire \slv_reg20[23]_i_1_n_0 ;
@@ -1165,9 +1174,9 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[0]_i_9 
        (.I0(\slv_reg3_reg_n_0_[0] ),
-        .I1(p_0_in[30]),
+        .I1(sha256_msg_size[32]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
-        .I3(\slv_reg1_reg_n_0_[0] ),
+        .I3(sha256_msg_size[0]),
         .I4(\axi_araddr_reg[2]_rep_n_0 ),
         .I5(\slv_reg0_reg_n_0_[0] ),
         .O(\axi_rdata[0]_i_9_n_0 ));
@@ -1254,10 +1263,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[10]_i_9 
        (.I0(\slv_reg3_reg_n_0_[10] ),
-        .I1(p_0_in[40]),
+        .I1(sha256_msg_size[42]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[8]),
+        .I4(sha256_msg_size[10]),
         .O(\axi_rdata[10]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1342,10 +1351,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[11]_i_9 
        (.I0(\slv_reg3_reg_n_0_[11] ),
-        .I1(p_0_in[41]),
+        .I1(sha256_msg_size[43]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[9]),
+        .I4(sha256_msg_size[11]),
         .O(\axi_rdata[11]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1430,10 +1439,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[12]_i_9 
        (.I0(\slv_reg3_reg_n_0_[12] ),
-        .I1(p_0_in[42]),
+        .I1(sha256_msg_size[44]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[10]),
+        .I4(sha256_msg_size[12]),
         .O(\axi_rdata[12]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1518,10 +1527,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[13]_i_9 
        (.I0(\slv_reg3_reg_n_0_[13] ),
-        .I1(p_0_in[43]),
+        .I1(sha256_msg_size[45]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[11]),
+        .I4(sha256_msg_size[13]),
         .O(\axi_rdata[13]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1606,10 +1615,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[14]_i_9 
        (.I0(\slv_reg3_reg_n_0_[14] ),
-        .I1(p_0_in[44]),
+        .I1(sha256_msg_size[46]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[12]),
+        .I4(sha256_msg_size[14]),
         .O(\axi_rdata[14]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1694,10 +1703,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[15]_i_9 
        (.I0(\slv_reg3_reg_n_0_[15] ),
-        .I1(p_0_in[45]),
+        .I1(sha256_msg_size[47]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[13]),
+        .I4(sha256_msg_size[15]),
         .O(\axi_rdata[15]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1782,10 +1791,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[16]_i_9 
        (.I0(\slv_reg3_reg_n_0_[16] ),
-        .I1(p_0_in[46]),
+        .I1(sha256_msg_size[48]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[14]),
+        .I4(sha256_msg_size[16]),
         .O(\axi_rdata[16]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1870,10 +1879,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[17]_i_9 
        (.I0(\slv_reg3_reg_n_0_[17] ),
-        .I1(p_0_in[47]),
+        .I1(sha256_msg_size[49]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[15]),
+        .I4(sha256_msg_size[17]),
         .O(\axi_rdata[17]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -1958,10 +1967,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[18]_i_9 
        (.I0(\slv_reg3_reg_n_0_[18] ),
-        .I1(p_0_in[48]),
+        .I1(sha256_msg_size[50]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[16]),
+        .I4(sha256_msg_size[18]),
         .O(\axi_rdata[18]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2046,10 +2055,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[19]_i_9 
        (.I0(\slv_reg3_reg_n_0_[19] ),
-        .I1(p_0_in[49]),
+        .I1(sha256_msg_size[51]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[17]),
+        .I4(sha256_msg_size[19]),
         .O(\axi_rdata[19]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2134,9 +2143,9 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[1]_i_9 
        (.I0(\slv_reg3_reg_n_0_[1] ),
-        .I1(p_0_in[31]),
+        .I1(sha256_msg_size[33]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
-        .I3(\slv_reg1_reg_n_0_[1] ),
+        .I3(sha256_msg_size[1]),
         .I4(\axi_araddr_reg[2]_rep_n_0 ),
         .I5(sha256_big_endian_msg),
         .O(\axi_rdata[1]_i_9_n_0 ));
@@ -2223,10 +2232,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[20]_i_9 
        (.I0(\slv_reg3_reg_n_0_[20] ),
-        .I1(p_0_in[50]),
+        .I1(sha256_msg_size[52]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[18]),
+        .I4(sha256_msg_size[20]),
         .O(\axi_rdata[20]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2310,10 +2319,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[21]_i_9 
        (.I0(\slv_reg3_reg_n_0_[21] ),
-        .I1(p_0_in[51]),
+        .I1(sha256_msg_size[53]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[19]),
+        .I4(sha256_msg_size[21]),
         .O(\axi_rdata[21]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2397,10 +2406,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[22]_i_9 
        (.I0(\slv_reg3_reg_n_0_[22] ),
-        .I1(p_0_in[52]),
+        .I1(sha256_msg_size[54]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[20]),
+        .I4(sha256_msg_size[22]),
         .O(\axi_rdata[22]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2484,10 +2493,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[23]_i_9 
        (.I0(\slv_reg3_reg_n_0_[23] ),
-        .I1(p_0_in[53]),
+        .I1(sha256_msg_size[55]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[21]),
+        .I4(sha256_msg_size[23]),
         .O(\axi_rdata[23]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2571,10 +2580,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[24]_i_9 
        (.I0(\slv_reg3_reg_n_0_[24] ),
-        .I1(p_0_in[54]),
+        .I1(sha256_msg_size[56]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[22]),
+        .I4(sha256_msg_size[24]),
         .O(\axi_rdata[24]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2658,10 +2667,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[25]_i_9 
        (.I0(\slv_reg3_reg_n_0_[25] ),
-        .I1(p_0_in[55]),
+        .I1(sha256_msg_size[57]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[23]),
+        .I4(sha256_msg_size[25]),
         .O(\axi_rdata[25]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2745,10 +2754,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[26]_i_9 
        (.I0(\slv_reg3_reg_n_0_[26] ),
-        .I1(p_0_in[56]),
+        .I1(sha256_msg_size[58]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[24]),
+        .I4(sha256_msg_size[26]),
         .O(\axi_rdata[26]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2832,10 +2841,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[27]_i_9 
        (.I0(\slv_reg3_reg_n_0_[27] ),
-        .I1(p_0_in[57]),
+        .I1(sha256_msg_size[59]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[25]),
+        .I4(sha256_msg_size[27]),
         .O(\axi_rdata[27]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -2919,10 +2928,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[28]_i_9 
        (.I0(\slv_reg3_reg_n_0_[28] ),
-        .I1(p_0_in[58]),
+        .I1(sha256_msg_size[60]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[26]),
+        .I4(sha256_msg_size[28]),
         .O(\axi_rdata[28]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3006,10 +3015,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[29]_i_9 
        (.I0(\slv_reg3_reg_n_0_[29] ),
-        .I1(p_0_in[59]),
+        .I1(sha256_msg_size[61]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[27]),
+        .I4(sha256_msg_size[29]),
         .O(\axi_rdata[29]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3094,9 +3103,9 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[2]_i_9 
        (.I0(\slv_reg3_reg_n_0_[2] ),
-        .I1(p_0_in[32]),
+        .I1(sha256_msg_size[34]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
-        .I3(p_0_in[0]),
+        .I3(sha256_msg_size[2]),
         .I4(\axi_araddr_reg[2]_rep_n_0 ),
         .I5(p_2_in),
         .O(\axi_rdata[2]_i_9_n_0 ));
@@ -3182,10 +3191,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[30]_i_9 
        (.I0(\slv_reg3_reg_n_0_[30] ),
-        .I1(p_0_in[60]),
+        .I1(sha256_msg_size[62]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[28]),
+        .I4(sha256_msg_size[30]),
         .O(\axi_rdata[30]_i_9_n_0 ));
   LUT3 #(
     .INIT(8'h08)) 
@@ -3208,10 +3217,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[31]_i_12 
        (.I0(\slv_reg3_reg_n_0_[31] ),
-        .I1(p_0_in[61]),
+        .I1(sha256_msg_size[63]),
         .I2(sel0[1]),
         .I3(sel0[0]),
-        .I4(p_0_in[29]),
+        .I4(sha256_msg_size[31]),
         .O(\axi_rdata[31]_i_12_n_0 ));
   LUT5 #(
     .INIT(32'hAFC0A0C0)) 
@@ -3377,11 +3386,11 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[3]_i_9 
        (.I0(\slv_reg3_reg_n_0_[3] ),
-        .I1(p_0_in[33]),
+        .I1(sha256_msg_size[35]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
-        .I3(p_0_in[1]),
+        .I3(sha256_msg_size[3]),
         .I4(\axi_araddr_reg[2]_rep_n_0 ),
-        .I5(p_1_in18_in),
+        .I5(p_0_in),
         .O(\axi_rdata[3]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3466,9 +3475,9 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[4]_i_9 
        (.I0(\slv_reg3_reg_n_0_[4] ),
-        .I1(p_0_in[34]),
+        .I1(sha256_msg_size[36]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
-        .I3(p_0_in[2]),
+        .I3(sha256_msg_size[4]),
         .I4(\axi_araddr_reg[2]_rep_n_0 ),
         .I5(p_1_in),
         .O(\axi_rdata[4]_i_9_n_0 ));
@@ -3555,10 +3564,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[5]_i_9 
        (.I0(\slv_reg3_reg_n_0_[5] ),
-        .I1(p_0_in[35]),
+        .I1(sha256_msg_size[37]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[3]),
+        .I4(sha256_msg_size[5]),
         .O(\axi_rdata[5]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3643,10 +3652,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[6]_i_9 
        (.I0(\slv_reg3_reg_n_0_[6] ),
-        .I1(p_0_in[36]),
+        .I1(sha256_msg_size[38]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[4]),
+        .I4(sha256_msg_size[6]),
         .O(\axi_rdata[6]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3731,10 +3740,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[7]_i_9 
        (.I0(\slv_reg3_reg_n_0_[7] ),
-        .I1(p_0_in[37]),
+        .I1(sha256_msg_size[39]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[5]),
+        .I4(sha256_msg_size[7]),
         .O(\axi_rdata[7]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3819,10 +3828,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[8]_i_9 
        (.I0(\slv_reg3_reg_n_0_[8] ),
-        .I1(p_0_in[38]),
+        .I1(sha256_msg_size[40]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[6]),
+        .I4(sha256_msg_size[8]),
         .O(\axi_rdata[8]_i_9_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3907,10 +3916,10 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
     .INIT(32'hAFC0A0C0)) 
     \axi_rdata[9]_i_9 
        (.I0(\slv_reg3_reg_n_0_[9] ),
-        .I1(p_0_in[39]),
+        .I1(sha256_msg_size[41]),
         .I2(\axi_araddr_reg[3]_rep_n_0 ),
         .I3(\axi_araddr_reg[2]_rep_n_0 ),
-        .I4(p_0_in[7]),
+        .I4(sha256_msg_size[9]),
         .O(\axi_rdata[9]_i_9_n_0 ));
   FDRE \axi_rdata_reg[0] 
        (.C(s00_axi_aclk),
@@ -4591,13 +4600,12 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .Q(s00_axi_rvalid),
         .R(axi_awready_i_1_n_0));
   test_axi_sha256_0_0_sha256_update axi_sha256
-       (.CO(axi_sha256_n_311),
+       (.CO(axi_sha256_n_312),
         .D(sha256_hash0),
         .Q(axi_awaddr[6:5]),
         .S(\slv_reg0[4]_i_12_n_0 ),
         .\axi_awaddr_reg[6] (axi_sha256_n_309),
         .\axi_awaddr_reg[6]_0 (axi_sha256_n_310),
-        .\cir_buf_reg[0][15] ({\slv_reg1_reg_n_0_[1] ,\slv_reg1_reg_n_0_[0] }),
         .\cur_block_reg[0]_0 (\slv_reg0_reg_n_0_[0] ),
         .\cur_block_reg[52]_0 (sha256_cur_block),
         .\hash1_reg[31] (sha256_hash1),
@@ -4609,12 +4617,13 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .\hash7_reg[31] (sha256_hash7),
         .issue_hash_ack_reset(issue_hash_ack_reset),
         .p_0_in(p_0_in),
-        .p_1_in18_in(p_1_in18_in),
         .p_2_in(p_2_in),
         .pad_start_carry__4(\pad_inst/p_0_in ),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_wstrb(s00_axi_wstrb[0]),
+        .s00_sha256_irq(s00_sha256_irq),
         .sha256_big_endian_msg(sha256_big_endian_msg),
+        .sha256_msg_size(sha256_msg_size),
         .slv_reg0(slv_reg0),
         .slv_reg01(slv_reg01),
         .slv_reg0121_out(slv_reg0121_out),
@@ -4672,404 +4681,404 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_10
-       (.I0(p_0_in[20]),
+       (.I0(sha256_msg_size[22]),
         .O(pad_start_carry__0_i_10_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_11
-       (.I0(p_0_in[19]),
+       (.I0(sha256_msg_size[21]),
         .O(pad_start_carry__0_i_11_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_12
-       (.I0(p_0_in[26]),
+       (.I0(sha256_msg_size[28]),
         .O(pad_start_carry__0_i_12_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_13
-       (.I0(p_0_in[25]),
+       (.I0(sha256_msg_size[27]),
         .O(pad_start_carry__0_i_13_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_14
-       (.I0(p_0_in[24]),
+       (.I0(sha256_msg_size[26]),
         .O(pad_start_carry__0_i_14_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_15
-       (.I0(p_0_in[23]),
+       (.I0(sha256_msg_size[25]),
         .O(pad_start_carry__0_i_15_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_16
-       (.I0(p_0_in[18]),
+       (.I0(sha256_msg_size[20]),
         .O(pad_start_carry__0_i_16_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_17
-       (.I0(p_0_in[17]),
+       (.I0(sha256_msg_size[19]),
         .O(pad_start_carry__0_i_17_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_18
-       (.I0(p_0_in[16]),
+       (.I0(sha256_msg_size[18]),
         .O(pad_start_carry__0_i_18_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_19
-       (.I0(p_0_in[15]),
+       (.I0(sha256_msg_size[17]),
         .O(pad_start_carry__0_i_19_n_0));
   CARRY4 pad_start_carry__0_i_5
        (.CI(pad_start_carry__0_i_7_n_0),
         .CO({pad_start_carry__0_i_5_n_0,pad_start_carry__0_i_5_n_1,pad_start_carry__0_i_5_n_2,pad_start_carry__0_i_5_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[22:19]),
+        .DI(sha256_msg_size[24:21]),
         .O(\pad_inst/p_0_in [22:19]),
         .S({pad_start_carry__0_i_8_n_0,pad_start_carry__0_i_9_n_0,pad_start_carry__0_i_10_n_0,pad_start_carry__0_i_11_n_0}));
   CARRY4 pad_start_carry__0_i_6
        (.CI(pad_start_carry__0_i_5_n_0),
         .CO({pad_start_carry__0_i_6_n_0,pad_start_carry__0_i_6_n_1,pad_start_carry__0_i_6_n_2,pad_start_carry__0_i_6_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[26:23]),
+        .DI(sha256_msg_size[28:25]),
         .O(\pad_inst/p_0_in [26:23]),
         .S({pad_start_carry__0_i_12_n_0,pad_start_carry__0_i_13_n_0,pad_start_carry__0_i_14_n_0,pad_start_carry__0_i_15_n_0}));
   CARRY4 pad_start_carry__0_i_7
        (.CI(pad_start_carry_i_6_n_0),
         .CO({pad_start_carry__0_i_7_n_0,pad_start_carry__0_i_7_n_1,pad_start_carry__0_i_7_n_2,pad_start_carry__0_i_7_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[18:15]),
+        .DI(sha256_msg_size[20:17]),
         .O(\pad_inst/p_0_in [18:15]),
         .S({pad_start_carry__0_i_16_n_0,pad_start_carry__0_i_17_n_0,pad_start_carry__0_i_18_n_0,pad_start_carry__0_i_19_n_0}));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_8
-       (.I0(p_0_in[22]),
+       (.I0(sha256_msg_size[24]),
         .O(pad_start_carry__0_i_8_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__0_i_9
-       (.I0(p_0_in[21]),
+       (.I0(sha256_msg_size[23]),
         .O(pad_start_carry__0_i_9_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_10
-       (.I0(p_0_in[32]),
+       (.I0(sha256_msg_size[34]),
         .O(pad_start_carry__1_i_10_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_11
-       (.I0(p_0_in[31]),
+       (.I0(sha256_msg_size[33]),
         .O(pad_start_carry__1_i_11_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_12
-       (.I0(p_0_in[38]),
+       (.I0(sha256_msg_size[40]),
         .O(pad_start_carry__1_i_12_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_13
-       (.I0(p_0_in[37]),
+       (.I0(sha256_msg_size[39]),
         .O(pad_start_carry__1_i_13_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_14
-       (.I0(p_0_in[36]),
+       (.I0(sha256_msg_size[38]),
         .O(pad_start_carry__1_i_14_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_15
-       (.I0(p_0_in[35]),
+       (.I0(sha256_msg_size[37]),
         .O(pad_start_carry__1_i_15_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_16
-       (.I0(p_0_in[30]),
+       (.I0(sha256_msg_size[32]),
         .O(pad_start_carry__1_i_16_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_17
-       (.I0(p_0_in[29]),
+       (.I0(sha256_msg_size[31]),
         .O(pad_start_carry__1_i_17_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_18
-       (.I0(p_0_in[28]),
+       (.I0(sha256_msg_size[30]),
         .O(pad_start_carry__1_i_18_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_19
-       (.I0(p_0_in[27]),
+       (.I0(sha256_msg_size[29]),
         .O(pad_start_carry__1_i_19_n_0));
   CARRY4 pad_start_carry__1_i_5
        (.CI(pad_start_carry__1_i_7_n_0),
         .CO({pad_start_carry__1_i_5_n_0,pad_start_carry__1_i_5_n_1,pad_start_carry__1_i_5_n_2,pad_start_carry__1_i_5_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[34:31]),
+        .DI(sha256_msg_size[36:33]),
         .O(\pad_inst/p_0_in [34:31]),
         .S({pad_start_carry__1_i_8_n_0,pad_start_carry__1_i_9_n_0,pad_start_carry__1_i_10_n_0,pad_start_carry__1_i_11_n_0}));
   CARRY4 pad_start_carry__1_i_6
        (.CI(pad_start_carry__1_i_5_n_0),
         .CO({pad_start_carry__1_i_6_n_0,pad_start_carry__1_i_6_n_1,pad_start_carry__1_i_6_n_2,pad_start_carry__1_i_6_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[38:35]),
+        .DI(sha256_msg_size[40:37]),
         .O(\pad_inst/p_0_in [38:35]),
         .S({pad_start_carry__1_i_12_n_0,pad_start_carry__1_i_13_n_0,pad_start_carry__1_i_14_n_0,pad_start_carry__1_i_15_n_0}));
   CARRY4 pad_start_carry__1_i_7
        (.CI(pad_start_carry__0_i_6_n_0),
         .CO({pad_start_carry__1_i_7_n_0,pad_start_carry__1_i_7_n_1,pad_start_carry__1_i_7_n_2,pad_start_carry__1_i_7_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[30:27]),
+        .DI(sha256_msg_size[32:29]),
         .O(\pad_inst/p_0_in [30:27]),
         .S({pad_start_carry__1_i_16_n_0,pad_start_carry__1_i_17_n_0,pad_start_carry__1_i_18_n_0,pad_start_carry__1_i_19_n_0}));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_8
-       (.I0(p_0_in[34]),
+       (.I0(sha256_msg_size[36]),
         .O(pad_start_carry__1_i_8_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__1_i_9
-       (.I0(p_0_in[33]),
+       (.I0(sha256_msg_size[35]),
         .O(pad_start_carry__1_i_9_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_10
-       (.I0(p_0_in[44]),
+       (.I0(sha256_msg_size[46]),
         .O(pad_start_carry__2_i_10_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_11
-       (.I0(p_0_in[43]),
+       (.I0(sha256_msg_size[45]),
         .O(pad_start_carry__2_i_11_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_12
-       (.I0(p_0_in[50]),
+       (.I0(sha256_msg_size[52]),
         .O(pad_start_carry__2_i_12_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_13
-       (.I0(p_0_in[49]),
+       (.I0(sha256_msg_size[51]),
         .O(pad_start_carry__2_i_13_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_14
-       (.I0(p_0_in[48]),
+       (.I0(sha256_msg_size[50]),
         .O(pad_start_carry__2_i_14_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_15
-       (.I0(p_0_in[47]),
+       (.I0(sha256_msg_size[49]),
         .O(pad_start_carry__2_i_15_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_16
-       (.I0(p_0_in[42]),
+       (.I0(sha256_msg_size[44]),
         .O(pad_start_carry__2_i_16_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_17
-       (.I0(p_0_in[41]),
+       (.I0(sha256_msg_size[43]),
         .O(pad_start_carry__2_i_17_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_18
-       (.I0(p_0_in[40]),
+       (.I0(sha256_msg_size[42]),
         .O(pad_start_carry__2_i_18_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_19
-       (.I0(p_0_in[39]),
+       (.I0(sha256_msg_size[41]),
         .O(pad_start_carry__2_i_19_n_0));
   CARRY4 pad_start_carry__2_i_5
        (.CI(pad_start_carry__2_i_7_n_0),
         .CO({pad_start_carry__2_i_5_n_0,pad_start_carry__2_i_5_n_1,pad_start_carry__2_i_5_n_2,pad_start_carry__2_i_5_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[46:43]),
+        .DI(sha256_msg_size[48:45]),
         .O(\pad_inst/p_0_in [46:43]),
         .S({pad_start_carry__2_i_8_n_0,pad_start_carry__2_i_9_n_0,pad_start_carry__2_i_10_n_0,pad_start_carry__2_i_11_n_0}));
   CARRY4 pad_start_carry__2_i_6
        (.CI(pad_start_carry__2_i_5_n_0),
         .CO({pad_start_carry__2_i_6_n_0,pad_start_carry__2_i_6_n_1,pad_start_carry__2_i_6_n_2,pad_start_carry__2_i_6_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[50:47]),
+        .DI(sha256_msg_size[52:49]),
         .O(\pad_inst/p_0_in [50:47]),
         .S({pad_start_carry__2_i_12_n_0,pad_start_carry__2_i_13_n_0,pad_start_carry__2_i_14_n_0,pad_start_carry__2_i_15_n_0}));
   CARRY4 pad_start_carry__2_i_7
        (.CI(pad_start_carry__1_i_6_n_0),
         .CO({pad_start_carry__2_i_7_n_0,pad_start_carry__2_i_7_n_1,pad_start_carry__2_i_7_n_2,pad_start_carry__2_i_7_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[42:39]),
+        .DI(sha256_msg_size[44:41]),
         .O(\pad_inst/p_0_in [42:39]),
         .S({pad_start_carry__2_i_16_n_0,pad_start_carry__2_i_17_n_0,pad_start_carry__2_i_18_n_0,pad_start_carry__2_i_19_n_0}));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_8
-       (.I0(p_0_in[46]),
+       (.I0(sha256_msg_size[48]),
         .O(pad_start_carry__2_i_8_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__2_i_9
-       (.I0(p_0_in[45]),
+       (.I0(sha256_msg_size[47]),
         .O(pad_start_carry__2_i_9_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_10
-       (.I0(p_0_in[59]),
+       (.I0(sha256_msg_size[61]),
         .O(pad_start_carry__3_i_10_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_11
-       (.I0(p_0_in[58]),
+       (.I0(sha256_msg_size[60]),
         .O(pad_start_carry__3_i_11_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_12
-       (.I0(p_0_in[57]),
+       (.I0(sha256_msg_size[59]),
         .O(pad_start_carry__3_i_12_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_13
-       (.I0(p_0_in[56]),
+       (.I0(sha256_msg_size[58]),
         .O(pad_start_carry__3_i_13_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_14
-       (.I0(p_0_in[55]),
+       (.I0(sha256_msg_size[57]),
         .O(pad_start_carry__3_i_14_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_15
-       (.I0(p_0_in[54]),
+       (.I0(sha256_msg_size[56]),
         .O(pad_start_carry__3_i_15_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_16
-       (.I0(p_0_in[53]),
+       (.I0(sha256_msg_size[55]),
         .O(pad_start_carry__3_i_16_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_17
-       (.I0(p_0_in[52]),
+       (.I0(sha256_msg_size[54]),
         .O(pad_start_carry__3_i_17_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_18
-       (.I0(p_0_in[51]),
+       (.I0(sha256_msg_size[53]),
         .O(pad_start_carry__3_i_18_n_0));
   CARRY4 pad_start_carry__3_i_5
        (.CI(pad_start_carry__3_i_6_n_0),
         .CO({NLW_pad_start_carry__3_i_5_CO_UNCONNECTED[3:2],pad_start_carry__3_i_5_n_2,pad_start_carry__3_i_5_n_3}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,p_0_in[60:59]}),
+        .DI({1'b0,1'b0,sha256_msg_size[62:61]}),
         .O({NLW_pad_start_carry__3_i_5_O_UNCONNECTED[3],\pad_inst/p_0_in [61:59]}),
         .S({1'b0,pad_start_carry__3_i_8_n_0,pad_start_carry__3_i_9_n_0,pad_start_carry__3_i_10_n_0}));
   CARRY4 pad_start_carry__3_i_6
        (.CI(pad_start_carry__3_i_7_n_0),
         .CO({pad_start_carry__3_i_6_n_0,pad_start_carry__3_i_6_n_1,pad_start_carry__3_i_6_n_2,pad_start_carry__3_i_6_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[58:55]),
+        .DI(sha256_msg_size[60:57]),
         .O(\pad_inst/p_0_in [58:55]),
         .S({pad_start_carry__3_i_11_n_0,pad_start_carry__3_i_12_n_0,pad_start_carry__3_i_13_n_0,pad_start_carry__3_i_14_n_0}));
   CARRY4 pad_start_carry__3_i_7
        (.CI(pad_start_carry__2_i_6_n_0),
         .CO({pad_start_carry__3_i_7_n_0,pad_start_carry__3_i_7_n_1,pad_start_carry__3_i_7_n_2,pad_start_carry__3_i_7_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[54:51]),
+        .DI(sha256_msg_size[56:53]),
         .O(\pad_inst/p_0_in [54:51]),
         .S({pad_start_carry__3_i_15_n_0,pad_start_carry__3_i_16_n_0,pad_start_carry__3_i_17_n_0,pad_start_carry__3_i_18_n_0}));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_8
-       (.I0(p_0_in[61]),
+       (.I0(sha256_msg_size[63]),
         .O(pad_start_carry__3_i_8_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry__3_i_9
-       (.I0(p_0_in[60]),
+       (.I0(sha256_msg_size[62]),
         .O(pad_start_carry__3_i_9_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_10
-       (.I0(p_0_in[9]),
+       (.I0(sha256_msg_size[11]),
         .O(pad_start_carry_i_10_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_11
-       (.I0(p_0_in[8]),
+       (.I0(sha256_msg_size[10]),
         .O(pad_start_carry_i_11_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_12
-       (.I0(p_0_in[7]),
+       (.I0(sha256_msg_size[9]),
         .O(pad_start_carry_i_12_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_13
-       (.I0(p_0_in[14]),
+       (.I0(sha256_msg_size[16]),
         .O(pad_start_carry_i_13_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_14
-       (.I0(p_0_in[13]),
+       (.I0(sha256_msg_size[15]),
         .O(pad_start_carry_i_14_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_15
-       (.I0(p_0_in[12]),
+       (.I0(sha256_msg_size[14]),
         .O(pad_start_carry_i_15_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_16
-       (.I0(p_0_in[11]),
+       (.I0(sha256_msg_size[13]),
         .O(pad_start_carry_i_16_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_17
-       (.I0(p_0_in[6]),
+       (.I0(sha256_msg_size[8]),
         .O(pad_start_carry_i_17_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_18
-       (.I0(p_0_in[5]),
+       (.I0(sha256_msg_size[7]),
         .O(pad_start_carry_i_18_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_19
-       (.I0(p_0_in[4]),
+       (.I0(sha256_msg_size[6]),
         .O(pad_start_carry_i_19_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_20
-       (.I0(p_0_in[3]),
+       (.I0(sha256_msg_size[5]),
         .O(pad_start_carry_i_20_n_0));
   CARRY4 pad_start_carry_i_5
        (.CI(pad_start_carry_i_7_n_0),
         .CO({pad_start_carry_i_5_n_0,pad_start_carry_i_5_n_1,pad_start_carry_i_5_n_2,pad_start_carry_i_5_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[10:7]),
+        .DI(sha256_msg_size[12:9]),
         .O(\pad_inst/p_0_in [10:7]),
         .S({pad_start_carry_i_9_n_0,pad_start_carry_i_10_n_0,pad_start_carry_i_11_n_0,pad_start_carry_i_12_n_0}));
   CARRY4 pad_start_carry_i_6
        (.CI(pad_start_carry_i_5_n_0),
         .CO({pad_start_carry_i_6_n_0,pad_start_carry_i_6_n_1,pad_start_carry_i_6_n_2,pad_start_carry_i_6_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[14:11]),
+        .DI(sha256_msg_size[16:13]),
         .O(\pad_inst/p_0_in [14:11]),
         .S({pad_start_carry_i_13_n_0,pad_start_carry_i_14_n_0,pad_start_carry_i_15_n_0,pad_start_carry_i_16_n_0}));
   CARRY4 pad_start_carry_i_7
-       (.CI(axi_sha256_n_311),
+       (.CI(axi_sha256_n_312),
         .CO({pad_start_carry_i_7_n_0,pad_start_carry_i_7_n_1,pad_start_carry_i_7_n_2,pad_start_carry_i_7_n_3}),
         .CYINIT(1'b0),
-        .DI(p_0_in[6:3]),
+        .DI(sha256_msg_size[8:5]),
         .O(\pad_inst/p_0_in [6:3]),
         .S({pad_start_carry_i_17_n_0,pad_start_carry_i_18_n_0,pad_start_carry_i_19_n_0,pad_start_carry_i_20_n_0}));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_9
-       (.I0(p_0_in[10]),
+       (.I0(sha256_msg_size[12]),
         .O(pad_start_carry_i_9_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair204" *) 
+  (* SOFT_HLUTNM = "soft_lutpair206" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg0[0]_i_1 
@@ -5077,7 +5086,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I1(\slv_reg0[1]_i_2_n_0 ),
         .I2(\slv_reg0_reg_n_0_[0] ),
         .O(\slv_reg0[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair204" *) 
+  (* SOFT_HLUTNM = "soft_lutpair206" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \slv_reg0[1]_i_1 
@@ -5110,17 +5119,17 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(slv_reg_wren),
         .I5(\slv_reg0[2]_i_4_n_0 ),
         .O(\slv_reg0[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair200" *) 
+  (* SOFT_HLUTNM = "soft_lutpair201" *) 
   LUT5 #(
-    .INIT(32'h88000001)) 
+    .INIT(32'h80800001)) 
     \slv_reg0[2]_i_2 
        (.I0(axi_awaddr[6]),
         .I1(axi_awaddr[5]),
-        .I2(axi_awaddr[2]),
-        .I3(axi_awaddr[4]),
+        .I2(axi_awaddr[4]),
+        .I3(axi_awaddr[2]),
         .I4(axi_awaddr[3]),
         .O(\slv_reg0[2]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair200" *) 
+  (* SOFT_HLUTNM = "soft_lutpair201" *) 
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     \slv_reg0[2]_i_3 
@@ -5140,14 +5149,14 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(\slv_reg0[2]_i_5_n_0 ),
         .I5(slv_reg_wren),
         .O(\slv_reg0[2]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair208" *) 
+  (* SOFT_HLUTNM = "soft_lutpair204" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \slv_reg0[2]_i_5 
        (.I0(axi_awaddr[5]),
         .I1(axi_awaddr[4]),
         .O(\slv_reg0[2]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair199" *) 
+  (* SOFT_HLUTNM = "soft_lutpair200" *) 
   LUT5 #(
     .INIT(32'h00200FF0)) 
     \slv_reg0[3]_i_3 
@@ -5155,22 +5164,22 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I1(s00_axi_wdata[3]),
         .I2(\slv_reg0[2]_i_2_n_0 ),
         .I3(\slv_reg0[2]_i_3_n_0 ),
-        .I4(p_1_in18_in),
+        .I4(p_0_in),
         .O(slv_reg0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair199" *) 
+  (* SOFT_HLUTNM = "soft_lutpair200" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg0[3]_i_4 
-       (.I0(p_1_in18_in),
+       (.I0(p_0_in),
         .I1(s00_axi_wdata[3]),
         .O(slv_reg01));
   LUT2 #(
     .INIT(4'h1)) 
     \slv_reg0[4]_i_12 
-       (.I0(p_0_in[60]),
-        .I1(p_0_in[61]),
+       (.I0(sha256_msg_size[62]),
+        .I1(sha256_msg_size[63]),
         .O(\slv_reg0[4]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair201" *) 
+  (* SOFT_HLUTNM = "soft_lutpair202" *) 
   LUT5 #(
     .INIT(32'h00200FF0)) 
     \slv_reg0[4]_i_4 
@@ -5188,7 +5197,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I2(axi_awready_reg_0),
         .I3(s00_axi_wvalid),
         .O(slv_reg_wren));
-  (* SOFT_HLUTNM = "soft_lutpair203" *) 
+  (* SOFT_HLUTNM = "soft_lutpair205" *) 
   LUT3 #(
     .INIT(8'hBA)) 
     \slv_reg0[4]_i_6 
@@ -5196,7 +5205,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I1(axi_awaddr[3]),
         .I2(axi_awaddr[2]),
         .O(\slv_reg0[4]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair201" *) 
+  (* SOFT_HLUTNM = "soft_lutpair202" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \slv_reg0[4]_i_7 
@@ -5233,7 +5242,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(1'b1),
         .D(axi_sha256_n_310),
-        .Q(p_1_in18_in),
+        .Q(p_0_in),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg0_reg[4] 
        (.C(s00_axi_aclk),
@@ -5730,7 +5739,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I2(s00_axi_wstrb[3]),
         .I3(axi_awaddr[5]),
         .O(\slv_reg12[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair202" *) 
+  (* SOFT_HLUTNM = "soft_lutpair203" *) 
   LUT4 #(
     .INIT(16'hFFFD)) 
     \slv_reg12[31]_i_2 
@@ -5969,7 +5978,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(axi_awaddr[5]),
         .I5(axi_awaddr[2]),
         .O(\slv_reg13[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair205" *) 
+  (* SOFT_HLUTNM = "soft_lutpair207" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \slv_reg13[31]_i_2 
@@ -6208,7 +6217,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(axi_awaddr[3]),
         .I5(axi_awaddr[5]),
         .O(\slv_reg14[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair206" *) 
+  (* SOFT_HLUTNM = "soft_lutpair208" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \slv_reg14[31]_i_2 
@@ -6441,7 +6450,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I2(axi_awaddr[2]),
         .I3(s00_axi_wstrb[3]),
         .O(\slv_reg15[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair202" *) 
+  (* SOFT_HLUTNM = "soft_lutpair204" *) 
   LUT4 #(
     .INIT(16'hFF7F)) 
     \slv_reg15[31]_i_2 
@@ -7608,7 +7617,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(s00_axi_wstrb[3]),
         .I5(axi_awaddr[2]),
         .O(p_1_in__0[31]));
-  (* SOFT_HLUTNM = "soft_lutpair205" *) 
+  (* SOFT_HLUTNM = "soft_lutpair207" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \slv_reg1[31]_i_2 
@@ -7629,193 +7638,193 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[0]),
-        .Q(\slv_reg1_reg_n_0_[0] ),
+        .Q(sha256_msg_size[0]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[10] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[10]),
-        .Q(p_0_in[8]),
+        .Q(sha256_msg_size[10]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[11] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[11]),
-        .Q(p_0_in[9]),
+        .Q(sha256_msg_size[11]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[12] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[12]),
-        .Q(p_0_in[10]),
+        .Q(sha256_msg_size[12]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[13] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[13]),
-        .Q(p_0_in[11]),
+        .Q(sha256_msg_size[13]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[14] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[14]),
-        .Q(p_0_in[12]),
+        .Q(sha256_msg_size[14]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[15] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[15]),
-        .Q(p_0_in[13]),
+        .Q(sha256_msg_size[15]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[16] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[16]),
-        .Q(p_0_in[14]),
+        .Q(sha256_msg_size[16]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[17] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[17]),
-        .Q(p_0_in[15]),
+        .Q(sha256_msg_size[17]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[18] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[18]),
-        .Q(p_0_in[16]),
+        .Q(sha256_msg_size[18]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[19] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[19]),
-        .Q(p_0_in[17]),
+        .Q(sha256_msg_size[19]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[1] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[1]),
-        .Q(\slv_reg1_reg_n_0_[1] ),
+        .Q(sha256_msg_size[1]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[20] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[20]),
-        .Q(p_0_in[18]),
+        .Q(sha256_msg_size[20]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[21] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[21]),
-        .Q(p_0_in[19]),
+        .Q(sha256_msg_size[21]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[22] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[22]),
-        .Q(p_0_in[20]),
+        .Q(sha256_msg_size[22]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[23] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[23]),
         .D(s00_axi_wdata[23]),
-        .Q(p_0_in[21]),
+        .Q(sha256_msg_size[23]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[24] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[24]),
-        .Q(p_0_in[22]),
+        .Q(sha256_msg_size[24]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[25] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[25]),
-        .Q(p_0_in[23]),
+        .Q(sha256_msg_size[25]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[26] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[26]),
-        .Q(p_0_in[24]),
+        .Q(sha256_msg_size[26]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[27] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[27]),
-        .Q(p_0_in[25]),
+        .Q(sha256_msg_size[27]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[28] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[28]),
-        .Q(p_0_in[26]),
+        .Q(sha256_msg_size[28]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[29] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[29]),
-        .Q(p_0_in[27]),
+        .Q(sha256_msg_size[29]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[2] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[2]),
-        .Q(p_0_in[0]),
+        .Q(sha256_msg_size[2]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[30] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[30]),
-        .Q(p_0_in[28]),
+        .Q(sha256_msg_size[30]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[31] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[31]),
         .D(s00_axi_wdata[31]),
-        .Q(p_0_in[29]),
+        .Q(sha256_msg_size[31]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[3] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[3]),
-        .Q(p_0_in[1]),
+        .Q(sha256_msg_size[3]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[4] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[4]),
-        .Q(p_0_in[2]),
+        .Q(sha256_msg_size[4]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[5] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[5]),
-        .Q(p_0_in[3]),
+        .Q(sha256_msg_size[5]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[6] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[6]),
-        .Q(p_0_in[4]),
+        .Q(sha256_msg_size[6]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[7] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[7]),
         .D(s00_axi_wdata[7]),
-        .Q(p_0_in[5]),
+        .Q(sha256_msg_size[7]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[8] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[8]),
-        .Q(p_0_in[6]),
+        .Q(sha256_msg_size[8]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg1_reg[9] 
        (.C(s00_axi_aclk),
         .CE(p_1_in__0[15]),
         .D(s00_axi_wdata[9]),
-        .Q(p_0_in[7]),
+        .Q(sha256_msg_size[9]),
         .R(axi_awready_i_1_n_0));
   LUT6 #(
     .INIT(64'h0008000000000000)) 
@@ -9629,193 +9638,193 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[0]),
-        .Q(p_0_in[30]),
+        .Q(sha256_msg_size[32]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[10] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[10]),
-        .Q(p_0_in[40]),
+        .Q(sha256_msg_size[42]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[11] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[11]),
-        .Q(p_0_in[41]),
+        .Q(sha256_msg_size[43]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[12] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[12]),
-        .Q(p_0_in[42]),
+        .Q(sha256_msg_size[44]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[13] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[13]),
-        .Q(p_0_in[43]),
+        .Q(sha256_msg_size[45]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[14] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[14]),
-        .Q(p_0_in[44]),
+        .Q(sha256_msg_size[46]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[15] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[15]),
-        .Q(p_0_in[45]),
+        .Q(sha256_msg_size[47]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[16] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[16]),
-        .Q(p_0_in[46]),
+        .Q(sha256_msg_size[48]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[17] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[17]),
-        .Q(p_0_in[47]),
+        .Q(sha256_msg_size[49]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[18] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[18]),
-        .Q(p_0_in[48]),
+        .Q(sha256_msg_size[50]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[19] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[19]),
-        .Q(p_0_in[49]),
+        .Q(sha256_msg_size[51]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[1] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[1]),
-        .Q(p_0_in[31]),
+        .Q(sha256_msg_size[33]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[20] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[20]),
-        .Q(p_0_in[50]),
+        .Q(sha256_msg_size[52]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[21] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[21]),
-        .Q(p_0_in[51]),
+        .Q(sha256_msg_size[53]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[22] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[22]),
-        .Q(p_0_in[52]),
+        .Q(sha256_msg_size[54]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[23] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[23]_i_1_n_0 ),
         .D(s00_axi_wdata[23]),
-        .Q(p_0_in[53]),
+        .Q(sha256_msg_size[55]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[24] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[24]),
-        .Q(p_0_in[54]),
+        .Q(sha256_msg_size[56]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[25] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[25]),
-        .Q(p_0_in[55]),
+        .Q(sha256_msg_size[57]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[26] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[26]),
-        .Q(p_0_in[56]),
+        .Q(sha256_msg_size[58]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[27] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[27]),
-        .Q(p_0_in[57]),
+        .Q(sha256_msg_size[59]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[28] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[28]),
-        .Q(p_0_in[58]),
+        .Q(sha256_msg_size[60]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[29] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[29]),
-        .Q(p_0_in[59]),
+        .Q(sha256_msg_size[61]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[2] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[2]),
-        .Q(p_0_in[32]),
+        .Q(sha256_msg_size[34]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[30] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[30]),
-        .Q(p_0_in[60]),
+        .Q(sha256_msg_size[62]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[31] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[31]_i_1_n_0 ),
         .D(s00_axi_wdata[31]),
-        .Q(p_0_in[61]),
+        .Q(sha256_msg_size[63]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[3] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[3]),
-        .Q(p_0_in[33]),
+        .Q(sha256_msg_size[35]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[4] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[4]),
-        .Q(p_0_in[34]),
+        .Q(sha256_msg_size[36]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[5] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[5]),
-        .Q(p_0_in[35]),
+        .Q(sha256_msg_size[37]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[6] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[6]),
-        .Q(p_0_in[36]),
+        .Q(sha256_msg_size[38]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[7] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[7]_i_1_n_0 ),
         .D(s00_axi_wdata[7]),
-        .Q(p_0_in[37]),
+        .Q(sha256_msg_size[39]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[8] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[8]),
-        .Q(p_0_in[38]),
+        .Q(sha256_msg_size[40]),
         .R(axi_awready_i_1_n_0));
   FDRE \slv_reg2_reg[9] 
        (.C(s00_axi_aclk),
         .CE(\slv_reg2[15]_i_1_n_0 ),
         .D(s00_axi_wdata[9]),
-        .Q(p_0_in[39]),
+        .Q(sha256_msg_size[41]),
         .R(axi_awready_i_1_n_0));
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
@@ -10174,7 +10183,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(s00_axi_wstrb[3]),
         .I5(axi_awaddr[2]),
         .O(\slv_reg5[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair208" *) 
+  (* SOFT_HLUTNM = "soft_lutpair209" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \slv_reg5[31]_i_2 
@@ -10413,7 +10422,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(s00_axi_wstrb[3]),
         .I5(axi_awaddr[4]),
         .O(\slv_reg6[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair206" *) 
+  (* SOFT_HLUTNM = "soft_lutpair208" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \slv_reg6[31]_i_2 
@@ -10628,8 +10637,8 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
        (.I0(slv_reg_wren),
         .I1(axi_awaddr[4]),
         .I2(s00_axi_wstrb[1]),
-        .I3(axi_awaddr[5]),
-        .I4(axi_awaddr[6]),
+        .I3(axi_awaddr[6]),
+        .I4(axi_awaddr[5]),
         .I5(\slv_reg7[31]_i_2_n_0 ),
         .O(\slv_reg7[15]_i_1_n_0 ));
   LUT6 #(
@@ -10638,8 +10647,8 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
        (.I0(slv_reg_wren),
         .I1(axi_awaddr[4]),
         .I2(s00_axi_wstrb[2]),
-        .I3(axi_awaddr[5]),
-        .I4(axi_awaddr[6]),
+        .I3(axi_awaddr[6]),
+        .I4(axi_awaddr[5]),
         .I5(\slv_reg7[31]_i_2_n_0 ),
         .O(\slv_reg7[23]_i_1_n_0 ));
   LUT6 #(
@@ -10648,11 +10657,11 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
        (.I0(slv_reg_wren),
         .I1(axi_awaddr[4]),
         .I2(s00_axi_wstrb[3]),
-        .I3(axi_awaddr[5]),
-        .I4(axi_awaddr[6]),
+        .I3(axi_awaddr[6]),
+        .I4(axi_awaddr[5]),
         .I5(\slv_reg7[31]_i_2_n_0 ),
         .O(\slv_reg7[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair207" *) 
+  (* SOFT_HLUTNM = "soft_lutpair209" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \slv_reg7[31]_i_2 
@@ -10665,8 +10674,8 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
        (.I0(slv_reg_wren),
         .I1(axi_awaddr[4]),
         .I2(s00_axi_wstrb[0]),
-        .I3(axi_awaddr[5]),
-        .I4(axi_awaddr[6]),
+        .I3(axi_awaddr[6]),
+        .I4(axi_awaddr[5]),
         .I5(\slv_reg7[31]_i_2_n_0 ),
         .O(\slv_reg7[7]_i_1_n_0 ));
   FDRE \slv_reg7_reg[0] 
@@ -11123,7 +11132,7 @@ module test_axi_sha256_0_0_axi_sha256_v1_0_S00_AXI
         .I4(s00_axi_wstrb[3]),
         .I5(axi_awaddr[2]),
         .O(\slv_reg9[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair207" *) 
+  (* SOFT_HLUTNM = "soft_lutpair205" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \slv_reg9[31]_i_2 
@@ -19464,7 +19473,7 @@ module test_axi_sha256_0_0_hasher
   wire [3:0]\hash7_reg[7]_0 ;
   wire s00_axi_aclk;
 
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[0]_i_1 
@@ -19472,7 +19481,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[0]),
         .O(\hash0_reg[31]_0 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[10]_i_1 
@@ -19480,7 +19489,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[10]),
         .O(\hash0_reg[31]_0 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[11]_i_1 
@@ -19488,7 +19497,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[11]),
         .O(\hash0_reg[31]_0 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[12]_i_1 
@@ -19496,7 +19505,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[12]),
         .O(\hash0_reg[31]_0 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[13]_i_1 
@@ -19504,7 +19513,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[13]),
         .O(\hash0_reg[31]_0 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[14]_i_1 
@@ -19512,7 +19521,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[14]),
         .O(\hash0_reg[31]_0 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[15]_i_1 
@@ -19520,7 +19529,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[15]),
         .O(\hash0_reg[31]_0 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[16]_i_1 
@@ -19528,7 +19537,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[16]),
         .O(\hash0_reg[31]_0 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[17]_i_1 
@@ -19536,7 +19545,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[17]),
         .O(\hash0_reg[31]_0 [17]));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[18]_i_1 
@@ -19544,7 +19553,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[18]),
         .O(\hash0_reg[31]_0 [18]));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[19]_i_1 
@@ -19552,7 +19561,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[19]),
         .O(\hash0_reg[31]_0 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[1]_i_1 
@@ -19560,7 +19569,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[1]),
         .O(\hash0_reg[31]_0 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[20]_i_1 
@@ -19568,7 +19577,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[20]),
         .O(\hash0_reg[31]_0 [20]));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[21]_i_1 
@@ -19576,7 +19585,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[21]),
         .O(\hash0_reg[31]_0 [21]));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[22]_i_1 
@@ -19584,7 +19593,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[22]),
         .O(\hash0_reg[31]_0 [22]));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[23]_i_1 
@@ -19592,7 +19601,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[23]),
         .O(\hash0_reg[31]_0 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[24]_i_1 
@@ -19600,7 +19609,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[24]),
         .O(\hash0_reg[31]_0 [24]));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[25]_i_1 
@@ -19608,7 +19617,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[25]),
         .O(\hash0_reg[31]_0 [25]));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[26]_i_1 
@@ -19616,7 +19625,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[26]),
         .O(\hash0_reg[31]_0 [26]));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[27]_i_1 
@@ -19624,7 +19633,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[27]),
         .O(\hash0_reg[31]_0 [27]));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[28]_i_1 
@@ -19632,7 +19641,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[28]),
         .O(\hash0_reg[31]_0 [28]));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[29]_i_1 
@@ -19640,7 +19649,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[29]),
         .O(\hash0_reg[31]_0 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[2]_i_1 
@@ -19648,7 +19657,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[2]),
         .O(\hash0_reg[31]_0 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[30]_i_1 
@@ -19656,7 +19665,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[30]),
         .O(\hash0_reg[31]_0 [30]));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[31]_i_1 
@@ -19664,7 +19673,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[31]),
         .O(\hash0_reg[31]_0 [31]));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[3]_i_1 
@@ -19672,7 +19681,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[3]),
         .O(\hash0_reg[31]_0 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[4]_i_1 
@@ -19680,7 +19689,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[4]),
         .O(\hash0_reg[31]_0 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[5]_i_1 
@@ -19688,7 +19697,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[5]),
         .O(\hash0_reg[31]_0 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[6]_i_1 
@@ -19696,7 +19705,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[6]),
         .O(\hash0_reg[31]_0 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[7]_i_1 
@@ -19704,7 +19713,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[7]),
         .O(\hash0_reg[31]_0 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[8]_i_1 
@@ -19712,7 +19721,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[8]),
         .O(\hash0_reg[31]_0 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \A[9]_i_1 
@@ -19720,7 +19729,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(A0[9]),
         .O(\hash0_reg[31]_0 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[0]_i_1 
@@ -19728,7 +19737,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [0]),
         .O(\hash1_reg[31]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[10]_i_1 
@@ -19736,7 +19745,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [10]),
         .O(\hash1_reg[31]_1 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[11]_i_1 
@@ -19744,7 +19753,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [11]),
         .O(\hash1_reg[31]_1 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[12]_i_1 
@@ -19752,7 +19761,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [12]),
         .O(\hash1_reg[31]_1 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[13]_i_1 
@@ -19760,7 +19769,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [13]),
         .O(\hash1_reg[31]_1 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[14]_i_1 
@@ -19768,7 +19777,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [14]),
         .O(\hash1_reg[31]_1 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[15]_i_1 
@@ -19776,7 +19785,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [15]),
         .O(\hash1_reg[31]_1 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[16]_i_1 
@@ -19784,7 +19793,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [16]),
         .O(\hash1_reg[31]_1 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[17]_i_1 
@@ -19792,7 +19801,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [17]),
         .O(\hash1_reg[31]_1 [17]));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[18]_i_1 
@@ -19800,7 +19809,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [18]),
         .O(\hash1_reg[31]_1 [18]));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[19]_i_1 
@@ -19808,7 +19817,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [19]),
         .O(\hash1_reg[31]_1 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[1]_i_1 
@@ -19816,7 +19825,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [1]),
         .O(\hash1_reg[31]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[20]_i_1 
@@ -19824,7 +19833,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [20]),
         .O(\hash1_reg[31]_1 [20]));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[21]_i_1 
@@ -19832,7 +19841,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [21]),
         .O(\hash1_reg[31]_1 [21]));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[22]_i_1 
@@ -19840,7 +19849,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [22]),
         .O(\hash1_reg[31]_1 [22]));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[23]_i_1 
@@ -19848,7 +19857,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [23]),
         .O(\hash1_reg[31]_1 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[24]_i_1 
@@ -19856,7 +19865,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [24]),
         .O(\hash1_reg[31]_1 [24]));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[25]_i_1 
@@ -19864,7 +19873,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [25]),
         .O(\hash1_reg[31]_1 [25]));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[26]_i_1 
@@ -19872,7 +19881,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [26]),
         .O(\hash1_reg[31]_1 [26]));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[27]_i_1 
@@ -19880,7 +19889,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [27]),
         .O(\hash1_reg[31]_1 [27]));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[28]_i_1 
@@ -19888,7 +19897,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [28]),
         .O(\hash1_reg[31]_1 [28]));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[29]_i_1 
@@ -19896,7 +19905,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [29]),
         .O(\hash1_reg[31]_1 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[2]_i_1 
@@ -19904,7 +19913,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [2]),
         .O(\hash1_reg[31]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[30]_i_1 
@@ -19912,7 +19921,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [30]),
         .O(\hash1_reg[31]_1 [30]));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[31]_i_1 
@@ -19920,7 +19929,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [31]),
         .O(\hash1_reg[31]_1 [31]));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[3]_i_1 
@@ -19928,7 +19937,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [3]),
         .O(\hash1_reg[31]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[4]_i_1 
@@ -19936,7 +19945,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [4]),
         .O(\hash1_reg[31]_1 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[5]_i_1 
@@ -19944,7 +19953,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [5]),
         .O(\hash1_reg[31]_1 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[6]_i_1 
@@ -19952,7 +19961,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [6]),
         .O(\hash1_reg[31]_1 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[7]_i_1 
@@ -19960,7 +19969,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [7]),
         .O(\hash1_reg[31]_1 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[8]_i_1 
@@ -19968,7 +19977,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [8]),
         .O(\hash1_reg[31]_1 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \B[9]_i_1 
@@ -19976,7 +19985,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\B_reg[31] [9]),
         .O(\hash1_reg[31]_1 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[0]_i_1 
@@ -19984,7 +19993,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [0]),
         .O(\hash2_reg[31]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[10]_i_1 
@@ -19992,7 +20001,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [10]),
         .O(\hash2_reg[31]_1 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[11]_i_1 
@@ -20000,7 +20009,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [11]),
         .O(\hash2_reg[31]_1 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[12]_i_1 
@@ -20008,7 +20017,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [12]),
         .O(\hash2_reg[31]_1 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[13]_i_1 
@@ -20016,7 +20025,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [13]),
         .O(\hash2_reg[31]_1 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[14]_i_1 
@@ -20024,7 +20033,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [14]),
         .O(\hash2_reg[31]_1 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[15]_i_1 
@@ -20032,7 +20041,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [15]),
         .O(\hash2_reg[31]_1 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[16]_i_1 
@@ -20040,7 +20049,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [16]),
         .O(\hash2_reg[31]_1 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[17]_i_1 
@@ -20048,7 +20057,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [17]),
         .O(\hash2_reg[31]_1 [17]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[18]_i_1 
@@ -20056,7 +20065,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [18]),
         .O(\hash2_reg[31]_1 [18]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[19]_i_1 
@@ -20064,7 +20073,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [19]),
         .O(\hash2_reg[31]_1 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[1]_i_1 
@@ -20072,7 +20081,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [1]),
         .O(\hash2_reg[31]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[20]_i_1 
@@ -20080,7 +20089,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [20]),
         .O(\hash2_reg[31]_1 [20]));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[21]_i_1 
@@ -20088,7 +20097,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [21]),
         .O(\hash2_reg[31]_1 [21]));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[22]_i_1 
@@ -20096,7 +20105,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [22]),
         .O(\hash2_reg[31]_1 [22]));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[23]_i_1 
@@ -20104,7 +20113,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [23]),
         .O(\hash2_reg[31]_1 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[24]_i_1 
@@ -20112,7 +20121,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [24]),
         .O(\hash2_reg[31]_1 [24]));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[25]_i_1 
@@ -20120,7 +20129,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [25]),
         .O(\hash2_reg[31]_1 [25]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[26]_i_1 
@@ -20128,7 +20137,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [26]),
         .O(\hash2_reg[31]_1 [26]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[27]_i_1 
@@ -20136,7 +20145,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [27]),
         .O(\hash2_reg[31]_1 [27]));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[28]_i_1 
@@ -20144,7 +20153,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [28]),
         .O(\hash2_reg[31]_1 [28]));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[29]_i_1 
@@ -20152,7 +20161,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [29]),
         .O(\hash2_reg[31]_1 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[2]_i_1 
@@ -20160,7 +20169,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [2]),
         .O(\hash2_reg[31]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[30]_i_1 
@@ -20168,7 +20177,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [30]),
         .O(\hash2_reg[31]_1 [30]));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[31]_i_1 
@@ -20176,7 +20185,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [31]),
         .O(\hash2_reg[31]_1 [31]));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[3]_i_1 
@@ -20184,7 +20193,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [3]),
         .O(\hash2_reg[31]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[4]_i_1 
@@ -20192,7 +20201,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [4]),
         .O(\hash2_reg[31]_1 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[5]_i_1 
@@ -20200,7 +20209,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [5]),
         .O(\hash2_reg[31]_1 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[6]_i_1 
@@ -20208,7 +20217,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [6]),
         .O(\hash2_reg[31]_1 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[7]_i_1 
@@ -20216,7 +20225,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [7]),
         .O(\hash2_reg[31]_1 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[8]_i_1 
@@ -20224,7 +20233,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [8]),
         .O(\hash2_reg[31]_1 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \C[9]_i_1 
@@ -20232,7 +20241,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\C_reg[31] [9]),
         .O(\hash2_reg[31]_1 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair157" *) 
+  (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[0]_i_1 
@@ -20240,7 +20249,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [0]),
         .O(\hash3_reg[31]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[10]_i_1 
@@ -20248,7 +20257,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [10]),
         .O(\hash3_reg[31]_1 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[11]_i_1 
@@ -20256,7 +20265,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [11]),
         .O(\hash3_reg[31]_1 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[12]_i_1 
@@ -20264,7 +20273,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [12]),
         .O(\hash3_reg[31]_1 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[13]_i_1 
@@ -20272,7 +20281,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [13]),
         .O(\hash3_reg[31]_1 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[14]_i_1 
@@ -20280,7 +20289,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [14]),
         .O(\hash3_reg[31]_1 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[15]_i_1 
@@ -20288,7 +20297,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [15]),
         .O(\hash3_reg[31]_1 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[16]_i_1 
@@ -20296,7 +20305,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [16]),
         .O(\hash3_reg[31]_1 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[17]_i_1 
@@ -20304,7 +20313,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [17]),
         .O(\hash3_reg[31]_1 [17]));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[18]_i_1 
@@ -20312,7 +20321,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [18]),
         .O(\hash3_reg[31]_1 [18]));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[19]_i_1 
@@ -20320,7 +20329,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [19]),
         .O(\hash3_reg[31]_1 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair157" *) 
+  (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[1]_i_1 
@@ -20328,7 +20337,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [1]),
         .O(\hash3_reg[31]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[20]_i_1 
@@ -20336,7 +20345,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [20]),
         .O(\hash3_reg[31]_1 [20]));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[21]_i_1 
@@ -20344,7 +20353,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [21]),
         .O(\hash3_reg[31]_1 [21]));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[22]_i_1 
@@ -20352,7 +20361,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [22]),
         .O(\hash3_reg[31]_1 [22]));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[23]_i_1 
@@ -20360,7 +20369,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [23]),
         .O(\hash3_reg[31]_1 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[24]_i_1 
@@ -20368,7 +20377,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [24]),
         .O(\hash3_reg[31]_1 [24]));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[25]_i_1 
@@ -20376,7 +20385,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [25]),
         .O(\hash3_reg[31]_1 [25]));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[26]_i_1 
@@ -20384,7 +20393,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [26]),
         .O(\hash3_reg[31]_1 [26]));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[27]_i_1 
@@ -20392,7 +20401,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [27]),
         .O(\hash3_reg[31]_1 [27]));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[28]_i_1 
@@ -20400,7 +20409,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [28]),
         .O(\hash3_reg[31]_1 [28]));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[29]_i_1 
@@ -20408,7 +20417,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [29]),
         .O(\hash3_reg[31]_1 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair156" *) 
+  (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[2]_i_1 
@@ -20416,7 +20425,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [2]),
         .O(\hash3_reg[31]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[30]_i_1 
@@ -20424,7 +20433,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [30]),
         .O(\hash3_reg[31]_1 [30]));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[31]_i_1 
@@ -20432,7 +20441,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [31]),
         .O(\hash3_reg[31]_1 [31]));
-  (* SOFT_HLUTNM = "soft_lutpair156" *) 
+  (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[3]_i_1 
@@ -20440,7 +20449,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [3]),
         .O(\hash3_reg[31]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[4]_i_1 
@@ -20448,7 +20457,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [4]),
         .O(\hash3_reg[31]_1 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[5]_i_1 
@@ -20456,7 +20465,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [5]),
         .O(\hash3_reg[31]_1 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[6]_i_1 
@@ -20464,7 +20473,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [6]),
         .O(\hash3_reg[31]_1 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[7]_i_1 
@@ -20472,7 +20481,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [7]),
         .O(\hash3_reg[31]_1 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[8]_i_1 
@@ -20480,7 +20489,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [8]),
         .O(\hash3_reg[31]_1 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \D[9]_i_1 
@@ -20488,7 +20497,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\A_reg[31] ),
         .I2(\D_reg[31] [9]),
         .O(\hash3_reg[31]_1 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[0]_i_1 
@@ -20496,7 +20505,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [0]),
         .O(\hash5_reg[31]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[10]_i_1 
@@ -20504,7 +20513,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [10]),
         .O(\hash5_reg[31]_1 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[11]_i_1 
@@ -20512,7 +20521,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [11]),
         .O(\hash5_reg[31]_1 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[12]_i_1 
@@ -20520,7 +20529,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [12]),
         .O(\hash5_reg[31]_1 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[13]_i_1 
@@ -20528,7 +20537,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [13]),
         .O(\hash5_reg[31]_1 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[14]_i_1 
@@ -20536,7 +20545,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [14]),
         .O(\hash5_reg[31]_1 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[15]_i_1 
@@ -20544,7 +20553,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [15]),
         .O(\hash5_reg[31]_1 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[16]_i_1 
@@ -20552,7 +20561,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [16]),
         .O(\hash5_reg[31]_1 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[17]_i_1 
@@ -20560,7 +20569,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [17]),
         .O(\hash5_reg[31]_1 [17]));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[18]_i_1 
@@ -20568,7 +20577,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [18]),
         .O(\hash5_reg[31]_1 [18]));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[19]_i_1 
@@ -20576,7 +20585,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [19]),
         .O(\hash5_reg[31]_1 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[1]_i_1 
@@ -20584,7 +20593,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [1]),
         .O(\hash5_reg[31]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[20]_i_1 
@@ -20592,7 +20601,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [20]),
         .O(\hash5_reg[31]_1 [20]));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[21]_i_1 
@@ -20600,7 +20609,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [21]),
         .O(\hash5_reg[31]_1 [21]));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[22]_i_1 
@@ -20608,7 +20617,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [22]),
         .O(\hash5_reg[31]_1 [22]));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[23]_i_1 
@@ -20616,7 +20625,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [23]),
         .O(\hash5_reg[31]_1 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[24]_i_1 
@@ -20624,7 +20633,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [24]),
         .O(\hash5_reg[31]_1 [24]));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[25]_i_1 
@@ -20632,7 +20641,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [25]),
         .O(\hash5_reg[31]_1 [25]));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[26]_i_1 
@@ -20640,7 +20649,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [26]),
         .O(\hash5_reg[31]_1 [26]));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[27]_i_1 
@@ -20648,7 +20657,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [27]),
         .O(\hash5_reg[31]_1 [27]));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[28]_i_1 
@@ -20656,7 +20665,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [28]),
         .O(\hash5_reg[31]_1 [28]));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[29]_i_1 
@@ -20664,7 +20673,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [29]),
         .O(\hash5_reg[31]_1 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[2]_i_1 
@@ -20672,7 +20681,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [2]),
         .O(\hash5_reg[31]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[30]_i_1 
@@ -20680,7 +20689,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [30]),
         .O(\hash5_reg[31]_1 [30]));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[31]_i_1 
@@ -20688,7 +20697,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [31]),
         .O(\hash5_reg[31]_1 [31]));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[3]_i_1 
@@ -20696,7 +20705,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [3]),
         .O(\hash5_reg[31]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[4]_i_1 
@@ -20704,7 +20713,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [4]),
         .O(\hash5_reg[31]_1 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[5]_i_1 
@@ -20712,7 +20721,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [5]),
         .O(\hash5_reg[31]_1 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[6]_i_1 
@@ -20720,7 +20729,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [6]),
         .O(\hash5_reg[31]_1 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[7]_i_1 
@@ -20728,7 +20737,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [7]),
         .O(\hash5_reg[31]_1 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[8]_i_1 
@@ -20736,7 +20745,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [8]),
         .O(\hash5_reg[31]_1 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \F[9]_i_1 
@@ -20744,7 +20753,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\F_reg[31]_0 [9]),
         .O(\hash5_reg[31]_1 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[0]_i_1 
@@ -20752,7 +20761,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [0]),
         .O(\hash6_reg[31]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[10]_i_1 
@@ -20760,7 +20769,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [10]),
         .O(\hash6_reg[31]_1 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[11]_i_1 
@@ -20768,7 +20777,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [11]),
         .O(\hash6_reg[31]_1 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[12]_i_1 
@@ -20776,7 +20785,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [12]),
         .O(\hash6_reg[31]_1 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[13]_i_1 
@@ -20784,7 +20793,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [13]),
         .O(\hash6_reg[31]_1 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[14]_i_1 
@@ -20792,7 +20801,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [14]),
         .O(\hash6_reg[31]_1 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[15]_i_1 
@@ -20800,7 +20809,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [15]),
         .O(\hash6_reg[31]_1 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[16]_i_1 
@@ -20808,7 +20817,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [16]),
         .O(\hash6_reg[31]_1 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[17]_i_1 
@@ -20816,7 +20825,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [17]),
         .O(\hash6_reg[31]_1 [17]));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[18]_i_1 
@@ -20824,7 +20833,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [18]),
         .O(\hash6_reg[31]_1 [18]));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[19]_i_1 
@@ -20832,7 +20841,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [19]),
         .O(\hash6_reg[31]_1 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[1]_i_1 
@@ -20840,7 +20849,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [1]),
         .O(\hash6_reg[31]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[20]_i_1 
@@ -20848,7 +20857,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [20]),
         .O(\hash6_reg[31]_1 [20]));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[21]_i_1 
@@ -20856,7 +20865,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [21]),
         .O(\hash6_reg[31]_1 [21]));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[22]_i_1 
@@ -20864,7 +20873,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [22]),
         .O(\hash6_reg[31]_1 [22]));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[23]_i_1 
@@ -20872,7 +20881,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [23]),
         .O(\hash6_reg[31]_1 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[24]_i_1 
@@ -20880,7 +20889,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [24]),
         .O(\hash6_reg[31]_1 [24]));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[25]_i_1 
@@ -20888,7 +20897,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [25]),
         .O(\hash6_reg[31]_1 [25]));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[26]_i_1 
@@ -20896,7 +20905,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [26]),
         .O(\hash6_reg[31]_1 [26]));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[27]_i_1 
@@ -20904,7 +20913,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [27]),
         .O(\hash6_reg[31]_1 [27]));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[28]_i_1 
@@ -20912,7 +20921,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [28]),
         .O(\hash6_reg[31]_1 [28]));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[29]_i_1 
@@ -20920,7 +20929,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [29]),
         .O(\hash6_reg[31]_1 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[2]_i_1 
@@ -20928,7 +20937,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [2]),
         .O(\hash6_reg[31]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[30]_i_1 
@@ -20936,7 +20945,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [30]),
         .O(\hash6_reg[31]_1 [30]));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[31]_i_1 
@@ -20944,7 +20953,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [31]),
         .O(\hash6_reg[31]_1 [31]));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[3]_i_1 
@@ -20952,7 +20961,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [3]),
         .O(\hash6_reg[31]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[4]_i_1 
@@ -20960,7 +20969,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [4]),
         .O(\hash6_reg[31]_1 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[5]_i_1 
@@ -20968,7 +20977,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [5]),
         .O(\hash6_reg[31]_1 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[6]_i_1 
@@ -20976,7 +20985,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [6]),
         .O(\hash6_reg[31]_1 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[7]_i_1 
@@ -20984,7 +20993,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [7]),
         .O(\hash6_reg[31]_1 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[8]_i_1 
@@ -20992,7 +21001,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [8]),
         .O(\hash6_reg[31]_1 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \G[9]_i_1 
@@ -21000,7 +21009,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(\G_reg[31] [9]),
         .O(\hash6_reg[31]_1 [9]));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[0]_i_1 
@@ -21008,7 +21017,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[0]),
         .O(\hash7_reg[31]_1 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[10]_i_1 
@@ -21016,7 +21025,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[10]),
         .O(\hash7_reg[31]_1 [10]));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[11]_i_1 
@@ -21024,7 +21033,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[11]),
         .O(\hash7_reg[31]_1 [11]));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[12]_i_1 
@@ -21032,7 +21041,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[12]),
         .O(\hash7_reg[31]_1 [12]));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[13]_i_1 
@@ -21040,7 +21049,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[13]),
         .O(\hash7_reg[31]_1 [13]));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[14]_i_1 
@@ -21048,7 +21057,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[14]),
         .O(\hash7_reg[31]_1 [14]));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[15]_i_1 
@@ -21056,7 +21065,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[15]),
         .O(\hash7_reg[31]_1 [15]));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[16]_i_1 
@@ -21064,7 +21073,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[16]),
         .O(\hash7_reg[31]_1 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[17]_i_1 
@@ -21072,7 +21081,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[17]),
         .O(\hash7_reg[31]_1 [17]));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[18]_i_1 
@@ -21080,7 +21089,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[18]),
         .O(\hash7_reg[31]_1 [18]));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[19]_i_1 
@@ -21088,7 +21097,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[19]),
         .O(\hash7_reg[31]_1 [19]));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[1]_i_1 
@@ -21096,7 +21105,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[1]),
         .O(\hash7_reg[31]_1 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[20]_i_1 
@@ -21104,7 +21113,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[20]),
         .O(\hash7_reg[31]_1 [20]));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[21]_i_1 
@@ -21112,7 +21121,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[21]),
         .O(\hash7_reg[31]_1 [21]));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[22]_i_1 
@@ -21120,7 +21129,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[22]),
         .O(\hash7_reg[31]_1 [22]));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[23]_i_1 
@@ -21128,7 +21137,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[23]),
         .O(\hash7_reg[31]_1 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[24]_i_1 
@@ -21136,7 +21145,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[24]),
         .O(\hash7_reg[31]_1 [24]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[25]_i_1 
@@ -21144,7 +21153,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[25]),
         .O(\hash7_reg[31]_1 [25]));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[26]_i_1 
@@ -21152,7 +21161,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[26]),
         .O(\hash7_reg[31]_1 [26]));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[27]_i_1 
@@ -21160,7 +21169,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[27]),
         .O(\hash7_reg[31]_1 [27]));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[28]_i_1 
@@ -21168,7 +21177,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[28]),
         .O(\hash7_reg[31]_1 [28]));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[29]_i_1 
@@ -21176,7 +21185,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[29]),
         .O(\hash7_reg[31]_1 [29]));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[2]_i_1 
@@ -21184,7 +21193,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[2]),
         .O(\hash7_reg[31]_1 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[30]_i_1 
@@ -21192,7 +21201,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[30]),
         .O(\hash7_reg[31]_1 [30]));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[31]_i_1 
@@ -21200,7 +21209,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[31]),
         .O(\hash7_reg[31]_1 [31]));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[3]_i_1 
@@ -21208,7 +21217,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[3]),
         .O(\hash7_reg[31]_1 [3]));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[4]_i_1 
@@ -21216,7 +21225,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[4]),
         .O(\hash7_reg[31]_1 [4]));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[5]_i_1 
@@ -21224,7 +21233,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[5]),
         .O(\hash7_reg[31]_1 [5]));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[6]_i_1 
@@ -21232,7 +21241,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[6]),
         .O(\hash7_reg[31]_1 [6]));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[7]_i_1 
@@ -21240,7 +21249,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[7]),
         .O(\hash7_reg[31]_1 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[8]_i_1 
@@ -21248,7 +21257,7 @@ module test_axi_sha256_0_0_hasher
         .I1(\F_reg[31] ),
         .I2(Q[8]),
         .O(\hash7_reg[31]_1 [8]));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \H[9]_i_1 
@@ -22807,7 +22816,7 @@ module test_axi_sha256_0_0_padder
     \state_reg[3]_0 ,
     \w_in_reg_reg[31]_0 ,
     CO,
-    p_0_in,
+    sha256_msg_size,
     \w_in_reg_reg[0]_0 ,
     \w_in_reg_reg[7]_i_5_0 ,
     \w_in_reg_reg[0]_i_2_0 ,
@@ -22832,7 +22841,6 @@ module test_axi_sha256_0_0_padder
     \state_reg[5]_2 ,
     \round_counter_reg[0]_rep__0 ,
     D,
-    \cir_buf_reg[0][15] ,
     pad_start_carry_0,
     pad_start_carry__4_0,
     \cur_block_reg_reg[54]_0 ,
@@ -22850,7 +22858,7 @@ module test_axi_sha256_0_0_padder
   output [1:0]\state_reg[3]_0 ;
   output [31:0]\w_in_reg_reg[31]_0 ;
   output [0:0]CO;
-  input [61:0]p_0_in;
+  input [63:0]sha256_msg_size;
   input [3:0]\w_in_reg_reg[0]_0 ;
   input [31:0]\w_in_reg_reg[7]_i_5_0 ;
   input \w_in_reg_reg[0]_i_2_0 ;
@@ -22875,7 +22883,6 @@ module test_axi_sha256_0_0_padder
   input \state_reg[5]_2 ;
   input [8:0]\round_counter_reg[0]_rep__0 ;
   input [1:0]D;
-  input [1:0]\cir_buf_reg[0][15] ;
   input pad_start_carry_0;
   input [58:0]pad_start_carry__4_0;
   input [54:0]\cur_block_reg_reg[54]_0 ;
@@ -22924,7 +22931,6 @@ module test_axi_sha256_0_0_padder
   wire \cir_buf[0][7]_i_3_n_0 ;
   wire \cir_buf[0][8]_i_2_n_0 ;
   wire \cir_buf[0][9]_i_2_n_0 ;
-  wire [1:0]\cir_buf_reg[0][15] ;
   wire [0:0]\cir_buf_reg[0][7] ;
   wire [54:0]cur_block_reg;
   wire [54:0]\cur_block_reg_reg[54]_0 ;
@@ -22996,8 +23002,7 @@ module test_axi_sha256_0_0_padder
   wire \next_state1_inferred__0/i__carry_n_1 ;
   wire \next_state1_inferred__0/i__carry_n_2 ;
   wire \next_state1_inferred__0/i__carry_n_3 ;
-  wire [61:0]p_0_in;
-  wire [2:0]p_0_in_0;
+  wire [2:0]p_0_in;
   wire pad_of0;
   wire pad_of0_carry__0_i_1_n_0;
   wire pad_of0_carry__0_i_2_n_0;
@@ -23091,6 +23096,7 @@ module test_axi_sha256_0_0_padder
   wire s00_axi_aclk;
   wire [31:0]sch_calc;
   wire sha256_big_endian_msg;
+  wire [63:0]sha256_msg_size;
   wire [31:0]sha256_w;
   wire state;
   wire \state[0]_i_1_n_0 ;
@@ -23553,7 +23559,7 @@ module test_axi_sha256_0_0_padder
        (.I0(sch_calc[0]),
         .I1(\cir_buf_reg[0][7] ),
         .I2(\cir_buf[0][31]_i_4_n_0 ),
-        .I3(p_0_in[27]),
+        .I3(sha256_msg_size[29]),
         .I4(w_in_reg[0]),
         .I5(\cir_buf[0][2]_i_2_n_0 ),
         .O(\w_in_reg_reg[31]_0 [0]));
@@ -23561,7 +23567,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][10]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[5]),
+        .I1(sha256_msg_size[7]),
         .I2(\cir_buf[0][10]_i_2_n_0 ),
         .I3(w_in_reg[10]),
         .I4(\cir_buf[0][14]_i_3_n_0 ),
@@ -23569,7 +23575,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][10]_i_2 
-       (.I0(p_0_in[37]),
+       (.I0(sha256_msg_size[39]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23579,7 +23585,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][11]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[6]),
+        .I1(sha256_msg_size[8]),
         .I2(\cir_buf[0][11]_i_2_n_0 ),
         .I3(w_in_reg[11]),
         .I4(\cir_buf[0][14]_i_3_n_0 ),
@@ -23587,7 +23593,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][11]_i_2 
-       (.I0(p_0_in[38]),
+       (.I0(sha256_msg_size[40]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23597,7 +23603,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][12]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[7]),
+        .I1(sha256_msg_size[9]),
         .I2(\cir_buf[0][12]_i_2_n_0 ),
         .I3(w_in_reg[12]),
         .I4(\cir_buf[0][14]_i_3_n_0 ),
@@ -23605,7 +23611,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][12]_i_2 
-       (.I0(p_0_in[39]),
+       (.I0(sha256_msg_size[41]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23615,7 +23621,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][13]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[8]),
+        .I1(sha256_msg_size[10]),
         .I2(\cir_buf[0][13]_i_2_n_0 ),
         .I3(w_in_reg[13]),
         .I4(\cir_buf[0][14]_i_3_n_0 ),
@@ -23623,7 +23629,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][13]_i_2 
-       (.I0(p_0_in[40]),
+       (.I0(sha256_msg_size[42]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23633,7 +23639,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][14]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[9]),
+        .I1(sha256_msg_size[11]),
         .I2(\cir_buf[0][14]_i_2_n_0 ),
         .I3(w_in_reg[14]),
         .I4(\cir_buf[0][14]_i_3_n_0 ),
@@ -23641,7 +23647,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][14]_i_2 
-       (.I0(p_0_in[41]),
+       (.I0(sha256_msg_size[43]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23653,8 +23659,8 @@ module test_axi_sha256_0_0_padder
        (.I0(\cir_buf_reg[0][7] ),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\state_reg_n_0_[2] ),
-        .I3(\cir_buf_reg[0][15] [0]),
-        .I4(\cir_buf_reg[0][15] [1]),
+        .I3(sha256_msg_size[0]),
+        .I4(sha256_msg_size[1]),
         .I5(\state_reg_n_0_[1] ),
         .O(\cir_buf[0][14]_i_3_n_0 ));
   LUT6 #(
@@ -23662,9 +23668,9 @@ module test_axi_sha256_0_0_padder
     \cir_buf[0][15]_i_1 
        (.I0(\cir_buf[0][15]_i_2_n_0 ),
         .I1(\cir_buf[0][22]_i_2_n_0 ),
-        .I2(p_0_in[10]),
-        .I3(\cir_buf_reg[0][15] [0]),
-        .I4(\cir_buf_reg[0][15] [1]),
+        .I2(sha256_msg_size[12]),
+        .I3(sha256_msg_size[0]),
+        .I4(sha256_msg_size[1]),
         .I5(\cir_buf[0][15]_i_3_n_0 ),
         .O(\w_in_reg_reg[31]_0 [15]));
   LUT6 #(
@@ -23673,11 +23679,11 @@ module test_axi_sha256_0_0_padder
        (.I0(sch_calc[15]),
         .I1(\cir_buf_reg[0][7] ),
         .I2(\cir_buf[0][31]_i_4_n_0 ),
-        .I3(p_0_in[42]),
+        .I3(sha256_msg_size[44]),
         .I4(w_in_reg[15]),
         .I5(\cir_buf[0][22]_i_4_n_0 ),
         .O(\cir_buf[0][15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair164" *) 
+  (* SOFT_HLUTNM = "soft_lutpair165" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \cir_buf[0][15]_i_3 
@@ -23689,16 +23695,16 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][16]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[11]),
+        .I1(sha256_msg_size[13]),
         .I2(\cir_buf[0][16]_i_2_n_0 ),
         .I3(w_in_reg[16]),
         .I4(\cir_buf[0][22]_i_4_n_0 ),
         .O(\w_in_reg_reg[31]_0 [16]));
-  (* SOFT_HLUTNM = "soft_lutpair160" *) 
+  (* SOFT_HLUTNM = "soft_lutpair161" *) 
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][16]_i_2 
-       (.I0(p_0_in[43]),
+       (.I0(sha256_msg_size[45]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23708,7 +23714,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][17]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[12]),
+        .I1(sha256_msg_size[14]),
         .I2(\cir_buf[0][17]_i_2_n_0 ),
         .I3(w_in_reg[17]),
         .I4(\cir_buf[0][22]_i_4_n_0 ),
@@ -23716,7 +23722,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][17]_i_2 
-       (.I0(p_0_in[44]),
+       (.I0(sha256_msg_size[46]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23726,7 +23732,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][18]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[13]),
+        .I1(sha256_msg_size[15]),
         .I2(\cir_buf[0][18]_i_2_n_0 ),
         .I3(w_in_reg[18]),
         .I4(\cir_buf[0][22]_i_4_n_0 ),
@@ -23734,7 +23740,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][18]_i_2 
-       (.I0(p_0_in[45]),
+       (.I0(sha256_msg_size[47]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23744,7 +23750,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][19]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[14]),
+        .I1(sha256_msg_size[16]),
         .I2(\cir_buf[0][19]_i_2_n_0 ),
         .I3(w_in_reg[19]),
         .I4(\cir_buf[0][22]_i_4_n_0 ),
@@ -23752,7 +23758,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][19]_i_2 
-       (.I0(p_0_in[46]),
+       (.I0(sha256_msg_size[48]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23764,7 +23770,7 @@ module test_axi_sha256_0_0_padder
        (.I0(sch_calc[1]),
         .I1(\cir_buf_reg[0][7] ),
         .I2(\cir_buf[0][31]_i_4_n_0 ),
-        .I3(p_0_in[28]),
+        .I3(sha256_msg_size[30]),
         .I4(w_in_reg[1]),
         .I5(\cir_buf[0][2]_i_2_n_0 ),
         .O(\w_in_reg_reg[31]_0 [1]));
@@ -23772,7 +23778,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][20]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[15]),
+        .I1(sha256_msg_size[17]),
         .I2(\cir_buf[0][20]_i_2_n_0 ),
         .I3(w_in_reg[20]),
         .I4(\cir_buf[0][22]_i_4_n_0 ),
@@ -23780,7 +23786,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][20]_i_2 
-       (.I0(p_0_in[47]),
+       (.I0(sha256_msg_size[49]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23790,7 +23796,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][21]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[16]),
+        .I1(sha256_msg_size[18]),
         .I2(\cir_buf[0][21]_i_2_n_0 ),
         .I3(w_in_reg[21]),
         .I4(\cir_buf[0][22]_i_4_n_0 ),
@@ -23798,7 +23804,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][21]_i_2 
-       (.I0(p_0_in[48]),
+       (.I0(sha256_msg_size[50]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23808,7 +23814,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][22]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[17]),
+        .I1(sha256_msg_size[19]),
         .I2(\cir_buf[0][22]_i_3_n_0 ),
         .I3(w_in_reg[22]),
         .I4(\cir_buf[0][22]_i_4_n_0 ),
@@ -23823,7 +23829,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][22]_i_3 
-       (.I0(p_0_in[49]),
+       (.I0(sha256_msg_size[51]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -23832,29 +23838,29 @@ module test_axi_sha256_0_0_padder
   LUT6 #(
     .INIT(64'hC080C000C0C0C000)) 
     \cir_buf[0][22]_i_4 
-       (.I0(\cir_buf_reg[0][15] [1]),
+       (.I0(sha256_msg_size[1]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(\state_reg_n_0_[1] ),
         .I4(\state_reg_n_0_[2] ),
-        .I5(\cir_buf_reg[0][15] [0]),
+        .I5(sha256_msg_size[0]),
         .O(\cir_buf[0][22]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFEAFFEAEA)) 
     \cir_buf[0][23]_i_1 
        (.I0(\cir_buf[0][23]_i_2_n_0 ),
-        .I1(p_0_in[50]),
+        .I1(sha256_msg_size[52]),
         .I2(\cir_buf[0][31]_i_4_n_0 ),
         .I3(\cir_buf_reg[0][7] ),
         .I4(sch_calc[23]),
         .I5(\cir_buf[0][23]_i_3_n_0 ),
         .O(\w_in_reg_reg[31]_0 [23]));
-  (* SOFT_HLUTNM = "soft_lutpair161" *) 
+  (* SOFT_HLUTNM = "soft_lutpair162" *) 
   LUT5 #(
     .INIT(32'h40000000)) 
     \cir_buf[0][23]_i_2 
-       (.I0(\cir_buf_reg[0][15] [1]),
-        .I1(\cir_buf_reg[0][15] [0]),
+       (.I0(sha256_msg_size[1]),
+        .I1(sha256_msg_size[0]),
         .I2(\state_reg_n_0_[2] ),
         .I3(\cir_buf_reg[0][7] ),
         .I4(\w_out_inferred__0/i___3_n_0 ),
@@ -23862,7 +23868,7 @@ module test_axi_sha256_0_0_padder
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][23]_i_3 
-       (.I0(p_0_in[18]),
+       (.I0(sha256_msg_size[20]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -23877,12 +23883,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[51]),
+        .I5(sha256_msg_size[53]),
         .O(\w_in_reg_reg[31]_0 [24]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][24]_i_2 
-       (.I0(p_0_in[19]),
+       (.I0(sha256_msg_size[21]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -23897,12 +23903,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[52]),
+        .I5(sha256_msg_size[54]),
         .O(\w_in_reg_reg[31]_0 [25]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][25]_i_2 
-       (.I0(p_0_in[20]),
+       (.I0(sha256_msg_size[22]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -23917,12 +23923,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[53]),
+        .I5(sha256_msg_size[55]),
         .O(\w_in_reg_reg[31]_0 [26]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][26]_i_2 
-       (.I0(p_0_in[21]),
+       (.I0(sha256_msg_size[23]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -23937,12 +23943,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[54]),
+        .I5(sha256_msg_size[56]),
         .O(\w_in_reg_reg[31]_0 [27]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][27]_i_2 
-       (.I0(p_0_in[22]),
+       (.I0(sha256_msg_size[24]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -23957,12 +23963,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[55]),
+        .I5(sha256_msg_size[57]),
         .O(\w_in_reg_reg[31]_0 [28]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][28]_i_2 
-       (.I0(p_0_in[23]),
+       (.I0(sha256_msg_size[25]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -23977,12 +23983,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[56]),
+        .I5(sha256_msg_size[58]),
         .O(\w_in_reg_reg[31]_0 [29]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][29]_i_2 
-       (.I0(p_0_in[24]),
+       (.I0(sha256_msg_size[26]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -23995,7 +24001,7 @@ module test_axi_sha256_0_0_padder
        (.I0(sch_calc[2]),
         .I1(\cir_buf_reg[0][7] ),
         .I2(\cir_buf[0][31]_i_4_n_0 ),
-        .I3(p_0_in[29]),
+        .I3(sha256_msg_size[31]),
         .I4(w_in_reg[2]),
         .I5(\cir_buf[0][2]_i_2_n_0 ),
         .O(\w_in_reg_reg[31]_0 [2]));
@@ -24003,8 +24009,8 @@ module test_axi_sha256_0_0_padder
     .INIT(64'hABAA000000000000)) 
     \cir_buf[0][2]_i_2 
        (.I0(\state_reg_n_0_[1] ),
-        .I1(\cir_buf_reg[0][15] [1]),
-        .I2(\cir_buf_reg[0][15] [0]),
+        .I1(sha256_msg_size[1]),
+        .I2(sha256_msg_size[0]),
         .I3(\state_reg_n_0_[2] ),
         .I4(\w_out_inferred__0/i___3_n_0 ),
         .I5(\cir_buf_reg[0][7] ),
@@ -24017,12 +24023,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[57]),
+        .I5(sha256_msg_size[59]),
         .O(\w_in_reg_reg[31]_0 [30]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][30]_i_2 
-       (.I0(p_0_in[25]),
+       (.I0(sha256_msg_size[27]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -24036,19 +24042,19 @@ module test_axi_sha256_0_0_padder
         .I1(\cir_buf[0][31]_i_3_n_0 ),
         .I2(w_in_reg[31]),
         .I3(\cir_buf[0][31]_i_4_n_0 ),
-        .I4(p_0_in[58]),
+        .I4(sha256_msg_size[60]),
         .O(\w_in_reg_reg[31]_0 [31]));
   LUT6 #(
     .INIT(64'hFC00AAAACC00AAAA)) 
     \cir_buf[0][31]_i_2 
        (.I0(sch_calc[31]),
         .I1(\state_reg_n_0_[3] ),
-        .I2(p_0_in[26]),
+        .I2(sha256_msg_size[28]),
         .I3(\w_out_inferred__0/i___3_n_0 ),
         .I4(\cir_buf_reg[0][7] ),
         .I5(Q[2]),
         .O(\cir_buf[0][31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair164" *) 
+  (* SOFT_HLUTNM = "soft_lutpair165" *) 
   LUT4 #(
     .INIT(16'hE000)) 
     \cir_buf[0][31]_i_3 
@@ -24057,7 +24063,7 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(\w_out_inferred__0/i___3_n_0 ),
         .O(\cir_buf[0][31]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair160" *) 
+  (* SOFT_HLUTNM = "soft_lutpair161" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \cir_buf[0][31]_i_4 
@@ -24073,12 +24079,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[30]),
+        .I5(sha256_msg_size[32]),
         .O(\w_in_reg_reg[31]_0 [3]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][3]_i_2 
-       (.I0(\cir_buf_reg[0][15] [0]),
+       (.I0(sha256_msg_size[0]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -24093,12 +24099,12 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[31]),
+        .I5(sha256_msg_size[33]),
         .O(\w_in_reg_reg[31]_0 [4]));
   LUT6 #(
     .INIT(64'hFFFF800080008000)) 
     \cir_buf[0][4]_i_2 
-       (.I0(\cir_buf_reg[0][15] [1]),
+       (.I0(sha256_msg_size[1]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[2]),
@@ -24113,14 +24119,14 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[32]),
+        .I5(sha256_msg_size[34]),
         .O(\w_in_reg_reg[31]_0 [5]));
   LUT6 #(
     .INIT(64'hF888888888888888)) 
     \cir_buf[0][5]_i_2 
        (.I0(w_in_reg[5]),
         .I1(\cir_buf[0][2]_i_2_n_0 ),
-        .I2(p_0_in[0]),
+        .I2(sha256_msg_size[2]),
         .I3(\w_out_inferred__0/i___3_n_0 ),
         .I4(\cir_buf_reg[0][7] ),
         .I5(Q[2]),
@@ -24133,14 +24139,14 @@ module test_axi_sha256_0_0_padder
         .I2(\cir_buf_reg[0][7] ),
         .I3(Q[1]),
         .I4(\w_out_inferred__0/i___3_n_0 ),
-        .I5(p_0_in[33]),
+        .I5(sha256_msg_size[35]),
         .O(\w_in_reg_reg[31]_0 [6]));
   LUT6 #(
     .INIT(64'hF888888888888888)) 
     \cir_buf[0][6]_i_2 
        (.I0(w_in_reg[6]),
         .I1(\cir_buf[0][2]_i_2_n_0 ),
-        .I2(p_0_in[1]),
+        .I2(sha256_msg_size[3]),
         .I3(\w_out_inferred__0/i___3_n_0 ),
         .I4(\cir_buf_reg[0][7] ),
         .I5(Q[2]),
@@ -24149,18 +24155,18 @@ module test_axi_sha256_0_0_padder
     .INIT(64'hFFFFFFFFEAFFEAEA)) 
     \cir_buf[0][7]_i_1 
        (.I0(\cir_buf[0][7]_i_2_n_0 ),
-        .I1(p_0_in[34]),
+        .I1(sha256_msg_size[36]),
         .I2(\cir_buf[0][31]_i_4_n_0 ),
         .I3(\cir_buf_reg[0][7] ),
         .I4(sch_calc[7]),
         .I5(\cir_buf[0][7]_i_3_n_0 ),
         .O(\w_in_reg_reg[31]_0 [7]));
-  (* SOFT_HLUTNM = "soft_lutpair161" *) 
+  (* SOFT_HLUTNM = "soft_lutpair162" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \cir_buf[0][7]_i_2 
-       (.I0(\cir_buf_reg[0][15] [1]),
-        .I1(\cir_buf_reg[0][15] [0]),
+       (.I0(sha256_msg_size[1]),
+        .I1(sha256_msg_size[0]),
         .I2(\state_reg_n_0_[2] ),
         .I3(\cir_buf_reg[0][7] ),
         .I4(\w_out_inferred__0/i___3_n_0 ),
@@ -24170,7 +24176,7 @@ module test_axi_sha256_0_0_padder
     \cir_buf[0][7]_i_3 
        (.I0(w_in_reg[7]),
         .I1(\cir_buf[0][2]_i_2_n_0 ),
-        .I2(p_0_in[2]),
+        .I2(sha256_msg_size[4]),
         .I3(\w_out_inferred__0/i___3_n_0 ),
         .I4(\cir_buf_reg[0][7] ),
         .I5(Q[2]),
@@ -24179,7 +24185,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][8]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[3]),
+        .I1(sha256_msg_size[5]),
         .I2(\cir_buf[0][8]_i_2_n_0 ),
         .I3(w_in_reg[8]),
         .I4(\cir_buf[0][14]_i_3_n_0 ),
@@ -24187,7 +24193,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][8]_i_2 
-       (.I0(p_0_in[35]),
+       (.I0(sha256_msg_size[37]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -24197,7 +24203,7 @@ module test_axi_sha256_0_0_padder
     .INIT(32'hFFF8F8F8)) 
     \cir_buf[0][9]_i_1 
        (.I0(\cir_buf[0][22]_i_2_n_0 ),
-        .I1(p_0_in[4]),
+        .I1(sha256_msg_size[6]),
         .I2(\cir_buf[0][9]_i_2_n_0 ),
         .I3(w_in_reg[9]),
         .I4(\cir_buf[0][14]_i_3_n_0 ),
@@ -24205,7 +24211,7 @@ module test_axi_sha256_0_0_padder
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \cir_buf[0][9]_i_2 
-       (.I0(p_0_in[36]),
+       (.I0(sha256_msg_size[38]),
         .I1(\w_out_inferred__0/i___3_n_0 ),
         .I2(Q[1]),
         .I3(\cir_buf_reg[0][7] ),
@@ -24557,200 +24563,200 @@ module test_axi_sha256_0_0_padder
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__0_i_1
-       (.I0(p_0_in[12]),
-        .I1(p_0_in[13]),
+       (.I0(sha256_msg_size[14]),
+        .I1(sha256_msg_size[15]),
         .O(i__carry__0_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__0_i_2
-       (.I0(p_0_in[10]),
-        .I1(p_0_in[11]),
+       (.I0(sha256_msg_size[12]),
+        .I1(sha256_msg_size[13]),
         .O(i__carry__0_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__0_i_3
-       (.I0(p_0_in[8]),
-        .I1(p_0_in[9]),
+       (.I0(sha256_msg_size[10]),
+        .I1(sha256_msg_size[11]),
         .O(i__carry__0_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__0_i_4
-       (.I0(p_0_in[6]),
-        .I1(p_0_in[7]),
+       (.I0(sha256_msg_size[8]),
+        .I1(sha256_msg_size[9]),
         .O(i__carry__0_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__1_i_1
-       (.I0(p_0_in[20]),
-        .I1(p_0_in[21]),
+       (.I0(sha256_msg_size[22]),
+        .I1(sha256_msg_size[23]),
         .O(i__carry__1_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__1_i_2
-       (.I0(p_0_in[18]),
-        .I1(p_0_in[19]),
+       (.I0(sha256_msg_size[20]),
+        .I1(sha256_msg_size[21]),
         .O(i__carry__1_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__1_i_3
-       (.I0(p_0_in[16]),
-        .I1(p_0_in[17]),
+       (.I0(sha256_msg_size[18]),
+        .I1(sha256_msg_size[19]),
         .O(i__carry__1_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__1_i_4
-       (.I0(p_0_in[14]),
-        .I1(p_0_in[15]),
+       (.I0(sha256_msg_size[16]),
+        .I1(sha256_msg_size[17]),
         .O(i__carry__1_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__2_i_1
-       (.I0(p_0_in[28]),
-        .I1(p_0_in[29]),
+       (.I0(sha256_msg_size[30]),
+        .I1(sha256_msg_size[31]),
         .O(i__carry__2_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__2_i_2
-       (.I0(p_0_in[26]),
-        .I1(p_0_in[27]),
+       (.I0(sha256_msg_size[28]),
+        .I1(sha256_msg_size[29]),
         .O(i__carry__2_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__2_i_3
-       (.I0(p_0_in[24]),
-        .I1(p_0_in[25]),
+       (.I0(sha256_msg_size[26]),
+        .I1(sha256_msg_size[27]),
         .O(i__carry__2_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__2_i_4
-       (.I0(p_0_in[22]),
-        .I1(p_0_in[23]),
+       (.I0(sha256_msg_size[24]),
+        .I1(sha256_msg_size[25]),
         .O(i__carry__2_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__3_i_1
-       (.I0(p_0_in[36]),
-        .I1(p_0_in[37]),
+       (.I0(sha256_msg_size[38]),
+        .I1(sha256_msg_size[39]),
         .O(i__carry__3_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__3_i_2
-       (.I0(p_0_in[34]),
-        .I1(p_0_in[35]),
+       (.I0(sha256_msg_size[36]),
+        .I1(sha256_msg_size[37]),
         .O(i__carry__3_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__3_i_3
-       (.I0(p_0_in[32]),
-        .I1(p_0_in[33]),
+       (.I0(sha256_msg_size[34]),
+        .I1(sha256_msg_size[35]),
         .O(i__carry__3_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__3_i_4
-       (.I0(p_0_in[30]),
-        .I1(p_0_in[31]),
+       (.I0(sha256_msg_size[32]),
+        .I1(sha256_msg_size[33]),
         .O(i__carry__3_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__4_i_1
-       (.I0(p_0_in[44]),
-        .I1(p_0_in[45]),
+       (.I0(sha256_msg_size[46]),
+        .I1(sha256_msg_size[47]),
         .O(i__carry__4_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__4_i_2
-       (.I0(p_0_in[42]),
-        .I1(p_0_in[43]),
+       (.I0(sha256_msg_size[44]),
+        .I1(sha256_msg_size[45]),
         .O(i__carry__4_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__4_i_3
-       (.I0(p_0_in[40]),
-        .I1(p_0_in[41]),
+       (.I0(sha256_msg_size[42]),
+        .I1(sha256_msg_size[43]),
         .O(i__carry__4_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__4_i_4
-       (.I0(p_0_in[38]),
-        .I1(p_0_in[39]),
+       (.I0(sha256_msg_size[40]),
+        .I1(sha256_msg_size[41]),
         .O(i__carry__4_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__5_i_1
-       (.I0(p_0_in[52]),
-        .I1(p_0_in[53]),
+       (.I0(sha256_msg_size[54]),
+        .I1(sha256_msg_size[55]),
         .O(i__carry__5_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__5_i_2
-       (.I0(p_0_in[50]),
-        .I1(p_0_in[51]),
+       (.I0(sha256_msg_size[52]),
+        .I1(sha256_msg_size[53]),
         .O(i__carry__5_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__5_i_3
-       (.I0(p_0_in[48]),
-        .I1(p_0_in[49]),
+       (.I0(sha256_msg_size[50]),
+        .I1(sha256_msg_size[51]),
         .O(i__carry__5_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__5_i_4
-       (.I0(p_0_in[46]),
-        .I1(p_0_in[47]),
+       (.I0(sha256_msg_size[48]),
+        .I1(sha256_msg_size[49]),
         .O(i__carry__5_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__6_i_1
-       (.I0(p_0_in[61]),
-        .I1(p_0_in[60]),
+       (.I0(sha256_msg_size[63]),
+        .I1(sha256_msg_size[62]),
         .O(i__carry__6_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__6_i_2
-       (.I0(p_0_in[59]),
-        .I1(p_0_in[58]),
+       (.I0(sha256_msg_size[61]),
+        .I1(sha256_msg_size[60]),
         .O(i__carry__6_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__6_i_3
-       (.I0(p_0_in[56]),
-        .I1(p_0_in[57]),
+       (.I0(sha256_msg_size[58]),
+        .I1(sha256_msg_size[59]),
         .O(i__carry__6_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry__6_i_4
-       (.I0(p_0_in[54]),
-        .I1(p_0_in[55]),
+       (.I0(sha256_msg_size[56]),
+        .I1(sha256_msg_size[57]),
         .O(i__carry__6_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry_i_1
-       (.I0(p_0_in[1]),
-        .I1(p_0_in[0]),
+       (.I0(sha256_msg_size[3]),
+        .I1(sha256_msg_size[2]),
         .O(i__carry_i_1_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry_i_2
-       (.I0(p_0_in[4]),
-        .I1(p_0_in[5]),
+       (.I0(sha256_msg_size[6]),
+        .I1(sha256_msg_size[7]),
         .O(i__carry_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry_i_3
-       (.I0(p_0_in[3]),
-        .I1(p_0_in[2]),
+       (.I0(sha256_msg_size[5]),
+        .I1(sha256_msg_size[4]),
         .O(i__carry_i_3_n_0));
   LUT2 #(
     .INIT(4'h2)) 
     i__carry_i_4
-       (.I0(p_0_in[0]),
-        .I1(p_0_in[1]),
+       (.I0(sha256_msg_size[2]),
+        .I1(sha256_msg_size[3]),
         .O(i__carry_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
     i__carry_i_5
-       (.I0(\cir_buf_reg[0][15] [1]),
-        .I1(\cir_buf_reg[0][15] [0]),
+       (.I0(sha256_msg_size[1]),
+        .I1(sha256_msg_size[0]),
         .O(i__carry_i_5_n_0));
   CARRY4 \next_state1_inferred__0/i__carry 
        (.CI(1'b0),
@@ -24826,40 +24832,40 @@ module test_axi_sha256_0_0_padder
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__0_i_1
        (.I0(cur_block_reg[21]),
-        .I1(p_0_in[25]),
+        .I1(sha256_msg_size[27]),
         .I2(cur_block_reg[22]),
-        .I3(p_0_in[26]),
-        .I4(p_0_in[27]),
+        .I3(sha256_msg_size[28]),
+        .I4(sha256_msg_size[29]),
         .I5(cur_block_reg[23]),
         .O(pad_of0_carry__0_i_1_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__0_i_2
        (.I0(cur_block_reg[18]),
-        .I1(p_0_in[22]),
+        .I1(sha256_msg_size[24]),
         .I2(cur_block_reg[19]),
-        .I3(p_0_in[23]),
-        .I4(p_0_in[24]),
+        .I3(sha256_msg_size[25]),
+        .I4(sha256_msg_size[26]),
         .I5(cur_block_reg[20]),
         .O(pad_of0_carry__0_i_2_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__0_i_3
        (.I0(cur_block_reg[15]),
-        .I1(p_0_in[19]),
+        .I1(sha256_msg_size[21]),
         .I2(cur_block_reg[16]),
-        .I3(p_0_in[20]),
-        .I4(p_0_in[21]),
+        .I3(sha256_msg_size[22]),
+        .I4(sha256_msg_size[23]),
         .I5(cur_block_reg[17]),
         .O(pad_of0_carry__0_i_3_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__0_i_4
        (.I0(cur_block_reg[12]),
-        .I1(p_0_in[16]),
+        .I1(sha256_msg_size[18]),
         .I2(cur_block_reg[13]),
-        .I3(p_0_in[17]),
-        .I4(p_0_in[18]),
+        .I3(sha256_msg_size[19]),
+        .I4(sha256_msg_size[20]),
         .I5(cur_block_reg[14]),
         .O(pad_of0_carry__0_i_4_n_0));
   CARRY4 pad_of0_carry__1
@@ -24873,40 +24879,40 @@ module test_axi_sha256_0_0_padder
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__1_i_1
        (.I0(cur_block_reg[33]),
-        .I1(p_0_in[37]),
+        .I1(sha256_msg_size[39]),
         .I2(cur_block_reg[34]),
-        .I3(p_0_in[38]),
-        .I4(p_0_in[39]),
+        .I3(sha256_msg_size[40]),
+        .I4(sha256_msg_size[41]),
         .I5(cur_block_reg[35]),
         .O(pad_of0_carry__1_i_1_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__1_i_2
        (.I0(cur_block_reg[30]),
-        .I1(p_0_in[34]),
+        .I1(sha256_msg_size[36]),
         .I2(cur_block_reg[31]),
-        .I3(p_0_in[35]),
-        .I4(p_0_in[36]),
+        .I3(sha256_msg_size[37]),
+        .I4(sha256_msg_size[38]),
         .I5(cur_block_reg[32]),
         .O(pad_of0_carry__1_i_2_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__1_i_3
        (.I0(cur_block_reg[27]),
-        .I1(p_0_in[31]),
+        .I1(sha256_msg_size[33]),
         .I2(cur_block_reg[28]),
-        .I3(p_0_in[32]),
-        .I4(p_0_in[33]),
+        .I3(sha256_msg_size[34]),
+        .I4(sha256_msg_size[35]),
         .I5(cur_block_reg[29]),
         .O(pad_of0_carry__1_i_3_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__1_i_4
        (.I0(cur_block_reg[24]),
-        .I1(p_0_in[28]),
+        .I1(sha256_msg_size[30]),
         .I2(cur_block_reg[25]),
-        .I3(p_0_in[29]),
-        .I4(p_0_in[30]),
+        .I3(sha256_msg_size[31]),
+        .I4(sha256_msg_size[32]),
         .I5(cur_block_reg[26]),
         .O(pad_of0_carry__1_i_4_n_0));
   CARRY4 pad_of0_carry__2
@@ -24920,40 +24926,40 @@ module test_axi_sha256_0_0_padder
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__2_i_1
        (.I0(cur_block_reg[45]),
-        .I1(p_0_in[49]),
+        .I1(sha256_msg_size[51]),
         .I2(cur_block_reg[46]),
-        .I3(p_0_in[50]),
-        .I4(p_0_in[51]),
+        .I3(sha256_msg_size[52]),
+        .I4(sha256_msg_size[53]),
         .I5(cur_block_reg[47]),
         .O(pad_of0_carry__2_i_1_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__2_i_2
        (.I0(cur_block_reg[42]),
-        .I1(p_0_in[46]),
+        .I1(sha256_msg_size[48]),
         .I2(cur_block_reg[43]),
-        .I3(p_0_in[47]),
-        .I4(p_0_in[48]),
+        .I3(sha256_msg_size[49]),
+        .I4(sha256_msg_size[50]),
         .I5(cur_block_reg[44]),
         .O(pad_of0_carry__2_i_2_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__2_i_3
        (.I0(cur_block_reg[39]),
-        .I1(p_0_in[43]),
+        .I1(sha256_msg_size[45]),
         .I2(cur_block_reg[40]),
-        .I3(p_0_in[44]),
-        .I4(p_0_in[45]),
+        .I3(sha256_msg_size[46]),
+        .I4(sha256_msg_size[47]),
         .I5(cur_block_reg[41]),
         .O(pad_of0_carry__2_i_3_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__2_i_4
        (.I0(cur_block_reg[36]),
-        .I1(p_0_in[40]),
+        .I1(sha256_msg_size[42]),
         .I2(cur_block_reg[37]),
-        .I3(p_0_in[41]),
-        .I4(p_0_in[42]),
+        .I3(sha256_msg_size[43]),
+        .I4(sha256_msg_size[44]),
         .I5(cur_block_reg[38]),
         .O(pad_of0_carry__2_i_4_n_0));
   CARRY4 pad_of0_carry__3
@@ -24966,67 +24972,67 @@ module test_axi_sha256_0_0_padder
   LUT2 #(
     .INIT(4'h9)) 
     pad_of0_carry__3_i_1
-       (.I0(p_0_in[58]),
+       (.I0(sha256_msg_size[60]),
         .I1(cur_block_reg[54]),
         .O(pad_of0_carry__3_i_1_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__3_i_2
        (.I0(cur_block_reg[51]),
-        .I1(p_0_in[55]),
+        .I1(sha256_msg_size[57]),
         .I2(cur_block_reg[52]),
-        .I3(p_0_in[56]),
-        .I4(p_0_in[57]),
+        .I3(sha256_msg_size[58]),
+        .I4(sha256_msg_size[59]),
         .I5(cur_block_reg[53]),
         .O(pad_of0_carry__3_i_2_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry__3_i_3
        (.I0(cur_block_reg[48]),
-        .I1(p_0_in[52]),
+        .I1(sha256_msg_size[54]),
         .I2(cur_block_reg[49]),
-        .I3(p_0_in[53]),
-        .I4(p_0_in[54]),
+        .I3(sha256_msg_size[55]),
+        .I4(sha256_msg_size[56]),
         .I5(cur_block_reg[50]),
         .O(pad_of0_carry__3_i_3_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry_i_1
        (.I0(cur_block_reg[9]),
-        .I1(p_0_in[13]),
+        .I1(sha256_msg_size[15]),
         .I2(cur_block_reg[10]),
-        .I3(p_0_in[14]),
-        .I4(p_0_in[15]),
+        .I3(sha256_msg_size[16]),
+        .I4(sha256_msg_size[17]),
         .I5(cur_block_reg[11]),
         .O(pad_of0_carry_i_1_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry_i_2
        (.I0(cur_block_reg[6]),
-        .I1(p_0_in[10]),
+        .I1(sha256_msg_size[12]),
         .I2(cur_block_reg[7]),
-        .I3(p_0_in[11]),
-        .I4(p_0_in[12]),
+        .I3(sha256_msg_size[13]),
+        .I4(sha256_msg_size[14]),
         .I5(cur_block_reg[8]),
         .O(pad_of0_carry_i_2_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry_i_3
        (.I0(cur_block_reg[3]),
-        .I1(p_0_in[7]),
+        .I1(sha256_msg_size[9]),
         .I2(cur_block_reg[4]),
-        .I3(p_0_in[8]),
-        .I4(p_0_in[9]),
+        .I3(sha256_msg_size[10]),
+        .I4(sha256_msg_size[11]),
         .I5(cur_block_reg[5]),
         .O(pad_of0_carry_i_3_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
     pad_of0_carry_i_4
        (.I0(cur_block_reg[0]),
-        .I1(p_0_in[4]),
+        .I1(sha256_msg_size[6]),
         .I2(cur_block_reg[1]),
-        .I3(p_0_in[5]),
-        .I4(p_0_in[6]),
+        .I3(sha256_msg_size[7]),
+        .I4(sha256_msg_size[8]),
         .I5(cur_block_reg[2]),
         .O(pad_of0_carry_i_4_n_0));
   CARRY4 pad_start_carry
@@ -25259,22 +25265,22 @@ module test_axi_sha256_0_0_padder
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_21
-       (.I0(p_0_in[2]),
+       (.I0(sha256_msg_size[4]),
         .O(pad_start_carry_i_21_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_22
-       (.I0(p_0_in[1]),
+       (.I0(sha256_msg_size[3]),
         .O(pad_start_carry_i_22_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_23
-       (.I0(p_0_in[0]),
+       (.I0(sha256_msg_size[2]),
         .O(pad_start_carry_i_23_n_0));
   LUT1 #(
     .INIT(2'h1)) 
     pad_start_carry_i_24
-       (.I0(\cir_buf_reg[0][15] [1]),
+       (.I0(sha256_msg_size[1]),
         .O(pad_start_carry_i_24_n_0));
   LUT6 #(
     .INIT(64'h9009000000009009)) 
@@ -25290,18 +25296,18 @@ module test_axi_sha256_0_0_padder
     .INIT(64'h9009000000009009)) 
     pad_start_carry_i_4
        (.I0(pad_start_carry_0),
-        .I1(p_0_in_0[0]),
+        .I1(p_0_in[0]),
         .I2(\w_in_reg_reg[0]_0 [1]),
-        .I3(p_0_in_0[1]),
-        .I4(p_0_in_0[2]),
+        .I3(p_0_in[1]),
+        .I4(p_0_in[2]),
         .I5(\w_in_reg_reg[0]_0 [2]),
         .O(pad_start_carry_i_4_n_0));
   CARRY4 pad_start_carry_i_8
        (.CI(1'b0),
         .CO({CO,pad_start_carry_i_8_n_1,pad_start_carry_i_8_n_2,pad_start_carry_i_8_n_3}),
-        .CYINIT(\cir_buf_reg[0][15] [0]),
-        .DI({p_0_in[2:0],\cir_buf_reg[0][15] [1]}),
-        .O({p_0_in_0,NLW_pad_start_carry_i_8_O_UNCONNECTED[0]}),
+        .CYINIT(sha256_msg_size[0]),
+        .DI(sha256_msg_size[4:1]),
+        .O({p_0_in,NLW_pad_start_carry_i_8_O_UNCONNECTED[0]}),
         .S({pad_start_carry_i_21_n_0,pad_start_carry_i_22_n_0,pad_start_carry_i_23_n_0,pad_start_carry_i_24_n_0}));
   LUT6 #(
     .INIT(64'h0004000000000000)) 
@@ -25322,14 +25328,14 @@ module test_axi_sha256_0_0_padder
         .I3(Q[2]),
         .I4(reset_round_counter),
         .O(\state[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair165" *) 
+  (* SOFT_HLUTNM = "soft_lutpair166" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \state[1]_i_1__0 
        (.I0(\state_reg_n_0_[0] ),
         .I1(\next_state1_inferred__0/i__carry__6_n_0 ),
         .O(next_state[1]));
-  (* SOFT_HLUTNM = "soft_lutpair165" *) 
+  (* SOFT_HLUTNM = "soft_lutpair166" *) 
   LUT3 #(
     .INIT(8'hF8)) 
     \state[2]_i_1 
@@ -25337,7 +25343,7 @@ module test_axi_sha256_0_0_padder
         .I1(\state_reg_n_0_[0] ),
         .I2(\state_reg_n_0_[1] ),
         .O(next_state[2]));
-  (* SOFT_HLUTNM = "soft_lutpair159" *) 
+  (* SOFT_HLUTNM = "soft_lutpair160" *) 
   LUT5 #(
     .INIT(32'h01000000)) 
     \state[3]_i_1 
@@ -25354,8 +25360,8 @@ module test_axi_sha256_0_0_padder
         .I1(\state_reg[5]_0 ),
         .I2(Q[1]),
         .I3(Q[2]),
-        .I4(\cir_buf_reg[0][15] [1]),
-        .I5(\cir_buf_reg[0][15] [0]),
+        .I4(sha256_msg_size[1]),
+        .I5(sha256_msg_size[0]),
         .O(\state[3]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00000000CECEFECE)) 
@@ -25367,17 +25373,17 @@ module test_axi_sha256_0_0_padder
         .I4(\state_reg[5]_2 ),
         .I5(reset_round_counter),
         .O(\state[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair158" *) 
+  (* SOFT_HLUTNM = "soft_lutpair159" *) 
   LUT5 #(
     .INIT(32'h7FFF0000)) 
     \state[5]_i_1__0 
-       (.I0(p_0_in[2]),
-        .I1(p_0_in[1]),
+       (.I0(sha256_msg_size[4]),
+        .I1(sha256_msg_size[3]),
         .I2(pad_of0),
-        .I3(p_0_in[3]),
+        .I3(sha256_msg_size[5]),
         .I4(\round_counter_reg[0]_rep__0 [2]),
         .O(\state_reg[3]_0 [0]));
-  (* SOFT_HLUTNM = "soft_lutpair159" *) 
+  (* SOFT_HLUTNM = "soft_lutpair160" *) 
   LUT5 #(
     .INIT(32'hFFFFCCC4)) 
     \state[6]_i_2 
@@ -25406,10 +25412,10 @@ module test_axi_sha256_0_0_padder
   LUT6 #(
     .INIT(64'h0000800000000000)) 
     \state[7]_i_3 
-       (.I0(p_0_in[3]),
+       (.I0(sha256_msg_size[5]),
         .I1(pad_of0),
-        .I2(p_0_in[1]),
-        .I3(p_0_in[2]),
+        .I2(sha256_msg_size[3]),
+        .I3(sha256_msg_size[4]),
         .I4(\state_reg[5]_2 ),
         .I5(en_pad),
         .O(\state[7]_i_3_n_0 ));
@@ -25451,15 +25457,15 @@ module test_axi_sha256_0_0_padder
         .I2(Q[2]),
         .I3(Q[1]),
         .O(\state[7]_i_8_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair158" *) 
+  (* SOFT_HLUTNM = "soft_lutpair159" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \state[9]_i_3 
        (.I0(\round_counter_reg[0]_rep__0 [2]),
-        .I1(p_0_in[2]),
-        .I2(p_0_in[1]),
+        .I1(sha256_msg_size[4]),
+        .I2(sha256_msg_size[3]),
         .I3(pad_of0),
-        .I4(p_0_in[3]),
+        .I4(sha256_msg_size[5]),
         .O(\state_reg[3]_0 [1]));
   FDRE #(
     .INIT(1'b1)) 
@@ -29255,7 +29261,7 @@ module test_axi_sha256_0_0_padder
         .I1(\w_in_reg[9]_i_13_n_0 ),
         .O(\w_in_reg_reg[9]_i_5_n_0 ),
         .S(\w_in_reg_reg[0]_0 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair163" *) 
+  (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT4 #(
     .INIT(16'h0116)) 
     \w_out_inferred__0/i_ 
@@ -29264,7 +29270,7 @@ module test_axi_sha256_0_0_padder
         .I2(\state_reg_n_0_[2] ),
         .I3(\state_reg_n_0_[3] ),
         .O(\w_out_inferred__0/i__n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair163" *) 
+  (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT4 #(
     .INIT(16'hFEE8)) 
     \w_out_inferred__0/i___0 
@@ -29273,7 +29279,7 @@ module test_axi_sha256_0_0_padder
         .I2(\state_reg_n_0_[2] ),
         .I3(\state_reg_n_0_[3] ),
         .O(\w_out_inferred__0/i___0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair162" *) 
+  (* SOFT_HLUTNM = "soft_lutpair163" *) 
   LUT4 #(
     .INIT(16'h0116)) 
     \w_out_inferred__0/i___1 
@@ -29282,7 +29288,7 @@ module test_axi_sha256_0_0_padder
         .I2(Q[1]),
         .I3(Q[2]),
         .O(\w_out_inferred__0/i___1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair162" *) 
+  (* SOFT_HLUTNM = "soft_lutpair163" *) 
   LUT4 #(
     .INIT(16'hFEE8)) 
     \w_out_inferred__0/i___2 
@@ -29892,12 +29898,13 @@ endmodule
 module test_axi_sha256_0_0_reg_delay__parameterized1
    (\axi_awaddr_reg[6] ,
     \axi_awaddr_reg[6]_0 ,
+    s00_sha256_irq,
     s00_axi_aclk,
     Q,
     slv_reg0,
     \slv_reg0_reg[4] ,
     \slv_reg0_reg[4]_0 ,
-    p_1_in18_in,
+    p_0_in,
     \slv_reg0_reg[4]_1 ,
     \slv_reg0_reg[4]_2 ,
     slv_reg01,
@@ -29908,12 +29915,13 @@ module test_axi_sha256_0_0_reg_delay__parameterized1
     \delay_reg[2][0]__0_1 );
   output \axi_awaddr_reg[6] ;
   output \axi_awaddr_reg[6]_0 ;
+  output s00_sha256_irq;
   input s00_axi_aclk;
   input [1:0]Q;
   input [1:0]slv_reg0;
   input \slv_reg0_reg[4] ;
   input \slv_reg0_reg[4]_0 ;
-  input p_1_in18_in;
+  input p_0_in;
   input \slv_reg0_reg[4]_1 ;
   input \slv_reg0_reg[4]_2 ;
   input slv_reg01;
@@ -29931,9 +29939,10 @@ module test_axi_sha256_0_0_reg_delay__parameterized1
   wire [4:0]\delay_reg[2][0]__0_0 ;
   wire \delay_reg[2][0]__0_1 ;
   wire done_control;
-  wire p_1_in18_in;
+  wire p_0_in;
   wire s00_axi_aclk;
   wire [0:0]s00_axi_wstrb;
+  wire s00_sha256_irq;
   wire sha256_block_done;
   wire sha256_hash_done;
   wire [1:0]slv_reg0;
@@ -29973,6 +29982,13 @@ module test_axi_sha256_0_0_reg_delay__parameterized1
         .D(\delay_reg[1][0]_srl2_n_0 ),
         .Q(sha256_block_done),
         .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    s00_sha256_irq_INST_0
+       (.I0(p_0_in),
+        .I1(sha256_block_done),
+        .O(s00_sha256_irq));
   LUT6 #(
     .INIT(64'hE4FFFFFFE400F0F0)) 
     \slv_reg0[3]_i_1 
@@ -29981,7 +29997,7 @@ module test_axi_sha256_0_0_reg_delay__parameterized1
         .I2(sha256_block_done),
         .I3(slv_reg0[0]),
         .I4(\slv_reg0_reg[4] ),
-        .I5(p_1_in18_in),
+        .I5(p_0_in),
         .O(\axi_awaddr_reg[6]_0 ));
   LUT6 #(
     .INIT(64'hFEFF0000FFFF0000)) 
@@ -30013,11 +30029,12 @@ module test_axi_sha256_0_0_reg_delay__parameterized1
         .I4(sha256_hash_done),
         .I5(s00_axi_wstrb),
         .O(\slv_reg0[4]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \slv_reg0[4]_i_3 
-       (.I0(sha256_block_done),
-        .I1(CO),
+       (.I0(CO),
+        .I1(sha256_block_done),
         .O(sha256_hash_done));
 endmodule
 
@@ -32054,7 +32071,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_5_in[17]),
         .I4(p_5_in[6]),
         .O(sch_calc__2_carry__0_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair172" *) 
+  (* SOFT_HLUTNM = "soft_lutpair173" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__0_i_10
@@ -32064,7 +32081,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[31]),
         .I4(\cir_buf_reg[6]_0 [6]),
         .O(sch_calc__2_carry__0_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair170" *) 
+  (* SOFT_HLUTNM = "soft_lutpair171" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__0_i_11
@@ -32074,7 +32091,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[6]),
         .I4(p_2_in[4]),
         .O(sch_calc__2_carry__0_i_11_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair171" *) 
+  (* SOFT_HLUTNM = "soft_lutpair172" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__0_i_12
@@ -32084,7 +32101,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[30]),
         .I4(\cir_buf_reg[6]_0 [5]),
         .O(sch_calc__2_carry__0_i_12_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair169" *) 
+  (* SOFT_HLUTNM = "soft_lutpair170" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__0_i_13
@@ -32094,7 +32111,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[5]),
         .I4(p_2_in[3]),
         .O(sch_calc__2_carry__0_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair170" *) 
+  (* SOFT_HLUTNM = "soft_lutpair171" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__0_i_14
@@ -32104,7 +32121,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[29]),
         .I4(\cir_buf_reg[6]_0 [4]),
         .O(sch_calc__2_carry__0_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair173" *) 
+  (* SOFT_HLUTNM = "soft_lutpair174" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__0_i_15
@@ -32114,7 +32131,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[0]),
         .I4(\cir_buf_reg[6]_0 [7]),
         .O(sch_calc__2_carry__0_i_15_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair172" *) 
+  (* SOFT_HLUTNM = "soft_lutpair173" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__0_i_16
@@ -32191,7 +32208,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[4]),
         .I5(sch_calc__2_carry__0_i_13_n_0),
         .O(sch_calc__2_carry__0_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair171" *) 
+  (* SOFT_HLUTNM = "soft_lutpair172" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__0_i_9
@@ -32217,7 +32234,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_5_in[21]),
         .I4(p_5_in[10]),
         .O(sch_calc__2_carry__1_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair176" *) 
+  (* SOFT_HLUTNM = "soft_lutpair177" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__1_i_10
@@ -32227,7 +32244,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[3]),
         .I4(\cir_buf_reg[6]_0 [10]),
         .O(sch_calc__2_carry__1_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair174" *) 
+  (* SOFT_HLUTNM = "soft_lutpair175" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__1_i_11
@@ -32237,7 +32254,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[10]),
         .I4(p_2_in[8]),
         .O(sch_calc__2_carry__1_i_11_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair175" *) 
+  (* SOFT_HLUTNM = "soft_lutpair176" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__1_i_12
@@ -32247,7 +32264,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[2]),
         .I4(\cir_buf_reg[6]_0 [9]),
         .O(sch_calc__2_carry__1_i_12_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair173" *) 
+  (* SOFT_HLUTNM = "soft_lutpair174" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__1_i_13
@@ -32257,7 +32274,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[9]),
         .I4(p_2_in[7]),
         .O(sch_calc__2_carry__1_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair174" *) 
+  (* SOFT_HLUTNM = "soft_lutpair175" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__1_i_14
@@ -32267,7 +32284,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[1]),
         .I4(\cir_buf_reg[6]_0 [8]),
         .O(sch_calc__2_carry__1_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair177" *) 
+  (* SOFT_HLUTNM = "soft_lutpair178" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__1_i_15
@@ -32277,7 +32294,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[4]),
         .I4(\cir_buf_reg[6]_0 [11]),
         .O(sch_calc__2_carry__1_i_15_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair176" *) 
+  (* SOFT_HLUTNM = "soft_lutpair177" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__1_i_16
@@ -32354,7 +32371,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[8]),
         .I5(sch_calc__2_carry__1_i_13_n_0),
         .O(sch_calc__2_carry__1_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair175" *) 
+  (* SOFT_HLUTNM = "soft_lutpair176" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__1_i_9
@@ -32380,7 +32397,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_5_in[10]),
         .I4(p_5_in[14]),
         .O(sch_calc__2_carry__2_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair180" *) 
+  (* SOFT_HLUTNM = "soft_lutpair181" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__2_i_10
@@ -32390,7 +32407,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[16]),
         .I4(\cir_buf_reg[6]_0 [14]),
         .O(sch_calc__2_carry__2_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair178" *) 
+  (* SOFT_HLUTNM = "soft_lutpair179" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__2_i_11
@@ -32400,7 +32417,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[14]),
         .I4(p_2_in[12]),
         .O(sch_calc__2_carry__2_i_11_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair179" *) 
+  (* SOFT_HLUTNM = "soft_lutpair180" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__2_i_12
@@ -32410,7 +32427,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[15]),
         .I4(\cir_buf_reg[6]_0 [13]),
         .O(sch_calc__2_carry__2_i_12_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair177" *) 
+  (* SOFT_HLUTNM = "soft_lutpair178" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__2_i_13
@@ -32420,7 +32437,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[13]),
         .I4(p_2_in[11]),
         .O(sch_calc__2_carry__2_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair178" *) 
+  (* SOFT_HLUTNM = "soft_lutpair179" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__2_i_14
@@ -32430,7 +32447,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[5]),
         .I4(\cir_buf_reg[6]_0 [12]),
         .O(sch_calc__2_carry__2_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair167" *) 
+  (* SOFT_HLUTNM = "soft_lutpair168" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__2_i_15
@@ -32440,7 +32457,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[15]),
         .I4(\cir_buf_reg[6]_0 [15]),
         .O(sch_calc__2_carry__2_i_15_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair180" *) 
+  (* SOFT_HLUTNM = "soft_lutpair181" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__2_i_16
@@ -32517,7 +32534,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[12]),
         .I5(sch_calc__2_carry__2_i_13_n_0),
         .O(sch_calc__2_carry__2_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair179" *) 
+  (* SOFT_HLUTNM = "soft_lutpair180" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__2_i_9
@@ -32543,7 +32560,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_5_in[14]),
         .I4(p_5_in[18]),
         .O(sch_calc__2_carry__3_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair184" *) 
+  (* SOFT_HLUTNM = "soft_lutpair185" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__3_i_10
@@ -32553,7 +32570,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[18]),
         .I4(\cir_buf_reg[6]_0 [18]),
         .O(sch_calc__2_carry__3_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair181" *) 
+  (* SOFT_HLUTNM = "soft_lutpair182" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__3_i_11
@@ -32563,7 +32580,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[18]),
         .I4(p_2_in[9]),
         .O(sch_calc__2_carry__3_i_11_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair183" *) 
+  (* SOFT_HLUTNM = "soft_lutpair184" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__3_i_12
@@ -32573,7 +32590,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[17]),
         .I4(\cir_buf_reg[6]_0 [17]),
         .O(sch_calc__2_carry__3_i_12_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair167" *) 
+  (* SOFT_HLUTNM = "soft_lutpair168" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__3_i_13
@@ -32583,7 +32600,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[17]),
         .I4(p_2_in[8]),
         .O(sch_calc__2_carry__3_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair181" *) 
+  (* SOFT_HLUTNM = "soft_lutpair182" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__3_i_14
@@ -32593,7 +32610,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[16]),
         .I4(\cir_buf_reg[6]_0 [16]),
         .O(sch_calc__2_carry__3_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair185" *) 
+  (* SOFT_HLUTNM = "soft_lutpair186" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__3_i_15
@@ -32603,7 +32620,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[19]),
         .I4(\cir_buf_reg[6]_0 [19]),
         .O(sch_calc__2_carry__3_i_15_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair184" *) 
+  (* SOFT_HLUTNM = "soft_lutpair185" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__3_i_16
@@ -32680,7 +32697,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[16]),
         .I5(sch_calc__2_carry__3_i_13_n_0),
         .O(sch_calc__2_carry__3_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair183" *) 
+  (* SOFT_HLUTNM = "soft_lutpair184" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__3_i_9
@@ -32706,7 +32723,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_5_in[18]),
         .I4(p_5_in[22]),
         .O(sch_calc__2_carry__4_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair188" *) 
+  (* SOFT_HLUTNM = "soft_lutpair189" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__4_i_10
@@ -32715,7 +32732,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[22]),
         .I3(\cir_buf_reg[6]_0 [22]),
         .O(sch_calc__2_carry__4_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair186" *) 
+  (* SOFT_HLUTNM = "soft_lutpair187" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__4_i_11
@@ -32725,7 +32742,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[22]),
         .I4(p_2_in[13]),
         .O(sch_calc__2_carry__4_i_11_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair182" *) 
+  (* SOFT_HLUTNM = "soft_lutpair183" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__4_i_12
@@ -32735,7 +32752,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[21]),
         .I4(\cir_buf_reg[6]_0 [21]),
         .O(sch_calc__2_carry__4_i_12_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair185" *) 
+  (* SOFT_HLUTNM = "soft_lutpair186" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__4_i_13
@@ -32745,7 +32762,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[21]),
         .I4(p_2_in[12]),
         .O(sch_calc__2_carry__4_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair186" *) 
+  (* SOFT_HLUTNM = "soft_lutpair187" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry__4_i_14
@@ -32755,7 +32772,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[20]),
         .I4(\cir_buf_reg[6]_0 [20]),
         .O(sch_calc__2_carry__4_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair187" *) 
+  (* SOFT_HLUTNM = "soft_lutpair188" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__4_i_15
@@ -32764,7 +32781,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[23]),
         .I3(\cir_buf_reg[6]_0 [23]),
         .O(sch_calc__2_carry__4_i_15_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair188" *) 
+  (* SOFT_HLUTNM = "soft_lutpair189" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__4_i_16
@@ -32840,7 +32857,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[20]),
         .I5(sch_calc__2_carry__4_i_13_n_0),
         .O(sch_calc__2_carry__4_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair182" *) 
+  (* SOFT_HLUTNM = "soft_lutpair183" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry__4_i_9
@@ -32866,7 +32883,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_5_in[5]),
         .I4(p_5_in[22]),
         .O(sch_calc__2_carry__5_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair189" *) 
+  (* SOFT_HLUTNM = "soft_lutpair190" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__5_i_10
@@ -32875,7 +32892,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[26]),
         .I3(\cir_buf_reg[6]_0 [26]),
         .O(sch_calc__2_carry__5_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair190" *) 
+  (* SOFT_HLUTNM = "soft_lutpair191" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__5_i_11
@@ -32884,7 +32901,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[24]),
         .I3(p_2_in[26]),
         .O(sch_calc__2_carry__5_i_11_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair191" *) 
+  (* SOFT_HLUTNM = "soft_lutpair192" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__5_i_12
@@ -32893,7 +32910,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[25]),
         .I3(\cir_buf_reg[6]_0 [25]),
         .O(sch_calc__2_carry__5_i_12_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair187" *) 
+  (* SOFT_HLUTNM = "soft_lutpair188" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__5_i_13
@@ -32902,7 +32919,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[23]),
         .I3(p_2_in[25]),
         .O(sch_calc__2_carry__5_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair190" *) 
+  (* SOFT_HLUTNM = "soft_lutpair191" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__5_i_14
@@ -32911,7 +32928,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[24]),
         .I3(\cir_buf_reg[6]_0 [24]),
         .O(sch_calc__2_carry__5_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair192" *) 
+  (* SOFT_HLUTNM = "soft_lutpair193" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__5_i_15
@@ -32920,7 +32937,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[27]),
         .I3(\cir_buf_reg[6]_0 [27]),
         .O(sch_calc__2_carry__5_i_15_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair189" *) 
+  (* SOFT_HLUTNM = "soft_lutpair190" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__5_i_16
@@ -32996,7 +33013,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[24]),
         .I5(sch_calc__2_carry__5_i_13_n_0),
         .O(sch_calc__2_carry__5_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair191" *) 
+  (* SOFT_HLUTNM = "soft_lutpair192" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__5_i_9
@@ -33020,7 +33037,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_5_in[29]),
         .I3(p_5_in[8]),
         .O(sch_calc__2_carry__6_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair192" *) 
+  (* SOFT_HLUTNM = "soft_lutpair193" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__6_i_10
@@ -33029,7 +33046,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[27]),
         .I3(p_2_in[29]),
         .O(sch_calc__2_carry__6_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair193" *) 
+  (* SOFT_HLUTNM = "soft_lutpair194" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__6_i_11
@@ -33064,7 +33081,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[30]),
         .I3(\cir_buf_reg[6]_0 [30]),
         .O(sch_calc__2_carry__6_i_14_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair194" *) 
+  (* SOFT_HLUTNM = "soft_lutpair195" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__6_i_15
@@ -33129,7 +33146,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[24]),
         .I5(sch_calc__2_carry__6_i_10_n_0),
         .O(sch_calc__2_carry__6_i_7_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair193" *) 
+  (* SOFT_HLUTNM = "soft_lutpair194" *) 
   LUT4 #(
     .INIT(16'h8EE8)) 
     sch_calc__2_carry__6_i_8
@@ -33138,7 +33155,7 @@ module test_axi_sha256_0_0_scheduler
         .I2(p_2_in[28]),
         .I3(p_2_in[30]),
         .O(sch_calc__2_carry__6_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair194" *) 
+  (* SOFT_HLUTNM = "soft_lutpair195" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     sch_calc__2_carry__6_i_9
@@ -33156,7 +33173,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(sch_calc__2_carry_i_9_n_0),
         .I4(sch_calc__2_carry_i_10_n_0),
         .O(sch_calc__2_carry_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair166" *) 
+  (* SOFT_HLUTNM = "soft_lutpair167" *) 
   LUT5 #(
     .INIT(32'hEBBE8228)) 
     sch_calc__2_carry_i_10
@@ -33173,7 +33190,7 @@ module test_axi_sha256_0_0_scheduler
         .I1(p_2_in[3]),
         .I2(p_2_in[26]),
         .O(sigma1_return__53[1]));
-  (* SOFT_HLUTNM = "soft_lutpair169" *) 
+  (* SOFT_HLUTNM = "soft_lutpair170" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry_i_12
@@ -33183,7 +33200,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[28]),
         .I4(\cir_buf_reg[6]_0 [3]),
         .O(sch_calc__2_carry_i_12_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair168" *) 
+  (* SOFT_HLUTNM = "soft_lutpair169" *) 
   LUT5 #(
     .INIT(32'hE88E8EE8)) 
     sch_calc__2_carry_i_13
@@ -33193,7 +33210,7 @@ module test_axi_sha256_0_0_scheduler
         .I3(p_2_in[4]),
         .I4(p_2_in[2]),
         .O(sch_calc__2_carry_i_13_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair166" *) 
+  (* SOFT_HLUTNM = "soft_lutpair167" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry_i_14
@@ -33277,7 +33294,7 @@ module test_axi_sha256_0_0_scheduler
         .I4(p_5_in[11]),
         .I5(p_5_in[0]),
         .O(sch_calc__2_carry_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair168" *) 
+  (* SOFT_HLUTNM = "soft_lutpair169" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     sch_calc__2_carry_i_9
@@ -33529,14 +33546,15 @@ module test_axi_sha256_0_0_sha256_update
     \hash7_reg[31] ,
     \axi_awaddr_reg[6] ,
     \axi_awaddr_reg[6]_0 ,
+    s00_sha256_irq,
     CO,
     s00_axi_aclk,
-    p_0_in,
+    sha256_msg_size,
     Q,
     slv_reg0,
     \slv_reg0_reg[4] ,
     \slv_reg0_reg[4]_0 ,
-    p_1_in18_in,
+    p_0_in,
     \slv_reg0_reg[4]_1 ,
     \slv_reg0_reg[4]_2 ,
     slv_reg01,
@@ -33563,7 +33581,6 @@ module test_axi_sha256_0_0_sha256_update
     \w_in_reg_reg[7]_i_2_1 ,
     \w_in_reg_reg[7]_i_2_2 ,
     S,
-    \cir_buf_reg[0][15] ,
     pad_start_carry__4,
     p_2_in);
   output [52:0]\cur_block_reg[52]_0 ;
@@ -33577,14 +33594,15 @@ module test_axi_sha256_0_0_sha256_update
   output [31:0]\hash7_reg[31] ;
   output \axi_awaddr_reg[6] ;
   output \axi_awaddr_reg[6]_0 ;
+  output s00_sha256_irq;
   output [0:0]CO;
   input s00_axi_aclk;
-  input [61:0]p_0_in;
+  input [63:0]sha256_msg_size;
   input [1:0]Q;
   input [1:0]slv_reg0;
   input \slv_reg0_reg[4] ;
   input \slv_reg0_reg[4]_0 ;
-  input p_1_in18_in;
+  input p_0_in;
   input \slv_reg0_reg[4]_1 ;
   input \slv_reg0_reg[4]_2 ;
   input slv_reg01;
@@ -33611,7 +33629,6 @@ module test_axi_sha256_0_0_sha256_update
   input [31:0]\w_in_reg_reg[7]_i_2_1 ;
   input [31:0]\w_in_reg_reg[7]_i_2_2 ;
   input [0:0]S;
-  input [1:0]\cir_buf_reg[0][15] ;
   input [58:0]pad_start_carry__4;
   input p_2_in;
 
@@ -33628,7 +33645,6 @@ module test_axi_sha256_0_0_sha256_update
   wire [0:0]S;
   wire \axi_awaddr_reg[6] ;
   wire \axi_awaddr_reg[6]_0 ;
-  wire [1:0]\cir_buf_reg[0][15] ;
   wire comp_control_delays_n_1;
   wire comp_control_delays_n_2;
   wire comp_inst_n_0;
@@ -34245,11 +34261,10 @@ module test_axi_sha256_0_0_sha256_update
   wire kval_addr_delay_inst_n_36;
   wire [6:4]next_state;
   wire [9:1]next_state__0;
-  wire [61:0]p_0_in;
+  wire p_0_in;
   wire [5:0]p_0_in_0;
   wire [31:0]p_0_in_1;
   wire [31:0]p_0_in_2;
-  wire p_1_in18_in;
   wire p_2_in;
   wire pad_inst_n_0;
   wire pad_inst_n_1;
@@ -34268,6 +34283,7 @@ module test_axi_sha256_0_0_sha256_update
   wire \round_counter_reg[0]_rep_n_0 ;
   wire s00_axi_aclk;
   wire [0:0]s00_axi_wstrb;
+  wire s00_sha256_irq;
   wire [31:0]sch_calc;
   wire sch_control_delays_n_1;
   wire sch_inst_n_32;
@@ -34307,6 +34323,7 @@ module test_axi_sha256_0_0_sha256_update
   wire [3:0]sha256_block_offset;
   wire [54:53]sha256_cur_block;
   wire sha256_hash_done0;
+  wire [63:0]sha256_msg_size;
   wire sha256_reset;
   wire [1:0]slv_reg0;
   wire slv_reg01;
@@ -35012,9 +35029,10 @@ module test_axi_sha256_0_0_sha256_update
         .\axi_awaddr_reg[6]_0 (\axi_awaddr_reg[6]_0 ),
         .\delay_reg[2][0]__0_0 ({state__0[6:5],state__0[3],state__0[1:0]}),
         .\delay_reg[2][0]__0_1 (pad_inst_n_5),
-        .p_1_in18_in(p_1_in18_in),
+        .p_0_in(p_0_in),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_wstrb(s00_axi_wstrb),
+        .s00_sha256_irq(s00_sha256_irq),
         .slv_reg0(slv_reg0),
         .slv_reg01(slv_reg01),
         .slv_reg0121_out(slv_reg0121_out),
@@ -35142,11 +35160,9 @@ module test_axi_sha256_0_0_sha256_update
        (.CO(CO),
         .D({next_state[6],next_state[4]}),
         .Q({pad_inst_n_0,pad_inst_n_1,pad_inst_n_2}),
-        .\cir_buf_reg[0][15] (\cir_buf_reg[0][15] ),
         .\cir_buf_reg[0][7] (sch_control_delays_n_1),
         .\cur_block_reg_reg[54]_0 ({sha256_cur_block,\cur_block_reg[52]_0 }),
         .en_pad(en_pad),
-        .p_0_in(p_0_in),
         .pad_start_carry_0(\round_counter_reg[0]_rep__0_n_0 ),
         .pad_start_carry__4_0(pad_start_carry__4),
         .reset_round_counter(reset_round_counter),
@@ -35154,6 +35170,7 @@ module test_axi_sha256_0_0_sha256_update
         .s00_axi_aclk(s00_axi_aclk),
         .sch_calc(sch_calc),
         .sha256_big_endian_msg(sha256_big_endian_msg),
+        .sha256_msg_size(sha256_msg_size),
         .\state_reg[1]_0 (pad_inst_n_7),
         .\state_reg[1]_1 (kval_addr_delay_inst_n_32),
         .\state_reg[2]_0 (pad_inst_n_9),
@@ -35197,14 +35214,14 @@ module test_axi_sha256_0_0_sha256_update
     \round_counter[0]_rep_i_1__0 
        (.I0(\round_counter_reg[0]_rep__0_n_0 ),
         .O(\round_counter[0]_rep_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair198" *) 
+  (* SOFT_HLUTNM = "soft_lutpair199" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \round_counter[1]_i_1 
        (.I0(\round_counter_reg[0]_rep__0_n_0 ),
         .I1(sha256_block_offset[1]),
         .O(p_0_in_0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair198" *) 
+  (* SOFT_HLUTNM = "soft_lutpair199" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \round_counter[2]_i_1 
@@ -35212,7 +35229,7 @@ module test_axi_sha256_0_0_sha256_update
         .I1(sha256_block_offset[1]),
         .I2(sha256_block_offset[2]),
         .O(p_0_in_0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair197" *) 
+  (* SOFT_HLUTNM = "soft_lutpair198" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \round_counter[3]_i_1 
@@ -35221,7 +35238,7 @@ module test_axi_sha256_0_0_sha256_update
         .I2(\round_counter_reg[0]_rep__0_n_0 ),
         .I3(sha256_block_offset[3]),
         .O(p_0_in_0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair195" *) 
+  (* SOFT_HLUTNM = "soft_lutpair196" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \round_counter[4]_i_1 
@@ -35326,480 +35343,480 @@ module test_axi_sha256_0_0_sha256_update
   LUT3 #(
     .INIT(8'h04)) 
     \slv_reg0[4]_i_10 
-       (.I0(p_0_in[58]),
+       (.I0(sha256_msg_size[60]),
         .I1(sha256_cur_block[54]),
-        .I2(p_0_in[59]),
+        .I2(sha256_msg_size[61]),
         .O(\slv_reg0[4]_i_10_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_11 
        (.I0(\cur_block_reg[52]_0 [52]),
-        .I1(p_0_in[56]),
-        .I2(p_0_in[57]),
+        .I1(sha256_msg_size[58]),
+        .I2(sha256_msg_size[59]),
         .I3(sha256_cur_block[53]),
         .O(\slv_reg0[4]_i_11_n_0 ));
   LUT3 #(
     .INIT(8'h09)) 
     \slv_reg0[4]_i_13 
        (.I0(sha256_cur_block[54]),
-        .I1(p_0_in[58]),
-        .I2(p_0_in[59]),
+        .I1(sha256_msg_size[60]),
+        .I2(sha256_msg_size[61]),
         .O(\slv_reg0[4]_i_13_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_14 
        (.I0(\cur_block_reg[52]_0 [52]),
-        .I1(p_0_in[56]),
+        .I1(sha256_msg_size[58]),
         .I2(sha256_cur_block[53]),
-        .I3(p_0_in[57]),
+        .I3(sha256_msg_size[59]),
         .O(\slv_reg0[4]_i_14_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_16 
        (.I0(\cur_block_reg[52]_0 [50]),
-        .I1(p_0_in[54]),
-        .I2(p_0_in[55]),
+        .I1(sha256_msg_size[56]),
+        .I2(sha256_msg_size[57]),
         .I3(\cur_block_reg[52]_0 [51]),
         .O(\slv_reg0[4]_i_16_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_17 
        (.I0(\cur_block_reg[52]_0 [48]),
-        .I1(p_0_in[52]),
-        .I2(p_0_in[53]),
+        .I1(sha256_msg_size[54]),
+        .I2(sha256_msg_size[55]),
         .I3(\cur_block_reg[52]_0 [49]),
         .O(\slv_reg0[4]_i_17_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_18 
        (.I0(\cur_block_reg[52]_0 [46]),
-        .I1(p_0_in[50]),
-        .I2(p_0_in[51]),
+        .I1(sha256_msg_size[52]),
+        .I2(sha256_msg_size[53]),
         .I3(\cur_block_reg[52]_0 [47]),
         .O(\slv_reg0[4]_i_18_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_19 
        (.I0(\cur_block_reg[52]_0 [44]),
-        .I1(p_0_in[48]),
-        .I2(p_0_in[49]),
+        .I1(sha256_msg_size[50]),
+        .I2(sha256_msg_size[51]),
         .I3(\cur_block_reg[52]_0 [45]),
         .O(\slv_reg0[4]_i_19_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_20 
        (.I0(\cur_block_reg[52]_0 [50]),
-        .I1(p_0_in[54]),
+        .I1(sha256_msg_size[56]),
         .I2(\cur_block_reg[52]_0 [51]),
-        .I3(p_0_in[55]),
+        .I3(sha256_msg_size[57]),
         .O(\slv_reg0[4]_i_20_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_21 
        (.I0(\cur_block_reg[52]_0 [48]),
-        .I1(p_0_in[52]),
+        .I1(sha256_msg_size[54]),
         .I2(\cur_block_reg[52]_0 [49]),
-        .I3(p_0_in[53]),
+        .I3(sha256_msg_size[55]),
         .O(\slv_reg0[4]_i_21_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_22 
        (.I0(\cur_block_reg[52]_0 [46]),
-        .I1(p_0_in[50]),
+        .I1(sha256_msg_size[52]),
         .I2(\cur_block_reg[52]_0 [47]),
-        .I3(p_0_in[51]),
+        .I3(sha256_msg_size[53]),
         .O(\slv_reg0[4]_i_22_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_23 
        (.I0(\cur_block_reg[52]_0 [44]),
-        .I1(p_0_in[48]),
+        .I1(sha256_msg_size[50]),
         .I2(\cur_block_reg[52]_0 [45]),
-        .I3(p_0_in[49]),
+        .I3(sha256_msg_size[51]),
         .O(\slv_reg0[4]_i_23_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_25 
        (.I0(\cur_block_reg[52]_0 [42]),
-        .I1(p_0_in[46]),
-        .I2(p_0_in[47]),
+        .I1(sha256_msg_size[48]),
+        .I2(sha256_msg_size[49]),
         .I3(\cur_block_reg[52]_0 [43]),
         .O(\slv_reg0[4]_i_25_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_26 
        (.I0(\cur_block_reg[52]_0 [40]),
-        .I1(p_0_in[44]),
-        .I2(p_0_in[45]),
+        .I1(sha256_msg_size[46]),
+        .I2(sha256_msg_size[47]),
         .I3(\cur_block_reg[52]_0 [41]),
         .O(\slv_reg0[4]_i_26_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_27 
        (.I0(\cur_block_reg[52]_0 [38]),
-        .I1(p_0_in[42]),
-        .I2(p_0_in[43]),
+        .I1(sha256_msg_size[44]),
+        .I2(sha256_msg_size[45]),
         .I3(\cur_block_reg[52]_0 [39]),
         .O(\slv_reg0[4]_i_27_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_28 
        (.I0(\cur_block_reg[52]_0 [36]),
-        .I1(p_0_in[40]),
-        .I2(p_0_in[41]),
+        .I1(sha256_msg_size[42]),
+        .I2(sha256_msg_size[43]),
         .I3(\cur_block_reg[52]_0 [37]),
         .O(\slv_reg0[4]_i_28_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_29 
        (.I0(\cur_block_reg[52]_0 [42]),
-        .I1(p_0_in[46]),
+        .I1(sha256_msg_size[48]),
         .I2(\cur_block_reg[52]_0 [43]),
-        .I3(p_0_in[47]),
+        .I3(sha256_msg_size[49]),
         .O(\slv_reg0[4]_i_29_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_30 
        (.I0(\cur_block_reg[52]_0 [40]),
-        .I1(p_0_in[44]),
+        .I1(sha256_msg_size[46]),
         .I2(\cur_block_reg[52]_0 [41]),
-        .I3(p_0_in[45]),
+        .I3(sha256_msg_size[47]),
         .O(\slv_reg0[4]_i_30_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_31 
        (.I0(\cur_block_reg[52]_0 [38]),
-        .I1(p_0_in[42]),
+        .I1(sha256_msg_size[44]),
         .I2(\cur_block_reg[52]_0 [39]),
-        .I3(p_0_in[43]),
+        .I3(sha256_msg_size[45]),
         .O(\slv_reg0[4]_i_31_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_32 
        (.I0(\cur_block_reg[52]_0 [36]),
-        .I1(p_0_in[40]),
+        .I1(sha256_msg_size[42]),
         .I2(\cur_block_reg[52]_0 [37]),
-        .I3(p_0_in[41]),
+        .I3(sha256_msg_size[43]),
         .O(\slv_reg0[4]_i_32_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_34 
        (.I0(\cur_block_reg[52]_0 [34]),
-        .I1(p_0_in[38]),
-        .I2(p_0_in[39]),
+        .I1(sha256_msg_size[40]),
+        .I2(sha256_msg_size[41]),
         .I3(\cur_block_reg[52]_0 [35]),
         .O(\slv_reg0[4]_i_34_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_35 
        (.I0(\cur_block_reg[52]_0 [32]),
-        .I1(p_0_in[36]),
-        .I2(p_0_in[37]),
+        .I1(sha256_msg_size[38]),
+        .I2(sha256_msg_size[39]),
         .I3(\cur_block_reg[52]_0 [33]),
         .O(\slv_reg0[4]_i_35_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_36 
        (.I0(\cur_block_reg[52]_0 [30]),
-        .I1(p_0_in[34]),
-        .I2(p_0_in[35]),
+        .I1(sha256_msg_size[36]),
+        .I2(sha256_msg_size[37]),
         .I3(\cur_block_reg[52]_0 [31]),
         .O(\slv_reg0[4]_i_36_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_37 
        (.I0(\cur_block_reg[52]_0 [28]),
-        .I1(p_0_in[32]),
-        .I2(p_0_in[33]),
+        .I1(sha256_msg_size[34]),
+        .I2(sha256_msg_size[35]),
         .I3(\cur_block_reg[52]_0 [29]),
         .O(\slv_reg0[4]_i_37_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_38 
        (.I0(\cur_block_reg[52]_0 [34]),
-        .I1(p_0_in[38]),
+        .I1(sha256_msg_size[40]),
         .I2(\cur_block_reg[52]_0 [35]),
-        .I3(p_0_in[39]),
+        .I3(sha256_msg_size[41]),
         .O(\slv_reg0[4]_i_38_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_39 
        (.I0(\cur_block_reg[52]_0 [32]),
-        .I1(p_0_in[36]),
+        .I1(sha256_msg_size[38]),
         .I2(\cur_block_reg[52]_0 [33]),
-        .I3(p_0_in[37]),
+        .I3(sha256_msg_size[39]),
         .O(\slv_reg0[4]_i_39_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_40 
        (.I0(\cur_block_reg[52]_0 [30]),
-        .I1(p_0_in[34]),
+        .I1(sha256_msg_size[36]),
         .I2(\cur_block_reg[52]_0 [31]),
-        .I3(p_0_in[35]),
+        .I3(sha256_msg_size[37]),
         .O(\slv_reg0[4]_i_40_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_41 
        (.I0(\cur_block_reg[52]_0 [28]),
-        .I1(p_0_in[32]),
+        .I1(sha256_msg_size[34]),
         .I2(\cur_block_reg[52]_0 [29]),
-        .I3(p_0_in[33]),
+        .I3(sha256_msg_size[35]),
         .O(\slv_reg0[4]_i_41_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_43 
        (.I0(\cur_block_reg[52]_0 [26]),
-        .I1(p_0_in[30]),
-        .I2(p_0_in[31]),
+        .I1(sha256_msg_size[32]),
+        .I2(sha256_msg_size[33]),
         .I3(\cur_block_reg[52]_0 [27]),
         .O(\slv_reg0[4]_i_43_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_44 
        (.I0(\cur_block_reg[52]_0 [24]),
-        .I1(p_0_in[28]),
-        .I2(p_0_in[29]),
+        .I1(sha256_msg_size[30]),
+        .I2(sha256_msg_size[31]),
         .I3(\cur_block_reg[52]_0 [25]),
         .O(\slv_reg0[4]_i_44_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_45 
        (.I0(\cur_block_reg[52]_0 [22]),
-        .I1(p_0_in[26]),
-        .I2(p_0_in[27]),
+        .I1(sha256_msg_size[28]),
+        .I2(sha256_msg_size[29]),
         .I3(\cur_block_reg[52]_0 [23]),
         .O(\slv_reg0[4]_i_45_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_46 
        (.I0(\cur_block_reg[52]_0 [20]),
-        .I1(p_0_in[24]),
-        .I2(p_0_in[25]),
+        .I1(sha256_msg_size[26]),
+        .I2(sha256_msg_size[27]),
         .I3(\cur_block_reg[52]_0 [21]),
         .O(\slv_reg0[4]_i_46_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_47 
        (.I0(\cur_block_reg[52]_0 [26]),
-        .I1(p_0_in[30]),
+        .I1(sha256_msg_size[32]),
         .I2(\cur_block_reg[52]_0 [27]),
-        .I3(p_0_in[31]),
+        .I3(sha256_msg_size[33]),
         .O(\slv_reg0[4]_i_47_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_48 
        (.I0(\cur_block_reg[52]_0 [24]),
-        .I1(p_0_in[28]),
+        .I1(sha256_msg_size[30]),
         .I2(\cur_block_reg[52]_0 [25]),
-        .I3(p_0_in[29]),
+        .I3(sha256_msg_size[31]),
         .O(\slv_reg0[4]_i_48_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_49 
        (.I0(\cur_block_reg[52]_0 [22]),
-        .I1(p_0_in[26]),
+        .I1(sha256_msg_size[28]),
         .I2(\cur_block_reg[52]_0 [23]),
-        .I3(p_0_in[27]),
+        .I3(sha256_msg_size[29]),
         .O(\slv_reg0[4]_i_49_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_50 
        (.I0(\cur_block_reg[52]_0 [20]),
-        .I1(p_0_in[24]),
+        .I1(sha256_msg_size[26]),
         .I2(\cur_block_reg[52]_0 [21]),
-        .I3(p_0_in[25]),
+        .I3(sha256_msg_size[27]),
         .O(\slv_reg0[4]_i_50_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_52 
        (.I0(\cur_block_reg[52]_0 [18]),
-        .I1(p_0_in[22]),
-        .I2(p_0_in[23]),
+        .I1(sha256_msg_size[24]),
+        .I2(sha256_msg_size[25]),
         .I3(\cur_block_reg[52]_0 [19]),
         .O(\slv_reg0[4]_i_52_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_53 
        (.I0(\cur_block_reg[52]_0 [16]),
-        .I1(p_0_in[20]),
-        .I2(p_0_in[21]),
+        .I1(sha256_msg_size[22]),
+        .I2(sha256_msg_size[23]),
         .I3(\cur_block_reg[52]_0 [17]),
         .O(\slv_reg0[4]_i_53_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_54 
        (.I0(\cur_block_reg[52]_0 [14]),
-        .I1(p_0_in[18]),
-        .I2(p_0_in[19]),
+        .I1(sha256_msg_size[20]),
+        .I2(sha256_msg_size[21]),
         .I3(\cur_block_reg[52]_0 [15]),
         .O(\slv_reg0[4]_i_54_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_55 
        (.I0(\cur_block_reg[52]_0 [12]),
-        .I1(p_0_in[16]),
-        .I2(p_0_in[17]),
+        .I1(sha256_msg_size[18]),
+        .I2(sha256_msg_size[19]),
         .I3(\cur_block_reg[52]_0 [13]),
         .O(\slv_reg0[4]_i_55_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_56 
        (.I0(\cur_block_reg[52]_0 [18]),
-        .I1(p_0_in[22]),
+        .I1(sha256_msg_size[24]),
         .I2(\cur_block_reg[52]_0 [19]),
-        .I3(p_0_in[23]),
+        .I3(sha256_msg_size[25]),
         .O(\slv_reg0[4]_i_56_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_57 
        (.I0(\cur_block_reg[52]_0 [16]),
-        .I1(p_0_in[20]),
+        .I1(sha256_msg_size[22]),
         .I2(\cur_block_reg[52]_0 [17]),
-        .I3(p_0_in[21]),
+        .I3(sha256_msg_size[23]),
         .O(\slv_reg0[4]_i_57_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_58 
        (.I0(\cur_block_reg[52]_0 [14]),
-        .I1(p_0_in[18]),
+        .I1(sha256_msg_size[20]),
         .I2(\cur_block_reg[52]_0 [15]),
-        .I3(p_0_in[19]),
+        .I3(sha256_msg_size[21]),
         .O(\slv_reg0[4]_i_58_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_59 
        (.I0(\cur_block_reg[52]_0 [12]),
-        .I1(p_0_in[16]),
+        .I1(sha256_msg_size[18]),
         .I2(\cur_block_reg[52]_0 [13]),
-        .I3(p_0_in[17]),
+        .I3(sha256_msg_size[19]),
         .O(\slv_reg0[4]_i_59_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_61 
        (.I0(\cur_block_reg[52]_0 [10]),
-        .I1(p_0_in[14]),
-        .I2(p_0_in[15]),
+        .I1(sha256_msg_size[16]),
+        .I2(sha256_msg_size[17]),
         .I3(\cur_block_reg[52]_0 [11]),
         .O(\slv_reg0[4]_i_61_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_62 
        (.I0(\cur_block_reg[52]_0 [8]),
-        .I1(p_0_in[12]),
-        .I2(p_0_in[13]),
+        .I1(sha256_msg_size[14]),
+        .I2(sha256_msg_size[15]),
         .I3(\cur_block_reg[52]_0 [9]),
         .O(\slv_reg0[4]_i_62_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_63 
        (.I0(\cur_block_reg[52]_0 [6]),
-        .I1(p_0_in[10]),
-        .I2(p_0_in[11]),
+        .I1(sha256_msg_size[12]),
+        .I2(sha256_msg_size[13]),
         .I3(\cur_block_reg[52]_0 [7]),
         .O(\slv_reg0[4]_i_63_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_64 
        (.I0(\cur_block_reg[52]_0 [4]),
-        .I1(p_0_in[8]),
-        .I2(p_0_in[9]),
+        .I1(sha256_msg_size[10]),
+        .I2(sha256_msg_size[11]),
         .I3(\cur_block_reg[52]_0 [5]),
         .O(\slv_reg0[4]_i_64_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_65 
        (.I0(\cur_block_reg[52]_0 [10]),
-        .I1(p_0_in[14]),
+        .I1(sha256_msg_size[16]),
         .I2(\cur_block_reg[52]_0 [11]),
-        .I3(p_0_in[15]),
+        .I3(sha256_msg_size[17]),
         .O(\slv_reg0[4]_i_65_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_66 
        (.I0(\cur_block_reg[52]_0 [8]),
-        .I1(p_0_in[12]),
+        .I1(sha256_msg_size[14]),
         .I2(\cur_block_reg[52]_0 [9]),
-        .I3(p_0_in[13]),
+        .I3(sha256_msg_size[15]),
         .O(\slv_reg0[4]_i_66_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_67 
        (.I0(\cur_block_reg[52]_0 [6]),
-        .I1(p_0_in[10]),
+        .I1(sha256_msg_size[12]),
         .I2(\cur_block_reg[52]_0 [7]),
-        .I3(p_0_in[11]),
+        .I3(sha256_msg_size[13]),
         .O(\slv_reg0[4]_i_67_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_68 
        (.I0(\cur_block_reg[52]_0 [4]),
-        .I1(p_0_in[8]),
+        .I1(sha256_msg_size[10]),
         .I2(\cur_block_reg[52]_0 [5]),
-        .I3(p_0_in[9]),
+        .I3(sha256_msg_size[11]),
         .O(\slv_reg0[4]_i_68_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_69 
        (.I0(\cur_block_reg[52]_0 [2]),
-        .I1(p_0_in[6]),
-        .I2(p_0_in[7]),
+        .I1(sha256_msg_size[8]),
+        .I2(sha256_msg_size[9]),
         .I3(\cur_block_reg[52]_0 [3]),
         .O(\slv_reg0[4]_i_69_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_70 
        (.I0(\cur_block_reg[52]_0 [0]),
-        .I1(p_0_in[4]),
-        .I2(p_0_in[5]),
+        .I1(sha256_msg_size[6]),
+        .I2(sha256_msg_size[7]),
         .I3(\cur_block_reg[52]_0 [1]),
         .O(\slv_reg0[4]_i_70_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_71 
        (.I0(sha256_block_offset[2]),
-        .I1(p_0_in[2]),
-        .I2(p_0_in[3]),
+        .I1(sha256_msg_size[4]),
+        .I2(sha256_msg_size[5]),
         .I3(sha256_block_offset[3]),
         .O(\slv_reg0[4]_i_71_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \slv_reg0[4]_i_72 
        (.I0(\round_counter_reg[0]_rep__0_n_0 ),
-        .I1(p_0_in[0]),
-        .I2(p_0_in[1]),
+        .I1(sha256_msg_size[2]),
+        .I2(sha256_msg_size[3]),
         .I3(sha256_block_offset[1]),
         .O(\slv_reg0[4]_i_72_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_73 
        (.I0(\cur_block_reg[52]_0 [2]),
-        .I1(p_0_in[6]),
+        .I1(sha256_msg_size[8]),
         .I2(\cur_block_reg[52]_0 [3]),
-        .I3(p_0_in[7]),
+        .I3(sha256_msg_size[9]),
         .O(\slv_reg0[4]_i_73_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_74 
        (.I0(\cur_block_reg[52]_0 [0]),
-        .I1(p_0_in[4]),
+        .I1(sha256_msg_size[6]),
         .I2(\cur_block_reg[52]_0 [1]),
-        .I3(p_0_in[5]),
+        .I3(sha256_msg_size[7]),
         .O(\slv_reg0[4]_i_74_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_75 
        (.I0(sha256_block_offset[2]),
-        .I1(p_0_in[2]),
+        .I1(sha256_msg_size[4]),
         .I2(sha256_block_offset[3]),
-        .I3(p_0_in[3]),
+        .I3(sha256_msg_size[5]),
         .O(\slv_reg0[4]_i_75_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \slv_reg0[4]_i_76 
        (.I0(\round_counter_reg[0]_rep__0_n_0 ),
-        .I1(p_0_in[0]),
+        .I1(sha256_msg_size[2]),
         .I2(sha256_block_offset[1]),
-        .I3(p_0_in[1]),
+        .I3(sha256_msg_size[3]),
         .O(\slv_reg0[4]_i_76_n_0 ));
   CARRY4 \slv_reg0_reg[4]_i_15 
        (.CI(\slv_reg0_reg[4]_i_24_n_0 ),
@@ -35857,7 +35874,7 @@ module test_axi_sha256_0_0_sha256_update
         .DI({\slv_reg0[4]_i_16_n_0 ,\slv_reg0[4]_i_17_n_0 ,\slv_reg0[4]_i_18_n_0 ,\slv_reg0[4]_i_19_n_0 }),
         .O(\NLW_slv_reg0_reg[4]_i_9_O_UNCONNECTED [3:0]),
         .S({\slv_reg0[4]_i_20_n_0 ,\slv_reg0[4]_i_21_n_0 ,\slv_reg0[4]_i_22_n_0 ,\slv_reg0[4]_i_23_n_0 }));
-  (* SOFT_HLUTNM = "soft_lutpair196" *) 
+  (* SOFT_HLUTNM = "soft_lutpair197" *) 
   LUT5 #(
     .INIT(32'h00000004)) 
     \state[1]_i_1 
@@ -35889,7 +35906,7 @@ module test_axi_sha256_0_0_sha256_update
         .I4(round_counter_reg[4]),
         .I5(round_counter_reg[5]),
         .O(\state[9]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair196" *) 
+  (* SOFT_HLUTNM = "soft_lutpair197" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \state[9]_i_11 
@@ -35899,13 +35916,13 @@ module test_axi_sha256_0_0_sha256_update
   LUT5 #(
     .INIT(32'h00FF0400)) 
     \state[9]_i_12 
-       (.I0(p_1_in18_in),
+       (.I0(\slv_reg0_reg[4]_0 ),
         .I1(p_2_in),
-        .I2(\slv_reg0_reg[4]_0 ),
+        .I2(p_0_in),
         .I3(state__0[4]),
         .I4(state__0[8]),
         .O(\state[9]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair195" *) 
+  (* SOFT_HLUTNM = "soft_lutpair196" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
     \state[9]_i_13 
@@ -35915,7 +35932,7 @@ module test_axi_sha256_0_0_sha256_update
         .I3(sha256_block_offset[2]),
         .I4(round_counter_reg[4]),
         .O(\state[9]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair197" *) 
+  (* SOFT_HLUTNM = "soft_lutpair198" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \state[9]_i_14 

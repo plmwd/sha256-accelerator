@@ -48,9 +48,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_rst_clk_wi
 # IP: bd/test/ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_axi_uartlite_0_0 || ORIG_REF_NAME==test_axi_uartlite_0_0} -quiet] -quiet
 
-# IP: bd/test/ip/test_xlconstant_0_0/test_xlconstant_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_xlconstant_0_0 || ORIG_REF_NAME==test_xlconstant_0_0} -quiet] -quiet
-
 # IP: bd/test/ip/test_led_axi_0_0/test_led_axi_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_led_axi_0_0 || ORIG_REF_NAME==test_led_axi_0_0} -quiet] -quiet
 

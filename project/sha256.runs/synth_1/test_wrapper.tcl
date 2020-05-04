@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 1
-set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,6 +31,7 @@ set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/904pa/AppData/Roaming/Xilinx/Vivado/2019.2/xhub/board_store} [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_repo_paths {
+  c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0
   c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0
   c:/Users/904pa/Documents/Git/sha256/ip_repo/axi_sha256_1.0
   c:/Users/904pa/Documents/Git/sha256/ip_repo/myip_1.0

@@ -120,14 +120,22 @@ static INLINE void sha256_ack_hash_done() {
 	*SHA256_CON &= ~SHA256_CON_HASH_DONE_BIT;
 }
 
+bool sha256_isr_done();
+
 typedef struct {
     void *msg_ptr;
     uint64_t msg_size;
-    uint32_t hash[8];
+    uint64_t last_block;
+    uint32_t *hash_ptr;
+    bool hash_done;
 } sha256_t;
 
+typedef enum {BLOCKING, NONBLOCKING} blocking_t;
+
 //s32 construct_sha256_t(sha256_t* sha256_obj, u32 *msg_ptr, u64 msg_size);
-s32 sha256(sha256_t *sha256_obj);
+s32 sha256(void *msg_ptr, uint64_t msg_size, uint32_t *hash_ptr, blocking_t b_t);
+
+void sha256_isr(void) __attribute__((fast_interrupt));
 
 /**************************** Type Definitions *****************************/
 /**

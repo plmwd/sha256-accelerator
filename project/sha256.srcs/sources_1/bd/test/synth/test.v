@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-//Date        : Thu Apr 30 23:32:53 2020
+//Date        : Mon May  4 13:52:04 2020
 //Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 //Command     : generate_target test.bd
 //Design      : test
@@ -1359,7 +1359,7 @@ module s01_couplers_imp_FJ0V8L
         .s_axi_wvalid(s01_couplers_to_auto_pc_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "test,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=test,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=26,numReposBlks=17,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=5,da_mb_cnt=1,da_trigger_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "test.hwdef" *) 
+(* CORE_GENERATION_INFO = "test,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=test,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=25,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=5,da_mb_cnt=1,da_trigger_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "test.hwdef" *) 
 module test
    (led_io,
     reset,
@@ -1372,6 +1372,7 @@ module test
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *) output usb_uart_txd;
 
+  wire axi_sha256_0_s00_sha256_irq;
   wire axi_uartlite_0_UART_RxD;
   wire axi_uartlite_0_UART_TxD;
   wire axi_uartlite_0_interrupt;
@@ -1557,7 +1558,6 @@ module test
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
   wire sys_clock_1;
-  wire [0:0]xlconstant_0_dout;
 
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
   assign led_io[15:0] = led_axi_0_led_io;
@@ -1585,7 +1585,8 @@ module test
         .s00_axi_wdata(microblaze_0_axi_periph_M04_AXI_WDATA),
         .s00_axi_wready(microblaze_0_axi_periph_M04_AXI_WREADY),
         .s00_axi_wstrb(microblaze_0_axi_periph_M04_AXI_WSTRB),
-        .s00_axi_wvalid(microblaze_0_axi_periph_M04_AXI_WVALID));
+        .s00_axi_wvalid(microblaze_0_axi_periph_M04_AXI_WVALID),
+        .s00_sha256_irq(axi_sha256_0_s00_sha256_irq));
   test_axi_uartlite_0_0 axi_uartlite_0
        (.interrupt(axi_uartlite_0_interrupt),
         .rx(axi_uartlite_0_UART_RxD),
@@ -1972,7 +1973,7 @@ module test
         .SYS_Rst(rst_clk_wiz_1_100M_bus_struct_reset));
   test_microblaze_0_xlconcat_0 microblaze_0_xlconcat
        (.In0(axi_uartlite_0_interrupt),
-        .In1(xlconstant_0_dout),
+        .In1(axi_sha256_0_s00_sha256_irq),
         .dout(microblaze_0_intr));
   test_rst_clk_wiz_1_100M_0 rst_clk_wiz_1_100M
        (.aux_reset_in(1'b1),
@@ -1983,8 +1984,6 @@ module test
         .mb_reset(rst_clk_wiz_1_100M_mb_reset),
         .peripheral_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
         .slowest_sync_clk(microblaze_0_Clk));
-  test_xlconstant_0_0 xlconstant_0
-       (.dout(xlconstant_0_dout));
 endmodule
 
 module test_microblaze_0_axi_periph_0

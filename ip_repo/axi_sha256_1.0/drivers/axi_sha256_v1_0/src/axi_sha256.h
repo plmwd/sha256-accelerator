@@ -43,92 +43,85 @@
 #define AXI_SHA256_HASH4_OFFSET 100
 #define AXI_SHA256_HASH5_OFFSET 104
 #define AXI_SHA256_HASH6_OFFSET 108
-#define AXI_SHA256_HASH7_OFFSET 
+#define AXI_SHA256_HASH7_OFFSET 112
 #define AXI_SHA256_S00_AXI_SLV_REG29_OFFSET 116
 
 
-#define SHA256_CON_EN_BIT 0x00000000u;
-#define SHA256_CON_RESET_BIT = 0x00000001u;
-#define SHA256_CON_BIG_ENDIAN_MSG_BIT = 0x00000002u;
-#define SHA256_CON_UPDATE_BIT = 0x00000004u;
-#define SHA256_CON_BLOCK_DONE_BIT = 0x00000008u;
-#define SHA256_CON_HASH_DONE_BIT = 0x0000000Cu
+#define SHA256_CON_EN_BIT 				0x00000001u
+#define SHA256_CON_BIG_ENDIAN_MSG_BIT 	0x00000002u
+#define SHA256_CON_UPDATE_BIT			0x00000004u
+#define SHA256_CON_BLOCK_DONE_BIT 		0x00000008u
+#define SHA256_CON_HASH_DONE_BIT 		0x00000010u
 
 // registers
-volatile uint32_t * const SHA256_CON = (volatile uint32_t *)XPAR_AXI_SHA256_0_S00_AXI_BASEADDR;
-volatile uint32_t * const SHA256_MSG_SIZE_L = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG_SIZE_L_OFFSET);
-volatile uint32_t * const SHA256_MSG_SIZE_H = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG_SIZE_H_OFFSET);
-volatile uint32_t * const SHA256_CUR_BLOCK_L = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_CUR_BLOCK_L_OFFSET);
-volatile uint32_t * const SHA256_CUR_BLOCK_H = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_CUR_BLOCK_H_OFFSET);
-volatile uint32_t * const SHA256_MSG0 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG0_OFFSET);
-volatile uint32_t * const SHA256_MSG1 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG1_OFFSET);
-volatile uint32_t * const SHA256_MSG2 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG2_OFFSET);
-volatile uint32_t * const SHA256_MSG3 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG3_OFFSET);
-volatile uint32_t * const SHA256_MSG4 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG4_OFFSET);
-volatile uint32_t * const SHA256_MSG5 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG5_OFFSET);
-volatile uint32_t * const SHA256_MSG6 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG6_OFFSET);
-volatile uint32_t * const SHA256_MSG7 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG7_OFFSET);
-volatile uint32_t * const SHA256_MSG8 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG8_OFFSET);
-volatile uint32_t * const SHA256_MSG9 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG9_OFFSET);
-volatile uint32_t * const SHA256_MSG10 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG10_OFFSET);
-volatile uint32_t * const SHA256_MSG11 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG11_OFFSET);
-volatile uint32_t * const SHA256_MSG12 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG12_OFFSET);
-volatile uint32_t * const SHA256_MSG13 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG13_OFFSET);
-volatile uint32_t * const SHA256_MSG14 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG14_OFFSET);
-volatile uint32_t * const SHA256_MSG15 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_MSG15_OFFSET);
-volatile uint32_t * const SHA256_HASH0 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
-volatile uint32_t * const SHA256_HASH1 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
-volatile uint32_t * const SHA256_HASH2 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
-volatile uint32_t * const SHA256_HASH3 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
-volatile uint32_t * const SHA256_HASH4 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
-volatile uint32_t * const SHA256_HASH5 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
-volatile uint32_t * const SHA256_HASH6 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
-volatile uint32_t * const SHA256_HASH7 = (volatile uint32_t *)(XPAR_AXI_SHA256_0_S00_AXI_BASEADDR + AXI_SHA256_HASH0_OFFSET);
+extern volatile uint32_t * const SHA256_CON;
+extern volatile uint32_t * const SHA256_MSG_SIZE_L;
+extern volatile uint32_t * const SHA256_MSG_SIZE_H;
+extern volatile uint32_t * const SHA256_CUR_BLOCK_L;
+extern volatile uint32_t * const SHA256_CUR_BLOCK_H;
+extern volatile uint32_t * const SHA256_MSG0;
+extern volatile uint32_t * const SHA256_MSG1;
+extern volatile uint32_t * const SHA256_MSG2;
+extern volatile uint32_t * const SHA256_MSG3;
+extern volatile uint32_t * const SHA256_MSG4;
+extern volatile uint32_t * const SHA256_MSG5;
+extern volatile uint32_t * const SHA256_MSG6;
+extern volatile uint32_t * const SHA256_MSG7;
+extern volatile uint32_t * const SHA256_MSG8;
+extern volatile uint32_t * const SHA256_MSG9;
+extern volatile uint32_t * const SHA256_MSG10;
+extern volatile uint32_t * const SHA256_MSG11;
+extern volatile uint32_t * const SHA256_MSG12;
+extern volatile uint32_t * const SHA256_MSG13;
+extern volatile uint32_t * const SHA256_MSG14;
+extern volatile uint32_t * const SHA256_MSG15;
+extern volatile uint32_t * const SHA256_HASH0;
+extern volatile uint32_t * const SHA256_HASH1;
+extern volatile uint32_t * const SHA256_HASH2;
+extern volatile uint32_t * const SHA256_HASH3;
+extern volatile uint32_t * const SHA256_HASH4;
+extern volatile uint32_t * const SHA256_HASH5;
+extern volatile uint32_t * const SHA256_HASH6;
+extern volatile uint32_t * const SHA256_HASH7;
 
 static INLINE void sha256_update() {
-    SHA256_CON |= SHA256_CON_UPDATE_BIT;
+    *SHA256_CON |= SHA256_CON_UPDATE_BIT ;
 }
 
 static INLINE void sha256_enable() {
-    SHA256_CON |= SHA256_CON_EN_BIT;
+    *SHA256_CON |= SHA256_CON_EN_BIT;
 }
 
 static INLINE void sha256_disable() {
-    SHA256_CON &= ~SHA256_CON_EN_BIT;
-}
-
-static INLINE void sha256_hold_reset() {
-    SHA256_CON |= SHA256_CON_RESET_BIT;
-}
-
-static INLINE void sha256_release_reset() {
-    SHA256_CON &= ~SHA256_CON_RESET_BIT;
-}
-
-static INLINE void sha256_reset() {
-    sha256_hold_reset();
-    sha256_release_reset();
+    *SHA256_CON &= ~SHA256_CON_EN_BIT;
 }
 
 static INLINE bool sha256_is_block_done() {
-    return (SHA256_CON & SHA256_CON_BLOCK_DONE_BIT) > 0u;
+    return (*SHA256_CON & SHA256_CON_BLOCK_DONE_BIT) > 0u;
 }
 
 static INLINE bool sha256_is_hash_done() {
-    return (SHA256_CON & SHA256_CON_HASH_DONE_BIT) > 0u;
+    return (*SHA256_CON & SHA256_CON_HASH_DONE_BIT) > 0u;
 }
 
 static INLINE void sha256_msg_big_endian_mode() {
-    SHA256_CON |= SHA256_CON_BIG_ENDIAN_MSG_BIT;
+    *SHA256_CON |= SHA256_CON_BIG_ENDIAN_MSG_BIT;
 }
 
 static INLINE void sha256_msg_little_endian_mode() {
-    SHA256_CON &= ~SHA256_CON_BIG_ENDIAN_MSG_BIT;
+    *SHA256_CON &= ~SHA256_CON_BIG_ENDIAN_MSG_BIT;
 }
 
+static INLINE void sha256_ack_block_done() {
+	*SHA256_CON &= ~SHA256_CON_BLOCK_DONE_BIT;
+}
 
-tyepdef struct {
-    uint32_t *msg_ptr;
+static INLINE void sha256_ack_hash_done() {
+	*SHA256_CON &= ~SHA256_CON_HASH_DONE_BIT;
+}
+
+typedef struct {
+    void *msg_ptr;
     uint64_t msg_size;
     uint32_t hash[8];
 } sha256_t;

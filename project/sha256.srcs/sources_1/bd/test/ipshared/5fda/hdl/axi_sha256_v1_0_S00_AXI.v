@@ -15,6 +15,7 @@
 	)
 	(
 		// Users to add ports here
+		output wire S_SHA256_IRQ,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -794,6 +795,11 @@
 	end    
 
 	// Add user logic here
+	// IRQ signal generation
+	// only block_done since hash_done depends on block_done 
+	// IRQ uses both signals to remove 1 cycle delay
+	assign S_SHA256_IRQ = slv_reg0[SHA256_BLOCK_DONE_BIT] | sha256_block_done;	
+
 	// Adjusted slv_reg write logic to make some regs read-only. See memory map for which ones.
 	// The sha256_addr is a word address (no byte resolution).
 	// The offset is which word in the 16-word message block and the cur_block indicates the current state
@@ -802,7 +808,7 @@
 
 	// Bit selection on sha256_msg_size to get the number of words in the message being hashed 
 	// Does not account for the padding overflowing so hash_done needs to wait for the sha256_update
-	// module to be done (includes padding).
+	// module to be done (includes padding), so it depends on block_done because the comparison will trigger before the block is done
 	assign sha256_hash_done = (sha256_addr > sha256_msg_size[63:2]) & sha256_block_done;
 
 	assign sha256_en = slv_reg0[SHA256_EN_BIT];
@@ -873,7 +879,6 @@
 		endcase
 	end
 	
-
 	sha256_update axi_sha256 (
 		.hash0(sha256_hash0),
 		.hash1(sha256_hash1),

@@ -24,7 +24,7 @@
 	)
 	(
 		// Users to add ports here
-
+		output wire s00_sha256_irq,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -81,6 +81,7 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) axi_sha256_v1_0_S00_AXI_inst (
+		.S_SHA256_IRQ(s00_sha256_irq),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

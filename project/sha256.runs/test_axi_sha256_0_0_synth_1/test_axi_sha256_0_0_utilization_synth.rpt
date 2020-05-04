@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Apr 30 23:33:49 2020
+| Date         : Mon May  4 13:53:03 2020
 | Host         : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 | Command      : report_utilization -file test_axi_sha256_0_0_utilization_synth.rpt -pb test_axi_sha256_0_0_utilization_synth.pb
 | Design       : test_axi_sha256_0_0
@@ -155,7 +155,7 @@ Table of Contents
 | FDRE     | 1661 |        Flop & Latch |
 | LUT6     |  806 |                 LUT |
 | LUT3     |  395 |                 LUT |
-| LUT2     |  346 |                 LUT |
+| LUT2     |  347 |                 LUT |
 | LUT5     |  256 |                 LUT |
 | MUXF7    |  192 |               MuxFx |
 | CARRY4   |  161 |          CarryLogic |
