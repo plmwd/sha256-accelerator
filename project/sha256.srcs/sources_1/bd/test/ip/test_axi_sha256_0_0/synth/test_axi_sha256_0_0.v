@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:axi_sha256:1.0
-// IP Revision: 8
+// IP Revision: 11
 
 (* X_CORE_INFO = "axi_sha256_v1_0,Vivado 2019.2" *)
 (* CHECK_LICENSE_TYPE = "test_axi_sha256_0_0,axi_sha256_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "test_axi_sha256_0_0,axi_sha256_v1_0,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi_sha256,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7}" *)
+(* CORE_GENERATION_INFO = "test_axi_sha256_0_0,axi_sha256_v1_0,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=axi_sha256,x_ipVersion=1.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=7,C_S00_SHA256_BIG_ENDIAN_HASH=true,C_S00_SHA256_BIG_ENDIAN=false}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module test_axi_sha256_0_0 (
   s00_sha256_irq,
@@ -131,7 +131,9 @@ input wire s00_axi_rready;
 
   axi_sha256_v1_0 #(
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
-    .C_S00_AXI_ADDR_WIDTH(7)  // Width of S_AXI address bus
+    .C_S00_AXI_ADDR_WIDTH(7),  // Width of S_AXI address bus
+    .C_S00_SHA256_BIG_ENDIAN_HASH(1'B1),
+    .C_S00_SHA256_BIG_ENDIAN(1'B0)
   ) inst (
     .s00_sha256_irq(s00_sha256_irq),
     .s00_axi_aclk(s00_axi_aclk),

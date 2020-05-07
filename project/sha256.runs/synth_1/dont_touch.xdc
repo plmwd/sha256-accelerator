@@ -54,6 +54,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_led_axi_0_
 # IP: bd/test/ip/test_axi_sha256_0_0/test_axi_sha256_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_axi_sha256_0_0 || ORIG_REF_NAME==test_axi_sha256_0_0} -quiet] -quiet
 
+# IP: bd/test/ip/test_axi_timer_0_0/test_axi_timer_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_axi_timer_0_0 || ORIG_REF_NAME==test_axi_timer_0_0} -quiet] -quiet
+
 # IP: bd/test/ip/test_auto_pc_0/test_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==test_auto_pc_0 || ORIG_REF_NAME==test_auto_pc_0} -quiet] -quiet
 

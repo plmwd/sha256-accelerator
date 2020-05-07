@@ -1,0 +1,17 @@
+{signal: [
+  {name: 'CLK', wave: '0p......'},
+  {name: 'EN', wave: '01......'},
+  {name: 'UPDATE', wave: '0101010.', node:'.....a'},
+  {name: 'BUSY', wave: '1.0...1.', node:'......b'},
+  {name: 'BLOCK_DONE', wave: '0.1.0...'},
+  {name: 'HASH_DONE', wave: '0.1.0...'}
+],
+ edge: ['a~>b '],
+ 
+ head:{
+ },
+ 
+ foot:{
+ 	tick:0
+ }
+}

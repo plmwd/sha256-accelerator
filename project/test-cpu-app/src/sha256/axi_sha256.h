@@ -48,8 +48,8 @@
 
 
 #define SHA256_CON_EN_BIT 				0x00000001u
-#define SHA256_CON_BIG_ENDIAN_MSG_BIT 	0x00000002u
-#define SHA256_CON_UPDATE_BIT			0x00000004u
+#define SHA256_CON_UPDATE_BIT			0x00000002u
+#define SHA256_CON_BUSY_BIT				0x00000004u
 #define SHA256_CON_BLOCK_DONE_BIT 		0x00000008u
 #define SHA256_CON_HASH_DONE_BIT 		0x00000010u
 
@@ -104,13 +104,10 @@ static INLINE bool sha256_is_hash_done() {
     return (*SHA256_CON & SHA256_CON_HASH_DONE_BIT) > 0u;
 }
 
-static INLINE void sha256_msg_big_endian_mode() {
-    *SHA256_CON |= SHA256_CON_BIG_ENDIAN_MSG_BIT;
+static INLINE void sha256_is_busy() {
+    *SHA256_CON |= SHA256_CON_BUSY_BIT;
 }
 
-static INLINE void sha256_msg_little_endian_mode() {
-    *SHA256_CON &= ~SHA256_CON_BIG_ENDIAN_MSG_BIT;
-}
 
 static INLINE void sha256_ack_block_done() {
 	*SHA256_CON &= ~SHA256_CON_BLOCK_DONE_BIT;

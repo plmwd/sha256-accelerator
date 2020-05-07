@@ -1,0 +1,7 @@
+#
+#Tue May 05 14:18:42 EDT 2020
+nodes=microblaze_0
+counters=SYS_TIME_SEC\:4,SYS_TIME_NSEC\:4,microblaze_0-NUM_CLOCK_CYCLES\:4,microblaze_0-VALID_INSTR\:4,microblaze_0-DATA_CACHE_REQ\:4,microblaze_0-DATA_CACHE_HIT\:4,microblaze_0-PIPELINE_STALL\:4,microblaze_0-MEM_RD_INSTR_CACHE_LATENCY\:4,microblaze_0-PADDING_LATENCY_AGG_FUNCS\:8,microblaze_0-MEM_RD_INSTR_CACHE_LATENCY_MAX\:2,microblaze_0-MEM_RD_INSTR_CACHE_LATENCY_MIN\:2
+node_frequencies=1.0E8
+type=MB
+timestamp=1588702722897

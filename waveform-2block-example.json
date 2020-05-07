@@ -1,0 +1,16 @@
+{signal: [
+  {name: 'CLK', wave: '0p|..|...|..|..'},
+  {name: 'EN', wave: '01|..|...|..|..'},
+  {name: 'UPDATE', wave: '0.|10|...|10|..'},
+  {name: 'BUSY', wave: '0.|.1|0..|.1|0.'},
+  {name: 'BLOCK_DONE', wave: '0.|..|1.0|..|10'},
+  {name: 'HASH_DONE', wave: '0.|..|...|..|10'}
+],
+ head:{
+ },
+ 
+ foot:{
+	tick:0
+}
+
+}

@@ -136,6 +136,10 @@ ENTITY test_mdm_1_0 IS
     Dbg_Shift_0 : OUT STD_LOGIC;
     Dbg_Update_0 : OUT STD_LOGIC;
     Dbg_Rst_0 : OUT STD_LOGIC;
+    Dbg_TrClk_0 : OUT STD_LOGIC;
+    Dbg_TrData_0 : IN STD_LOGIC_VECTOR(0 TO 35);
+    Dbg_TrReady_0 : OUT STD_LOGIC;
+    Dbg_TrValid_0 : IN STD_LOGIC;
     Dbg_Disable_0 : OUT STD_LOGIC
   );
 END test_mdm_1_0;
@@ -1703,6 +1707,10 @@ ARCHITECTURE test_mdm_1_0_arch OF test_mdm_1_0 IS
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF Dbg_Disable_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 DISABLE";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TrValid_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TRVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TrReady_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TRREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TrData_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TRDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF Dbg_TrClk_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 TRCLK";
   ATTRIBUTE X_INTERFACE_INFO OF Dbg_Rst_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 RST";
   ATTRIBUTE X_INTERFACE_INFO OF Dbg_Update_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 UPDATE";
   ATTRIBUTE X_INTERFACE_INFO OF Dbg_Shift_0: SIGNAL IS "xilinx.com:interface:mbdebug:3.0 MBDEBUG_0 SHIFT";
@@ -1809,7 +1817,7 @@ BEGIN
       C_DBG_MEM_ACCESS => 1,
       C_USE_CROSS_TRIGGER => 0,
       C_EXT_TRIG_RESET_VALUE => X"F1234",
-      C_TRACE_OUTPUT => 0,
+      C_TRACE_OUTPUT => 3,
       C_TRACE_DATA_WIDTH => 32,
       C_TRACE_CLK_FREQ_HZ => 200000000,
       C_TRACE_CLK_OUT_PHASE => 90,
@@ -2080,8 +2088,10 @@ BEGIN
       Dbg_Rst_0 => Dbg_Rst_0,
       Dbg_Trig_In_0 => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 8)),
       Dbg_Trig_Ack_Out_0 => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 8)),
-      Dbg_TrData_0 => STD_LOGIC_VECTOR(TO_UNSIGNED(0, 36)),
-      Dbg_TrValid_0 => '0',
+      Dbg_TrClk_0 => Dbg_TrClk_0,
+      Dbg_TrData_0 => Dbg_TrData_0,
+      Dbg_TrReady_0 => Dbg_TrReady_0,
+      Dbg_TrValid_0 => Dbg_TrValid_0,
       Dbg_Disable_0 => Dbg_Disable_0,
       Dbg_AWREADY_0 => '0',
       Dbg_WREADY_0 => '0',

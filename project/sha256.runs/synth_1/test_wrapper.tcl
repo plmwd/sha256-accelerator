@@ -95,6 +95,8 @@ set_property used_in_implementation false [get_files -all c:/Users/904pa/Documen
 set_property used_in_implementation false [get_files -all c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_uartlite_0_0/test_axi_uartlite_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_timer_0_0/test_axi_timer_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_axi_timer_0_0/test_axi_timer_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_auto_pc_0/test_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/test_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/904pa/Documents/Git/sha256/project/sha256.srcs/sources_1/bd/test/ip/test_microblaze_0_0/data/mb_bootloop_le.elf]

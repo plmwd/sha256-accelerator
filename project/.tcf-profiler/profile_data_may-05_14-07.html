@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<style>
+   table th, tr, td {
+      border-collapse: collapse;
+      padding: 2px;
+      table-layout: fixed;
+   }
+
+   table th {
+      background-color: darkslategray;
+      color: white;
+   }
+
+   table thead.details th {
+      background-color: lightslategray;
+      color: white;
+   }
+
+   h4.details {
+      margin: 4px;
+   }
+
+   td {
+      position: relative;
+   }
+
+   .bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-color: darkOrange;
+      z-index: -1;
+      opacity: .90;
+   }
+
+   div.details .bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-color: coral;
+      z-index: -1;
+      opacity: .90;
+   }
+
+   .button {
+      display: inline-block;
+      padding:0px;
+      font-size: 12px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: black;
+      background-color: white;
+      border: none;
+      border-radius: 4px;
+   }
+
+   .button:hover {
+      background-color: lightsteelblue;
+   }
+
+    div.details {
+       border: solid 4px;
+      border-color: silver;
+      margin: 20px;
+      padding: 20px;
+      display: none;
+   }
+
+</style>
+<script>
+   var expandText = "[+]";
+   var collapseText = "(-)";
+   var lastBtnElm;
+
+   function changeText(btnElm) {
+      if (btnElm.textContent == expandText) {
+         if (lastBtnElm != null) {
+            changeState(lastBtnElm, false);
+         }
+         changeState(btnElm, true);
+         lastBtnElm = btnElm
+      } else {
+         changeState(btnElm, false);
+      }
+   }
+
+   function changeState(btnElm, isSelected) {
+      var divId = btnElm.id + "-details";
+      var divElm = document.getElementById(divId);
+      if (isSelected) {
+         btnElm.textContent = collapseText;
+         btnElm.style.backgroundColor = "white";
+         if (divElm != null) {
+            divElm.style.display = "block";
+         }
+      } else {
+         btnElm.textContent = expandText;
+         btnElm.style.backgroundColor = "white";
+         if (divElm != null) {
+            divElm.style.display = "none";
+         }
+      }
+   }
+
+</script>
+<div id="main-div">
+   <table class="table" style="width: 100%;" border="1">
+      <thead>
+         <tr>
+            <th style="width: 10%;">Address</th>
+            <th style="width: 20%;">% Inclusive</th>
+            <th style="width: 20%;">% Exclusive</th>
+            <th style="width: 15%;">Function</th>
+            <th style="width: 15%;">File</th>
+            <th style="width: 10%;">Line</th>
+            <th style="width: 10%;">Details</th>
+         </tr>
+      </thead>
+   </table>
+      <table class="table" style="width: 100%;" border="1">
+         <tbody>
+            <tr>
+               <td style="width: 10%;">00000000</td>
+               <td style="width: 20%;">.000
+                  <div class="bar" style="width: .000%"></div>
+               </td>
+               <td style="width: 20%;">100
+                  <div class="bar" style="width: 100%"></div>
+               </td>
+               <td style="width: 15%;">sha256_isr_done</td>
+               <td style="width: 15%;">axi_sha256.c</td>
+               <td style="width: 10%;">78</td>
+               <td class="td-btn" style="width: 10%;"><button id="btn-0" class="button" onClick="changeText(this);">[+]</button></td>
+            </tr>
+         </tbody>
+      </table>
+      <div id="btn-0-details" class="details">
+      <h4 class="details">Caller Functions</h4>
+      <table class="table" style="width: 100%;" border="1">
+         <thead class="details">
+            <tr>
+               <th style="width: 20%;">Address</th>
+               <th style="width: 20%;">% Exclusive</th>
+               <th style="width: 20%;">Function</th>
+               <th style="width: 20%;">File</th>
+               <th style="width: 20%;">Line</th>
+            </tr>
+         </thead>
+            <tbody class="details">
+               <tr>
+                  <td style="width: 20%;">00000000</td>
+                  <td style="width: 20%;">100
+                     <div class="bar" style="width: 100%"></div>
+                  </td>
+                  <td style="width: 20%;">sha256_isr_done</td>
+                  <td style="width: 20%;">axi_sha256.c</td>
+                  <td style="width: 20%;">78</td>
+               </tr>
+            </tbody>
+         </table>
+      <h4 class="details">Callee Functions</h4>
+      <table class="table" style="width: 100%;" border="1">
+         <thead class="details">
+            <tr>
+               <th style="width: 20%;">Address</th>
+               <th style="width: 20%;">% Exclusive</th>
+               <th style="width: 20%;">Function</th>
+               <th style="width: 20%;">File</th>
+               <th style="width: 20%;">Line</th>
+            </tr>
+         </thead>
+            <tbody class="details">
+               <tr>
+                  <td style="width: 20%;">00000000</td>
+                  <td style="width: 20%;">100
+                     <div class="bar" style="width: 100%"></div>
+                  </td>
+                  <td style="width: 20%;">sha256_isr_done</td>
+                  <td style="width: 20%;">axi_sha256.c</td>
+                  <td style="width: 20%;">78</td>
+               </tr>
+                  <tr>
+                     <td style="width: 20%;">0000023c</td>
+                     <td style="width: 20%;">50.0
+                        <div class="bar" style="width: 50.0%"></div>
+                     </td>
+                     <td style="width: 20%;">_crtinit</td>
+                     <td style="width: 20%;"></td>
+                     <td style="width: 20%;">0</td>
+                  </tr>
+               </tbody>
+            </table>
+   </div>
+         <table class="table" style="width: 100%;" border="1">
+            <tbody>
+               <tr>
+                  <td style="width: 10%;">00002758</td>
+                  <td style="width: 20%;">100
+                     <div class="bar" style="width: 100%"></div>
+                  </td>
+                  <td style="width: 20%;">100
+                     <div class="bar" style="width: 100%"></div>
+                  </td>
+                  <td style="width: 15%;">XUartLite_SendByte</td>
+                  <td style="width: 15%;">xuartlite_l.c</td>
+                  <td style="width: 10%;">88</td>
+                  <td class="td-btn" style="width: 10%;"><button id="btn-1" class="button" onClick="changeText(this);">[+]</button></td>
+               </tr>
+            </tbody>
+         </table>
+         <div id="btn-1-details" class="details">
+         <h4 class="details">Caller Functions</h4>
+         <table class="table" style="width: 100%;" border="1">
+            <thead class="details">
+               <tr>
+                  <th style="width: 20%;">Address</th>
+                  <th style="width: 20%;">% Exclusive</th>
+                  <th style="width: 20%;">Function</th>
+                  <th style="width: 20%;">File</th>
+                  <th style="width: 20%;">Line</th>
+               </tr>
+            </thead>
+               <tbody class="details">
+                  <tr>
+                     <td style="width: 20%;">0000272c</td>
+                     <td style="width: 20%;">100
+                        <div class="bar" style="width: 100%"></div>
+                     </td>
+                     <td style="width: 20%;">outbyte</td>
+                     <td style="width: 20%;">outbyte.c</td>
+                     <td style="width: 20%;">14</td>
+                  </tr>
+                     <tr>
+                        <td style="width: 20%;">00002758</td>
+                        <td style="width: 20%;">16.6
+                           <div class="bar" style="width: 16.6%"></div>
+                        </td>
+                        <td style="width: 20%;">XUartLite_SendByte</td>
+                        <td style="width: 20%;">xuartlite_l.c</td>
+                        <td style="width: 20%;">88</td>
+                     </tr>
+                  </tbody>
+               </table>
+         <h4 class="details">Callee Functions</h4>
+         <table class="table" style="width: 100%;" border="1">
+            <thead class="details">
+               <tr>
+                  <th style="width: 20%;">Address</th>
+                  <th style="width: 20%;">% Exclusive</th>
+                  <th style="width: 20%;">Function</th>
+                  <th style="width: 20%;">File</th>
+                  <th style="width: 20%;">Line</th>
+               </tr>
+            </thead>
+               <tbody class="details">
+                  <tr>
+                     <td style="width: 20%;">00002758</td>
+                     <td style="width: 20%;">16.6
+                        <div class="bar" style="width: 16.6%"></div>
+                     </td>
+                     <td style="width: 20%;">XUartLite_SendByte</td>
+                     <td style="width: 20%;">xuartlite_l.c</td>
+                     <td style="width: 20%;">88</td>
+                  </tr>
+               </tbody>
+            </table>
+      </div>
+            <table class="table" style="width: 100%;" border="1">
+               <tbody>
+                  <tr>
+                     <td style="width: 10%;">00001544</td>
+                     <td style="width: 20%;">.000
+                        <div class="bar" style="width: .000%"></div>
+                     </td>
+                     <td style="width: 20%;">100
+                        <div class="bar" style="width: 100%"></div>
+                     </td>
+                     <td style="width: 15%;">main</td>
+                     <td style="width: 15%;">sha256_test.c</td>
+                     <td style="width: 10%;">17</td>
+                     <td class="td-btn" style="width: 10%;"><button id="btn-2" class="button" onClick="changeText(this);">[+]</button></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div id="btn-2-details" class="details">
+            <h4 class="details">Caller Functions</h4>
+            <table class="table" style="width: 100%;" border="1">
+               <thead class="details">
+                  <tr>
+                     <th style="width: 20%;">Address</th>
+                     <th style="width: 20%;">% Exclusive</th>
+                     <th style="width: 20%;">Function</th>
+                     <th style="width: 20%;">File</th>
+                     <th style="width: 20%;">Line</th>
+                  </tr>
+               </thead>
+                  <tbody class="details">
+                     <tr>
+                        <td style="width: 20%;">b0000008</td>
+                        <td style="width: 20%;">50.0
+                           <div class="bar" style="width: 50.0%"></div>
+                        </td>
+                        <td style="width: 20%;">null</td>
+                        <td style="width: 20%;"></td>
+                        <td style="width: 20%;">0</td>
+                     </tr>
+                        <tr>
+                           <td style="width: 20%;">0000023c</td>
+                           <td style="width: 20%;">50.0
+                              <div class="bar" style="width: 50.0%"></div>
+                           </td>
+                           <td style="width: 20%;">_crtinit</td>
+                           <td style="width: 20%;"></td>
+                           <td style="width: 20%;">0</td>
+                        </tr>
+                     </tbody>
+                  </table>
+            <h4 class="details">Callee Functions</h4>
+            <table class="table" style="width: 100%;" border="1">
+               <thead class="details">
+                  <tr>
+                     <th style="width: 20%;">Address</th>
+                     <th style="width: 20%;">% Exclusive</th>
+                     <th style="width: 20%;">Function</th>
+                     <th style="width: 20%;">File</th>
+                     <th style="width: 20%;">Line</th>
+                  </tr>
+               </thead>
+                  <tbody class="details">
+                     <tr>
+                        <td style="width: 20%;">0000232c</td>
+                        <td style="width: 20%;">100
+                           <div class="bar" style="width: 100%"></div>
+                        </td>
+                        <td style="width: 20%;">xil_printf</td>
+                        <td style="width: 20%;">xil_printf.c</td>
+                        <td style="width: 20%;">259</td>
+                     </tr>
+                  </tbody>
+               </table>
+         </div>
+               <table class="table" style="width: 100%;" border="1">
+                  <tbody>
+                     <tr>
+                        <td style="width: 10%;">0000232c</td>
+                        <td style="width: 20%;">.000
+                           <div class="bar" style="width: .000%"></div>
+                        </td>
+                        <td style="width: 20%;">100
+                           <div class="bar" style="width: 100%"></div>
+                        </td>
+                        <td style="width: 15%;">xil_printf</td>
+                        <td style="width: 15%;">xil_printf.c</td>
+                        <td style="width: 10%;">259</td>
+                        <td class="td-btn" style="width: 10%;"><button id="btn-3" class="button" onClick="changeText(this);">[+]</button></td>
+                     </tr>
+                  </tbody>
+               </table>
+               <div id="btn-3-details" class="details">
+               <h4 class="details">Caller Functions</h4>
+               <table class="table" style="width: 100%;" border="1">
+                  <thead class="details">
+                     <tr>
+                        <th style="width: 20%;">Address</th>
+                        <th style="width: 20%;">% Exclusive</th>
+                        <th style="width: 20%;">Function</th>
+                        <th style="width: 20%;">File</th>
+                        <th style="width: 20%;">Line</th>
+                     </tr>
+                  </thead>
+                     <tbody class="details">
+                        <tr>
+                           <td style="width: 20%;">00001544</td>
+                           <td style="width: 20%;">100
+                              <div class="bar" style="width: 100%"></div>
+                           </td>
+                           <td style="width: 20%;">main</td>
+                           <td style="width: 20%;">sha256_test.c</td>
+                           <td style="width: 20%;">17</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               <h4 class="details">Callee Functions</h4>
+               <table class="table" style="width: 100%;" border="1">
+                  <thead class="details">
+                     <tr>
+                        <th style="width: 20%;">Address</th>
+                        <th style="width: 20%;">% Exclusive</th>
+                        <th style="width: 20%;">Function</th>
+                        <th style="width: 20%;">File</th>
+                        <th style="width: 20%;">Line</th>
+                     </tr>
+                  </thead>
+                     <tbody class="details">
+                        <tr>
+                           <td style="width: 20%;">00002138</td>
+                           <td style="width: 20%;">83.3
+                              <div class="bar" style="width: 83.3%"></div>
+                           </td>
+                           <td style="width: 20%;">outnum</td>
+                           <td style="width: 20%;">xil_printf.c</td>
+                           <td style="width: 20%;">99</td>
+                        </tr>
+                           <tr>
+                              <td style="width: 20%;">0000272c</td>
+                              <td style="width: 20%;">16.6
+                                 <div class="bar" style="width: 16.6%"></div>
+                              </td>
+                              <td style="width: 20%;">outbyte</td>
+                              <td style="width: 20%;">outbyte.c</td>
+                              <td style="width: 20%;">14</td>
+                           </tr>
+                        </tbody>
+                     </table>
+            </div>
+                  <table class="table" style="width: 100%;" border="1">
+                     <tbody>
+                        <tr>
+                           <td style="width: 10%;">0000272c</td>
+                           <td style="width: 20%;">.000
+                              <div class="bar" style="width: .000%"></div>
+                           </td>
+                           <td style="width: 20%;">100
+                              <div class="bar" style="width: 100%"></div>
+                           </td>
+                           <td style="width: 15%;">outbyte</td>
+                           <td style="width: 15%;">outbyte.c</td>
+                           <td style="width: 10%;">14</td>
+                           <td class="td-btn" style="width: 10%;"><button id="btn-4" class="button" onClick="changeText(this);">[+]</button></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div id="btn-4-details" class="details">
+                  <h4 class="details">Caller Functions</h4>
+                  <table class="table" style="width: 100%;" border="1">
+                     <thead class="details">
+                        <tr>
+                           <th style="width: 20%;">Address</th>
+                           <th style="width: 20%;">% Exclusive</th>
+                           <th style="width: 20%;">Function</th>
+                           <th style="width: 20%;">File</th>
+                           <th style="width: 20%;">Line</th>
+                        </tr>
+                     </thead>
+                        <tbody class="details">
+                           <tr>
+                              <td style="width: 20%;">00002138</td>
+                              <td style="width: 20%;">83.3
+                                 <div class="bar" style="width: 83.3%"></div>
+                              </td>
+                              <td style="width: 20%;">outnum</td>
+                              <td style="width: 20%;">xil_printf.c</td>
+                              <td style="width: 20%;">99</td>
+                           </tr>
+                              <tr>
+                                 <td style="width: 20%;">0000232c</td>
+                                 <td style="width: 20%;">16.6
+                                    <div class="bar" style="width: 16.6%"></div>
+                                 </td>
+                                 <td style="width: 20%;">xil_printf</td>
+                                 <td style="width: 20%;">xil_printf.c</td>
+                                 <td style="width: 20%;">259</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                  <h4 class="details">Callee Functions</h4>
+                  <table class="table" style="width: 100%;" border="1">
+                     <thead class="details">
+                        <tr>
+                           <th style="width: 20%;">Address</th>
+                           <th style="width: 20%;">% Exclusive</th>
+                           <th style="width: 20%;">Function</th>
+                           <th style="width: 20%;">File</th>
+                           <th style="width: 20%;">Line</th>
+                        </tr>
+                     </thead>
+                        <tbody class="details">
+                           <tr>
+                              <td style="width: 20%;">00002758</td>
+                              <td style="width: 20%;">100
+                                 <div class="bar" style="width: 100%"></div>
+                              </td>
+                              <td style="width: 20%;">XUartLite_SendByte</td>
+                              <td style="width: 20%;">xuartlite_l.c</td>
+                              <td style="width: 20%;">88</td>
+                           </tr>
+                        </tbody>
+                     </table>
+               </div>
+                     <table class="table" style="width: 100%;" border="1">
+                        <tbody>
+                           <tr>
+                              <td style="width: 10%;">00002138</td>
+                              <td style="width: 20%;">.000
+                                 <div class="bar" style="width: .000%"></div>
+                              </td>
+                              <td style="width: 20%;">83.3
+                                 <div class="bar" style="width: 83.3%"></div>
+                              </td>
+                              <td style="width: 15%;">outnum</td>
+                              <td style="width: 15%;">xil_printf.c</td>
+                              <td style="width: 10%;">99</td>
+                              <td class="td-btn" style="width: 10%;"><button id="btn-5" class="button" onClick="changeText(this);">[+]</button></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <div id="btn-5-details" class="details">
+                     <h4 class="details">Caller Functions</h4>
+                     <table class="table" style="width: 100%;" border="1">
+                        <thead class="details">
+                           <tr>
+                              <th style="width: 20%;">Address</th>
+                              <th style="width: 20%;">% Exclusive</th>
+                              <th style="width: 20%;">Function</th>
+                              <th style="width: 20%;">File</th>
+                              <th style="width: 20%;">Line</th>
+                           </tr>
+                        </thead>
+                           <tbody class="details">
+                              <tr>
+                                 <td style="width: 20%;">0000232c</td>
+                                 <td style="width: 20%;">83.3
+                                    <div class="bar" style="width: 83.3%"></div>
+                                 </td>
+                                 <td style="width: 20%;">xil_printf</td>
+                                 <td style="width: 20%;">xil_printf.c</td>
+                                 <td style="width: 20%;">259</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     <h4 class="details">Callee Functions</h4>
+                     <table class="table" style="width: 100%;" border="1">
+                        <thead class="details">
+                           <tr>
+                              <th style="width: 20%;">Address</th>
+                              <th style="width: 20%;">% Exclusive</th>
+                              <th style="width: 20%;">Function</th>
+                              <th style="width: 20%;">File</th>
+                              <th style="width: 20%;">Line</th>
+                           </tr>
+                        </thead>
+                           <tbody class="details">
+                              <tr>
+                                 <td style="width: 20%;">0000272c</td>
+                                 <td style="width: 20%;">83.3
+                                    <div class="bar" style="width: 83.3%"></div>
+                                 </td>
+                                 <td style="width: 20%;">outbyte</td>
+                                 <td style="width: 20%;">outbyte.c</td>
+                                 <td style="width: 20%;">14</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                  </div>
+                        <table class="table" style="width: 100%;" border="1">
+                           <tbody>
+                              <tr>
+                                 <td style="width: 10%;">b0000008</td>
+                                 <td style="width: 20%;">.000
+                                    <div class="bar" style="width: .000%"></div>
+                                 </td>
+                                 <td style="width: 20%;">50.0
+                                    <div class="bar" style="width: 50.0%"></div>
+                                 </td>
+                                 <td style="width: 15%;">null</td>
+                                 <td style="width: 15%;"></td>
+                                 <td style="width: 10%;">0</td>
+                                 <td class="td-btn" style="width: 10%;"><button id="btn-6" class="button" onClick="changeText(this);">[+]</button></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <div id="btn-6-details" class="details">
+                        <h4 class="details">Callee Functions</h4>
+                        <table class="table" style="width: 100%;" border="1">
+                           <thead class="details">
+                              <tr>
+                                 <th style="width: 20%;">Address</th>
+                                 <th style="width: 20%;">% Exclusive</th>
+                                 <th style="width: 20%;">Function</th>
+                                 <th style="width: 20%;">File</th>
+                                 <th style="width: 20%;">Line</th>
+                              </tr>
+                           </thead>
+                              <tbody class="details">
+                                 <tr>
+                                    <td style="width: 20%;">00001544</td>
+                                    <td style="width: 20%;">50.0
+                                       <div class="bar" style="width: 50.0%"></div>
+                                    </td>
+                                    <td style="width: 20%;">main</td>
+                                    <td style="width: 20%;">sha256_test.c</td>
+                                    <td style="width: 20%;">17</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                     </div>
+                           <table class="table" style="width: 100%;" border="1">
+                              <tbody>
+                                 <tr>
+                                    <td style="width: 10%;">0000023c</td>
+                                    <td style="width: 20%;">.000
+                                       <div class="bar" style="width: .000%"></div>
+                                    </td>
+                                    <td style="width: 20%;">50.0
+                                       <div class="bar" style="width: 50.0%"></div>
+                                    </td>
+                                    <td style="width: 15%;">_crtinit</td>
+                                    <td style="width: 15%;"></td>
+                                    <td style="width: 10%;">0</td>
+                                    <td class="td-btn" style="width: 10%;"><button id="btn-7" class="button" onClick="changeText(this);">[+]</button></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <div id="btn-7-details" class="details">
+                           <h4 class="details">Caller Functions</h4>
+                           <table class="table" style="width: 100%;" border="1">
+                              <thead class="details">
+                                 <tr>
+                                    <th style="width: 20%;">Address</th>
+                                    <th style="width: 20%;">% Exclusive</th>
+                                    <th style="width: 20%;">Function</th>
+                                    <th style="width: 20%;">File</th>
+                                    <th style="width: 20%;">Line</th>
+                                 </tr>
+                              </thead>
+                                 <tbody class="details">
+                                    <tr>
+                                       <td style="width: 20%;">00000000</td>
+                                       <td style="width: 20%;">50.0
+                                          <div class="bar" style="width: 50.0%"></div>
+                                       </td>
+                                       <td style="width: 20%;">sha256_isr_done</td>
+                                       <td style="width: 20%;">axi_sha256.c</td>
+                                       <td style="width: 20%;">78</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           <h4 class="details">Callee Functions</h4>
+                           <table class="table" style="width: 100%;" border="1">
+                              <thead class="details">
+                                 <tr>
+                                    <th style="width: 20%;">Address</th>
+                                    <th style="width: 20%;">% Exclusive</th>
+                                    <th style="width: 20%;">Function</th>
+                                    <th style="width: 20%;">File</th>
+                                    <th style="width: 20%;">Line</th>
+                                 </tr>
+                              </thead>
+                                 <tbody class="details">
+                                    <tr>
+                                       <td style="width: 20%;">00001544</td>
+                                       <td style="width: 20%;">50.0
+                                          <div class="bar" style="width: 50.0%"></div>
+                                       </td>
+                                       <td style="width: 20%;">main</td>
+                                       <td style="width: 20%;">sha256_test.c</td>
+                                       <td style="width: 20%;">17</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                        </div>
+                        </div>
+</html>

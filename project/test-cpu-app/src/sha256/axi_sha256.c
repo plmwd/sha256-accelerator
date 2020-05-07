@@ -56,7 +56,6 @@ void sha256_isr(void) {
 
 		sha256_obj.hash_done = true;
 		sha256_ack_hash_done();
-		sha256_ack_block_done();
 	}
 	else {
 		sha256_ack_block_done();
@@ -104,9 +103,6 @@ s32 sha256(void *msg_ptr, uint64_t msg_size, uint32_t *hash_ptr, blocking_t b_t)
     sha256_disable();
     *SHA256_MSG_SIZE_L = msg_size;
     *SHA256_MSG_SIZE_H = msg_size >> 32;
-
-    // enter data into the message block buffer in little-endian format
-    sha256_msg_little_endian_mode();
 
     // enable to reset module
     sha256_enable();
