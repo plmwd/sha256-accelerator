@@ -1,0 +1,6 @@
+/*cpu-sha256*/
+the_ROM_image:
+{
+   <bitstream> 
+   <elf> 
+}
