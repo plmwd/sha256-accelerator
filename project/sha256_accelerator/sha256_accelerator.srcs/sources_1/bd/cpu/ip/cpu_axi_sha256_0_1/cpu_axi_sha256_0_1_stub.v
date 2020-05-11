@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Mon May 11 00:06:37 2020
+// Date        : Mon May 11 17:04:26 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_axi_sha256_0_1/cpu_axi_sha256_0_1_stub.v

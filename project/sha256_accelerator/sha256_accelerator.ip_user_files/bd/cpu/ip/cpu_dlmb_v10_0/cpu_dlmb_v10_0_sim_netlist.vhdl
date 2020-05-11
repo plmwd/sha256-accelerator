@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Sun May 10 21:39:12 2020
+-- Date        : Sun May 10 21:39:11 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_dlmb_v10_0/cpu_dlmb_v10_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top cpu_dlmb_v10_0 -prefix
+--               cpu_dlmb_v10_0_ cpu_dlmb_v10_0_sim_netlist.vhdl
 -- Design      : cpu_dlmb_v10_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -52,8 +52,6 @@ entity cpu_dlmb_v10_0_lmb_v10 is
   attribute C_LMB_NUM_SLAVES of cpu_dlmb_v10_0_lmb_v10 : entity is 1;
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of cpu_dlmb_v10_0_lmb_v10 : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cpu_dlmb_v10_0_lmb_v10 : entity is "lmb_v10";
 end cpu_dlmb_v10_0_lmb_v10;
 
 architecture STRUCTURE of cpu_dlmb_v10_0_lmb_v10 is

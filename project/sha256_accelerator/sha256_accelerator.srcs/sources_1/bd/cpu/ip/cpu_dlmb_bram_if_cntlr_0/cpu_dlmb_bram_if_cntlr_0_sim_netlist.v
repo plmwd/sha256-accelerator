@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 // Date        : Sun May 10 23:36:01 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               C:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_dlmb_bram_if_cntlr_0/cpu_dlmb_bram_if_cntlr_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top cpu_dlmb_bram_if_cntlr_0 -prefix
+//               cpu_dlmb_bram_if_cntlr_0_ cpu_dlmb_bram_if_cntlr_0_sim_netlist.v
 // Design      : cpu_dlmb_bram_if_cntlr_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -243,7 +243,7 @@ endmodule
 (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) (* C_MASK1 = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
 (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_NUM_LMB = "2" *) (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) 
 (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) 
-(* C_UE_FAILING_REGISTERS = "0" *) (* C_WRITE_ACCESS = "2" *) (* ORIG_REF_NAME = "lmb_bram_if_cntlr" *) 
+(* C_UE_FAILING_REGISTERS = "0" *) (* C_WRITE_ACCESS = "2" *) 
 module cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
    (LMB_Clk,
     LMB_Rst,
@@ -585,7 +585,6 @@ module cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
         .lmb_select(lmb_select));
 endmodule
 
-(* ORIG_REF_NAME = "lmb_mux" *) 
 module cpu_dlmb_bram_if_cntlr_0_lmb_mux
    (Sl_Ready,
     BRAM_EN_A,

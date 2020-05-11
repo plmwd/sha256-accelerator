@@ -140,7 +140,7 @@ void sha2_update(word_t *hash, byte_t *msg_block);
 */
 void output_hash(byte_t* hash);
 
-void sha256(byte_t* hash, void *stream, uint64_t stream_len, uint64_t (*read_block)(byte_t*, void*));
+//void sha256(byte_t* hash, void *stream, uint64_t stream_len, uint64_t (*read_block)(byte_t*, void*));
 
 void bsha256(byte_t* hash, byte_t *buf, uint64_t buf_len);
 void fsha256(byte_t* hash, FILE *f);

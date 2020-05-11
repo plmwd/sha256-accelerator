@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 -- Date        : Sun May 10 21:41:20 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_clk_wiz_1_0/cpu_clk_wiz_1_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top cpu_clk_wiz_1_0 -prefix
+--               cpu_clk_wiz_1_0_ cpu_clk_wiz_1_0_sim_netlist.vhdl
 -- Design      : cpu_clk_wiz_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,8 +21,6 @@ entity cpu_clk_wiz_1_0_cpu_clk_wiz_1_0_clk_wiz is
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cpu_clk_wiz_1_0_cpu_clk_wiz_1_0_clk_wiz : entity is "cpu_clk_wiz_1_0_clk_wiz";
 end cpu_clk_wiz_1_0_cpu_clk_wiz_1_0_clk_wiz;
 
 architecture STRUCTURE of cpu_clk_wiz_1_0_cpu_clk_wiz_1_0_clk_wiz is

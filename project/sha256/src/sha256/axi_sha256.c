@@ -42,6 +42,7 @@ volatile uint32_t * const SHA256_HASH7 = (volatile uint32_t *)(XPAR_AXI_SHA256_0
 
 
 sha256_t sha256_obj;
+// msg_ptr needs to be word aligned
 
 void swap_endianness32(uint32_t *word) {
 	uint32_t byte0, byte1, byte2, byte3;
@@ -72,7 +73,11 @@ void load_msg_buffer() {
 #else
 	// load a word into the message block buffer until all words have been filled
 	if (sha256_obj.cur_block == sha256_obj.last_block) {
-		memcpy((void*)SHA256_MSG0, sha256_obj.msg_ptr, sha256_obj.data_bytes_in_last_block);
+		//memcpy((void*)SHA256_MSG0, sha256_obj.msg_ptr, sha256_obj.data_bytes_in_last_block);
+		uint32_t *msg_ptr = (uint32_t *)sha256_obj.msg_ptr;
+		for (uint32_t i = 0; i < (sha256_obj.data_bytes_in_last_block >> 3); i++) {
+			SHA256_MSG0[i] = msg_ptr[i];
+		}
 		sha256_obj.final_block = true;
 	}
 	else

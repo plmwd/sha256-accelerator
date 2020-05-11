@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 -- Date        : Sun May 10 23:36:01 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_dlmb_bram_if_cntlr_0/cpu_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top cpu_dlmb_bram_if_cntlr_0 -prefix
+--               cpu_dlmb_bram_if_cntlr_0_ cpu_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
 -- Design      : cpu_dlmb_bram_if_cntlr_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -39,8 +39,6 @@ entity cpu_dlmb_bram_if_cntlr_0_lmb_mux is
     LMB_WriteStrobe : in STD_LOGIC;
     LMB1_BE : in STD_LOGIC_VECTOR ( 0 to 3 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cpu_dlmb_bram_if_cntlr_0_lmb_mux : entity is "lmb_mux";
 end cpu_dlmb_bram_if_cntlr_0_lmb_mux;
 
 architecture STRUCTURE of cpu_dlmb_bram_if_cntlr_0_lmb_mux is
@@ -1738,8 +1736,6 @@ entity cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
   attribute C_UE_FAILING_REGISTERS of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
   attribute C_WRITE_ACCESS : integer;
   attribute C_WRITE_ACCESS of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 2;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "lmb_bram_if_cntlr";
 end cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr;
 
 architecture STRUCTURE of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is

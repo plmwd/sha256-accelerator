@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 // Date        : Sun May 10 21:39:58 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_ilmb_bram_if_cntlr_0/cpu_ilmb_bram_if_cntlr_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top cpu_ilmb_bram_if_cntlr_0 -prefix
+//               cpu_ilmb_bram_if_cntlr_0_ cpu_ilmb_bram_if_cntlr_0_stub.v
 // Design      : cpu_ilmb_bram_if_cntlr_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1

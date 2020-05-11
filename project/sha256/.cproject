@@ -195,7 +195,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="src/helloworld.c|src/sha256/sha256cl.c|src/sha256/sha2.h|src/sha256/sha2.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="src/sha256/sha256_test.c|src/helloworld.c|src/sha256/sha256cl.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

@@ -416,14 +416,14 @@ uint64_t bread_block(byte_t *msg_block, void *stream) {
  * 
  * 
 ********************************************************************************************************/
-void fsha256(byte_t* hash, FILE *f) {
-    sha256(hash, (void*)f, get_file_len(f), &fread_block);
-}
+//void fsha256(byte_t* hash, FILE *f) {
+//    sha256(hash, (void*)f, get_file_len(f), &fread_block);
+//}
 
 
-void bsha256(byte_t* hash, byte_t *buf, uint64_t buf_len) {
-    sha256(hash, (void*)init_stream(buf, buf_len), buf_len, &bread_block);
-}
+//void bsha256(byte_t* hash, byte_t *buf, uint64_t buf_len) {
+//    sha256(hash, (void*)init_stream(buf, buf_len), buf_len, &bread_block);
+//}
 
 
 // streamable type should return number of bytes left
@@ -431,12 +431,15 @@ void bsha256(byte_t* hash, byte_t *buf, uint64_t buf_len) {
 // it should have the base pointer
 // read_block should return zero if the position pointer reaches the end of the stream 
 // read_block should cast stream to appropiate type
-void sha256(byte_t* hash_byte, void *stream, uint64_t stream_len, uint64_t (*read_block)(byte_t*, void*)) {
+void bsha256(byte_t* hash_byte, byte_t *buf, uint64_t buf_len) {
     byte_t msg_block[NUM_MSG_BLOCK_BYTES];
     uint64_t bytes_read;
     bool done = false;
     uint64_t block_num = 0;     // for debugging
     word_t hash[SHA256_SIZE_WORDS];
+    stream_t *stream;
+
+    stream = init_stream(buf, buf_len);
 
     init_sha256(hash);
 
@@ -445,12 +448,12 @@ void sha256(byte_t* hash_byte, void *stream, uint64_t stream_len, uint64_t (*rea
             xil_printf("block: %ld\n", block_num);
         #endif
 
-        bytes_read = read_block(msg_block, stream);
+        bytes_read = bread_block(msg_block, stream);
 
         
         //remaining_bytes < NUM_MSG_BLOCK_BYTES
         if (bytes_read < NUM_MSG_BLOCK_BYTES) {
-            done = add_padding(msg_block, bytes_read, stream_len);
+            done = add_padding(msg_block, bytes_read, buf_len);
         }
 
         sha2_update(hash, msg_block);
@@ -466,6 +469,41 @@ void sha256(byte_t* hash_byte, void *stream, uint64_t stream_len, uint64_t (*rea
         hash_byte[j++] = (byte_t)hash[i];
     }
 }
+//void sha256(byte_t* hash_byte, void *stream, uint64_t stream_len, uint64_t (*read_block)(byte_t*, void*)) {
+//    byte_t msg_block[NUM_MSG_BLOCK_BYTES];
+//    uint64_t bytes_read;
+//    bool done = false;
+//    uint64_t block_num = 0;     // for debugging
+//    word_t hash[SHA256_SIZE_WORDS];
+//
+//    init_sha256(hash);
+//
+//    while (!done) {
+//        #ifdef DEBUG
+//            xil_printf("block: %ld\n", block_num);
+//        #endif
+//
+//        bytes_read = read_block(msg_block, stream);
+//
+//
+//        //remaining_bytes < NUM_MSG_BLOCK_BYTES
+//        if (bytes_read < NUM_MSG_BLOCK_BYTES) {
+//            done = add_padding(msg_block, bytes_read, stream_len);
+//        }
+//
+//        sha2_update(hash, msg_block);
+//
+//        block_num++;
+//    }
+//
+//    int j = 0;
+//    for (int i = 0; i < SHA256_SIZE_WORDS; i++) {
+//        hash_byte[j++] = (byte_t)(hash[i] >> 24);
+//        hash_byte[j++] = (byte_t)(hash[i] >> 16);
+//        hash_byte[j++] = (byte_t)(hash[i] >> 8);
+//        hash_byte[j++] = (byte_t)hash[i];
+//    }
+//}
 
 
 

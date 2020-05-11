@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sun May 10 21:39:13 2020
+// Date        : Sun May 10 23:36:01 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_dlmb_bram_if_cntlr_0/cpu_dlmb_bram_if_cntlr_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top cpu_dlmb_bram_if_cntlr_0 -prefix
+//               cpu_dlmb_bram_if_cntlr_0_ cpu_dlmb_bram_if_cntlr_0_sim_netlist.v
 // Design      : cpu_dlmb_bram_if_cntlr_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -146,8 +146,8 @@ module cpu_dlmb_bram_if_cntlr_0
   (* C_LMB_AWIDTH = "32" *) 
   (* C_LMB_DWIDTH = "32" *) 
   (* C_LMB_PROTOCOL = "0" *) 
-  (* C_MASK = "64'b0000000000000000000000000000000000000000001000000000000000000000" *) 
-  (* C_MASK1 = "64'b0000000000000000000000000000000000000000001000000000000000000000" *) 
+  (* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) 
+  (* C_MASK1 = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) 
   (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
   (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
   (* C_NUM_LMB = "2" *) 
@@ -240,10 +240,10 @@ endmodule
 (* C_ECC_ONOFF_RESET_VALUE = "1" *) (* C_ECC_STATUS_REGISTERS = "0" *) (* C_FAMILY = "artix7" *) 
 (* C_FAULT_INJECT = "0" *) (* C_HIGHADDR = "64'b0000000000000000000000000000000000000000000000011111111111111111" *) (* C_INTERCONNECT = "0" *) 
 (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) (* C_LMB_PROTOCOL = "0" *) 
-(* C_MASK = "64'b0000000000000000000000000000000000000000001000000000000000000000" *) (* C_MASK1 = "64'b0000000000000000000000000000000000000000001000000000000000000000" *) (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
+(* C_MASK = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) (* C_MASK1 = "64'b0000000000000000000000000000000001000000000000000000000000000000" *) (* C_MASK2 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) 
 (* C_MASK3 = "64'b0000000000000000000000000000000000000000100000000000000000000000" *) (* C_NUM_LMB = "2" *) (* C_S_AXI_CTRL_ADDR_WIDTH = "32" *) 
 (* C_S_AXI_CTRL_BASEADDR = "32'b11111111111111111111111111111111" *) (* C_S_AXI_CTRL_DATA_WIDTH = "32" *) (* C_S_AXI_CTRL_HIGHADDR = "32'b00000000000000000000000000000000" *) 
-(* C_UE_FAILING_REGISTERS = "0" *) (* C_WRITE_ACCESS = "2" *) (* ORIG_REF_NAME = "lmb_bram_if_cntlr" *) 
+(* C_UE_FAILING_REGISTERS = "0" *) (* C_WRITE_ACCESS = "2" *) 
 module cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
    (LMB_Clk,
     LMB_Rst,
@@ -585,7 +585,6 @@ module cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr
         .lmb_select(lmb_select));
 endmodule
 
-(* ORIG_REF_NAME = "lmb_mux" *) 
 module cpu_dlmb_bram_if_cntlr_0_lmb_mux
    (Sl_Ready,
     BRAM_EN_A,
@@ -681,9 +680,9 @@ module cpu_dlmb_bram_if_cntlr_0_lmb_mux
     \BRAM_Addr_A[0]_INST_0_i_1 
        (.I0(\more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg_n_0_[1] ),
         .I1(LMB1_AddrStrobe),
-        .I2(LMB1_ABus[10]),
+        .I2(LMB1_ABus[1]),
         .I3(LMB_AddrStrobe),
-        .I4(LMB_ABus[10]),
+        .I4(LMB_ABus[1]),
         .O(ongoing_new));
   LUT5 #(
     .INIT(32'hCFC0AAAA)) 
@@ -1283,8 +1282,8 @@ module cpu_dlmb_bram_if_cntlr_0_lmb_mux
   LUT4 #(
     .INIT(16'hFF75)) 
     \BRAM_WEN_A[0]_INST_0_i_2 
-       (.I0(LMB_ABus[10]),
-        .I1(LMB1_ABus[10]),
+       (.I0(LMB_ABus[1]),
+        .I1(LMB1_ABus[1]),
         .I2(LMB1_AddrStrobe),
         .I3(\more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg_n_0_[1] ),
         .O(lmb_select));
@@ -1376,9 +1375,9 @@ module cpu_dlmb_bram_if_cntlr_0_lmb_mux
   LUT4 #(
     .INIT(16'h0400)) 
     \more_than_one_lmb.lmb_mux_generate[1].LMB_ABus_vec_Q[1][0]_i_1 
-       (.I0(LMB_ABus[10]),
+       (.I0(LMB_ABus[1]),
         .I1(LMB_AddrStrobe),
-        .I2(LMB1_ABus[10]),
+        .I2(LMB1_ABus[1]),
         .I3(LMB1_AddrStrobe),
         .O(\more_than_one_lmb.lmb_mux_generate[1].LMB_ABus_vec_Q[1][0]_i_1_n_0 ));
   FDRE \more_than_one_lmb.lmb_mux_generate[1].LMB_ABus_vec_Q_reg[1][0] 
@@ -1807,9 +1806,9 @@ module cpu_dlmb_bram_if_cntlr_0_lmb_mux
     \more_than_one_lmb.lmb_mux_generate[1].wait_vec[1]_i_1 
        (.I0(\more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg_n_0_[1] ),
         .I1(LMB1_AddrStrobe),
-        .I2(LMB1_ABus[10]),
+        .I2(LMB1_ABus[1]),
         .I3(LMB_AddrStrobe),
-        .I4(LMB_ABus[10]),
+        .I4(LMB_ABus[1]),
         .O(\more_than_one_lmb.lmb_mux_generate[1].wait_vec[1]_i_1_n_0 ));
   FDRE \more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg[1] 
        (.C(LMB_Clk),

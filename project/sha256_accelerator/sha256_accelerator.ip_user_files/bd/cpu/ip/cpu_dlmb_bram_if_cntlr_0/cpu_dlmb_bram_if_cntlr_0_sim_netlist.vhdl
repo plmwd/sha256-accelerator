@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Sun May 10 21:39:13 2020
+-- Date        : Sun May 10 23:36:01 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_dlmb_bram_if_cntlr_0/cpu_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top cpu_dlmb_bram_if_cntlr_0 -prefix
+--               cpu_dlmb_bram_if_cntlr_0_ cpu_dlmb_bram_if_cntlr_0_sim_netlist.vhdl
 -- Design      : cpu_dlmb_bram_if_cntlr_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -39,8 +39,6 @@ entity cpu_dlmb_bram_if_cntlr_0_lmb_mux is
     LMB_WriteStrobe : in STD_LOGIC;
     LMB1_BE : in STD_LOGIC_VECTOR ( 0 to 3 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cpu_dlmb_bram_if_cntlr_0_lmb_mux : entity is "lmb_mux";
 end cpu_dlmb_bram_if_cntlr_0_lmb_mux;
 
 architecture STRUCTURE of cpu_dlmb_bram_if_cntlr_0_lmb_mux is
@@ -89,9 +87,9 @@ begin
         port map (
       I0 => \more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg_n_0_[1]\,
       I1 => LMB1_AddrStrobe,
-      I2 => LMB1_ABus(10),
+      I2 => LMB1_ABus(1),
       I3 => LMB_AddrStrobe,
-      I4 => LMB_ABus(10),
+      I4 => LMB_ABus(1),
       O => ongoing_new
     );
 \BRAM_Addr_A[10]_INST_0\: unisim.vcomponents.LUT5
@@ -890,8 +888,8 @@ BRAM_EN_A_INST_0: unisim.vcomponents.LUT5
       INIT => X"FF75"
     )
         port map (
-      I0 => LMB_ABus(10),
-      I1 => LMB1_ABus(10),
+      I0 => LMB_ABus(1),
+      I1 => LMB1_ABus(1),
       I2 => LMB1_AddrStrobe,
       I3 => \more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg_n_0_[1]\,
       O => \^lmb_select\
@@ -1009,9 +1007,9 @@ Sl_Ready_INST_0: unisim.vcomponents.LUT3
       INIT => X"0400"
     )
         port map (
-      I0 => LMB_ABus(10),
+      I0 => LMB_ABus(1),
       I1 => LMB_AddrStrobe,
-      I2 => LMB1_ABus(10),
+      I2 => LMB1_ABus(1),
       I3 => LMB1_AddrStrobe,
       O => \more_than_one_lmb.lmb_mux_generate[1].LMB_ABus_vec_Q[1][0]_i_1_n_0\
     );
@@ -1582,9 +1580,9 @@ Sl_Ready_INST_0: unisim.vcomponents.LUT3
         port map (
       I0 => \more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg_n_0_[1]\,
       I1 => LMB1_AddrStrobe,
-      I2 => LMB1_ABus(10),
+      I2 => LMB1_ABus(1),
       I3 => LMB_AddrStrobe,
-      I4 => LMB_ABus(10),
+      I4 => LMB_ABus(1),
       O => \more_than_one_lmb.lmb_mux_generate[1].wait_vec[1]_i_1_n_0\
     );
 \more_than_one_lmb.lmb_mux_generate[1].wait_vec_reg[1]\: unisim.vcomponents.FDRE
@@ -1717,9 +1715,9 @@ entity cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
   attribute C_MASK : string;
-  attribute C_MASK of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000001000000000000000000000";
+  attribute C_MASK of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000001000000000000000000000000000000";
   attribute C_MASK1 : string;
-  attribute C_MASK1 of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000001000000000000000000000";
+  attribute C_MASK1 of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000001000000000000000000000000000000";
   attribute C_MASK2 : string;
   attribute C_MASK2 of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK3 : string;
@@ -1738,8 +1736,6 @@ entity cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
   attribute C_UE_FAILING_REGISTERS of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 0;
   attribute C_WRITE_ACCESS : integer;
   attribute C_WRITE_ACCESS of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is 2;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr : entity is "lmb_bram_if_cntlr";
 end cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr;
 
 architecture STRUCTURE of cpu_dlmb_bram_if_cntlr_0_lmb_bram_if_cntlr is
@@ -2026,9 +2022,9 @@ architecture STRUCTURE of cpu_dlmb_bram_if_cntlr_0 is
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of U0 : label is 0;
   attribute C_MASK : string;
-  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000000000000001000000000000000000000";
+  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000001000000000000000000000000000000";
   attribute C_MASK1 : string;
-  attribute C_MASK1 of U0 : label is "64'b0000000000000000000000000000000000000000001000000000000000000000";
+  attribute C_MASK1 of U0 : label is "64'b0000000000000000000000000000000001000000000000000000000000000000";
   attribute C_MASK2 : string;
   attribute C_MASK2 of U0 : label is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK3 : string;

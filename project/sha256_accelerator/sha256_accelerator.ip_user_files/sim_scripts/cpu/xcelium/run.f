@@ -6,17 +6,7 @@
   "C:/Xilinx/Vivado/2019.2/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/axi_sha256_v1_0_S_AXI.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/compressor.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/hasher.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/padder.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/reg_delay.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/rom.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/scheduler.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/sha256_update.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/sha256_update_no_padder.v" \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/src/hdl/axi_sha256_v1_0.v" \
-  "../../../bd/cpu/ip/cpu_axi_sha256_0_1/sim/cpu_axi_sha256_0_1.v" \
+  "c:/Users/904pa/Documents/Git/sha256/project/sha256_accelerator/sha256_accelerator.srcs/sources_1/bd/cpu/ip/cpu_axi_sha256_0_1/cpu_axi_sha256_0_1_sim_netlist.v" \
 -endlib
 -makelib xcelium_lib/microblaze_v11_0_2 \
   "../../../../sha256_accelerator.srcs/sources_1/bd/cpu/ipshared/f871/hdl/microblaze_v11_0_vh_rfs.vhd" \
@@ -108,9 +98,6 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/cpu/ip/cpu_rst_clk_wiz_1_100M_0/sim/cpu_rst_clk_wiz_1_100M_0.vhd" \
 -endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/cpu/sim/cpu.v" \
--endlib
 -makelib xcelium_lib/lib_pkg_v1_0_2 \
   "../../../../sha256_accelerator.srcs/sources_1/bd/cpu/ipshared/0513/hdl/lib_pkg_v1_0_rfs.vhd" \
 -endlib
@@ -129,11 +116,8 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/cpu/ip/cpu_axi_timer_0_0/sim/cpu_axi_timer_0_0.vhd" \
 -endlib
--makelib xcelium_lib/axi_protocol_converter_v2_1_20 \
-  "../../../../sha256_accelerator.srcs/sources_1/bd/cpu/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
--endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/cpu/ip/cpu_auto_pc_0/sim/cpu_auto_pc_0.v" \
+  "../../../bd/cpu/ip/cpu_auto_pc_0/cpu_auto_pc_0_sim_netlist.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v
