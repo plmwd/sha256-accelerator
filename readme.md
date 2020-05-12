@@ -39,12 +39,12 @@ This data sheet for the accelerator outlining the configuration parameters, regi
 This document has flowcharts and block diagrams of the internals of the accelerator, specifically the sha256_update module and all of its submodules.
 
 ## **Revisions**
-> ### **1.0**
-> Initial release
-> Hash block completion in 70 cycles
-> Simple drivers, but added too much overhead
+  ### **1.0**
+  - Initial release
+  - Hash block completion in 70 cycles
+  - Simple drivers, but added too much overhead
 
 
-> ## **Future Plans**
-> - DMA support to reduce overhead on CPU
-> - Provide base address and size and master AXI will talk to DMA to automatically fetch next message block between hashes
+## **Future Plans**
+  - DMA support to reduce overhead on CPU
+  - Provide base address and size and master AXI will talk to DMA to automatically fetch next message block between hashes
