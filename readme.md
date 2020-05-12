@@ -2,7 +2,7 @@
 The AXI SHA256 accelerator, utilizing the AXI4-Lite interface, is able to complete a hash of a 512-bit block in only 70 cycles and has a max operating frequency of 100 MHz.
 
 ## **Repo Layout**
-### **axi_sha256_1.0**
+  ### **axi_sha256_1.0**
 
 This folder contains the IP repo for the accelerator
 
@@ -37,3 +37,14 @@ This data sheet for the accelerator outlining the configuration parameters, regi
 ### **SHA256-HardwareImplementation.pdf**
 
 This document has flowcharts and block diagrams of the internals of the accelerator, specifically the sha256_update module and all of its submodules.
+
+## **Revisions**
+> ### **1.0**
+> Initial release
+> Hash block completion in 70 cycles
+> Simple drivers, but added too much overhead
+
+
+> ## **Future Plans**
+> - DMA support to reduce overhead on CPU
+> - Provide base address and size and master AXI will talk to DMA to automatically fetch next message block between hashes
