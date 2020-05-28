@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdx:platform sdx:vendor="xilinx.com"
+              sdx:library="sdx"
+              sdx:name="cpu-sha256-rtos"
+              sdx:version="1.0"
+              sdx:schemaVersion="1.0"
+              xmlns:sdx="http://www.xilinx.com/sdx">
+    <sdx:description>
+cpu-sha256-rtos
+    </sdx:description>
+    <sdx:systemConfigurations sdx:defaultConfiguration="cpu-sha256-rtos">
+        <sdx:configuration sdx:name="cpu-sha256-rtos"
+                           sdx:displayName="cpu-sha256-rtos"
+                           sdx:defaultProcessorGroup="freertos10_xilinx_domain"
+                           sdx:runtimes="cpp">
+            <sdx:description>cpu-sha256-rtos</sdx:description>
+            <sdx:bootImages sdx:default="standard">
+                <sdx:image sdx:name="standard"
+                            sdx:bif="cpu-sha256-rtos/boot/cpu-sha256-rtos.bif"
+                            sdx:readme="cpu-sha256-rtos/boot/generic.readme"
+                            />
+            </sdx:bootImages>
+            <sdx:processorGroup sdx:name="freertos10_xilinx_domain"
+                                sdx:displayName="freertos10_xilinx on microblaze_0"
+                                sdx:cpuType="microblaze_0"
+                                sdx:cpuInstance="microblaze_0">
+                <sdx:os sdx:name="freertos10_xilinx"
+                        sdx:displayName="freertos10_xilinx"
+                        sdx:bspLibraryPaths="cpu-sha256-rtos/freertos10_xilinx_domain/bsplib/lib"
+                        sdx:bspIncludePaths="cpu-sha256-rtos/freertos10_xilinx_domain/bspinclude/include"
+                        sdx:bspConfig="cpu-sha256-rtos/freertos10_xilinx_domain/system.mss"
+                />
+            </sdx:processorGroup>
+        </sdx:configuration>
+    </sdx:systemConfigurations>
+</sdx:platform>

@@ -9,3 +9,5 @@ webtalk/
 sha256.tmp/
 sha256.cache/
 .log/
+work/Vivado/*
+!work/Vivado/*.xpr
