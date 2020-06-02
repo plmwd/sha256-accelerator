@@ -2,41 +2,34 @@
 The AXI SHA256 accelerator, utilizing the AXI4-Lite interface, is able to complete a hash of a 512-bit block in only 70 cycles and has a max operating frequency of 100 MHz.
 
 ## **Repo Layout**
-  ### **axi_sha256_1.0**
 
-This folder contains the IP repo for the accelerator
+### **docs**
 
-### **axi_sha256_1.0.zip**
+This folder contains block diagrams, the reference manual, generated reports, along with any other supporting files.
 
-Archived IP repo
+### **hardware**
 
-### **C_implementation**
+This folder contains bitstream and .xsa files.
 
-This folder contains the software implementation of the SHA256 algorithm
+### **ip**
 
-### **impl**
+This folder contains the ip support files and drivers.
 
-This folder contains implementations (.bit .xsa and reports) for the accelerator with and without the padder module
+### **rtl**
 
-### **project**
+This folder contains the HDL for sythesis.
 
-This folder contains the Vivado and Vitis projects used in development and testing
+### **software implementation**
 
-### **src**
+This folder only contains a software implementation of sha256.
 
-This folder contains the HDL for sythesis and simulation
+### **testbench**
 
-### **waveforms**
+This folder contains the HDL for simulation.
 
-This folder only contains waveform images used in the data sheet
+### **work**
 
-### **AXI-SHA256-Datasheet.pdf**
-
-This data sheet for the accelerator outlining the configuration parameters, register map, and operation
-
-### **SHA256-HardwareImplementation.pdf**
-
-This document has flowcharts and block diagrams of the internals of the accelerator, specifically the sha256_update module and all of its submodules.
+This folder contains tracked files needed to fully re-create the Vivado or Vitis projects. Temporary/generated files are left untracked.
 
 ## **Revisions**
   ### **1.0**
