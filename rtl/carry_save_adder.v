@@ -1,14 +1,14 @@
 `timescale 1ns / 1ps
 
-module carry_save_adder(
+module carry_save_adder #(
+    parameter WIDTH = 32
+    ) (
     input wire [WIDTH - 1 : 0] num0,
     input wire [WIDTH - 1 : 0] num1,
     input wire [WIDTH - 1 : 0] num2,
     output wire [WIDTH - 1 : 0] partial_sum,
     output wire [WIDTH - 1 : 0] saved_carrys
     );
-
-    parameter WIDTH = 32;
 
     genvar fa;
 

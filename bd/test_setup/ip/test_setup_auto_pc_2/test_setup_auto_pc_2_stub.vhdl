@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 -- Date        : Fri May 29 13:47:42 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/904pa/Documents/Git/sha256/bd/test_setup/ip/test_setup_auto_pc_2/test_setup_auto_pc_2_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top test_setup_auto_pc_2 -prefix
+--               test_setup_auto_pc_2_ test_setup_auto_pc_2_stub.vhdl
 -- Design      : test_setup_auto_pc_2
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

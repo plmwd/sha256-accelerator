@@ -45,8 +45,8 @@ module sha256_update(
     output `WORD hash6,
     output `WORD hash7,
     output [3:0] block_offset, /* padded message word addr (16 words) */
-    output reg [54:0] cur_block,
-    output done,
+    output [54:0] cur_block,
+    output reg done,
     output reg error,
     
     input clk,
@@ -58,56 +58,64 @@ module sha256_update(
     );
 
     // one-hot encoding
-    localparam  STATE_IDLE = 10'd1,
-                STATE_INIT0 = 10'd2,
-                STATE_INIT1 = 10'd4,
-                STATE_START = 10'd8,
-                STATE_PREPROC_COMP = 10'd16,
-                STATE_ROUND_CALC = 10'd32,
-                STATE_COMP_IMD_HASH = 10'd64,
-                STATE_DONE = 10'd128,
-                STATE_ERROR = 10'd256,
-                STATE_OF_PAD = 10'd512;
+    localparam  STATE_IDLE = 5'd1,
+                STATE_INIT = 5'd2,
+                STATE_ROUND_CALC = 5'd4,
+                STATE_COMP_IMD_HASH = 5'd8,
+                STATE_DONE = 5'd16;
 
-   // Module delays (pipelined control signals in order of: padder, scheduler, [compressor, hasher, kval])
-    localparam  KVAL_ADDR_DELAY = 2,
-                HASH_CONTROL_DELAY = 2,
-                SCH_CONTROL_DELAY = 1,
-                COMP_CONTROL_DELAY = 2,
-                DONE_CONTROL_DELAY = 2;
-
+    /******************* REGISTERS *******************/
     // State register
-    reg [9:0] state, next_state;
+    reg [4 : 0] state, next_state;
 
-    // round counter
-    reg [5:0] round_counter;
-    
+    // Round counter and pipeline stage registers
+    reg [5 : 0] round_counter;
+    // Used to count once per block hash (counts to 63, then holds at 0)
+    reg finished_rounds;
+    // (R)ound (c)ounter stage (n) (rcn)
+    // rc1: between padder and scheduler
+    // rc2: between scheduler and pre-calc stage of compressor
+    // rc3: between pre-calc stage and done stage
+    reg [5 : 0] rc1, rc2, rc3;   
 
-    // current block counter
-    reg en_cur_block_counter;
+    reg [54 : 0] block_counter;
 
-    // Signals
+    /******************* SIGNALS *******************/
+    // Round counter 
+    wire [5 : 0] rc0;       // (R)ound (c)ounter stage (n) (rcn)
     reg en_round_counter;
     reg reset_round_counter;
-    wire [5:0] kval_addr_delay;
+    // Round counter overflow - used to count once per block hash
+    wire rc_of;
+
+    // Block counter 
+    reg en_block_counter;
+    wire reset_block_counter;
+
+    // State machine 
     wire first_block;
 
-    // hasher wires
+    // Hasher 
     reg hash_wen;
     reg init_hash;
-    wire `WORD  hash0_to_comp, hash1_to_comp, hash2_to_comp, hash3_to_comp, 
-                hash4_to_comp, hash5_to_comp, hash6_to_comp, hash7_to_comp;
+    wire `WORD  hash0_to_comp, 
+                hash1_to_comp, 
+                hash2_to_comp, 
+                hash3_to_comp, 
+                hash4_to_comp, 
+                hash5_to_comp, 
+                hash6_to_comp, 
+                hash7_to_comp;
 
-
-    // scheduler wires
+    // Scheduler 
     wire `WORD scheduled_msg;   
-    reg en_sch;
-    reg load_sch;
+    wire en_sch;
+    wire load_sch;
 
-    // compressor wires
-    reg init_comp;
+    // Compressor 
+    wire init_comp;
     reg en_comp;
-    wire `WORD  k;
+    wire comp_done;
     wire `WORD  A_comp_to_hasher, 
                 B_comp_to_hasher, 
                 C_comp_to_hasher, 
@@ -117,25 +125,33 @@ module sha256_update(
                 G_comp_to_hasher, 
                 H_comp_to_hasher;
 
-    // padder wires 
+    // Padder 
     reg start_pad;
-    reg en_pad;
-    reg reset_pad;
+    wire en_pad;
+    wire reset_pad;
     wire `WORD pad_w;
     wire pad_of;
 
-    // control signal delay wires
-    wire en_sch_delayed;
-    wire load_sch_delayed;
-    wire en_comp_delayed;
-    wire init_comp_delayed;
-    wire done_delayed;
+    /******************* ASSIGNMENTS *******************/    
+    // Round counter
+    assign rc0 = round_counter;
+    assign rc_of = (rc1 == 63) && (rc0 == 0);
 
-    reg done_control;
+    // Block counter
+    assign cur_block = block_counter;
+    assign reset_block_counter = reset;
 
-    // assign done output bit
-    assign done = done_delayed;
+    // Padder
+    assign en_pad = 1;
+    assign reset_pad = reset;
 
+    // Scheduler
+    assign en_sch = 1;
+    assign load_sch = (rc1 <= 15);
+
+    // Compressor
+    assign init_comp = (rc2 == 0) && (rc3 == 0);
+    assign penultimate_comp_done = (rc2 == 63);
     
     // output hash
     assign hash0 = hash0_to_comp;
@@ -147,83 +163,16 @@ module sha256_update(
     assign hash6 = hash6_to_comp;
     assign hash7 = hash7_to_comp;
 
-    // output message word address 
-    assign block_offset = round_counter;
+    // output message word address - needs to fetch word for compressor pre-calculation
+    assign block_offset = rc0;
 
     // assign first block control signal
     assign first_block = (cur_block == 0);
-
-    // k-val pipeline delays
-    reg_delay #(
-        .WIDTH(6),
-        .NUM_DELAYS(KVAL_ADDR_DELAY)
-        )
-        kval_addr_delay_inst (
-        .out(kval_addr_delay),
-        .clk(clk),
-        .in(round_counter)
-        );
-
-    // Hasher control pipeline delays
-    reg_delay #(
-        .WIDTH(2),
-        .NUM_DELAYS(HASH_CONTROL_DELAY)
-        )
-        hash_control_delays (
-            .out({hash_wen_delayed, init_hash_delayed}),
-            .in({hash_wen, init_hash}),
-            .clk(clk)
-        ); 
-
-    // Done control signal pipeline delays
-    reg_delay #(
-        .WIDTH(1),
-        .NUM_DELAYS(DONE_CONTROL_DELAY)
-        )
-        done_control_delay (
-            .out(done_delayed),
-            .in(done_control),
-            .clk(clk)
-        );
-
-    // Scheduler control pipeline delays
-    reg_delay #(
-        .WIDTH(2),
-        .NUM_DELAYS(SCH_CONTROL_DELAY)
-        )
-        sch_control_delays (
-            .out({en_sch_delayed, load_sch_delayed}),
-            .in({en_sch, load_sch}),
-            .clk(clk)
-        );
-
-    // Compressor control pipeline delays
-    reg_delay #(
-        .WIDTH(2),
-        .NUM_DELAYS(COMP_CONTROL_DELAY)
-        )
-        comp_control_delays (
-            .out({en_comp_delayed, init_comp_delayed}),
-            .in({en_comp, init_comp}),
-            .clk(clk)
-        );
-
-    // k-values ROM
-    rom #(
-        .WORD_WIDTH(32),
-        .NUM_WORDS(64),
-        .FILE("kvals.mem")
-        ) 
-        kvals (
-        .out(k),
-        .addr(kval_addr_delay)
-        );
 
     // Padder instantiation
     padder pad_inst (
         .w_out(pad_w),
         .pad_of(pad_of),
-
         .w_in(w),
         .msg_size(msg_size),
         .offset(block_offset),
@@ -232,17 +181,16 @@ module sha256_update(
         .reset(reset_pad),
         .start(start_pad),
         .clk(clk)
-        );
+    );
 
     // Scheduler instantiation
     scheduler sch_inst (
         .sch_msg(scheduled_msg),
-
         .clk(clk),
-        .en(en_sch_delayed),
-        .load(load_sch_delayed),
+        .en(en_sch),
+        .load(load_sch),
         .msg(pad_w)
-        );
+    );
 
     // Compressor instantiation
     compressor comp_inst (
@@ -254,7 +202,7 @@ module sha256_update(
         .F(F_comp_to_hasher),
         .G(G_comp_to_hasher),
         .H(H_comp_to_hasher),
-
+        .done(comp_done),
         .clk(clk),
         .hash0(hash0_to_comp),
         .hash1(hash1_to_comp),
@@ -265,10 +213,10 @@ module sha256_update(
         .hash6(hash6_to_comp),
         .hash7(hash7_to_comp),
         .w(scheduled_msg),
-        .k(k),
-        .en(en_comp_delayed),
-        .init(init_comp_delayed)
-        );
+        .cur_round(rc2),
+        .en(en_comp),
+        .init(init_comp)
+    );
 
     // Hasher instantiation
     hasher hasher_inst (
@@ -280,7 +228,6 @@ module sha256_update(
         .hash5(hash5_to_comp),
         .hash6(hash6_to_comp),
         .hash7(hash7_to_comp),
-
         .clk(clk),
         .A(A_comp_to_hasher),
         .B(B_comp_to_hasher),
@@ -290,28 +237,40 @@ module sha256_update(
         .F(F_comp_to_hasher),
         .G(G_comp_to_hasher),
         .H(H_comp_to_hasher),
-        .wen(hash_wen_delayed),
-        .init(init_hash_delayed)
+        .wen(hash_wen),
+        .init(init_hash)
     );
 
     // current block update logic
     always @(posedge clk) begin
-        if (reset)
-            cur_block <= 0;
+        if (reset_block_counter)
+            block_counter <= 0;
         else begin
-            if (en_cur_block_counter)
-                cur_block <= cur_block + 1;
+            if (en_block_counter)
+                block_counter <= block_counter + 1;
         end
     end
 
-    // round counter logic
+    // Round counter logic
     always @(posedge clk) begin
-        if (reset_round_counter) 
+        if (reset_round_counter) begin
             round_counter <= 0;
+            finished_rounds <= 0;
+        end
         else begin
             if (en_round_counter)
                 round_counter <= round_counter + 1;
+            
+            if (rc_of)
+                finished_rounds <= 1;
         end
+    end
+
+    // Round counter pipeline registers
+    always @(posedge clk) begin
+        rc1 <= rc0;
+        rc2 <= rc1;
+        rc3 <= rc2;
     end
 
     // state register update
@@ -334,38 +293,23 @@ module sha256_update(
         case(state)
             STATE_IDLE: begin
                 if (update)
-                    next_state = STATE_INIT0;
+                    next_state = STATE_INIT;
             end
 
-            STATE_INIT0:
-                next_state = STATE_INIT1;
-
-            STATE_INIT1:
-                next_state = STATE_START;
-
-            STATE_START:
-                next_state = STATE_PREPROC_COMP;
-
-            STATE_PREPROC_COMP: begin
-                // state doesnt change if <15
-                if (round_counter >= 15)
-                    next_state = STATE_ROUND_CALC;
-            end
+            STATE_INIT:
+                next_state = STATE_ROUND_CALC;
 
             STATE_ROUND_CALC: begin
-                if (round_counter == 63)
+                if (comp_done)
                     next_state = STATE_COMP_IMD_HASH;
             end
 
             STATE_COMP_IMD_HASH: begin
                 if (pad_of)
-                    next_state = STATE_OF_PAD;
+                    next_state = STATE_INIT;
                 else
                     next_state = STATE_DONE;
             end
-
-            STATE_OF_PAD:
-                next_state = STATE_INIT1;
 
             STATE_DONE: begin
                 next_state = STATE_IDLE;
@@ -376,84 +320,51 @@ module sha256_update(
     // state output function
     always @(*) begin
         en_round_counter = 0;
-        reset_round_counter = 0;
+        reset_round_counter = 1;
         hash_wen = 0;
         init_hash = 0;
-        en_sch = 0;
-        load_sch = 0;
-        init_comp = 0;
         en_comp = 0;
-        done_control = 0;
         start_pad = 0;
-        en_pad = 0;
-        reset_pad = 0;
-        en_cur_block_counter = 0;
+        en_block_counter = 0;
+        done = 0;
         error = 0;
 
         case (state)
             STATE_IDLE: begin
-                reset_round_counter = 1;
-                reset_pad = 1;
+                
             end
 
-            STATE_INIT0: begin
-                // load inital hash values if the first block
-                if(first_block) begin
-                    hash_wen = 1;
+            STATE_INIT: begin
+                // Round counter is reset
+                // Load hasher with initial values if the first block
+                if (first_block) begin
                     init_hash = 1;
+                    hash_wen = 1;
                 end
             end
 
-            STATE_INIT1: begin
-                // load compressor with inital block hash values
-                init_comp = 1;
-                en_comp = 1;
-            end
-
-            STATE_START: begin
-                en_pad = 1;
-                start_pad = 1;
-                en_sch = 1;
-                load_sch = 1;
-                en_comp = 1;
-                en_round_counter = 1;
-            end
-
-            STATE_PREPROC_COMP: begin
-                en_pad = 1;
-                en_sch = 1;
-                load_sch = 1;
-                en_comp = 1;
-                en_round_counter = 1;
-            end
-
             STATE_ROUND_CALC: begin
-                en_pad = 1;
-                en_sch = 1;
+                reset_round_counter = 0;
                 en_comp = 1;
-                en_round_counter = 1;
-            end
 
-            STATE_OF_PAD: begin
-                en_cur_block_counter = 1;
+                if (rc0 == 0)
+                    start_pad = 1;
+
+                if (!finished_rounds && !rc_of)
+                    en_round_counter = 1;
             end
 
             STATE_COMP_IMD_HASH: begin
                 hash_wen = 1;
-                //en_cur_block_counter = 1;
+                en_block_counter = 1;
             end
 
             STATE_DONE: begin
-                done_control = 1;
-                en_cur_block_counter = 1;
+                done = 1;
             end
-
-            STATE_ERROR:
-                error = 1;
 
             default:
                 error = 1;
         endcase
     end
-
 endmodule

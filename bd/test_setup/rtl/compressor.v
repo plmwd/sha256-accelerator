@@ -39,6 +39,7 @@ module compressor (
     output reg `WORD F,
     output reg `WORD G,
     output reg `WORD H,
+    output reg done,
 
     input clk,
     input `WORD hash0,
@@ -50,17 +51,60 @@ module compressor (
     input `WORD hash6,
     input `WORD hash7,
     input `WORD w,
-    input `WORD k,
+    input [5 : 0] cur_round,
     input en,
     input init
     );
 
     `include "sha256.vh";
 
-    wire `WORD temp1, temp2;
+    /******************* REGISTERS *******************/
+    reg `WORD pre_calc_ps;
+    reg `WORD pre_calc_sc;
+    reg `WORD pre_calc;
 
-    assign temp1 = H + k + w + SIGMA1(E) + ch(E, F, G);
+    /******************* SIGNALS *******************/
+    wire `WORD k;
+    wire `WORD temp1, temp2;
+    wire `WORD csa_state_input;
+    wire `WORD csa_ps;
+    wire `WORD csa_sc;
+    wire penultimate_comp_done;
+
+    /******************* ASSIGNMENTS *******************/  
+    assign penultimate_done = (cur_round == 63); 
+    assign temp1 = (pre_calc + SIGMA1(E) + ch(E, F, G));
+    // assign temp1 = (pre_calc_ps + pre_calc_sc) + (SIGMA1(E) + ch(E, F, G));
     assign temp2 = SIGMA0(A) + maj(A, B, C);
+    assign csa_state_input = (init) ? hash7 : G;
+
+    // carry_save_adder # (
+    //     .WIDTH(32)
+    // ) csa_inst (
+    //     .num0(csa_state_input),
+    //     .num1(k),
+    //     .num2(w),
+    //     .partial_sum(csa_ps),
+    //     .saved_carrys(csa_sc)
+    // );
+
+    // k-values ROM
+    rom #(
+        .WORD_WIDTH(32),
+        .NUM_WORDS(64),
+        .FILE("kvals.mem")
+    ) kvals (
+        .out(k),
+        .addr(cur_round)
+    );
+
+    always @(posedge clk) begin
+        // pre_calc_ps <= csa_ps;
+        // pre_calc_sc <= csa_sc;
+        pre_calc <= csa_state_input + w + k;
+
+        done <= penultimate_done;
+    end
 
     // Compressor register logic
     // The algorithm requires that the state registers (A...H) be initialized with the initial vectors or the previous hash
@@ -76,7 +120,6 @@ module compressor (
                 E <= hash4;
                 F <= hash5;
                 G <= hash6;
-                H <= hash7;
             end
             else begin
                 A <= temp1 + temp2;

@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Fri May 29 13:47:39 2020
+// Date        : Thu Jun  4 16:59:09 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/904pa/Documents/Git/sha256/bd/test_setup/ip/test_setup_axi_sha256_0_1/test_setup_axi_sha256_0_1_sim_netlist.v
+//               C:/Users/904pa/Documents/Git/sha256/bd/test_setup/ip/test_setup_axi_sha256_0_1/test_setup_axi_sha256_0_1_sim_netlist.v
 // Design      : test_setup_axi_sha256_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

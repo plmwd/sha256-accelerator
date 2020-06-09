@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Fri May 29 13:47:45 2020
+// Date        : Fri May 29 13:47:44 2020
 // Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/904pa/Documents/Git/sha256/bd/test_setup/ip/test_setup_auto_pc_0/test_setup_auto_pc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top test_setup_auto_pc_0 -prefix
+//               test_setup_auto_pc_0_ test_setup_auto_pc_0_stub.v
 // Design      : test_setup_auto_pc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1

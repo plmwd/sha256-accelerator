@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 -- Date        : Fri May 29 13:47:42 2020
 -- Host        : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/904pa/Documents/Git/sha256/bd/test_setup/ip/test_setup_auto_pc_2/test_setup_auto_pc_2_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top test_setup_auto_pc_2 -prefix
+--               test_setup_auto_pc_2_ test_setup_auto_pc_2_sim_netlist.vhdl
 -- Design      : test_setup_auto_pc_2
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -43,8 +43,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_incr_cmd is
     \axaddr_incr_reg[3]_i_2_0\ : in STD_LOGIC;
     m_axi_arready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_incr_cmd : entity is "axi_protocol_converter_v2_1_20_b2s_incr_cmd";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_incr_cmd;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_incr_cmd is
@@ -902,8 +900,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm is
     \FSM_sequential_state_reg[0]_2\ : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm : entity is "axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_rd_cmd_fsm is
@@ -1491,8 +1487,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_simple_fifo is
     aclk : in STD_LOGIC;
     SS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_simple_fifo : entity is "axi_protocol_converter_v2_1_20_b2s_simple_fifo";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_simple_fifo;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_simple_fifo is
@@ -2463,8 +2457,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_wrap_cmd is
     \wrap_boundary_axaddr_r_reg[6]_0\ : in STD_LOGIC_VECTOR ( 6 downto 0 );
     \axaddr_wrap_reg[11]_0\ : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_wrap_cmd : entity is "axi_protocol_converter_v2_1_20_b2s_wrap_cmd";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_wrap_cmd;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_wrap_cmd is
@@ -3075,8 +3067,6 @@ entity test_setup_auto_pc_2_axi_register_slice_v2_1_20_axic_register_slice is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_register_slice_v2_1_20_axic_register_slice : entity is "axi_register_slice_v2_1_20_axic_register_slice";
 end test_setup_auto_pc_2_axi_register_slice_v2_1_20_axic_register_slice;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_register_slice_v2_1_20_axic_register_slice is
@@ -6362,8 +6352,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_cmd_translator is
     \axaddr_incr_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \axaddr_incr_reg[3]_i_2\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_cmd_translator : entity is "axi_protocol_converter_v2_1_20_b2s_cmd_translator";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_cmd_translator;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_cmd_translator is
@@ -6516,8 +6504,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_r_channel is
     \in\ : in STD_LOGIC_VECTOR ( 33 downto 0 );
     SS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_r_channel : entity is "axi_protocol_converter_v2_1_20_b2s_r_channel";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_r_channel;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_r_channel is
@@ -6630,8 +6616,6 @@ entity test_setup_auto_pc_2_axi_register_slice_v2_1_20_axi_register_slice is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_register_slice_v2_1_20_axi_register_slice : entity is "axi_register_slice_v2_1_20_axi_register_slice";
 end test_setup_auto_pc_2_axi_register_slice_v2_1_20_axi_register_slice;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_register_slice_v2_1_20_axi_register_slice is
@@ -6741,8 +6725,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_ar_channel is
     \FSM_sequential_state_reg[0]\ : in STD_LOGIC;
     \wrap_boundary_axaddr_r_reg[6]\ : in STD_LOGIC_VECTOR ( 6 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_ar_channel : entity is "axi_protocol_converter_v2_1_20_b2s_ar_channel";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_ar_channel;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s_ar_channel is
@@ -6971,8 +6953,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s is
     m_axi_rvalid : in STD_LOGIC;
     aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s : entity is "axi_protocol_converter_v2_1_20_b2s";
 end test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s;
 
 architecture STRUCTURE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_b2s is
@@ -7304,8 +7284,6 @@ entity test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_axi_protocol_converte
   attribute C_TRANSLATION_MODE of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_axi_protocol_converter : entity is 2;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_axi_protocol_converter : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_axi_protocol_converter : entity is "axi_protocol_converter_v2_1_20_axi_protocol_converter";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of test_setup_auto_pc_2_axi_protocol_converter_v2_1_20_axi_protocol_converter : entity is 1;
   attribute P_AXI4 : integer;

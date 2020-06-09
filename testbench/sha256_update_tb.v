@@ -218,6 +218,8 @@ module sha256_update_tb();
 
         // wait for the hash computation to finish
         wait(done_t == 1'b1);
+        wait(done_t == 1'b0);
+        //$display("Done 0");
 
         sync_neg();
         update_t = 1;

@@ -1,0 +1,71 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Fri May 29 15:58:03 2020
+| Host         : DESKTOP-E4CP06Q running 64-bit major release  (build 9200)
+| Command      : report_high_fanout_nets -max_nets 50 -file C:/Users/904pa/Documents/Git/sha256/docs/reports/unoptimized-high-fanout-report.rpt
+| Design       : test_setup_wrapper
+| Device       : xc7a35t
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+High Fan-out Nets Information
+
+1. Summary
+----------
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| Net Name                                                                                                                                                                                         | Fanout | Driver Type |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/slv_reg0[3]_i_1_n_0                                                                                                                    |    941 | LUT1        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/Use_MuxCy[10].OF_Piperun_Stage/MUXCY_I/lopt_1                                                                           |    364 | CARRY4      |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/slv_reg3                                                                                                                               |    309 | LUT6        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Use_Debug_Logic.Master_Core.Debug_Perf/Use_Statistics.Debug_Stat_I/sample_cmd                                                    |    301 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_sha256/comp_control_delays/delay_reg[1][1]_0[1]                                                                                    |    264 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_1                                                                                                                                 |    258 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_sha256/hash_control_delays/delay_reg[1][1]_1[0]                                                                                    |    257 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_sha256/hash_control_delays/delay_reg[1][1]_0                                                                                       |    256 | LUT2        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_sha256/sch_control_delays/Q[1]                                                                                                     |    224 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Using_DCache.mem_databus_ready_sel_carry_or/MUXCY_I/lopt_4                                                                       |    204 | CARRY4      |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_5                                                                                                                                 |    201 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_8                                                                                                                                 |    200 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/Use_MuxCy[2].OF_Piperun_Stage/MUXCY_I/lopt_1                                                                            |    197 | CARRY4      |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN                                                                                                                                   |    194 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_sha256/comp_control_delays/delay_reg[1][1]_0[0]                                                                                    |    191 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Use_Debug_Logic.Master_Core.Debug_Perf/Use_Statistics.Debug_Stat_I/all_statistics_counters[5].Debug_Stat_Counter_i/c1_stop_valid |    180 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_2                                                                                                                                 |    173 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_6                                                                                                                                 |    164 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/Using_ICache_Carry_Chain.Using_Latch_AS_Logic.AND2B1L_I1/if_ready                                                       |    157 | AND2B1L     |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_7                                                                                                                                 |    156 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_10                                                                                                                                |    151 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Use_Debug_Logic.Master_Core.Debug_Perf/LOCKSTEP_Master_Out[36]                                                                   |    146 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Using_DCache.Using_WriteThrough.DCache_I1/Using_New_CacheInterface_for_AXI.Cache_Interface_I1/incoming_data_valid                |    146 | LUT5        |
+| test_setup_i/mdm_1/U0/Use_Bus_MASTER.bus_master_I/Has_FIFO.Read_FIFO/Addr_Counters[4].FDRE_I/M_AXI_ARESETN_0                                                                                     |    144 | LUT1        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_11                                                                                                                                |    142 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_sha256/sha256_block_offset[0]                                                                                                      |    139 | FDRE        |
+| test_setup_i/mdm_1/U0/Use_E2.BSCAN_I/Use_BSCAN.PORT_Selector_reg[0]                                                                                                                              |    139 | BSCANE2     |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_sha256/sha256_block_offset[1]                                                                                                      |    138 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_3                                                                                                                                 |    138 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Use_Debug_Logic.Master_Core.Debug_Perf/Use_Statistics.Debug_Stat_I/Serial_Dbg_Intf.clear_cmd_reg_rep_n_0                         |    131 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset_repN_9                                                                                                                                 |    130 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/D[22]                                                                                                                   |    129 | LUT5        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/D[23]                                                                                                                   |    129 | LUT5        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/D[24]                                                                                                                   |    129 | LUT5        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/D[25]                                                                                                                   |    129 | LUT5        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/D[26]                                                                                                                   |    129 | LUT5        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/D[27]                                                                                                                   |    129 | LUT5        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_araddr_reg[2]_rep_n_0                                                                                                              |    128 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/axi_araddr_reg[3]_rep_n_0                                                                                                              |    128 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/sel0[0]                                                                                                                                |    128 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/sel0[1]                                                                                                                                |    128 | FDRE        |
+| test_setup_i/microblaze_0_axi_intc/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_reg[5]_0[0]                                                                                               |    122 | FDRE        |
+| test_setup_i/microblaze_0_axi_intc/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_reg[5]_0[1]                                                                                               |    120 | FDRE        |
+| test_setup_i/microblaze_0_axi_intc/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_reg[5]_0[3]                                                                                               |    118 | FDRE        |
+| test_setup_i/microblaze_0_axi_intc/U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_reg[5]_0[2]                                                                                               |    115 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/mem_sel_msr                                                                                                             |    112 | FDRE        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Using_DCache.Using_WriteThrough.DCache_I1/Using_New_CacheInterface_for_AXI.Cache_Interface_I1/read_data_cnt[0]                   |    109 | LUT4        |
+| test_setup_i/mdm_1/U0/Use_E2.BSCAN_I/Ext_JTAG_UPDATE_BUFG                                                                                                                                        |    104 | BUFG        |
+| test_setup_i/microblaze_0/U0/MicroBlaze_Core_I/Performance.Core/Decode_I/D[4]                                                                                                                    |    101 | FDRE        |
+| test_setup_i/axi_sha256_0/inst/axi_sha256_v1_0_S_AXI_inst/sel0[2]                                                                                                                                |     97 | FDRE        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------------+
+
+
