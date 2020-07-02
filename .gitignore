@@ -13,3 +13,4 @@ work/Vivado/Basys3/*
 work/Vivado/Ultra96v2/*
 !work/Vivado/Basys3/*.xpr
 !work/Vivado/Ultra96v2/*.xpr
+docs/version1.1/~$timization-report.docx
