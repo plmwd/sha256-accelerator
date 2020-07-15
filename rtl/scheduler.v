@@ -29,7 +29,7 @@
 
 `include "sha256types.vh"
 
-module scheduler (
+(* use_dsp = "yes" *) module scheduler (
     output `WORD sch_msg,
     input clk,
     input en,

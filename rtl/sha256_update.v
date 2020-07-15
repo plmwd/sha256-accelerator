@@ -35,7 +35,7 @@
 
 `include "sha256types.vh"
 
-module sha256_update(
+(* use_dsp = "yes" *) module sha256_update(
     output `WORD hash0,
     output `WORD hash1,
     output `WORD hash2,

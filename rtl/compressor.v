@@ -30,7 +30,7 @@
 
 `include "sha256types.vh"
 
-module compressor (
+(* use_dsp = "yes" *) module compressor (
     output reg `WORD A,
     output reg `WORD B,
     output reg `WORD C,
@@ -65,7 +65,7 @@ module compressor (
 
     /******************* SIGNALS *******************/
     wire `WORD k;
-    wire `WORD temp1, temp2;
+    (* use_dsp = "yes" *) wire `WORD temp1, temp2;
     wire `WORD csa_state_input;
     wire `WORD csa_ps;
     wire `WORD csa_sc;
